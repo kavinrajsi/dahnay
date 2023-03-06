@@ -73,9 +73,10 @@
         bottom: -5px;
       }
     }
-    &:hover{
-      a{
-        &::after{
+
+    &:hover {
+      a {
+        &::after {
           content: "";
           width: 100%;
         }
@@ -159,94 +160,25 @@ main {
     font-size: 14px;
     line-height: 18px;
     color: #8A90A2;
+    margin-bottom: 18px;
   }
-}
 
-.footer {
-  background: #292930;
-
-  .footer-aboutme {
+  .link-text {
+    font-family: 'Sen';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
     display: flex;
-    padding-top: 64px;
+    align-items: center;
+    text-align: center;
+    color: #F0493E;
 
-    &-container {
-      display: flex;
-      gap: 30px;
+    svg {
+      margin-left: 8px;
     }
 
-    &-content {
-      p {
-        &:first-child {
-          font-family: var(--font-sen);
-          font-style: normal;
-          font-weight: 700;
-          font-size: 20px;
-          line-height: 24px;
-          color: #FFFFFF;
-          margin-bottom: 8px;
-        }
-
-        font-family: var(--font-dm);
-        font-style: normal;
-        font-weight: 400;
-        font-size: 15px;
-        line-height: 18px;
-        color: #8A90A2;
-      }
-    }
-
-    &-form {
-      label {
-        display: block;
-        font-family: var(--font-sen);
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        display: flex;
-        align-items: center;
-        color: #FFFFFF;
-        margin-bottom: 10px;
-      }
-
-      input {
-        padding: 16px;
-        font-family: var(--font-sen);
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        color: #F0493E;
-        background: #FFFFFF;
-        border-radius: 4px;
-        width: 100%;
-        border: 0;
-      }
-    }
-  }
-
-  &-copyright {
-    margin-top: 32px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    margin-bottom: 64px;
-    width: 100%;
-    border-top: 1px solid rgba(138, 144, 162, 0.45);
-    border-bottom: 1px solid rgba(138, 144, 162, 0.45);
-
-    p {
-      flex: 1 0 auto;
-      font-family: var(--font-sen);
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      color: #fff;
-    }
-
-    nav {
-      display: flex;
-      gap: 22px;
-    }
   }
 }
+
+@import 'footer';

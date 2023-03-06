@@ -1,3 +1,7 @@
+.logo{
+
+}
+
 .menu {
   position: fixed;
   top: 27px;
@@ -38,10 +42,18 @@
 
   &-nav {
     display: none;
+    height: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 58px;
+    background-color: #fff;
 
     @media (min-width: 992px) {
       display: flex;
       gap: 48px;
+      position: static;
+      height: initial;
     }
   }
 
@@ -88,6 +100,7 @@
 
       &:hover {
         color: #F0493E;
+
         &::after {
           content: "";
           width: 100%;
@@ -95,4 +108,32 @@
       }
     }
   }
+}
+
+
+
+.open {
+  +.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    height: 100vh;
+
+    .menu-item {
+      padding: 10px;
+      font-family: 'Sen';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.01em;
+      color: #8A90A2;
+      display: block;
+    }
+  }
+}
+
+
+.menu-active {
+  overflow: hidden;
 }

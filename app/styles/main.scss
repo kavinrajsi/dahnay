@@ -14,6 +14,51 @@
 }
 
 
+.menu-button {
+  position: relative;
+  transition: all 70ms ease-out;
+  cursor: pointer;
+  padding: 5px 10px;
+
+  .burger-line-1,
+  .burger-line-2,
+  .burger-line-3 {
+    display: block;
+    background-color: #000;
+    margin: 6px 0;
+    height: 1.6px;
+    width: 24px;
+  }
+  &.open{
+    .burger-line-2{
+    opacity: 0;
+    }
+    .burger-line-1{
+        top: 5px;
+        top: calc(50% - 6px);
+        left: auto;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        position: absolute;
+        right: 6px;
+
+    }
+
+    .burger-line-3{
+
+    top: 5px;
+    top: calc(50% - 6px);
+    left: auto;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    position: absolute;
+    right: 6px;
+    }
+  }
+}
+
+
+
 @import 'navbar';
 @import 'banner';
 @import 'container';

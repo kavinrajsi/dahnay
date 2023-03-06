@@ -1,7 +1,3 @@
-.logo{
-
-}
-
 .menu {
   position: fixed;
   top: 27px;
@@ -25,6 +21,8 @@
     border-radius: 6px;
 
     @media (min-width: 992px) {
+      flex: 0 0 100%;
+      max-width: 100%;
       margin-left: auto;
       margin-right: auto;
       padding-left: 50px;
@@ -41,19 +39,34 @@
 
 
   &-nav {
+    height: 100vh;
+    z-index: 5;
     display: none;
-    height: 0;
-    position: absolute;
-    left: 0;
+    position: fixed;
+    left: initial;
     right: 0;
-    top: 58px;
+    top: 0px;
+    width: 218px;
+
     background-color: #fff;
 
+    &::before {
+      content: "";
+      display: block;
+      height: 46px;
+      background: #F0493E;
+      width: 100%;
+    }
+
     @media (min-width: 992px) {
+      &::before{
+        content: none;
+      }
       display: flex;
       gap: 48px;
       position: static;
       height: initial;
+      width: initial;
     }
   }
 
@@ -96,6 +109,8 @@
         background-color: #F0493E;
         position: absolute;
         bottom: -5px;
+        left: 0;
+        right: 0;
       }
 
       &:hover {
@@ -117,9 +132,10 @@
     display: flex;
     flex-direction: column;
     gap: 22px;
-    height: 100vh;
+    z-index: 8;
 
     .menu-item {
+      text-align: center;
       padding: 10px;
       font-family: 'Sen';
       font-style: normal;
@@ -136,4 +152,18 @@
 
 .menu-active {
   overflow: hidden;
+}
+
+.backdrop{
+
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  left: 0;
+  right: 0;
+  position: fixed;
+  top: 0;
+  z-index: 4;
 }

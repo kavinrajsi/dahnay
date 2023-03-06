@@ -28,34 +28,49 @@
   <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+  <svg style="display:none">
+    <symbol id="menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+      stroke-linejoin="round" class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </symbol>
+  </svg>
+
   <header>
-    <nav class="navbar">
+    <nav class="menu">
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="./images/logo.png" alt="Logo" width="170" height="74"
-            class="d-inline-block align-text-top">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" target="_blank" href="https://www.dahnay.com/index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" target="_blank" href="https://www.dahnay.com/aboutus.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" target="_blank" href="https://www.dahnay.com/service.html">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" target="_blank" href="https://www.dahnay.com/industry.html">Industries</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" target="_blank" href="https://www.dahnay.com/contact.html">Contact</a>
-        </li>
-      </ul>
+        <div class="row">
+          <div class="col-12 menu-bar">
+            <a class="menu-brand" href="#">
+              <img src="./images/logo.png" alt="Logo" width="170" height="74" class="d-inline-block align-text-top">
+            </a>
+            <div class="menu-button">
+              <svg width="24" height="24" class="burgerMenu active" style="display: inline;">
+                <use href="#menu"></use>
+              </svg>
+            </div>
+
+            <ul class="menu-nav">
+              <li class="menu-item">
+                <a class="menu-item-link active" aria-current="page" target="_blank"
+                  href="https://www.dahnay.com/index.html">Home</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-item-link" target="_blank" href="https://www.dahnay.com/aboutus.html">About</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-item-link" target="_blank" href="https://www.dahnay.com/service.html">Services</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-item-link" target="_blank" href="https://www.dahnay.com/industry.html">Industries</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-item-link" target="_blank" href="https://www.dahnay.com/contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
@@ -63,7 +78,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 p-0">
-          <div class="banner-contnet image-wrapper">
+          <div class="banner-content image-wrapper">
             <p>Let's dive in and <br> explore the trends!</p>
             <img src="./images/hero-banner@3x.png" class="img-fluid" alt="">
           </div>
@@ -71,59 +86,74 @@
       </div>
     </div>
     <div class="article-area container">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
+      <div class="row">
+        <div class="col-12 col-md-4 col-lg-4">
           <div class="card">
-            <a href="#">
-            <img src="./images/Image-1.png" class="card-img-top img-fluid "
-              alt="Can Logistics Technology Replace Human Decision Makers">
-            <div class="card-body">
-              <h5 class="card-title">Can Logistics Technology Replace Human Decision Makers?</h5>
-              <p class="card-text">You are head of transportation for a large apparel company with 2000 stores spread
-                over 900 cities across India. Every week you ship over ...</p>
+            <a target="_blank" href="https://www.knowledgeridge.com/c/ExpertsViewsDetails/508">
+              <img src="./images/Image-1@2x.png" class="card-img-top img-fluid "
+                alt="Can Logistics Technology Replace Human Decision Makers">
+              <div class="card-body">
+                <h5 class="card-title">Can Logistics Technology Replace Human Decision Makers?</h5>
+                <p class="card-text">You are head of transportation for a large apparel company with 2000 stores spread
+                  over 900 cities across India. Every week you ship over 20,000 boxes through 15 logistics partners from
+                  6 warehouses.</p>
                 <p class="link-text">Read More
                   <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 7.5H12.17L6.58 1.91L8 0.5L16 8.5L8 16.5L6.59 15.09L12.17 9.5H0V7.5Z" fill="#F0493E"/>
-                    </svg>
-                </p>
-            </div>
-            </a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <a href="#">
-            <img src="./images/Image-2.png" class="card-img-top img-fluid "
-              alt="Blockchain strengthening links in supply chain">
-            <div class="card-body">
-              <h5 class="card-title">Blockchain strengthening links in supply chain</h5>
-              <p class="card-text">Though use of blockchain solutions in supply chain is still relatively low, Tech
-                Mahindra is among pioneers driving its adoption ...</p>
-              <p class="link-text">Read More
-                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 7.5H12.17L6.58 1.91L8 0.5L16 8.5L8 16.5L6.59 15.09L12.17 9.5H0V7.5Z" fill="#F0493E"/>
+                    <path d="M0 7.5H12.17L6.58 1.91L8 0.5L16 8.5L8 16.5L6.59 15.09L12.17 9.5H0V7.5Z" fill="#F0493E" />
                   </svg>
-              </p>
-            </div>
+                </p>
+              </div>
             </a>
           </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-4 col-lg-4">
           <div class="card">
-            <a href="#">
-            <img src="./images/Image-3.png" class="card-img-top img-fluid "
-              alt="How To Turn Low-Trust Business Relationships Into High-Performing Partnerships">
-            <div class="card-body">
-              <h5 class="card-title">How To Turn Low-Trust Business Relationships Into High-Performing...</h5>
-              <p class="card-text">I’ve argued over the past few years that we have a trust problem in supply chain
-                management. For example, in a survey we conducted with our ...</p>
+            <a target="_blank"
+              href="https://supplychaindigital.com/digital-supply-chain/blockchain-strengthening-links-in-supply-chain">
+              <img src="./images/Image-2@2x.png" class="card-img-top img-fluid "
+                alt="Blockchain strengthening links in supply chain">
+              <div class="card-body">
+                <h5 class="card-title">Blockchain strengthening links in supply chain</h5>
+                <p class="card-text">
+                  Though use of blockchain solutions in supply chain is still relatively low, Tech Mahindra is among
+                  pioneers driving its adoption Cryptocurrencies and non-fungible tokens (NFTs) tend to hog most of the
+                  headlines when it comes to blockchain, but those behind the technology understand just how powerful it
+                  can also be in transforming crucial aspects of commerce, such as supply chain.
+                </p>
                 <p class="link-text">Read More
                   <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 7.5H12.17L6.58 1.91L8 0.5L16 8.5L8 16.5L6.59 15.09L12.17 9.5H0V7.5Z" fill="#F0493E"/>
-                    </svg>
+                    <path d="M0 7.5H12.17L6.58 1.91L8 0.5L16 8.5L8 16.5L6.59 15.09L12.17 9.5H0V7.5Z" fill="#F0493E" />
+                  </svg>
                 </p>
-            </div>
-          </a>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-4">
+          <div class="card">
+            <a target="_blank"
+              href="https://talkinglogistics.com/2023/02/13/how-to-turn-low-trust-business-relationships-into-high-performing-partnerships/">
+              <img src="./images/Image-3@2x.png"
+                alt="How To Turn Low-Trust Business Relationships Into High-Performing Partnerships"
+                class="card-img-top img-fluid" />
+              <div class="card-body">
+                <h5 class="card-title">How To Turn Low-Trust Business Relationships Into High-Performing Partnerships
+                </h5>
+                <p class="card-text">
+                  I’ve argued over the past few years that we have a trust problem in supply chain management. For
+                  example, in a survey we conducted with our Indago supply chain research community in September 2021,
+                  more than half of the respondents (56%) either agreed or strongly agreed that “you can’t be too
+                  careful when dealing with people across your supply chain.” Why is this lack of trust a problem? What
+                  are the costs of distrust? Is there a way to measure trust in business relationships? And how can
+                  companies turn low-trust business relationships into high-performing partnerships?
+                </p>
+                <p class="link-text">Read More
+                  <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 7.5H12.17L6.58 1.91L8 0.5L16 8.5L8 16.5L6.59 15.09L12.17 9.5H0V7.5Z" fill="#F0493E" />
+                  </svg>
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -132,7 +162,7 @@
   <footer class="footer">
     <div class="container">
       <div class="row footer-aboutme">
-        <div class="col-12 col-sm-7 footer-aboutme-container">
+        <div class="col-12 col-md-7 footer-aboutme-container">
           <div class="footer-aboutme-image">
             <img src="./images/dahnay-sultan.png" width="100" height="100" alt="">
           </div>
@@ -142,7 +172,7 @@
               with people and keep up with the trend. Let's work and create a better future, together!</p>
           </div>
         </div>
-        <div class="col-12 col-sm-5 footer-aboutme-form">
+        <div class="col-12 col-md-5 footer-aboutme-form">
           <!-- Begin Mailchimp Signup Form -->
           <div id="mc_embed_signup">
             <form
@@ -151,7 +181,7 @@
               target="_self">
               <div id="mc_embed_signup_scroll">
                 <div class="mc-field-group">
-                  <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                  <label for="mce-EMAIL">Stay Connected
                   </label>
                   <input placeholder="Enter your Email Address" type="email" value="" name="EMAIL"
                     class="required email" id="mce-EMAIL" required>

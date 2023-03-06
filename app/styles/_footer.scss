@@ -1,11 +1,13 @@
-
-
 .footer {
   background: #292930;
 
   .footer-aboutme {
     display: flex;
-    padding-top: 64px;
+    padding-top: 30px;
+
+    @media (min-width: 768px) {
+      padding-top: 64px;
+    }
 
     &-container {
       display: flex;
@@ -30,10 +32,17 @@
         font-size: 15px;
         line-height: 18px;
         color: #8A90A2;
+
       }
     }
 
     &-form {
+      margin-top: 30px;
+
+      @media (min-width: 768px) {
+        margin: 0;
+      }
+
       label {
         display: block;
         font-family: var(--font-sen);
@@ -64,17 +73,24 @@
       .mc-field-group {
         position: relative;
         overflow: hidden;
-
+        &::after,
         &::before {
           content: "";
           display: block;
           width: 50px;
           height: 50px;
-          background: #F0493E;
-          border-radius: 0px 4px 4px 0px;
           position: absolute;
           bottom: 0;
           right: 0;
+        }
+        &::after{
+          background: url('../images/arrow.svg') no-repeat center;
+          z-index: 3;
+        }
+        &::before {
+          background: #F0493E;
+          border-radius: 0px 4px 4px 0px;
+          z-index: 2;
         }
       }
     }

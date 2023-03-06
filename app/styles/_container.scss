@@ -1,0 +1,13 @@
+
+.article-area {
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  .row {
+    gap: 24px;
+
+    @media (min-width: 768px) {
+      gap: 0px;
+    }
+  }
+}

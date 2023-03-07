@@ -1,63 +1,24 @@
 @import 'reset';
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
 :root {
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --font-sen: 'Sen', sans-serif;
   --font-dm: 'DM Sans', sans-serif;
+  --color-black : #000;
+  --color-white : #fff;
+  --color-red: #F0493E;
+  --color-grey : #8A90A2;
+  --color-grey90 : #292930;
+  --color-backpc : #1C1C1C;
+  --color-grey10 : #F4F4F4;
 }
 
-
-.menu-button {
-  position: relative;
-  transition: all 70ms ease-out;
-  cursor: pointer;
-  padding: 5px 10px;
-
-  .burger-line-1,
-  .burger-line-2,
-  .burger-line-3 {
-    display: block;
-    background-color: #000;
-    margin: 6px 0;
-    height: 1.6px;
-    width: 24px;
-  }
-  &.open{
-    .burger-line-2{
-    opacity: 0;
-    }
-    .burger-line-1{
-        top: 5px;
-        top: calc(50% - 6px);
-        left: auto;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        position: absolute;
-        right: 6px;
-
-    }
-
-    .burger-line-3{
-
-    top: 5px;
-    top: calc(50% - 6px);
-    left: auto;
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-    position: absolute;
-    right: 6px;
-    }
-  }
+.browserupgrade {
+  margin: 8px 0;
+  background: #ccc;
+  color: var(--color-black);
+  padding: 8px 0;
 }
-
-
 
 @import 'navbar';
 @import 'banner';

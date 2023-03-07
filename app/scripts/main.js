@@ -39,16 +39,9 @@ document.getElementById('contactForm').addEventListener('submit', submitForm);
 function submitForm(e) {
   e.preventDefault();
 
-  var clientIP = '';
-  $.get('https://ipinfo.io', function (response) {
-    clientIP = response.ip;
-  }, 'json');
-
   var email = getInputVal('email');
-  var ipAddress = clientIP;
-  var date = new Date();
 
-  saveMessage(email, ipAddress, date);
+  saveMessage(email);
 
   document.querySelector('.alert').style.display = 'block';
 
@@ -68,8 +61,6 @@ function getInputVal(id) {
 function saveMessage(email) {
   var newMessageRef = messagesRef.push();
   newMessageRef.set({
-    email: email,
-    ipAddress: ipAddress,
-    date: date
+    email: email
   });
 }

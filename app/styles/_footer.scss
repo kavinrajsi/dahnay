@@ -32,6 +32,12 @@
         font-size: 15px;
         line-height: 18px;
         color: var(--color-grey);
+
+        a{
+          text-decoration: underline;
+          text-decoration-color: rgba(138, 144, 162, 0.45);
+        color: var(--color-grey);
+        }
       }
     }
 

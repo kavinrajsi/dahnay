@@ -1,19 +1,31 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en-US">
 
 <head>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="format-detection" content="telephone=no">
   <title>DahNay Logistics – Delivering Performance</title>
+
+  <link rel="preconnect" href="https://dahnay.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+
+  <link rel="dns-prefetch" href="https://dahnay.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="17x17" href="./images/favicon.png">
+
+  <meta name="theme-color" content="#000">
+
   <!-- Place favicon.ico in the root directory -->
   <!-- build:css styles/vendor.css -->
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.css" type="text/css" />
   <!-- endbuild -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Sen:wght@400;700&display=swap"
     rel="stylesheet">
   <!-- build:css styles/main.css -->
@@ -22,11 +34,16 @@
   <!-- build:js scripts/modernizr.js -->
   <script src="scripts/modernizr.js"></script>
   <!-- endbuild -->
-  <link rel="preload" as="image" href="./images/dahnay-sultan.png">
-  <link rel="preload" as="image" href="./images/hero-banner@3x.png">
+
+  <link rel="preload" as="image" href="./images/hero-banner@2x.png">
   <link rel="preload" as="image" href="./images/Image-1@3x.png">
   <link rel="preload" as="image" href="./images/Image-2@3x.png">
   <link rel="preload" as="image" href="./images/Image-3@3x.png">
+  <link rel="preload" as="image" href="./images/dahnay-sultan.png">
+
+  <link rel="preload" as="script" href="https://www.gstatic.com/firebasejs/8.2.1/firebase.js">
+  <link rel="preload" as="script" href="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js">
+  <link rel="preload" as="script" href="https://www.googletagmanager.com/gtm.js?id=GTM-WNLQJHK">
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -108,7 +125,11 @@
         <div class="col-12 p-0">
           <div class="banner-content image-wrapper">
             <p>Let's dive in and <br> explore the trends!</p>
-            <img src="./images/hero-banner@2x.png" class="img-fluid" alt="Let's dive in and explore the trends!">
+            <picture>
+              <source srcset="./images/hero-banner@2x.webp" type="image/webp">
+              <img src="./images/hero-banner@2x.png" width="2880" height="960"
+                alt="Let's dive in and explore the trends!" class="img-fluid">
+            </picture>
           </div>
         </div>
       </div>
@@ -118,8 +139,11 @@
         <div class="col-12 col-md-4 col-lg-4">
           <div class="card">
             <a target="_blank" href="https://www.knowledgeridge.com/c/ExpertsViewsDetails/508">
-              <img src="./images/Image-1@2x.png" class="card-img-top img-fluid "
-                alt="Can Logistics Technology Replace Human Decision Makers">
+              <picture>
+                <source srcset="./images/Image-1@2x.webp" type="image/webp">
+                <img src="./images/Image-1@2x.png" width="676" height="360"
+                  alt="Can Logistics Technology Replace Human Decision Makers" class="card-img-top img-fluid">
+              </picture>
               <div class="card-body">
                 <h5 class="card-title">Can Logistics Technology Replace Human Decision Makers?</h5>
                 <p class="card-text">You are head of transportation for a large apparel company with 2000 stores spread
@@ -138,8 +162,11 @@
           <div class="card">
             <a target="_blank"
               href="https://supplychaindigital.com/digital-supply-chain/blockchain-strengthening-links-in-supply-chain">
-              <img src="./images/Image-2@2x.png" class="card-img-top img-fluid "
-                alt="Blockchain strengthening links in supply chain">
+              <picture>
+                <source srcset="./images/Image-2@2x.webp" type="image/webp">
+                <img src="./images/Image-2@2x.png" width="676" height="360"
+                  alt="Blockchain strengthening links in supply chain" class="card-img-top img-fluid">
+              </picture>
               <div class="card-body">
                 <h5 class="card-title">Blockchain strengthening links in supply chain</h5>
                 <p class="card-text">
@@ -161,9 +188,14 @@
           <div class="card">
             <a target="_blank"
               href="https://talkinglogistics.com/2023/02/13/how-to-turn-low-trust-business-relationships-into-high-performing-partnerships/">
-              <img src="./images/Image-3@2x.png"
-                alt="How To Turn Low-Trust Business Relationships Into High-Performing Partnerships"
-                class="card-img-top img-fluid" />
+
+              <picture>
+                <source srcset="./images/Image-3@2x.webp" type="image/webp">
+                <img src="./images/Image-3@2x.png" width="676" height="360"
+                  alt="How To Turn Low-Trust Business Relationships Into High-Performing Partnerships"
+                  class="card-img-top img-fluid">
+              </picture>
+
               <div class="card-body">
                 <h5 class="card-title">How To Turn Low-Trust Business Relationships Into High-Performing Partnerships
                 </h5>
@@ -192,12 +224,16 @@
       <div class="row footer-aboutme">
         <div class="col-12 col-md-7 footer-aboutme-container">
           <div class="footer-aboutme-image">
-            <img src="./images/dahnay-sultan.png" width="100" height="100" alt="">
+            <picture>
+              <source srcset="./images/dahnay-sultan@2x.webp" type="image/webp">
+              <img src="./images/dahnay-sultan@2x.png" width="100" height="100" alt="Sultan">
+            </picture>
           </div>
           <div class="footer-aboutme-content">
             <p>About Me</p>
-            <p>Hi, I am Sultan from DahNAY. In this ever-evolving industry, I believe it's essential to collaborate
-              with people and keep up with the trend. Let's work and create a better future, together!</p>
+            <p>Hi, I am Sultan. I manage International Business at DahNAY Logistics. And I love connecting with people.
+              Trade, trends and teas are favourite topics of discussion. But yeah, I love my coffee ;) You can connect
+              with me on <a href="https://www.linkedin.com/in/sultan-basha-4656b527/" target="_blank">LinkedIn</a> here.</p>
           </div>
         </div>
         <div class="col-12 col-md-5 footer-aboutme-form">

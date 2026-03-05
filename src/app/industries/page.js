@@ -18,51 +18,61 @@ export const metadata = {
 const industries = [
   {
     title: "Automotive",
+    href: "/industries/automotive",
     desc: "Driving global supply chains with reliable, time-sensitive automotive logistics.",
     image: "/images/industry-automotive.jpg",
   },
   {
     title: "Pharma & Healthcare",
+    href: "/industries/pharma-healthcare",
     desc: "Ensuring fresh and secure transport of food and agricultural products with efficiency.",
     image: "/images/industry-pharma.jpg",
   },
   {
     title: "Energy, Oil & Gas",
+    href: "/industries/energy-oil-gas",
     desc: "Providing temperature-controlled logistics to safeguard the integrity of pharmaceutical shipments",
     image: "/images/industry-energy.jpg",
   },
   {
     title: "Fashion & Lifestyle",
+    href: "/industries/fashion-lifestyle",
     desc: "Powering the future with efficient logistics for the renewable energy sector.",
     image: "/images/industry-fashion.jpg",
   },
   {
     title: "Whitegoods",
+    href: "/industries/whitegoods",
     desc: "Ensuring fresh and secure transport of food and agricultural products with efficiency.",
     image: "/images/industry-whitegoods.jpg",
   },
   {
     title: "Perishables",
+    href: "/industries/perishables",
     desc: "Driving global supply chains with reliable, time-sensitive automotive logistics.",
     image: "/images/industry-perishables.jpg",
   },
   {
     title: "Retail",
+    href: "/industries/retail",
     desc: "Providing temperature-controlled logistics to safeguard the integrity of pharmaceutical shipments",
     image: "/images/industry-retail.jpg",
   },
   {
     title: "FMCG",
+    href: "/industries/fmcg",
     desc: "Powering the future with efficient logistics for the renewable energy sector.",
     image: "/images/industry-fmcg.jpg",
   },
   {
     title: "Paper & Pulp",
+    href: "/industries/paper-pulp",
     desc: "Ensuring fresh and secure transport of food and agricultural products with efficiency.",
     image: "/images/industry-paper.jpg",
   },
   {
     title: "Chemicals",
+    href: "/industries/chemicals",
     desc: "Driving global supply chains with reliable, time-sensitive automotive logistics.",
     image: "/images/industry-chemicals.jpg",
   },
@@ -123,7 +133,7 @@ export default function Industries() {
       <div className={styles.industriesGrid}>
         <div className={styles.industriesRow}>
           {row1.map((industry) => (
-            <div key={industry.title} className={styles.industryCard}>
+            <Link key={industry.title} href={industry.href} className={styles.industryCard}>
               <div className={styles.industryImageWrap}>
                 <Image
                   className={styles.industryImage}
@@ -139,12 +149,12 @@ export default function Industries() {
                 </div>
                 <span className={styles.industryLink}>Learn more</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className={styles.industriesRow}>
           {row2.map((industry) => (
-            <div key={industry.title} className={styles.industryCard}>
+            <Link key={industry.title} href={industry.href} className={styles.industryCard}>
               <div className={styles.industryImageWrap}>
                 <Image
                   className={styles.industryImage}
@@ -160,12 +170,12 @@ export default function Industries() {
                 </div>
                 <span className={styles.industryLink}>Learn more</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className={styles.industriesRow}>
           {row3.map((industry) => (
-            <div key={industry.title} className={styles.industryCard}>
+            <Link key={industry.title} href={industry.href} className={styles.industryCard}>
               <div className={styles.industryImageWrap}>
                 <Image
                   className={styles.industryImage}
@@ -181,7 +191,7 @@ export default function Industries() {
                 </div>
                 <span className={styles.industryLink}>Learn more</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

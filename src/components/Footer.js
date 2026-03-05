@@ -22,13 +22,13 @@ const serviceLinks = [
 ];
 
 const industryLinks = [
-  { label: "Automotive", href: "/industries" },
-  { label: "Chemicals", href: "/industries" },
-  { label: "FMCG", href: "/industries" },
-  { label: "Healthcare", href: "/industries" },
-  { label: "Industrial", href: "/industries" },
-  { label: "Retail", href: "/industries" },
-  { label: "Technology", href: "/industries" },
+  { label: "Automotive", href: "/industries/automotive" },
+  { label: "Chemicals", href: "/industries/chemicals" },
+  { label: "FMCG", href: "/industries/fmcg" },
+  { label: "Healthcare", href: "/industries/pharma-healthcare" },
+  { label: "Perishables", href: "/industries/perishables" },
+  { label: "Retail", href: "/industries/retail" },
+  { label: "Energy, Oil & Gas", href: "/industries/energy-oil-gas" },
 ];
 
 const popularLinks = [

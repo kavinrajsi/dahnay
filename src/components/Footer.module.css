@@ -1,0 +1,250 @@
+.footer {
+  width: 100%;
+}
+
+/* ── Main section ── */
+.main {
+  background-color: #2a2a29;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 64px 160px 32px;
+}
+
+/* ── Top row: brand + link columns ── */
+.top {
+  display: flex;
+  gap: 115px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+/* ── Brand column ── */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.brandInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo {
+  display: inline-grid;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  place-items: start;
+}
+
+.logoIcon {
+  grid-column: 1;
+  grid-row: 1;
+  width: 57.61px;
+  height: 55.85px;
+}
+
+.logoTextGroup {
+  grid-column: 1;
+  grid-row: 1;
+  display: inline-grid;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  place-items: start;
+  margin-left: 35.3%;
+  margin-top: 23.49%;
+}
+
+.logoDot {
+  grid-column: 1;
+  grid-row: 1;
+  width: 8.09px;
+  height: 7.99px;
+  margin-left: 93.52%;
+  margin-top: 66.21%;
+}
+
+.logoText {
+  grid-column: 1;
+  grid-row: 1;
+  width: 121.77px;
+  height: 23.37px;
+}
+
+.logoTagline {
+  grid-column: 1;
+  grid-row: 1;
+  width: 105.92px;
+  height: 12.2px;
+  margin-left: 35.17%;
+  margin-top: 78.21%;
+}
+
+.tagline {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* ── Link columns ── */
+.columns {
+  display: flex;
+  gap: 68px;
+  width: 645px;
+  flex-shrink: 0;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.columnTitle {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.columnLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.columnLink {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.columnLink:hover {
+  color: #ffffff;
+}
+
+/* ── Contact info ── */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactLink {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  color: #ffffff;
+}
+
+/* ── Popular Links ── */
+.popularLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.popularLinksTitle {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.popularLinksRow {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.popularLink {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.popularLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.popularLinkSeparator {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Bottom bar ── */
+.bottom {
+  background-color: #ef4230;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 160px;
+}
+
+.copyright {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.policyLinks {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.policyLink {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.policyLink:hover {
+  text-decoration: underline;
+}
+
+.policySeparator {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.madeBy {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+}

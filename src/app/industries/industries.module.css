@@ -1,0 +1,183 @@
+/* ── Hero Banner ── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.heroTitle {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* ── Intro Section ── */
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px 16px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: #f6f6f6;
+  border-radius: 16px 0 16px 0;
+  align-self: flex-start;
+}
+
+.badgeText {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+.introHeading {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 36px;
+  color: #0b090a;
+}
+
+.introDesc {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #646464;
+}
+
+/* ── Industries Grid ── */
+.industriesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 16px 40px;
+}
+
+.industryCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.industryImageWrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.industryImage {
+  object-fit: cover;
+}
+
+.industryBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+
+.industryTitle {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.industryDesc {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #696e79;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.industryLink {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ee412f;
+  text-decoration: underline;
+}
+
+/* ── Desktop ── */
+@media (min-width: 769px) {
+  .hero {
+    height: 580px;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .intro {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 80px 160px 64px;
+  }
+
+  .introLeft {
+    width: 455px;
+    flex-shrink: 0;
+  }
+
+  .introHeading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .introDesc {
+    width: 455px;
+  }
+
+  .industriesGrid {
+    padding: 0 160px 80px;
+  }
+
+  .industriesRow {
+    display: flex;
+    gap: 20px;
+  }
+
+  .industryCard {
+    width: 265px;
+    flex-shrink: 0;
+  }
+}

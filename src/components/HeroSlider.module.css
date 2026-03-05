@@ -1,0 +1,148 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+}
+
+/* ── Each slide ── */
+.slide {
+  position: relative;
+  width: 100%;
+  height: 580px;
+}
+
+.slideImage {
+  object-fit: cover;
+}
+
+.desktopImage {
+  display: none;
+}
+
+.mobileImage {
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .desktopImage {
+    display: block;
+  }
+
+  .mobileImage {
+    display: none;
+  }
+}
+
+.gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 54%);
+  z-index: 1;
+}
+
+/* ── Content overlay ── */
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 10.83%;
+  right: 57.29%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  height: 392px;
+  z-index: 2;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: rgba(239, 65, 48, 0.7);
+  border-radius: 0 0 16px 0;
+  border-top-left-radius: 16px;
+  align-self: flex-start;
+}
+
+.badgeText {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+}
+
+.headingGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.heading {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  color: #ffffff;
+}
+
+.description {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.scrollIndicator {
+  width: 72px;
+  height: 120px;
+}
+
+/* ── Splide pagination overrides ── */
+.slider :global(.splide__pagination) {
+  position: absolute;
+  bottom: 24px;
+  left: 10.83%;
+  right: auto;
+  justify-content: flex-start;
+  padding: 0;
+  z-index: 3;
+}
+
+.slider :global(.splide__pagination li) {
+  line-height: 0;
+}
+
+.slider :global(.splide__pagination__page) {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  margin: 0 4px;
+  padding: 0;
+  opacity: 1;
+  transition: background 0.3s ease;
+}
+
+.slider :global(.splide__pagination__page.is-active) {
+  background: #ef4230;
+  transform: none;
+}
+
+/* ── Hide default arrows ── */
+.slider :global(.splide__arrows) {
+  display: none;
+}

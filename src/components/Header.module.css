@@ -1,0 +1,111 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 160px;
+  background-color: #ffffff;
+  height: 78px;
+}
+
+.logo {
+  display: inline-grid;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  place-items: start;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  grid-column: 1;
+  grid-row: 1;
+  width: 42.39px;
+  height: 41.1px;
+}
+
+.logoTextGroup {
+  grid-column: 1;
+  grid-row: 1;
+  display: inline-grid;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  place-items: start;
+  margin-left: 35.3%;
+  margin-top: 23.49%;
+}
+
+.logoDot {
+  grid-column: 1;
+  grid-row: 1;
+  width: 5.96px;
+  height: 5.88px;
+  margin-left: 93.52%;
+  margin-top: 66.21%;
+}
+
+.logoText {
+  grid-column: 1;
+  grid-row: 1;
+  width: 89.61px;
+  height: 17.2px;
+}
+
+.logoTagline {
+  grid-column: 1;
+  grid-row: 1;
+  width: 77.95px;
+  height: 8.98px;
+  margin-left: 35.17%;
+  margin-top: 78.21%;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navLink {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.trackingBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 40px;
+  background-color: #ee412f;
+  border-radius: 0 0 8px 0;
+  border-top-left-radius: 8px;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.trackingBtn:hover {
+  background-color: #d93a2a;
+}
+
+.trackingText {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+}

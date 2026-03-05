@@ -1,0 +1,133 @@
+.section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 80px 160px;
+}
+
+/* ── Left column ── */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 455px;
+  flex-shrink: 0;
+}
+
+.infoTop {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: #f6f6f6;
+  border-radius: 0 0 16px 0;
+  border-top-left-radius: 16px;
+  align-self: flex-start;
+}
+
+.badgeText {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #333333;
+  text-align: center;
+}
+
+.heading {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 40px;
+  color: #333333;
+}
+
+.headingAccent {
+  color: #ef4230;
+}
+
+.description {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #333333;
+}
+
+/* ── Right column: accordion ── */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 550px;
+  flex-shrink: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  width: 100%;
+  overflow: hidden;
+}
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+}
+
+.itemQuestion {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #0b090a;
+  flex: 1;
+}
+
+.itemToggle {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.itemToggleOpen {
+  transform: rotate(45deg);
+}
+
+.itemAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding-top 0.3s ease;
+  padding-top: 0;
+}
+
+.itemAnswerOpen {
+  max-height: 500px;
+  padding-top: 16px;
+}
+
+.itemAnswerText {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #333333;
+}

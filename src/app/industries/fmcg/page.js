@@ -10,11 +10,11 @@ import { ContinuityIcon, MaterialIntegrityIcon, HighVolumeIcon, MultimodalIcon }
 export const metadata = { title: "FMCG - DahNAY" };
 
 const expertiseItems = [
-  { image: "/images/industries/fmcg/primary-distribution.png", title: "Primary Distribution Management", description: "Movement of finished goods from production facilities to distribution centres." },
-  { image: "/images/industries/fmcg/secondary-last-mile.png", title: "Secondary & Last-Mile Distribution", description: "Final-stage delivery from warehouses to retail outlets and end consumers." },
-  { image: "/images/industries/fmcg/high-velocity.png", title: "High-Velocity Inventory Movement", description: "Fast-cycle logistics designed for rapid stock rotation and replenishment." },
-  { image: "/images/industries/fmcg/warehousing.png", title: "Warehousing Management", description: "Storage and inventory management aligned to demand forecasting and seasonal cycles." },
-  { image: "/images/industries/fmcg/ecommerce.png", title: "E-commerce Fulfilment Support", description: "End-to-end fulfilment for direct-to-consumer and marketplace channels." },
+  { image: "/images/industries/fmcg/primary-distribution.png", title: "Primary Distribution Management" },
+  { image: "/images/industries/fmcg/secondary-last-mile.png", title: "Secondary & Last-Mile Distribution" },
+  { image: "/images/industries/fmcg/high-velocity.png", title: "High-Velocity Inventory Movement" },
+  { image: "/images/industries/fmcg/warehousing.png", title: "Warehousing Management" },
+  { image: "/images/industries/fmcg/ecommerce.png", title: "E-commerce Fulfilment Support" },
 ];
 
 const whyDahnayItems = [

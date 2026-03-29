@@ -10,9 +10,11 @@ import { ContinuityIcon, MaterialIntegrityIcon, HighVolumeIcon, MultimodalIcon }
 export const metadata = { title: "Retail & Apparel - DahNAY" };
 
 const expertiseItems = [
-  { image: "/images/industries/retail-apparel/time-sensitive.png", title: "Time-Sensitive Freight Solutions", description: "Speed-optimised logistics aligned to fashion launch windows and retail cycles." },
-  { image: "/images/industries/retail-apparel/ecommerce.png", title: "E-commerce Fulfilment Support", description: "End-to-end fulfilment solutions for online retail and direct-to-consumer brands." },
-  { image: "/images/industries/retail-apparel/replenishment.png", title: "Retail Replenishment", description: "Inventory replenishment logistics to keep shelves stocked across retail networks." },
+  { image: "/images/industries/retail-apparel/sourcing.png", title: "Sourcing & Inbound Logistics" },
+  { image: "/images/industries/retail-apparel/time-sensitive.png", title: "Time-Sensitive Freight Solutions" },
+  { image: "/images/industries/retail-apparel/global-export.png", title: "Global Export & Distribution" },
+  { image: "/images/industries/retail-apparel/ecommerce.png", title: "E-commerce Fulfilment Support" },
+  { image: "/images/industries/retail-apparel/replenishment.png", title: "Retail Replenishment" },
 ];
 
 const whyDahnayItems = [

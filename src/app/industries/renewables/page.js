@@ -10,12 +10,13 @@ import { ContinuityIcon, MaterialIntegrityIcon, HighVolumeIcon, MultimodalIcon }
 export const metadata = { title: "Renewables - DahNAY" };
 
 const expertiseItems = [
-  { image: "/images/industries/renewables/wind-energy.png", title: "Wind Energy Equipment Transport", description: "Logistics for turbine blades, nacelles and tower sections across global project sites." },
-  { image: "/images/industries/renewables/solar-module.png", title: "Solar Module Logistics", description: "Secure handling and distribution of solar panels and mounting systems." },
-  { image: "/images/industries/renewables/multimodal.png", title: "Multimodal Project Coordination", description: "Integrated air, sea and inland transport for large-scale renewable projects." },
-  { image: "/images/industries/renewables/infrastructure.png", title: "Infrastructure Component Movement", description: "Transport of heavy infrastructure components to remote project locations." },
+  { image: "/images/industries/renewables/wind-energy.png", title: "Wind Energy Equipment Transport" },
+  { image: "/images/industries/renewables/solar-module.png", title: "Solar Module Logistics" },
+  { image: "/images/industries/renewables/heavy-lift.png", title: "Project & Heavy-Lift Logistics" },
+  { image: "/images/industries/renewables/multimodal.png", title: "Multimodal Project Coordination" },
+  { image: "/images/industries/renewables/infrastructure.png", title: "Infrastructure Component Movement" },
+  { image: "/images/industries/renewables/warehousing.png", title: "Warehousing & Distribution" },
 ];
-
 const whyDahnayItems = [
   { icon: <ContinuityIcon />, title: "Continuity-Focused Planning", content: "Logistics aligned to production cycles to prevent supply disruptions." },
   { icon: <MaterialIntegrityIcon />, title: "Material Integrity Assurance", content: "Handling protocols designed to minimise damage and moisture exposure." },

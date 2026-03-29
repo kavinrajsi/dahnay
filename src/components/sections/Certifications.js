@@ -37,6 +37,8 @@ export default function Certifications({
           <Image
             src={image}
             alt={imageAlt}
+            width={550}
+            height={400}
             className={styles.certifications__image}
           />
         </div>

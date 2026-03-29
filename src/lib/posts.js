@@ -1,50 +1,84 @@
-// Data layer — reads from static JSON files in src/data/posts/
+// Data layer — reads from Payload CMS via local API (server-side only)
 
-import { readFileSync } from "fs";
-import { join } from "path";
+import config from "@payload-config";
+import { getPayload } from "payload";
 
-const DATA_DIR = join(process.cwd(), "src/data/posts");
-
-function readIndex() {
-  try {
-    return JSON.parse(readFileSync(join(DATA_DIR, "index.json"), "utf8"));
-  } catch {
-    return [];
-  }
+async function getPayloadClient() {
+  return getPayload({ config });
 }
 
-function readPost(slug) {
-  try {
-    return JSON.parse(readFileSync(join(DATA_DIR, `${slug}.json`), "utf8"));
-  } catch {
-    return null;
-  }
-}
+export async function getPosts(options = {}) {
+  const payload = await getPayloadClient();
 
-export function getPosts(options = {}) {
-  let posts = readIndex();
+  const where = { status: { equals: "published" } };
 
   if (options.filter) {
-    // Support simple tag filter: "tag:case-study"
     const match = options.filter.match(/^tag:(.+)$/);
     if (match) {
+      // Tag filter not directly supported — filter client-side after fetch
+      const result = await payload.find({
+        collection: "posts",
+        where,
+        limit: 100,
+        sort: "-publishedAt",
+      });
       const tagSlug = match[1];
-      posts = posts.filter((p) =>
-        p.tags?.some((t) => t.slug === tagSlug)
+      return result.docs.filter((p) =>
+        p.tags?.some((t) => t.tag === tagSlug)
       );
     }
   }
 
-  const limit = options.limit === "all" ? posts.length : (options.limit ?? posts.length);
-  return posts.slice(0, limit);
+  const limit = options.limit === "all" ? 0 : (options.limit ?? 0);
+
+  const result = await payload.find({
+    collection: "posts",
+    where,
+    limit,
+    sort: "-publishedAt",
+  });
+
+  return result.docs;
 }
 
-export function getPost(slug) {
-  const post = readPost(slug);
-  if (!post) throw new Error(`Post not found: ${slug}`);
-  return post;
+export async function getPost(slug) {
+  const payload = await getPayloadClient();
+
+  const result = await payload.find({
+    collection: "posts",
+    where: {
+      and: [
+        { slug: { equals: slug } },
+        { status: { equals: "published" } },
+      ],
+    },
+    limit: 1,
+  });
+
+  if (!result.docs.length) throw new Error(`Post not found: ${slug}`);
+  return result.docs[0];
 }
 
-export function getPostsByTag(tag) {
+export async function getPostsByTag(tag) {
   return getPosts({ filter: `tag:${tag}` });
+}
+
+export async function getPostsByType(postType, options = {}) {
+  const payload = await getPayloadClient();
+
+  const limit = options.limit === "all" ? 0 : (options.limit ?? 0);
+
+  const result = await payload.find({
+    collection: "posts",
+    where: {
+      and: [
+        { postType: { equals: postType } },
+        { status: { equals: "published" } },
+      ],
+    },
+    limit,
+    sort: "-publishedAt",
+  });
+
+  return result.docs;
 }

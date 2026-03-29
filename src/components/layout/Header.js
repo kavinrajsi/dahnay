@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const solutionsMegaMenu = [
   {
@@ -63,67 +64,86 @@ const newsroomDropdown = [
 export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleMouseEnter = (menu) => setActiveDropdown(menu);
   const handleMouseLeave = () => setActiveDropdown(null);
   const closeAll = () => { setActiveDropdown(null); setMobileMenuOpen(false); };
 
-  const renderDropdown = (id, items) => (
-    <div
-      className="header__nav-item"
-      onMouseEnter={() => handleMouseEnter(id)}
-      onMouseLeave={handleMouseLeave}
-    >
-      <button className="header__nav-link">
-        {id.charAt(0).toUpperCase() + id.slice(1)}
-        <svg className="header__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
-      {activeDropdown === id && (
-        <div className="header__dropdown">
-          {items.map((item) => (
-            <Link key={item.href + item.label} href={item.href} className="header__dropdown-link" onClick={closeAll}>
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-
-  const renderMegaMenu = (id, label, columns) => (
-    <div
-      className="header__nav-item"
-      onMouseEnter={() => handleMouseEnter(id)}
-      onMouseLeave={handleMouseLeave}
-    >
-      <button className="header__nav-link">
-        {label}
-        <svg className="header__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
-      {activeDropdown === id && (
-        <div className="header__mega-menu">
-          <div className="container header__mega-menu-inner">
-            {columns.map((col) => (
-              <div key={col.title} className="header__mega-col">
-                <Link href={col.href} className="header__mega-title" onClick={closeAll}>{col.title}</Link>
-                <div className="header__mega-links">
-                  {col.items.map((item) => (
-                    <Link key={item.href + item.label} href={item.href} className="header__mega-link" onClick={closeAll}>
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+  const renderDropdown = (id, items) => {
+    const hasActive = items.some((item) => pathname === item.href);
+    return (
+      <div
+        className="header__nav-item"
+        onMouseEnter={() => handleMouseEnter(id)}
+        onMouseLeave={handleMouseLeave}
+      >
+        <button className={`header__nav-link${hasActive ? " header__nav-link--active" : ""}`}>
+          {id.charAt(0).toUpperCase() + id.slice(1)}
+          <svg className="header__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        {activeDropdown === id && (
+          <div className="header__dropdown">
+            {items.map((item) => (
+              <Link
+                key={item.href + item.label}
+                href={item.href}
+                className={`header__dropdown-link${pathname === item.href ? " header__dropdown-link--active" : ""}`}
+                onClick={closeAll}
+              >
+                {item.label}
+              </Link>
             ))}
           </div>
-        </div>
-      )}
-    </div>
-  );
+        )}
+      </div>
+    );
+  };
+
+  const renderMegaMenu = (id, label, columns) => {
+    const hasActive = columns.some(
+      (col) => pathname === col.href || col.items.some((item) => pathname === item.href)
+    );
+    return (
+      <div
+        className="header__nav-item"
+        onMouseEnter={() => handleMouseEnter(id)}
+        onMouseLeave={handleMouseLeave}
+      >
+        <button className={`header__nav-link${hasActive ? " header__nav-link--active" : ""}`}>
+          {label}
+          <svg className="header__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        {activeDropdown === id && (
+          <div className="header__mega-menu">
+            <div className="container header__mega-menu-inner">
+              {columns.map((col) => (
+                <div key={col.title} className="header__mega-col">
+                  <Link href={col.href} className="header__mega-title" onClick={closeAll}>{col.title}</Link>
+                  <div className="header__mega-links">
+                    {col.items.map((item) => (
+                      <Link
+                        key={item.href + item.label}
+                        href={item.href}
+                        className={`header__mega-link${pathname === item.href ? " header__mega-link--active" : ""}`}
+                        onClick={closeAll}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <header className="header">

@@ -10,12 +10,12 @@ import { ContinuityIcon, MaterialIntegrityIcon, HighVolumeIcon, MultimodalIcon }
 export const metadata = { title: "Natural Rubber - DahNAY" };
 
 const expertiseItems = [
-  { image: "/images/industries/natural-rubber/plantation-to-port.png", title: "Plantation-to-Port Movement", description: "Coordinated transport from plantation hubs to export port facilities." },
-  { image: "/images/industries/natural-rubber/bulk-commodity.png", title: "Bulk Commodity Transport", description: "High-volume movement of raw rubber across domestic and international corridors." },
-  { image: "/images/industries/natural-rubber/containerised-export.png", title: "Containerised Export Logistics", description: "Optimised container solutions for rubber export shipments." },
-  { image: "/images/industries/natural-rubber/multimodal.png", title: "Multimodal Freight Coordination", description: "Integrated sea, road and inland transport for seamless commodity flow." },
-  { image: "/images/industries/natural-rubber/processing-equipment.png", title: "Rubber Processing Equipment", description: "Transport of processing machinery and industrial equipment for rubber plants." },
-  { image: "/images/industries/natural-rubber/warehousing.png", title: "Warehousing & Distribution", description: "Storage and distribution aligned to production output and market demand." },
+  { image: "/images/industries/natural-rubber/plantation-to-port.png", title: "Plantation-to-Port Movement" },
+  { image: "/images/industries/natural-rubber/bulk-commodity.png", title: "Bulk Commodity Transport" },
+  { image: "/images/industries/natural-rubber/containerised-export.png", title: "Containerised Export Logistics" },
+  { image: "/images/industries/natural-rubber/multimodal.png", title: "Multimodal Freight Coordination" },
+  { image: "/images/industries/natural-rubber/processing-equipment.png", title: "Rubber Processing Equipment" },
+  { image: "/images/industries/natural-rubber/warehousing.png", title: "Warehousing & Distribution" },
 ];
 
 const whyDahnayItems = [

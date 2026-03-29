@@ -10,12 +10,12 @@ import { ContinuityIcon, MaterialIntegrityIcon, HighVolumeIcon, MultimodalIcon }
 export const metadata = { title: "White Goods - DahNAY" };
 
 const expertiseItems = [
-  { image: "/images/industries/white-goods/factory-to-port.png", title: "Factory-to-Port Coordination", description: "Seamless coordination from manufacturing hubs to port facilities." },
-  { image: "/images/industries/white-goods/container-optimize.png", title: "Container Optimize & Load Planning", description: "Maximised container utilisation for high-cubic appliance cargo." },
-  { image: "/images/industries/white-goods/global-freight.png", title: "Global Freight Management", description: "International freight solutions across key appliance trade routes." },
-  { image: "/images/industries/white-goods/customs.png", title: "Customs & Regulatory Handling", description: "Compliance and documentation support for cross-border shipments." },
-  { image: "/images/industries/white-goods/warehousing.png", title: "Warehousing & Distribution", description: "Storage and distribution logistics aligned to retail and distributor timelines." },
-  { image: "/images/industries/white-goods/aftermarket.png", title: "Aftermarket & Spare Parts Logistics", description: "Efficient distribution of spare parts and aftermarket components." },
+  { image: "/images/industries/white-goods/factory-to-port.png", title: "Factory-to-Port Coordination" },
+  { image: "/images/industries/white-goods/container-optimize.png", title: "Container Optimize & Load Planning" },
+  { image: "/images/industries/white-goods/global-freight.png", title: "Global Freight Management" },
+  { image: "/images/industries/white-goods/customs.png", title: "Customs & Regulatory Handling" },
+  { image: "/images/industries/white-goods/warehousing.png", title: "Warehousing & Distribution" },
+  { image: "/images/industries/white-goods/aftermarket.png", title: "Aftermarket & Spare Parts Logistics" },
 ];
 
 const whyDahnayItems = [

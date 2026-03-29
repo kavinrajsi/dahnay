@@ -10,11 +10,11 @@ import { ContinuityIcon, MaterialIntegrityIcon, HighVolumeIcon, MultimodalIcon }
 export const metadata = { title: "Paper & Pulp - DahNAY" };
 
 const expertiseItems = [
-  { image: "/images/industries/paper-pulp/bulk-pulp.png", title: "Bulk Pulp Transportation", description: "High-volume transport of raw pulp from mills to processing and export facilities." },
-  { image: "/images/industries/paper-pulp/paper-reel.png", title: "Paper Reel & Sheet Handling", description: "Specialised handling for paper reels and sheet cargo to prevent damage." },
-  { image: "/images/industries/paper-pulp/moisture-controlled.png", title: "Moisture-Controlled Logistics", description: "Climate-managed transport to protect moisture-sensitive paper and pulp products." },
-  { image: "/images/industries/paper-pulp/warehousing.png", title: "Warehousing & Inventory Management", description: "Storage solutions aligned to production output and distribution schedules." },
-  { image: "/images/industries/paper-pulp/high-volume.png", title: "High-Volume Distribution", description: "Scalable distribution logistics for large-volume paper and pulp shipments." },
+  { image: "/images/industries/paper-pulp/bulk-pulp.png", title: "Bulk Pulp Transportation" },
+  { image: "/images/industries/paper-pulp/paper-reel.png", title: "Paper Reel & Sheet Handling" },
+  { image: "/images/industries/paper-pulp/moisture-controlled.png", title: "Moisture-Controlled Logistics" },
+  { image: "/images/industries/paper-pulp/warehousing.png", title: "Warehousing & Inventory Management" },
+  { image: "/images/industries/paper-pulp/high-volume.png", title: "High-Volume Distribution" },
 ];
 
 const whyDahnayItems = [

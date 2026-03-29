@@ -10,12 +10,12 @@ import { ContinuityIcon, MaterialIntegrityIcon, HighVolumeIcon, MultimodalIcon }
 export const metadata = { title: "Energy, Oil & Gas - DahNAY" };
 
 const expertiseItems = [
-  { image: "/images/industries/energy-oil-gas/project-heavy-lift.png", title: "Project & Heavy-Lift Logistics", description: "Engineered logistics for oversized and heavy-lift cargo across energy projects." },
-  { image: "/images/industries/energy-oil-gas/upstream.png", title: "Upstream Equipment Movement", description: "Transport of drilling, exploration and wellhead equipment to remote sites." },
-  { image: "/images/industries/energy-oil-gas/midstream.png", title: "Midstream & Pipeline Logistics", description: "Coordinated movement of pipeline materials and midstream infrastructure." },
-  { image: "/images/industries/energy-oil-gas/downstream.png", title: "Downstream & Refinery Cargo", description: "Logistics support for refinery modules, processing equipment and maintenance cargo." },
-  { image: "/images/industries/energy-oil-gas/hazardous.png", title: "Hazardous & Specialised Cargo", description: "Compliant handling and transport of hazardous and regulated materials." },
-  { image: "/images/industries/energy-oil-gas/renewable-equipment.png", title: "Renewable Equipment Transport", description: "Logistics for renewable energy infrastructure within the energy sector transition." },
+  { image: "/images/industries/energy-oil-gas/project-heavy-lift.png", title: "Project & Heavy-Lift Logistics" },
+  { image: "/images/industries/energy-oil-gas/upstream.png", title: "Upstream Equipment Movement" },
+  { image: "/images/industries/energy-oil-gas/midstream.png", title: "Midstream & Pipeline Logistics" },
+  { image: "/images/industries/energy-oil-gas/downstream.png", title: "Downstream & Refinery Cargo" },
+  { image: "/images/industries/energy-oil-gas/hazardous.png", title: "Hazardous & Specialised Cargo" },
+  { image: "/images/industries/energy-oil-gas/renewable-equipment.png", title: "Renewable Equipment Transport" },
 ];
 
 const whyDahnayItems = [

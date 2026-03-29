@@ -10,12 +10,12 @@ import { ContinuityIcon, MaterialIntegrityIcon, HighVolumeIcon, MultimodalIcon }
 export const metadata = { title: "Construction Materials - DahNAY" };
 
 const expertiseItems = [
-  { image: "/images/industries/construction-materials/bulk-material.png", title: "Bulk Material Transportation", description: "High-volume transport of cement, aggregates and raw construction materials." },
-  { image: "/images/industries/construction-materials/steel-structural.png", title: "Steel & Structural Logistics", description: "Specialised handling and transport of steel, rebar and structural components." },
-  { image: "/images/industries/construction-materials/project-heavy.png", title: "Project & Heavy Cargo Movement", description: "Engineered logistics for oversized and heavy construction equipment." },
-  { image: "/images/industries/construction-materials/phased-delivery.png", title: "Phased Site Delivery Planning", description: "Sequenced deliveries aligned to construction milestones and site readiness." },
-  { image: "/images/industries/construction-materials/last-mile-site.png", title: "Last-Mile Site Access Solutions", description: "Final-mile delivery to construction sites with access constraints." },
-  { image: "/images/industries/construction-materials/modular.png", title: "Modular Component Transport", description: "Transport of prefabricated and modular building components." },
+  { image: "/images/industries/construction-materials/bulk-material.png", title: "Bulk Material Transportation" },
+  { image: "/images/industries/construction-materials/steel-structural.png", title: "Steel & Structural Logistics" },
+  { image: "/images/industries/construction-materials/project-heavy.png", title: "Project & Heavy Cargo Movement" },
+  { image: "/images/industries/construction-materials/phased-delivery.png", title: "Phased Site Delivery Planning" },
+  { image: "/images/industries/construction-materials/last-mile-site.png", title: "Last-Mile Site Access Solutions" },
+  { image: "/images/industries/construction-materials/modular.png", title: "Modular Component Transport" },
 ];
 
 const whyDahnayItems = [

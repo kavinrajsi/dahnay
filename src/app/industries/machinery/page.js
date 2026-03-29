@@ -10,12 +10,12 @@ import { ContinuityIcon, MaterialIntegrityIcon, HighVolumeIcon, MultimodalIcon }
 export const metadata = { title: "Machinery - DahNAY" };
 
 const expertiseItems = [
-  { image: "/images/industries/machinery/heavy-machinery.png", title: "Heavy Machinery Transport", description: "Specialised logistics for large-scale industrial machinery and equipment." },
-  { image: "/images/industries/machinery/oversized-cargo.png", title: "Oversized Cargo Movement", description: "Route planning and transport execution for oversized and out-of-gauge cargo." },
-  { image: "/images/industries/machinery/multimodal.png", title: "Multimodal Freight Coordination", description: "Integrated air, sea and road transport for complex machinery shipments." },
-  { image: "/images/industries/machinery/factory-to-site.png", title: "Factory-to-Site Delivery", description: "End-to-end delivery from manufacturing plants to project installation sites." },
-  { image: "/images/industries/machinery/breakbulk.png", title: "Breakbulk Cargo Logistics", description: "Handling and transport of non-containerised heavy and bulky cargo." },
-  { image: "/images/industries/machinery/distribution.png", title: "Industrial Equipment Distribution", description: "Distribution logistics for industrial equipment across domestic and international markets." },
+  { image: "/images/industries/machinery/heavy-machinery.png", title: "Heavy Machinery Transport" },
+  { image: "/images/industries/machinery/oversized-cargo.png", title: "Oversized Cargo Movement" },
+  { image: "/images/industries/machinery/multimodal.png", title: "Multimodal Freight Coordination" },
+  { image: "/images/industries/machinery/factory-to-site.png", title: "Factory-to-Site Delivery" },
+  { image: "/images/industries/machinery/breakbulk.png", title: "Breakbulk Cargo Logistics" },
+  { image: "/images/industries/machinery/distribution.png", title: "Industrial Equipment Distribution" },
 ];
 
 const whyDahnayItems = [

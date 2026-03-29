@@ -7,6 +7,7 @@ import { getPosts } from "@/lib/posts";
 export const metadata = { title: "Newsroom - DahNAY" };
 
 function formatDate(dateStr) {
+  if (!dateStr) return "";
   return new Date(dateStr).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "long",
@@ -15,19 +16,26 @@ function formatDate(dateStr) {
 }
 
 function PostCard({ post }) {
-  const tag = post.tags?.[0];
-  const isCaseStudy = post.tags?.some((t) => t.slug === "case-study");
+  const isCaseStudy = post.postType === "case-study";
   const href = isCaseStudy
     ? `/newsroom/case-study/${post.slug}`
     : `/newsroom/${post.slug}`;
 
+  const imageUrl = post.featuredImage?.url;
+  const imageAlt = post.featuredImage?.alt || post.title;
+  const tagLabel = post.postType === "case-study"
+    ? "Case Study"
+    : post.postType === "blog"
+    ? "Blog"
+    : "Newsroom";
+
   return (
     <Link href={href} className="news-card">
-      {post.feature_image && (
+      {imageUrl && (
         <div className="news-card__image-wrapper">
           <Image
-            src={post.feature_image}
-            alt={post.feature_image_alt || post.title}
+            src={imageUrl}
+            alt={imageAlt}
             fill
             className="news-card__image"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -35,13 +43,13 @@ function PostCard({ post }) {
         </div>
       )}
       <div className="news-card__content">
-        {tag && <span className="news-card__tag">{tag.name}</span>}
+        <span className="news-card__tag">{tagLabel}</span>
         <h3 className="news-card__title">{post.title}</h3>
         {post.excerpt && (
           <p className="news-card__excerpt">{post.excerpt}</p>
         )}
-        <time className="news-card__date" dateTime={post.published_at}>
-          {formatDate(post.published_at)}
+        <time className="news-card__date" dateTime={post.publishedAt}>
+          {formatDate(post.publishedAt)}
         </time>
       </div>
     </Link>
@@ -53,7 +61,7 @@ export default async function NewsroomPage() {
   try {
     posts = await getPosts({ limit: 12 });
   } catch {
-    // Ghost not reachable or no posts yet
+    // CMS unavailable or no posts yet
   }
 
   return (

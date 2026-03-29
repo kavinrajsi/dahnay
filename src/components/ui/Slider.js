@@ -1,8 +1,11 @@
 "use client";
 
 import { useRef } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import Slick from "react-slick";
+
+const Slick = dynamic(() => import("react-slick"), { ssr: false });
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

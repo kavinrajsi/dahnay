@@ -7,7 +7,7 @@ export async function generateStaticParams() {
   try {
     const posts = await getPosts();
     return posts
-      .filter((p) => !p.tags?.some((t) => t.slug === "case-study"))
+      .filter((p) => p.postType !== "case-study")
       .map((p) => ({ slug: p.slug }));
   } catch {
     return [];
@@ -21,8 +21,8 @@ export async function generateMetadata({ params }) {
     return {
       title: `${post.title} - DahNAY`,
       description: post.excerpt,
-      openGraph: post.feature_image
-        ? { images: [{ url: post.feature_image }] }
+      openGraph: post.featuredImage?.url
+        ? { images: [{ url: post.featuredImage.url }] }
         : undefined,
     };
   } catch {
@@ -31,6 +31,7 @@ export async function generateMetadata({ params }) {
 }
 
 function formatDate(dateStr) {
+  if (!dateStr) return "";
   return new Date(dateStr).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "long",
@@ -48,35 +49,36 @@ export default async function ArticlePage({ params }) {
     notFound();
   }
 
-  const tag = post.tags?.[0];
+  const imageUrl = post.featuredImage?.url;
+  const imageAlt = post.featuredImage?.alt || post.title;
 
   return (
     <div className="page page--article">
       <Banner
         title={post.title}
-        desktopImage={
-          post.feature_image || "/images/banners/banner-desktop-newsroom.png"
-        }
+        desktopImage={imageUrl || "/images/banners/banner-desktop-newsroom.png"}
       />
 
       <article className="article container">
         <header className="article__header">
-          {tag && <span className="article__tag">{tag.name}</span>}
-          <time className="article__date" dateTime={post.published_at}>
-            {formatDate(post.published_at)}
+          <span className="article__tag">
+            {post.postType === "blog" ? "Blog" : "Newsroom"}
+          </span>
+          <time className="article__date" dateTime={post.publishedAt}>
+            {formatDate(post.publishedAt)}
           </time>
-          {post.reading_time && (
+          {post.readingTime && (
             <span className="article__reading-time">
-              {post.reading_time} min read
+              {post.readingTime} min read
             </span>
           )}
         </header>
 
-        {post.feature_image && (
+        {imageUrl && (
           <div className="article__cover">
             <Image
-              src={post.feature_image}
-              alt={post.feature_image_alt || post.title}
+              src={imageUrl}
+              alt={imageAlt}
               width={1200}
               height={630}
               className="article__cover-image"
@@ -85,10 +87,9 @@ export default async function ArticlePage({ params }) {
           </div>
         )}
 
-        <div
-          className="article__body"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <div className="article__body">
+          {post.excerpt && <p className="article__excerpt">{post.excerpt}</p>}
+        </div>
       </article>
     </div>
   );

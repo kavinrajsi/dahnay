@@ -10,12 +10,12 @@ import { ContinuityIcon, MaterialIntegrityIcon, HighVolumeIcon, MultimodalIcon }
 export const metadata = { title: "Automotive Industry - DahNAY" };
 
 const expertiseItems = [
-  { image: "/images/industries/automotive/inbound-outbound.png", title: "Inbound and Outbound Transportation", description: "Coordinated movement of raw materials and finished goods across the automotive supply chain." },
-  { image: "/images/industries/automotive/time-critical.png", title: "Time-critical movements", description: "Expedited logistics for urgent parts and components to maintain production schedules." },
-  { image: "/images/industries/automotive/engines.png", title: "Engines and mechanical parts", description: "Specialised handling for heavy and high-value mechanical components." },
-  { image: "/images/industries/automotive/accessories.png", title: "Accessories", description: "Efficient distribution of automotive accessories and aftermarket parts." },
-  { image: "/images/industries/automotive/finished-vehicles.png", title: "Finished Vehicles Logistics", description: "End-to-end vehicle transportation from plant to dealership." },
-  { image: "/images/industries/automotive/tyres-tubes.png", title: "Tyres and Tubes", description: "Bulk and retail logistics for tyres and tubes across markets." },
+  { image: "/images/industries/automotive/inbound-outbound.png", title: "Inbound and Outbound Transportation" },
+  { image: "/images/industries/automotive/time-critical.png", title: "Time-critical movements" },
+  { image: "/images/industries/automotive/engines.png", title: "Engines and mechanical parts" },
+  { image: "/images/industries/automotive/accessories.png", title: "Accessories" },
+  { image: "/images/industries/automotive/finished-vehicles.png", title: "Finished Vehicles Logistics" },
+  { image: "/images/industries/automotive/tyres-tubes.png", title: "Tyres and Tubes" },
 ];
 
 const whyDahnayItems = [

@@ -2,11 +2,11 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Banner from "@/components/sections/Banner";
-import { getPost, getPostsByTag } from "@/lib/posts";
+import { getPost, getPostsByType } from "@/lib/posts";
 
 export async function generateStaticParams() {
   try {
-    const posts = await getPostsByTag("case-study");
+    const posts = await getPostsByType("case-study");
     return posts.map((p) => ({ slug: p.slug }));
   } catch {
     return [];
@@ -20,8 +20,8 @@ export async function generateMetadata({ params }) {
     return {
       title: `${post.title} - DahNAY`,
       description: post.excerpt,
-      openGraph: post.feature_image
-        ? { images: [{ url: post.feature_image }] }
+      openGraph: post.featuredImage?.url
+        ? { images: [{ url: post.featuredImage.url }] }
         : undefined,
     };
   } catch {
@@ -30,6 +30,7 @@ export async function generateMetadata({ params }) {
 }
 
 function formatDate(dateStr) {
+  if (!dateStr) return "";
   return new Date(dateStr).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "long",
@@ -47,33 +48,34 @@ export default async function CaseStudyPage({ params }) {
     notFound();
   }
 
+  const imageUrl = post.featuredImage?.url;
+  const imageAlt = post.featuredImage?.alt || post.title;
+
   return (
     <div className="page page--case-study">
       <Banner
         title={post.title}
-        desktopImage={
-          post.feature_image || "/images/banners/banner-desktop-newsroom.png"
-        }
+        desktopImage={imageUrl || "/images/banners/banner-desktop-newsroom.png"}
       />
 
       <article className="article container">
         <header className="article__header">
           <span className="article__tag">Case Study</span>
-          <time className="article__date" dateTime={post.published_at}>
-            {formatDate(post.published_at)}
+          <time className="article__date" dateTime={post.publishedAt}>
+            {formatDate(post.publishedAt)}
           </time>
-          {post.reading_time && (
+          {post.readingTime && (
             <span className="article__reading-time">
-              {post.reading_time} min read
+              {post.readingTime} min read
             </span>
           )}
         </header>
 
-        {post.feature_image && (
+        {imageUrl && (
           <div className="article__cover">
             <Image
-              src={post.feature_image}
-              alt={post.feature_image_alt || post.title}
+              src={imageUrl}
+              alt={imageAlt}
               width={1200}
               height={630}
               className="article__cover-image"
@@ -82,10 +84,9 @@ export default async function CaseStudyPage({ params }) {
           </div>
         )}
 
-        <div
-          className="article__body"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <div className="article__body">
+          {post.excerpt && <p className="article__excerpt">{post.excerpt}</p>}
+        </div>
       </article>
     </div>
   );

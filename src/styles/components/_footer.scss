@@ -1,0 +1,108 @@
+.footer {
+  &__main {
+    padding-top: 64px;
+    padding-bottom: 32px;
+    background: #141414;
+  }
+
+  &__link {
+    font-family: var(--font-avenir), sans-serif;
+    font-style: normal;
+    font-weight: var(--font-weight-roman);
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__tagline {
+    max-width: 360px;
+    padding-top: 16px;
+    font-family: var(--font-avenir), sans-serif;
+    font-style: normal;
+    font-weight: var(--font-weight-roman);
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+  }
+
+  &__link-column {
+    width: 170px;
+  }
+
+  &__link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__column-title {
+    font-family: var(--font-avenir), sans-serif;
+    font-style: normal;
+    font-weight: var(--font-weight-heavy);
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+    padding-bottom: 16px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 68px;
+  }
+
+  &__popular {
+    padding-top: 24px;
+    border-top: 1px solid #d3d3d3;
+  }
+
+  &__popular-text {
+    color: rgba(255, 255, 255, 0.7);
+    a {
+      display: inline-block;
+      font-family: var(--font-avenir), sans-serif;
+      font-style: normal;
+      font-weight: var(--font-weight-roman);
+      font-size: 14px;
+      line-height: 20px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 16px;
+    padding-top: 40px;
+  }
+
+  &__bottom {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: var(--primary-orange);
+    font-family: var(--font-avenir), sans-serif;
+    font-style: normal;
+    font-weight: var(--font-weight-roman);
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--neutral-white);
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@forward "reset";
+@forward "interpolate";
+@forward "typography";
+@forward "components/section-header";
+@forward "components/button";
+@forward "components/service-card";
+@forward "components/icon-card";
+@forward "components/why-dahnay";
+@forward "components/faq";
+@forward "components/banner";
+@forward "components/expertise";
+@forward "components/slider";
+@forward "components/grow-form";
+@forward "components/footer";
+@forward "components/header";
+@forward "components/policy";
+@forward "components/what-drives-us";
+@forward "components/trust-cta";
+@forward "components/contact";
+@forward "components/industry-overview";
+@forward "components/centered-intro";
+@forward "components/test-page";
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+
+    @media (min-width: 1400px) {
+        max-width: 1440px;
+        max-width: 1120px;
+        // padding-left: 180px;
+        // padding-right: 180px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    &--fluid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+// body * {
+//    outline: 1px solid lightblue;
+// }

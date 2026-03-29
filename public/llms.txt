@@ -1,0 +1,57 @@
+# DahNAY Logistics
+
+> Global logistics company offering end-to-end freight, supply chain management, and trade compliance solutions.
+
+DahNAY Logistics is a full-service logistics provider operating across major international trade corridors spanning Asia, the Middle East, Africa, Europe, and the Americas. We specialise in sea freight, air freight, road transportation, project logistics, customs clearance, and last-mile delivery.
+
+## Services
+
+- [Sea Freight](/service/sea-freight): Ocean freight management including FCL, LCL, consolidation, and break-bulk cargo handling.
+- [Air Freight](/service/air-freight): Time-sensitive air cargo solutions with express, charter, and dangerous goods handling.
+- [Road Transportation](/service/road-transportation): Cross-border and domestic road freight with FTL, LTL, and specialised vehicles.
+- [Project Logistics](/service/project-logistics): Heavy-lift, oversized, and high-value cargo with route surveys and regulatory coordination.
+- [Customs Clearance](/service/customs-clearance): Import/export documentation, HS classification, trade compliance, and bonded warehousing.
+- [Domestic Trucking](/service/domestic-trucking): Inland distribution with scheduled routes, fleet management, and real-time tracking.
+- [Reverse Logistics](/service/reverse-logistics): Returns management, recall logistics, refurbishment support, and compliance reporting.
+- [Time-Critical Delivery](/service/time-critical-delivery): Emergency spare parts, on-board courier, and production line supply logistics.
+- [Last Mile Delivery](/service/last-mile-delivery): Urban and rural distribution, white glove service, and returns pickup.
+- [Ecommerce Fulfilment](/service/ecommerce-fulfilment): Order fulfilment, inventory management, and multi-channel distribution.
+
+## Solutions
+
+- [DahNAY Logistics](/solutions/logistics): Comprehensive freight forwarding and supply chain solutions.
+- [DahNAY Lines](/solutions/lines): Dry cargo, refrigerated cargo, and specialised cargo shipping lines.
+- [DahNAY Ports & Infra](/solutions/ports-infra): Warehousing, FTWZ, and container freight stations.
+
+## Industries
+
+- [Automotive](/industries/automotive)
+- [Renewables](/industries/renewables)
+- [Machinery](/industries/machinery)
+- [Retail & Apparel](/industries/retail-apparel)
+- [Natural Rubber](/industries/natural-rubber)
+- [White Goods](/industries/white-goods)
+- [Energy, Oil & Gas](/industries/energy-oil-gas)
+- [FMCG](/industries/fmcg)
+- [Construction Materials](/industries/construction-materials)
+- [Paper & Pulp](/industries/paper-pulp)
+
+## Company
+
+- [About Us](/about)
+- [Careers](/careers)
+- [ESG & CSR](/esg-csr)
+- [Newsroom](/newsroom)
+- [Contact Us](/contact)
+
+## Policies
+
+- [Privacy Policy](/privacy-policy)
+- [Terms & Conditions](/terms-conditions)
+- [POSH Policy](/posh-policy)
+- [Whistleblower Policy](/whistleblower-policy)
+- [Cookie Policy](/cookie-policy)
+
+## Contact
+
+- Email: info@dahnay.com

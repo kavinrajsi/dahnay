@@ -1,0 +1,103 @@
+// Typography CSS custom properties from Figma (DahNAY_Final--dev-2-)
+// Names match Figma tokens: desktop/H1 → --desktop-H1
+// Font files loaded via next/font/local in layout.js
+
+// ----- Font Weights -----
+$font-weight-roman: 400;
+$font-weight-medium: 500;
+$font-weight-heavy: 800;
+
+:root {
+  // Font weights
+  --font-weight-roman: #{$font-weight-roman};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-heavy: #{$font-weight-heavy};
+
+  // desktop/H1
+  --desktop-H1-size: 48px;
+  --desktop-H1-weight: #{$font-weight-heavy};
+  --desktop-H1-line-height: 56px;
+
+  // desktop/H2
+  --desktop-H2-size: 40px;
+  --desktop-H2-weight: #{$font-weight-heavy};
+  --desktop-H2-line-height: 48px;
+
+  // desktop/H3
+  --desktop-H3-size: 32px;
+  --desktop-H3-weight: #{$font-weight-heavy};
+  --desktop-H3-line-height: 40px;
+
+  // desktop/H4
+  --desktop-H4-size: 28px;
+  --desktop-H4-weight: #{$font-weight-heavy};
+  --desktop-H4-line-height: 34px;
+
+  // desktop/h5
+  --desktop-h5-size: 20px;
+  --desktop-h5-weight: #{$font-weight-heavy};
+  --desktop-h5-line-height: 30px;
+
+  // desktop/B1
+  --desktop-B1-size: 18px;
+  --desktop-B1-weight: #{$font-weight-medium};
+  --desktop-B1-line-height: 24px;
+
+  // desktop/b2
+  --desktop-b2-size: 16px;
+  --desktop-b2-weight: #{$font-weight-roman};
+  --desktop-b2-line-height: 22px;
+
+  // desktop/Tagline
+  --desktop-Tagline-size: 10px;
+  --desktop-Tagline-weight: #{$font-weight-roman};
+  --desktop-Tagline-line-height: 16px;
+
+  // mobile/H2
+  --mobile-H2-size: 24px;
+  --mobile-H2-weight: #{$font-weight-heavy};
+  --mobile-H2-line-height: 26px;
+
+  // mobile/H3
+  --mobile-H3-size: 20px;
+  --mobile-H3-weight: #{$font-weight-heavy};
+  --mobile-H3-line-height: 22px;
+
+  // mobile/B1
+  --mobile-B1-size: 16px;
+  --mobile-B1-weight: #{$font-weight-medium};
+  --mobile-B1-line-height: 18px;
+
+  // mobile/B2
+  --mobile-B2-size: 14px;
+  --mobile-B2-weight: #{$font-weight-roman};
+  --mobile-B2-line-height: 18px;
+
+  // mobile/Tagline
+  --mobile-Tagline-size: 12px;
+  --mobile-Tagline-weight: #{$font-weight-medium};
+  --mobile-Tagline-line-height: 14px;
+}
+
+// ----- Typography Mixins -----
+// Usage: @include typo('desktop-H1');
+@mixin typo($token) {
+  font-size: var(--#{$token}-size);
+  font-weight: var(--#{$token}-weight);
+  line-height: var(--#{$token}-line-height);
+}
+
+@mixin desktop-H1 { @include typo('desktop-H1'); }
+@mixin desktop-H2 { @include typo('desktop-H2'); }
+@mixin desktop-H3 { @include typo('desktop-H3'); }
+@mixin desktop-H4 { @include typo('desktop-H4'); }
+@mixin desktop-h5 { @include typo('desktop-h5'); }
+@mixin desktop-B1 { @include typo('desktop-B1'); }
+@mixin desktop-b2 { @include typo('desktop-b2'); }
+@mixin desktop-Tagline { @include typo('desktop-Tagline'); text-transform: uppercase; }
+
+@mixin mobile-H2 { @include typo('mobile-H2'); }
+@mixin mobile-H3 { @include typo('mobile-H3'); }
+@mixin mobile-B1 { @include typo('mobile-B1'); }
+@mixin mobile-B2 { @include typo('mobile-B2'); }
+@mixin mobile-Tagline { @include typo('mobile-Tagline'); text-transform: uppercase; }

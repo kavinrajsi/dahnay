@@ -1,0 +1,60 @@
+.why-dahnay {
+  background: #f6f6f6;
+  padding: 80px 0;
+
+  .section-header {
+    max-width: 455px;
+    padding-bottom: 32px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .icon-card {
+    background: var(--primary-orange);
+    border-radius: 16px;
+    align-items: center;
+    text-align: center;
+    padding: 32px 16px;
+
+    .icon-card__title {
+      padding-top: 24px;
+      font-family: var(--font-avenir), sans-serif;
+      font-style: normal;
+      font-weight: var(--font-weight-medium);
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      color: var(--neutral-white);
+    }
+
+    .icon-card__content {
+      padding-top: 8px;
+      font-family: var(--font-avenir), sans-serif;
+      font-style: normal;
+      font-weight: var(--font-weight-roman);
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: var(--neutral-grey);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding: 40px 0;
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+}

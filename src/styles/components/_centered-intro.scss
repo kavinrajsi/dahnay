@@ -1,0 +1,28 @@
+.centered-intro {
+  background: #f6f6f6;
+  padding: 64px 0;
+
+  &__content {
+    max-width: 740px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-heavy);
+    font-size: var(--desktop-H3-size);
+    line-height: var(--desktop-H3-line-height);
+    color: var(--neutral-black1);
+    padding-bottom: 8px;
+  }
+
+  &__text {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-roman);
+    font-size: var(--desktop-b2-size);
+    line-height: var(--desktop-b2-line-height);
+    color: var(--text-grey);
+    padding-bottom: 8px;
+  }
+}

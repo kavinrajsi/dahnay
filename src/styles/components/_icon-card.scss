@@ -1,0 +1,34 @@
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-heavy);
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--neutral-black1);
+  }
+
+  &__content {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-roman);
+    font-size: var(--desktop-b2-size);
+    line-height: 20px;
+    color: var(--secondary-grey);
+  }
+}

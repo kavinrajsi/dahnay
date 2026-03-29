@@ -1,0 +1,95 @@
+.slider {
+  .slick-slider {
+    position: relative;
+  }
+
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-slide {
+    height: auto;
+
+    > div {
+      height: 100%;
+    }
+  }
+
+  // react-slick wraps appendDots in a <ul> with class slick-dots
+  .slick-dots {
+    position: static;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  // Controls row: dots center, arrows right
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+
+    li {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--neutral-white3);
+      transition: background 0.2s;
+
+      &.slick-active {
+        background: var(--primary-orange);
+      }
+
+      button {
+        display: none;
+      }
+    }
+  }
+
+  &__arrows {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-left: auto;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+
+    &--prev,
+    &--next {
+      position: static;
+      z-index: auto;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

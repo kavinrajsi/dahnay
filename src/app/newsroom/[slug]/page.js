@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Banner from "@/components/sections/Banner";
-import { getPost, getPosts } from "@/lib/ghost";
+import { getPost, getPosts } from "@/lib/posts";
 
 export async function generateStaticParams() {
   try {
@@ -59,34 +59,34 @@ export default async function ArticlePage({ params }) {
         }
       />
 
-      <article className="ghost-article container">
-        <header className="ghost-article__header">
-          {tag && <span className="ghost-article__tag">{tag.name}</span>}
-          <time className="ghost-article__date" dateTime={post.published_at}>
+      <article className="article container">
+        <header className="article__header">
+          {tag && <span className="article__tag">{tag.name}</span>}
+          <time className="article__date" dateTime={post.published_at}>
             {formatDate(post.published_at)}
           </time>
           {post.reading_time && (
-            <span className="ghost-article__reading-time">
+            <span className="article__reading-time">
               {post.reading_time} min read
             </span>
           )}
         </header>
 
         {post.feature_image && (
-          <div className="ghost-article__cover">
+          <div className="article__cover">
             <Image
               src={post.feature_image}
               alt={post.feature_image_alt || post.title}
               width={1200}
               height={630}
-              className="ghost-article__cover-image"
+              className="article__cover-image"
               priority
             />
           </div>
         )}
 
         <div
-          className="ghost-content"
+          className="article__body"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </article>

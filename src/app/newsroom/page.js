@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Banner from "@/components/sections/Banner";
-import { getPosts } from "@/lib/ghost";
+import { getPosts } from "@/lib/posts";
 
 export const metadata = { title: "Newsroom - DahNAY" };
 

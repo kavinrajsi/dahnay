@@ -1,4 +1,5 @@
 // Figma: node-id=354-4868
+import HomeServices from "@/components/sections/HomeServices";
 import HomeSupplyChain from "@/components/sections/HomeSupplyChain";
 import HomeAbout from "@/components/sections/HomeAbout";
 import WhyDahnay from "@/components/sections/WhyDahnay";
@@ -21,6 +22,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="page page--home">
+      <HomeServices />
       <HomeSupplyChain />
       <HomeAbout />
       <WhyDahnay />

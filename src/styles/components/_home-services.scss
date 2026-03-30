@@ -1,0 +1,135 @@
+.home-services {
+  padding: 80px 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 48px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+
+    @media (min-width: 992px) {
+      width: 455px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: #f6f6f6;
+    border-radius: 0 16px 0 16px;
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-medium);
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #333333;
+  }
+
+  &__title {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-heavy);
+    font-size: 28px;
+    line-height: 36px;
+    color: #0b090a;
+
+    @media (min-width: 992px) {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  &__body {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-roman);
+    font-size: 16px;
+    line-height: 22px;
+    color: #646464;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: 992px) {
+      flex: 1;
+    }
+  }
+}
+
+.home-service-card {
+  background: #f5f3f4;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &__image-wrapper {
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 32px;
+    flex: 1;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__title {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-medium);
+    font-size: 18px;
+    line-height: 24px;
+    color: #333333;
+  }
+
+  &__desc {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-roman);
+    font-size: 16px;
+    line-height: 22px;
+    color: #6d6f71;
+  }
+
+  &__link {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-medium);
+    font-size: 18px;
+    line-height: 24px;
+    color: #ef4230;
+    text-decoration: underline;
+  }
+}

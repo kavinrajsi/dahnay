@@ -15,7 +15,7 @@ export default function Expertise({
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3.5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     dotsClass: "slider__control",
     responsive: [
@@ -25,7 +25,7 @@ export default function Expertise({
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 1.5 },
+        settings: { slidesToShow: 1.2 },
       },
     ],
   };

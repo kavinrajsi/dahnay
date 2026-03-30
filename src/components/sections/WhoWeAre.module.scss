@@ -10,13 +10,15 @@
   &__imageWrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 550 / 450;
+    // aspect-ratio: 550 / 450;
     border-radius: 16px 0 16px 0;
     overflow: hidden;
   }
 
   &__image {
     object-fit: cover;
+    width: 100%;
+    height: auto;
   }
 
   &__content {
@@ -40,9 +42,12 @@
 
   &__stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 24px 0;
+    grid-template-columns: repeat(1, 1fr);
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__stat {
@@ -85,11 +90,17 @@
     }
 
     &__imageWrapper {
-      flex: 0 0 550px;
+      // flex: 0 0 550px;
     }
 
     &__content {
       flex: 0 0 550px;
+      @media (min-width: 768px) {
+        max-width: 50%;
+      }
+      @media (min-width: 992px) {
+        max-width: 550px;
+      }
     }
 
     &__header {

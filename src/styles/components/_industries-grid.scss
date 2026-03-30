@@ -26,6 +26,20 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+
+    .industry-card__image {
+      transform: scale(1.05);
+    }
+
+    .industry-card__learn-more {
+      text-decoration: underline;
+    }
+  }
 
   &__image-wrapper {
     border-radius: 16px 0 16px 0;
@@ -39,6 +53,7 @@
     height: auto;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
   }
 
   &__content {

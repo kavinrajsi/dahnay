@@ -1,6 +1,11 @@
 .banner {
   &__image {
     width: 100%;
-    height: auto;
+    object-fit: cover;
+    height: calc(650px - 100px);
+    align-items: center;
+    @media (min-width: 768px) {
+      height: auto;
+    }
   }
 }

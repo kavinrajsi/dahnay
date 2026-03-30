@@ -1,6 +1,16 @@
 import PolicyContent from "@/components/sections/PolicyContent";
 
-export const metadata = { title: "Terms & Conditions - DahNAY" };
+export const metadata = {
+  title: "Terms & Conditions",
+  description:
+    "DahNAY Terms & Conditions — the legal terms governing your use of our website and logistics services.",
+  openGraph: {
+    title: "Terms & Conditions | DahNAY",
+    description:
+      "DahNAY Terms & Conditions — the legal terms governing your use of our website and logistics services.",
+    images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
+  },
+};
 
 export default function TermsConditionsPage() {
   return (

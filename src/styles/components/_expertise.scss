@@ -1,10 +1,22 @@
 .expertise {
   padding: 80px 0;
-  background: #F6F6F6;
+  background: #f6f6f6;
+
+  &--no-bg {
+    background: none;
+  }
 
   .section-header {
-    max-width: 455px;
     padding-bottom: 64px;
+    @media (min-width: 768px) {
+      max-width: 50%;
+    }
+    @media (min-width: 992px) {
+      max-width: 455px;
+    }
+    .section-header__tag {
+      background-color: #d3d3d3;
+    }
   }
 
   &__slide {
@@ -13,21 +25,38 @@
     .service-card__image-wrapper {
       position: relative;
       width: 100%;
-      aspect-ratio: 360 / 216;
+      // aspect-ratio: 360 / 216;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    @media (min-width: 562px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
     .service-card__image-wrapper {
       position: relative;
       width: 100%;
       // aspect-ratio: 360 / 216;
-      img{
+      img {
         object-fit: cover;
+        width: 100%;
+        height: auto;
       }
     }
 

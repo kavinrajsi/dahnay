@@ -1,0 +1,65 @@
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 80px 16px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 560px;
+}
+
+.code {
+  font-family: var(--font-avenir), sans-serif;
+  font-weight: var(--font-weight-heavy);
+  font-size: 120px;
+  line-height: 1;
+  color: #ef4230;
+  letter-spacing: -4px;
+
+  @media (min-width: 992px) {
+    font-size: 180px;
+  }
+}
+
+.title {
+  font-family: var(--font-avenir), sans-serif;
+  font-weight: var(--font-weight-heavy);
+  font-size: 28px;
+  line-height: 36px;
+  color: #0b090a;
+  margin-top: 8px;
+
+  @media (min-width: 992px) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+.description {
+  font-family: var(--font-avenir), sans-serif;
+  font-weight: var(--font-weight-roman);
+  font-size: 16px;
+  line-height: 22px;
+  color: #646464;
+  max-width: 400px;
+}
+
+.button {
+  margin-top: 8px;
+  padding: 14px 40px;
+  background: #ef4230;
+  border-radius: 8px 0 8px 0;
+  font-family: var(--font-avenir), sans-serif;
+  font-weight: var(--font-weight-roman);
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  display: inline-block;
+}

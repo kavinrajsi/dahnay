@@ -1,0 +1,48 @@
+.case-study {
+  padding: 40px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__imageWrapper {
+    width: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px 0 16px 0;
+  }
+
+  @media (min-width: 768px) {
+    padding: 80px 0;
+
+    &__container {
+      flex-direction: row;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .section-header {
+      @media (min-width: 768px) {
+        max-width: 50%;
+      }
+      @media (min-width: 992px) {
+        max-width: 550px;
+      }
+    }
+
+    &__imageWrapper {
+      @media (min-width: 768px) {
+        max-width: 50%;
+      }
+      @media (min-width: 992px) {
+        max-width: 550px;
+      }
+    }
+  }
+}

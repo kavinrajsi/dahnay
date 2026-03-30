@@ -4,7 +4,17 @@ import CenteredIntro from "@/components/sections/CenteredIntro";
 import ContentBlock from "@/components/sections/ContentBlock";
 import TrustCTA from "@/components/sections/TrustCTA";
 
-export const metadata = { title: "ESG & CSR - DahNAY" };
+export const metadata = {
+  title: "ESG & CSR",
+  description:
+    "DahNAY's commitment to sustainability — our environmental, social, and governance initiatives for a responsible logistics future.",
+  openGraph: {
+    title: "ESG & CSR | DahNAY",
+    description:
+      "DahNAY's commitment to sustainability — our environmental, social, and governance initiatives for a responsible logistics future.",
+    images: [{ url: "/images/banners/banner-desktop-esg-csr.png", width: 1200, height: 630 }],
+  },
+};
 
 export default function EsgCsrPage() {
   return (

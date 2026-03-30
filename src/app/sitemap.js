@@ -1,0 +1,71 @@
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.dahnay.com";
+
+const services = [
+  "air-freight",
+  "customs-clearance",
+  "domestic-trucking",
+  "ecommerce-fulfilment",
+  "last-mile-delivery",
+  "project-logistics",
+  "reverse-logistics",
+  "road-transportation",
+  "sea-freight",
+  "time-critical-delivery",
+];
+
+const industries = [
+  "automotive",
+  "construction-materials",
+  "energy-oil-gas",
+  "fmcg",
+  "machinery",
+  "natural-rubber",
+  "paper-pulp",
+  "renewables",
+  "retail-apparel",
+  "white-goods",
+];
+
+export default function sitemap() {
+  const now = new Date();
+
+  const staticPages = [
+    { url: "/", priority: 1.0, changeFrequency: "weekly" },
+    { url: "/about", priority: 0.8, changeFrequency: "monthly" },
+    { url: "/contact", priority: 0.9, changeFrequency: "monthly" },
+    { url: "/careers", priority: 0.7, changeFrequency: "weekly" },
+    { url: "/newsroom", priority: 0.7, changeFrequency: "weekly" },
+    { url: "/industries", priority: 0.9, changeFrequency: "monthly" },
+    { url: "/service", priority: 0.9, changeFrequency: "monthly" },
+    { url: "/solutions", priority: 0.8, changeFrequency: "monthly" },
+    { url: "/solutions/lines", priority: 0.8, changeFrequency: "monthly" },
+    { url: "/solutions/logistics", priority: 0.8, changeFrequency: "monthly" },
+    { url: "/solutions/ports-infra", priority: 0.8, changeFrequency: "monthly" },
+    { url: "/esg-csr", priority: 0.6, changeFrequency: "monthly" },
+    { url: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" },
+    { url: "/terms-conditions", priority: 0.3, changeFrequency: "yearly" },
+    { url: "/cookie-policy", priority: 0.3, changeFrequency: "yearly" },
+    { url: "/posh-policy", priority: 0.2, changeFrequency: "yearly" },
+    { url: "/whistleblower-policy", priority: 0.2, changeFrequency: "yearly" },
+  ].map(({ url, ...rest }) => ({
+    url: `${siteUrl}${url}`,
+    lastModified: now,
+    ...rest,
+  }));
+
+  const servicePages = services.map((slug) => ({
+    url: `${siteUrl}/service/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }));
+
+  const industryPages = industries.map((slug) => ({
+    url: `${siteUrl}/industries/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }));
+
+  return [...staticPages, ...servicePages, ...industryPages];
+}

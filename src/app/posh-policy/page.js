@@ -1,6 +1,16 @@
 import PolicyContent from "@/components/sections/PolicyContent";
 
-export const metadata = { title: "POSH Policy - DahNAY" };
+export const metadata = {
+  title: "POSH Policy",
+  description:
+    "DahNAY's Prevention of Sexual Harassment (POSH) Policy — our commitment to a safe and respectful workplace for all employees.",
+  openGraph: {
+    title: "POSH Policy | DahNAY",
+    description:
+      "DahNAY's Prevention of Sexual Harassment (POSH) Policy — our commitment to a safe and respectful workplace for all employees.",
+    images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
+  },
+};
 
 export default function POSHPolicyPage() {
   return (

@@ -3,7 +3,7 @@
   flex-direction: column;
 
   &__item {
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
     margin-bottom: 8px;
     border-radius: 8px;
     width: 100%;
@@ -74,13 +74,25 @@
       gap: 64px;
       align-items: flex-start;
     }
+  }
 
-    &__left {
+  &__left {
+    @media (min-width: 768px) {
+      // flex: 0 0 auto;
+      // max-width: 50%;
+    }
+    @media (min-width: 992px) {
       flex: 0 0 auto;
       max-width: 455px;
     }
+  }
 
-    &__right {
+  &__right {
+    @media (min-width: 768px) {
+      // flex: 0 0 50%;
+      // margin-left: auto;
+    }
+    @media (min-width: 992px) {
       flex: 0 0 550px;
       margin-left: auto;
     }

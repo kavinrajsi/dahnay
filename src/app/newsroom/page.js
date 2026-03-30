@@ -4,7 +4,17 @@ import Link from "next/link";
 import Banner from "@/components/sections/Banner";
 import { getPosts } from "@/lib/posts";
 
-export const metadata = { title: "Newsroom - DahNAY" };
+export const metadata = {
+  title: "Newsroom",
+  description:
+    "Latest news, insights, and case studies from DahNAY on logistics, supply chain trends, and industry developments.",
+  openGraph: {
+    title: "Newsroom | DahNAY",
+    description:
+      "Latest news, insights, and case studies from DahNAY on logistics, supply chain trends, and industry developments.",
+    images: [{ url: "/images/banners/banner-desktop-newsroom.png", width: 1200, height: 630 }],
+  },
+};
 
 function formatDate(dateStr) {
   if (!dateStr) return "";

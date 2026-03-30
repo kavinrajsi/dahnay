@@ -1,6 +1,16 @@
 import PolicyContent from "@/components/sections/PolicyContent";
 
-export const metadata = { title: "Cookie Policy - DahNAY" };
+export const metadata = {
+  title: "Cookie Policy",
+  description:
+    "DahNAY Cookie Policy — information about the cookies we use on our website and how to manage your preferences.",
+  openGraph: {
+    title: "Cookie Policy | DahNAY",
+    description:
+      "DahNAY Cookie Policy — information about the cookies we use on our website and how to manage your preferences.",
+    images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
+  },
+};
 
 export default function CookiePolicyPage() {
   return (

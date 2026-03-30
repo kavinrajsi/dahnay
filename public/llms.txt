@@ -1,57 +1,48 @@
-# DahNAY Logistics
+# DahNAY
 
-> Global logistics company offering end-to-end freight, supply chain management, and trade compliance solutions.
-
-DahNAY Logistics is a full-service logistics provider operating across major international trade corridors spanning Asia, the Middle East, Africa, Europe, and the Americas. We specialise in sea freight, air freight, road transportation, project logistics, customs clearance, and last-mile delivery.
-
-## Services
-
-- [Sea Freight](/service/sea-freight): Ocean freight management including FCL, LCL, consolidation, and break-bulk cargo handling.
-- [Air Freight](/service/air-freight): Time-sensitive air cargo solutions with express, charter, and dangerous goods handling.
-- [Road Transportation](/service/road-transportation): Cross-border and domestic road freight with FTL, LTL, and specialised vehicles.
-- [Project Logistics](/service/project-logistics): Heavy-lift, oversized, and high-value cargo with route surveys and regulatory coordination.
-- [Customs Clearance](/service/customs-clearance): Import/export documentation, HS classification, trade compliance, and bonded warehousing.
-- [Domestic Trucking](/service/domestic-trucking): Inland distribution with scheduled routes, fleet management, and real-time tracking.
-- [Reverse Logistics](/service/reverse-logistics): Returns management, recall logistics, refurbishment support, and compliance reporting.
-- [Time-Critical Delivery](/service/time-critical-delivery): Emergency spare parts, on-board courier, and production line supply logistics.
-- [Last Mile Delivery](/service/last-mile-delivery): Urban and rural distribution, white glove service, and returns pickup.
-- [Ecommerce Fulfilment](/service/ecommerce-fulfilment): Order fulfilment, inventory management, and multi-channel distribution.
-
-## Solutions
-
-- [DahNAY Logistics](/solutions/logistics): Comprehensive freight forwarding and supply chain solutions.
-- [DahNAY Lines](/solutions/lines): Dry cargo, refrigerated cargo, and specialised cargo shipping lines.
-- [DahNAY Ports & Infra](/solutions/ports-infra): Warehousing, FTWZ, and container freight stations.
-
-## Industries
-
-- [Automotive](/industries/automotive)
-- [Renewables](/industries/renewables)
-- [Machinery](/industries/machinery)
-- [Retail & Apparel](/industries/retail-apparel)
-- [Natural Rubber](/industries/natural-rubber)
-- [White Goods](/industries/white-goods)
-- [Energy, Oil & Gas](/industries/energy-oil-gas)
-- [FMCG](/industries/fmcg)
-- [Construction Materials](/industries/construction-materials)
-- [Paper & Pulp](/industries/paper-pulp)
+> DahNAY is a global logistics and supply chain solutions company headquartered in India, providing industry-specific freight services powered by technology and expertise.
 
 ## Company
 
-- [About Us](/about)
-- [Careers](/careers)
-- [ESG & CSR](/esg-csr)
-- [Newsroom](/newsroom)
-- [Contact Us](/contact)
+DahNAY delivers end-to-end logistics solutions across air freight, sea freight, road transportation, customs clearance, last-mile delivery, and project logistics. The company serves 10+ industry verticals including automotive, FMCG, energy, renewables, and retail across South Asia and major international trade corridors.
 
-## Policies
+## Services
 
-- [Privacy Policy](/privacy-policy)
-- [Terms & Conditions](/terms-conditions)
-- [POSH Policy](/posh-policy)
-- [Whistleblower Policy](/whistleblower-policy)
-- [Cookie Policy](/cookie-policy)
+- **Air Freight**: Fast, reliable international air cargo with real-time tracking and customs support
+- **Sea Freight**: FCL and LCL ocean freight with global carrier partnerships
+- **Customs Clearance**: Expert customs brokerage, documentation, and duty management
+- **Domestic Trucking**: FTL and LTL road freight across India
+- **Last Mile Delivery**: Final-leg delivery with end-to-end visibility
+- **Project Logistics**: Heavy-lift, oversized cargo, and multi-modal transport
+- **Reverse Logistics**: Returns management and remanufacturing logistics
+- **Road Transportation**: Full-load and part-load trucking across South Asia
+- **Ecommerce Fulfilment**: Warehousing, pick-and-pack, and order fulfilment
+- **Time-Critical Delivery**: Urgent shipment solutions, 24/7
+
+## Industries Served
+
+Automotive, FMCG, Energy & Oil & Gas, Construction Materials, Paper & Pulp, Natural Rubber, White Goods, Machinery, Renewables, Retail & Apparel
+
+## Technology Solutions
+
+- **DahNAY Lines**: Carrier and shipping line management platform
+- **DahNAY Logistics**: End-to-end supply chain visibility and freight management
+- **DahNAY Ports & Infrastructure**: Port operations and terminal management solutions
 
 ## Contact
 
+- Website: https://www.dahnay.com
 - Email: info@dahnay.com
+- Contact form: https://www.dahnay.com/contact
+
+## Key Pages
+
+- Homepage: https://www.dahnay.com
+- Services: https://www.dahnay.com/service
+- Industries: https://www.dahnay.com/industries
+- Solutions: https://www.dahnay.com/solutions
+- About: https://www.dahnay.com/about
+- Careers: https://www.dahnay.com/careers
+- Newsroom: https://www.dahnay.com/newsroom
+- ESG & CSR: https://www.dahnay.com/esg-csr
+- Contact: https://www.dahnay.com/contact

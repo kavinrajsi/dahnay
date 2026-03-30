@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -74,9 +77,16 @@ const socialLinks = [
 ];
 
 function LinkColumn({ title, links }) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="footer__link-column">
-      <h4 className="footer__column-title">{title}</h4>
+    <div className={`footer__link-column${open ? " footer__link-column--open" : ""}`}>
+      <button className="footer__column-title" onClick={() => setOpen(!open)}>
+        {title}
+        <svg className="footer__column-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
       <ul className="footer__link-list">
         {links.map((item) => (
           <li key={item.label}>
@@ -233,6 +243,11 @@ export default function Footer() {
           <p className="footer__copyright">
             &copy;{new Date().getFullYear()} DahNay Logistics. All Rights Reserved.
           </p>
+          <div className="footer__legal">
+            <Link href="/privacy-policy" className="footer__legal-link">Privacy Policy</Link>
+            <Link href="/terms-conditions" className="footer__legal-link">Terms &amp; Conditions</Link>
+            <Link href="/cookie-policy" className="footer__legal-link">Cookie Policy</Link>
+          </div>
           <p className="footer__made-by">
             Made by <a href="https://madarth.com/?utm_source=dahnay&utm_medium=referral&utm_campaign=website_footer" target="_blank" rel="noopener noreferrer">Madarth <sup>&reg;</sup></a>
           </p>

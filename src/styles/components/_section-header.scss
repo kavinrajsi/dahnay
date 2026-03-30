@@ -1,5 +1,4 @@
 .section-header {
-
   &__title {
     font-family: var(--font-avenir), sans-serif;
     font-style: normal;
@@ -11,6 +10,7 @@
   }
 
   &__content {
+    padding-top: 8px;
     font-family: var(--font-avenir), sans-serif;
     font-style: normal;
     font-weight: var(--font-weight-roman);
@@ -40,6 +40,11 @@
   }
 
   &.section-header--left {
-    max-width: 740px;
+    @media (min-width: 768px) {
+      max-width: 50%;
+    }
+    @media (min-width: 992px) {
+      max-width: 740px;
+    }
   }
 }

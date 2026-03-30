@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -66,6 +66,11 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
   const handleMouseEnter = (menu) => setActiveDropdown(menu);
   const handleMouseLeave = () => setActiveDropdown(null);
   const closeAll = () => { setActiveDropdown(null); setMobileMenuOpen(false); };
@@ -112,12 +117,12 @@ export default function Header() {
         onMouseEnter={() => handleMouseEnter(id)}
         onMouseLeave={handleMouseLeave}
       >
-        <button className={`header__nav-link${hasActive ? " header__nav-link--active" : ""}`}>
+        <Link href={`/${id}`} className={`header__nav-link${hasActive ? " header__nav-link--active" : ""}`}>
           {label}
           <svg className="header__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </button>
+        </Link>
         {activeDropdown === id && (
           <div className="header__mega-menu">
             <div className="container header__mega-menu-inner">
@@ -148,6 +153,28 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container header__container">
+        <button
+          className={`header__hamburger${mobileMenuOpen ? " header__hamburger--open" : ""}`}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
+        >
+          {mobileMenuOpen ? (
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 12C0 5.37258 5.37258 0 12 0H52V40C52 46.6274 46.6274 52 40 52H0V12Z" fill="#EF4230"/>
+              <path d="M18 18L34 34" stroke="white" strokeWidth="1.3" strokeLinecap="round"/>
+              <path d="M34 18L18 34" stroke="white" strokeWidth="1.3" strokeLinecap="round"/>
+            </svg>
+          ) : (
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 12C0 5.37258 5.37258 0 12 0H52V40C52 46.6274 46.6274 52 40 52H0V12Z" fill="#EF4230"/>
+              <path d="M14 18H38" stroke="white" strokeWidth="1.3"/>
+              <path d="M14 26H38" stroke="white" strokeWidth="1.3"/>
+              <path d="M14 34H38" stroke="white" strokeWidth="1.3"/>
+            </svg>
+          )}
+        </button>
+
         <Link href="/" className="header__logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="143" height="42" fill="none" viewBox="0 0 143 42">
             <path fill="#EE402F" d="M39.789 9.68c-.99 0-3.229.015-3.229.015s.027 1.84-.002 3.423c1.406 10.638-2.645 17.17-10.49 20.727-10.083 4.582-20.473-.309-24.168-8.368a1.467 1.467 0 0 0-.228-.432.958.958 0 0 0-.704-.313A.968.968 0 0 0 0 25.7c0 .157.04.3.107.435 6.965 18.315 24.818 16.8 32.784 11.253 7.813-5.438 12.834-16.804 6.898-27.709ZM13.213 2.693c.025 0 .052-.006.078-.01a.831.831 0 0 1 .108-.022c2.647-.546 4.999-.54 6.47-.278 5.277.93 8.313 2.323 12.415 6.319.004.008 3.282 0 3.282 0v-2.09C32.649 3.213 26.694-.001 20.708 0c-2.59 0-5.09.367-7.648 1.385a.842.842 0 0 0-.175.069.665.665 0 0 0 .328 1.239Z" />
@@ -158,21 +185,12 @@ export default function Header() {
           </svg>
         </Link>
 
-        <button
-          className="header__hamburger"
-          onClick={() => {
-            alert("Burger clicked");
-            const next = !mobileMenuOpen;
-            setMobileMenuOpen(next);
-            alert(next ? "Menu is now open" : "Menu is now closed");
-          }}
-          aria-label="Toggle menu"
-          aria-expanded={mobileMenuOpen}
-        >
-          <span className="header__hamburger-line" />
-          <span className="header__hamburger-line" />
-          <span className="header__hamburger-line" />
-        </button>
+        <Link href="/contact" className="header__phone">
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 12C0 5.37258 5.37258 0 12 0H52V40C52 46.6274 46.6274 52 40 52H0V12Z" fill="#EF4230"/>
+            <path d="M36.6 38C33.8222 38 31.0778 37.3944 28.3667 36.1833C25.6556 34.9722 23.1889 33.2556 20.9667 31.0333C18.7444 28.8111 17.0278 26.3444 15.8167 23.6333C14.6056 20.9222 14 18.1778 14 15.4C14 15 14.1333 14.6667 14.4 14.4C14.6667 14.1333 15 14 15.4 14H20.8C21.1111 14 21.3889 14.1056 21.6333 14.3167C21.8778 14.5278 22.0222 14.7778 22.0667 15.0667L22.9333 19.7333C22.9778 20.0889 22.9667 20.3889 22.9 20.6333C22.8333 20.8778 22.7111 21.0889 22.5333 21.2667L19.3 24.5333C19.7444 25.3556 20.2722 26.15 20.8833 26.9167C21.4944 27.6833 22.1667 28.4222 22.9 29.1333C23.5889 29.8222 24.3111 30.4611 25.0667 31.05C25.8222 31.6389 26.6222 32.1778 27.4667 32.6667L30.6 29.5333C30.8 29.3333 31.0611 29.1833 31.3833 29.0833C31.7056 28.9833 32.0222 28.9556 32.3333 29L36.9333 29.9333C37.2444 30.0222 37.5 30.1833 37.7 30.4167C37.9 30.65 38 30.9111 38 31.2V36.6C38 37 37.8667 37.3333 37.6 37.6C37.3333 37.8667 37 38 36.6 38ZM18.0333 22L20.2333 19.8L19.6667 16.6667H16.7C16.8111 17.5778 16.9667 18.4778 17.1667 19.3667C17.3667 20.2556 17.6556 21.1333 18.0333 22ZM29.9667 33.9333C30.8333 34.3111 31.7167 34.6111 32.6167 34.8333C33.5167 35.0556 34.4222 35.2 35.3333 35.2667V32.3333L32.2 31.7L29.9667 33.9333Z" fill="white"/>
+          </svg>
+        </Link>
 
         <nav className="header__nav header__nav--desktop">
           <Link href="/" className="header__nav-link">Home</Link>

@@ -30,7 +30,7 @@ export default function ServiceExpertise({
   };
 
   return (
-    <section className="expertise">
+    <section className="expertise expertise--no-bg">
       <div className="container">
         <SectionHeader
           tag={tag}

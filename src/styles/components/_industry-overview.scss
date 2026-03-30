@@ -4,4 +4,9 @@
   align-items: flex-start;
   padding-top: 64px;
   padding-bottom: 64px;
+  gap: 8px 16px;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import SectionHeader from "./SectionHeader";
 
 function getUTMParams() {
@@ -23,10 +23,10 @@ function getUTMParams() {
 export default function GrowForm() {
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
-  const [referrer, setReferrer] = useState("");
+  const referrer = useRef("");
 
   useEffect(() => {
-    setReferrer(document.referrer || window.location.pathname);
+    referrer.current = document.referrer || window.location.pathname;
   }, []);
 
   function validate(data) {
@@ -62,7 +62,7 @@ export default function GrowForm() {
       mobile: formData.get("mobile"),
       message: formData.get("message"),
       utm: getUTMParams(),
-      previousPage: referrer,
+      previousPage: referrer.current,
       pageUrl: window.location.href,
     };
 

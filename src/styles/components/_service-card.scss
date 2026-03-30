@@ -18,6 +18,10 @@
     font-size: 18px;
     line-height: 22px;
     color: var(--neutral-black1);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &__description {

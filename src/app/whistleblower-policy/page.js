@@ -1,6 +1,16 @@
 import PolicyContent from "@/components/sections/PolicyContent";
 
-export const metadata = { title: "Whistleblower Policy - DahNAY" };
+export const metadata = {
+  title: "Whistleblower Policy",
+  description:
+    "DahNAY's Whistleblower Policy — a secure channel for reporting concerns about unethical conduct or policy violations.",
+  openGraph: {
+    title: "Whistleblower Policy | DahNAY",
+    description:
+      "DahNAY's Whistleblower Policy — a secure channel for reporting concerns about unethical conduct or policy violations.",
+    images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
+  },
+};
 
 export default function WhistleblowerPolicyPage() {
   return (

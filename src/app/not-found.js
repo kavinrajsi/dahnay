@@ -4,11 +4,11 @@ import styles from "./not-found.module.scss";
 export default function NotFound() {
   return (
     <section className={styles.notFound}>
-      <div className={styles.container}>
+      <div className={styles.inner}>
         <span className={styles.code}>404</span>
         <h1 className={styles.title}>Page not found</h1>
         <p className={styles.description}>
-          Sorry, the page you are looking for doesn&apos;t exist or has been moved.
+          Sorry, the page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
         <Link href="/" className={styles.button}>
           Back to Home

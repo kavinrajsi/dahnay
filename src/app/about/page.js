@@ -6,7 +6,17 @@ import FounderSection from "@/components/sections/FounderSection";
 import TrustCTA from "@/components/sections/TrustCTA";
 import GrowForm from "@/components/sections/GrowForm";
 
-export const metadata = { title: "About Us - DahNAY" };
+export const metadata = {
+  title: "About Us",
+  description:
+    "Learn about DahNAY — our story, values, and the team driving innovation in global logistics and supply chain management.",
+  openGraph: {
+    title: "About Us | DahNAY",
+    description:
+      "Learn about DahNAY — our story, values, and the team driving innovation in global logistics and supply chain management.",
+    images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
+  },
+};
 
 export default function AboutPage() {
   return (

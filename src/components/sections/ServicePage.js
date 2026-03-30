@@ -6,44 +6,25 @@ import Certifications from "@/components/sections/Certifications";
 import FAQSection from "@/components/sections/FAQSection";
 import GrowForm from "@/components/sections/GrowForm";
 import serviceData from "@/data/services/index.json";
-import {
-  GlobalNetworkIcon,
-  RegulatoryExpertiseIcon,
-  RealTimeVisibilityIcon,
-  DedicatedSupportIcon,
-} from "@/components/icons/ServiceIcons";
-
-const iconMap = {
-  GlobalNetworkIcon,
-  RegulatoryExpertiseIcon,
-  RealTimeVisibilityIcon,
-  DedicatedSupportIcon,
-};
 
 export default function ServicePage({ slug }) {
-  const { shared } = serviceData;
   const data = serviceData[slug];
-
-  const whyItems = shared.whyDahnay.items.map((item) => {
-    const Icon = iconMap[item.icon];
-    return { ...item, icon: <Icon /> };
-  });
 
   return (
     <div className="page page--service">
       <Banner {...data.banner} />
       <Overview {...data.overview} />
       <ServiceExpertise
-        {...shared.expertise}
+        {...data.expertise}
         items={data.expertiseItems}
       />
       <WhyDahnay
-        title={shared.whyDahnay.title}
-        content={shared.whyDahnay.content}
-        items={whyItems}
+        title={data.whyDahnay.title}
+        content={data.whyDahnay.content}
+        items={data.whyDahnay.items}
       />
-      <Certifications {...shared.certifications} />
-      <FAQSection {...shared.faq} />
+      <Certifications {...data.certifications} />
+      <FAQSection {...data.faq} />
       <GrowForm />
     </div>
   );

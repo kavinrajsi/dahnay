@@ -1,0 +1,322 @@
+{
+  "shared": {
+    "expertise": {
+      "tag": "Our Industry solutions",
+      "title": "Our Expertise"
+    },
+    "whyDahnay": {
+      "title": "Why DahNAY",
+      "items": [
+        { "icon": "ContinuityIcon", "title": "Continuity-Focused Planning", "content": "Logistics aligned to production cycles to prevent supply disruptions." },
+        { "icon": "MaterialIntegrityIcon", "title": "Material Integrity Assurance", "content": "Handling protocols designed to minimise damage and moisture exposure." },
+        { "icon": "HighVolumeIcon", "title": "High-Volume Movement Expertise", "content": "Proven capability in managing large-scale, repetitive shipments." },
+        { "icon": "MultimodalIcon", "title": "Multimodal Efficiency", "content": "Integrated transport across road, rail and sea for cost and scale optimisation." }
+      ]
+    },
+    "faq": {
+      "tag": "FAQ's",
+      "title": "Frequently Asked",
+      "titleAccent": "Questions",
+      "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY's intelligent logistics network and real-time visibility"
+    }
+  },
+  "automotive": {
+    "banner": {
+      "title": "Automotive Industry",
+      "desktopImage": "/images/banners/banner-desktop-automotive.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Powering the road ahead",
+      "content": "The automotive industry operates on tightly synchronised supply chains, where production schedules, inventory levels and delivery timelines leave no room for error. With deep operational experience and strong global coordination, we keep production lines moving without disruption"
+    },
+    "expertise": {
+      "content": "We design logistics workflows aligned to the automotive value chain. Each solution is structured to reduce downtime, manage risk and maintain production continuity.",
+      "items": [
+        { "image": "/images/industries/automotive/inbound-outbound.png", "title": "Inbound and Outbound Transportation" },
+        { "image": "/images/industries/automotive/time-critical.png", "title": "Time-critical movements" },
+        { "image": "/images/industries/automotive/engines.png", "title": "Engines and mechanical parts" },
+        { "image": "/images/industries/automotive/accessories.png", "title": "Accessories" },
+        { "image": "/images/industries/automotive/finished-vehicles.png", "title": "Finished Vehicles Logistics" },
+        { "image": "/images/industries/automotive/tyres-tubes.png", "title": "Tyres and Tubes" }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "What types of automotive cargo does DahNAY handle?", "answer": "We manage the full spectrum — from inbound raw materials and CKD/SKD kits to finished vehicle transport, engines, mechanical parts, tyres, tubes and aftermarket accessories." },
+        { "question": "Can you support just-in-time delivery for automotive production lines?", "answer": "Yes. Our time-critical logistics are designed around production schedules, ensuring parts and components arrive precisely when needed to avoid line stoppages." },
+        { "question": "Do you handle finished vehicle logistics?", "answer": "We provide end-to-end finished vehicle transport from manufacturing plants to dealerships, including multi-modal movement by road, rail and sea." },
+        { "question": "How do you ensure the safety of high-value automotive components?", "answer": "We use specialised handling protocols, secure packaging and real-time tracking to protect engines, electronics and precision parts throughout transit." },
+        { "question": "Which regions does DahNAY serve for automotive logistics?", "answer": "We operate across major automotive corridors spanning Asia, the Middle East, Europe, Africa and the Americas, with tailored solutions for each trade lane." }
+      ]
+    }
+  },
+  "fmcg": {
+    "banner": {
+      "title": "FMCG",
+      "desktopImage": "/images/banners/banner-desktop-fmcg.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "The logistics behind every shelf",
+      "content": "From production lines to retail shelves, FMCG supply chains demand speed, consistency and uninterrupted flow. We deliver with the precision fast-moving markets require."
+    },
+    "expertise": {
+      "content": "We design logistics workflows aligned to demand cycles, distribution networks and retail velocity. Every solution is engineered for speed, accuracy and consistency.",
+      "items": [
+        { "image": "/images/industries/fmcg/primary-distribution.png", "title": "Primary Distribution Management" },
+        { "image": "/images/industries/fmcg/secondary-last-mile.png", "title": "Secondary & Last-Mile Distribution" },
+        { "image": "/images/industries/fmcg/high-velocity.png", "title": "High-Velocity Inventory Movement" },
+        { "image": "/images/industries/fmcg/warehousing.png", "title": "Warehousing Management" },
+        { "image": "/images/industries/fmcg/ecommerce.png", "title": "E-commerce Fulfilment Support" }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "How does DahNAY handle high-velocity FMCG supply chains?", "answer": "We design logistics workflows around demand cycles and rapid stock rotation, ensuring fast-cycle movement from production facilities to distribution centres and retail outlets." },
+        { "question": "Do you support e-commerce fulfilment for FMCG brands?", "answer": "Yes. We provide end-to-end fulfilment for direct-to-consumer and marketplace channels, including pick-pack, dispatch and last-mile delivery." },
+        { "question": "Can DahNAY manage seasonal demand surges?", "answer": "Our warehousing and distribution solutions are aligned to demand forecasting and seasonal cycles, allowing us to scale operations during peak periods." },
+        { "question": "What distribution models do you offer for FMCG?", "answer": "We support primary distribution from factories to warehouses, secondary distribution to retail outlets and direct last-mile delivery to end consumers." },
+        { "question": "How do you maintain product integrity for FMCG goods?", "answer": "We follow strict handling protocols designed to minimise damage, contamination and temperature exposure, ensuring products reach shelves in optimal condition." }
+      ]
+    }
+  },
+  "energy-oil-gas": {
+    "banner": {
+      "title": "Energy, Oil & Gas",
+      "desktopImage": "/images/banners/banner-desktop-energy-oil-gas.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "The logistics behind the pipeline",
+      "content": "Energy and oil & gas operations extend across offshore platforms, drilling sites, refineries and cross-border infrastructure corridors. The cargo is oversized, high-value and often mission-critical. Timelines are fixed. Compliance is non-negotiable. DahNAY delivers structured, project-led logistics solutions engineered for industrial scale."
+    },
+    "expertise": {
+      "content": "We design logistics workflows aligned to upstream, midstream and downstream operations. Every solution is engineered to manage complexity, minimise risk and protect project timelines.",
+      "items": [
+        { "image": "/images/industries/energy-oil-gas/project-heavy-lift.png", "title": "Project & Heavy-Lift Logistics" },
+        { "image": "/images/industries/energy-oil-gas/upstream.png", "title": "Upstream Equipment Movement" },
+        { "image": "/images/industries/energy-oil-gas/midstream.png", "title": "Midstream & Pipeline Logistics" },
+        { "image": "/images/industries/energy-oil-gas/downstream.png", "title": "Downstream & Refinery Cargo" },
+        { "image": "/images/industries/energy-oil-gas/hazardous.png", "title": "Hazardous & Specialised Cargo" },
+        { "image": "/images/industries/energy-oil-gas/renewable-equipment.png", "title": "Renewable Equipment Transport" }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "Does DahNAY handle hazardous cargo for the energy sector?", "answer": "Yes. We are fully equipped for IMDG-compliant handling and transport of hazardous and regulated materials, with trained personnel and certified processes." },
+        { "question": "Can you manage logistics for remote upstream sites?", "answer": "We specialise in moving drilling, exploration and wellhead equipment to remote and hard-to-reach locations, with route planning and site access coordination." },
+        { "question": "What types of energy projects does DahNAY support?", "answer": "We support the full energy value chain — upstream exploration, midstream pipelines, downstream refinery operations and renewable energy infrastructure." },
+        { "question": "Do you handle heavy-lift and oversized cargo for energy projects?", "answer": "Yes. Our project logistics team manages oversized and heavy-lift cargo including reactor vessels, turbines, transformers and pipeline sections." },
+        { "question": "Can DahNAY support the energy transition with renewable equipment logistics?", "answer": "Absolutely. We provide logistics for renewable energy infrastructure including wind turbines, solar installations and battery storage systems as part of the energy sector transition." }
+      ]
+    }
+  },
+  "construction-materials": {
+    "banner": {
+      "title": "Construction Materials",
+      "desktopImage": "/images/banners/banner-desktop-construction-materials.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Construction materials logistics",
+      "content": "From raw materials like cement to ready-to-install components, construction supply chains demand speed, scale and synchronised delivery. We deliver with the precision large projects depend on."
+    },
+    "expertise": {
+      "content": "We design logistics workflows aligned to project timelines, site readiness and material dependencies. Every solution is engineered for reliability, efficiency and control.",
+      "items": [
+        { "image": "/images/industries/construction-materials/bulk-material.png", "title": "Bulk Material Transportation" },
+        { "image": "/images/industries/construction-materials/steel-structural.png", "title": "Steel & Structural Logistics" },
+        { "image": "/images/industries/construction-materials/project-heavy.png", "title": "Project & Heavy Cargo Movement" },
+        { "image": "/images/industries/construction-materials/phased-delivery.png", "title": "Phased Site Delivery Planning" },
+        { "image": "/images/industries/construction-materials/last-mile-site.png", "title": "Last-Mile Site Access Solutions" },
+        { "image": "/images/industries/construction-materials/modular.png", "title": "Modular Component Transport" }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "What construction materials can DahNAY transport?", "answer": "We handle cement, aggregates, steel, rebar, structural components, prefabricated modules and oversized construction equipment across domestic and international routes." },
+        { "question": "Can you deliver materials to remote or access-restricted construction sites?", "answer": "Yes. Our last-mile site access solutions are designed for constrained locations, including narrow roads, urban builds and remote project sites." },
+        { "question": "Do you offer phased delivery aligned to construction schedules?", "answer": "Absolutely. We plan sequenced deliveries matched to your construction milestones, ensuring materials arrive at the right stage of the build." },
+        { "question": "How do you handle oversized or heavy construction cargo?", "answer": "We provide engineered logistics with route surveys, permits, specialised trailers and lifting equipment for heavy and out-of-gauge cargo." },
+        { "question": "Can DahNAY manage high-volume bulk material shipments?", "answer": "Yes. We have proven capability in managing large-scale, repetitive shipments of bulk construction materials with consistent scheduling and supply continuity." }
+      ]
+    }
+  },
+  "paper-pulp": {
+    "banner": {
+      "title": "Paper & Pulp",
+      "desktopImage": "/images/banners/banner-desktop-paper-pulp.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Logistics that keeps paper & pulp in motion",
+      "content": "From mills to markets, paper and pulp supply chains demand volume efficiency, material integrity and uninterrupted flow. We deliver with the control continuous production depends on."
+    },
+    "expertise": {
+      "content": "We design logistics workflows aligned to production cycles, storage conditions and distribution demand. Every solution is engineered to protect material quality while optimising scale.",
+      "items": [
+        { "image": "/images/industries/paper-pulp/bulk-pulp.png", "title": "Bulk Pulp Transportation" },
+        { "image": "/images/industries/paper-pulp/paper-reel.png", "title": "Paper Reel & Sheet Handling" },
+        { "image": "/images/industries/paper-pulp/moisture-controlled.png", "title": "Moisture-Controlled Logistics" },
+        { "image": "/images/industries/paper-pulp/warehousing.png", "title": "Warehousing & Inventory Management" },
+        { "image": "/images/industries/paper-pulp/high-volume.png", "title": "High-Volume Distribution" }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "Lorem ipsum dolor sit amet consectetur?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Eu aenean non orci adipiscing odio?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Lorem ipsum dolor sit amet consectetur. Senectus platea in nunc quis. Viverra libero quam fames vitae felis eu?", "answer": "Lorem ipsum dolor sit amet consectetur." }
+      ]
+    }
+  },
+  "natural-rubber": {
+    "banner": {
+      "title": "Natural Rubber",
+      "desktopImage": "/images/banners/banner-desktop-natural-rubber.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "From plantation to production",
+      "content": "Natural rubber supply chains connect plantations, processing units and global manufacturing industries such as tyres, automotive and industrial goods. The cargo moves in high volumes across export corridors and requires efficient containerised transport. DahNAY delivers structured logistics solutions designed for commodity-scale movement, ensuring natural rubber shipments move seamlessly from production hubs to global markets."
+    },
+    "expertise": {
+      "content": "We design logistics workflows aligned to rubber production cycles and export trade flows.",
+      "items": [
+        { "image": "/images/industries/natural-rubber/plantation-to-port.png", "title": "Plantation-to-Port Movement" },
+        { "image": "/images/industries/natural-rubber/bulk-commodity.png", "title": "Bulk Commodity Transport" },
+        { "image": "/images/industries/natural-rubber/containerised-export.png", "title": "Containerised Export Logistics" },
+        { "image": "/images/industries/natural-rubber/multimodal.png", "title": "Multimodal Freight Coordination" },
+        { "image": "/images/industries/natural-rubber/processing-equipment.png", "title": "Rubber Processing Equipment" },
+        { "image": "/images/industries/natural-rubber/warehousing.png", "title": "Warehousing & Distribution" }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "Lorem ipsum dolor sit amet consectetur. Eu aenean non orci adipiscing odio?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Lorem ipsum dolor sit amet consectetur?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Eu aenean non orci adipiscing odio?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Lorem ipsum dolor sit amet consectetur. Senectus platea in nunc quis. Viverra libero quam fames vitae felis eu?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Lorem ipsum dolor sit amet consectetur. Eu aenean non orci adipiscing odio?", "answer": "Lorem ipsum dolor sit amet consectetur." }
+      ]
+    }
+  },
+  "white-goods": {
+    "banner": {
+      "title": "White Goods",
+      "desktopImage": "/images/banners/banner-desktop-white-goods.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "The infrastructure behind appliances",
+      "content": "White goods supply chains move high-volume, high-cubic and damage-sensitive cargo across domestic and international markets. Every shipment must align with production schedules, retail commitments and distributor timelines. DahNAY delivers logistics solutions engineered for appliance scale, optimising container utilisation, protecting cargo integrity and ensuring seamless movement from manufacturing hubs to distribution networks."
+    },
+    "expertise": {
+      "content": "We design logistics workflows aligned to appliance manufacturing output and retail distribution cycles, structured to protect cargo and maintain delivery commitments.",
+      "items": [
+        { "image": "/images/industries/white-goods/factory-to-port.png", "title": "Factory-to-Port Coordination" },
+        { "image": "/images/industries/white-goods/container-optimize.png", "title": "Container Optimize & Load Planning" },
+        { "image": "/images/industries/white-goods/global-freight.png", "title": "Global Freight Management" },
+        { "image": "/images/industries/white-goods/customs.png", "title": "Customs & Regulatory Handling" },
+        { "image": "/images/industries/white-goods/warehousing.png", "title": "Warehousing & Distribution" },
+        { "image": "/images/industries/white-goods/aftermarket.png", "title": "Aftermarket & Spare Parts Logistics" }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "Lorem ipsum dolor sit amet consectetur. Eu aenean non orci adipiscing odio?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Lorem ipsum dolor sit amet consectetur?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Eu aenean non orci adipiscing odio?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Lorem ipsum dolor sit amet consectetur. Senectus platea in nunc quis. Viverra libero quam fames vitae felis eu?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Lorem ipsum dolor sit amet consectetur. Eu aenean non orci adipiscing odio?", "answer": "Lorem ipsum dolor sit amet consectetur." }
+      ]
+    }
+  },
+  "machinery": {
+    "banner": {
+      "title": "Machinery",
+      "desktopImage": "/images/banners/banner-desktop-machinery.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Precision logistics for machinery",
+      "content": "From factory equipment to large-scale engineering systems, industrial cargo demands specialised handling and engineered logistics. We deliver it with the precision heavy industry requires."
+    },
+    "expertise": {
+      "content": "We design logistics workflows aligned to industrial manufacturing and engineering supply chains.",
+      "items": [
+        { "image": "/images/industries/machinery/heavy-machinery.png", "title": "Heavy Machinery Transport" },
+        { "image": "/images/industries/machinery/oversized-cargo.png", "title": "Oversized Cargo Movement" },
+        { "image": "/images/industries/machinery/multimodal.png", "title": "Multimodal Freight Coordination" },
+        { "image": "/images/industries/machinery/factory-to-site.png", "title": "Factory-to-Site Delivery" },
+        { "image": "/images/industries/machinery/breakbulk.png", "title": "Breakbulk Cargo Logistics" },
+        { "image": "/images/industries/machinery/distribution.png", "title": "Industrial Equipment Distribution" }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "Lorem ipsum dolor sit amet consectetur?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Eu aenean non orci adipiscing odio?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Lorem ipsum dolor sit amet consectetur. Senectus platea in nunc quis. Viverra libero quam fames vitae felis eu?", "answer": "Lorem ipsum dolor sit amet consectetur." }
+      ]
+    }
+  },
+  "renewables": {
+    "banner": {
+      "title": "Renewables",
+      "desktopImage": "/images/banners/banner-desktop-renewables.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Powering the energy transition",
+      "content": "Renewable energy projects involve large, complex and time-sensitive cargo. Turbine blades, solar modules and power infrastructure must move across continents and remote project sites without delays. DahNAY delivers structured logistics solutions designed to support renewable energy expansion, managing heavy components, coordinating multimodal transport and ensuring seamless project execution."
+    },
+    "expertise": {
+      "content": "We design logistics workflows aligned to renewable energy projects, ensuring efficient movement of equipment, components and infrastructure.",
+      "items": [
+        { "image": "/images/industries/renewables/wind-energy.png", "title": "Wind Energy Equipment Transport" },
+        { "image": "/images/industries/renewables/solar-module.png", "title": "Solar Module Logistics" },
+        { "image": "/images/industries/renewables/heavy-lift.png", "title": "Project & Heavy-Lift Logistics" },
+        { "image": "/images/industries/renewables/multimodal.png", "title": "Multimodal Project Coordination" },
+        { "image": "/images/industries/renewables/infrastructure.png", "title": "Infrastructure Component Movement" },
+        { "image": "/images/industries/renewables/warehousing.png", "title": "Warehousing & Distribution" }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "Lorem ipsum dolor sit amet consectetur?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Eu aenean non orci adipiscing odio?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Lorem ipsum dolor sit amet consectetur. Senectus platea in nunc quis. Viverra libero quam fames vitae felis eu?", "answer": "Lorem ipsum dolor sit amet consectetur." }
+      ]
+    }
+  },
+  "retail-apparel": {
+    "banner": {
+      "title": "Retail & Apparel",
+      "desktopImage": "/images/banners/banner-desktop-retail-apparel.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "At the pace of demand",
+      "content": "Fashion operates on tight launch windows and compressed retail cycles. Timing defines success. DahNAY aligns sourcing, production and distribution to market demand, ensuring collections reach the right markets, right on schedule."
+    },
+    "expertise": {
+      "content": "We design logistics workflows aligned to fashion production and retail cycles, structured to reduce delays and timelines.",
+      "items": [
+        { "image": "/images/industries/retail-apparel/sourcing.png", "title": "Sourcing & Inbound Logistics" },
+        { "image": "/images/industries/retail-apparel/time-sensitive.png", "title": "Time-Sensitive Freight Solutions" },
+        { "image": "/images/industries/retail-apparel/global-export.png", "title": "Global Export & Distribution" },
+        { "image": "/images/industries/retail-apparel/ecommerce.png", "title": "E-commerce Fulfilment Support" },
+        { "image": "/images/industries/retail-apparel/replenishment.png", "title": "Retail Replenishment" }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "Lorem ipsum dolor sit amet consectetur?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Eu aenean non orci adipiscing odio?", "answer": "Lorem ipsum dolor sit amet consectetur." },
+        { "question": "Lorem ipsum dolor sit amet consectetur. Senectus platea in nunc quis. Viverra libero quam fames vitae felis eu?", "answer": "Lorem ipsum dolor sit amet consectetur." }
+      ]
+    }
+  }
+}

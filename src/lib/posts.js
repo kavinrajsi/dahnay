@@ -1,62 +1,32 @@
-// Data layer — reads from Payload CMS via local API (server-side only)
+import posts from "@/data/posts/index.json";
 
-import config from "@payload-config";
-import { getPayload } from "payload";
-
-async function getPayloadClient() {
-  return getPayload({ config });
-}
+const published = posts.filter((p) => p.status === "published");
 
 export async function getPosts(options = {}) {
-  const payload = await getPayloadClient();
-
-  const where = { status: { equals: "published" } };
+  let result = [...published];
 
   if (options.filter) {
     const match = options.filter.match(/^tag:(.+)$/);
     if (match) {
-      // Tag filter not directly supported — filter client-side after fetch
-      const result = await payload.find({
-        collection: "posts",
-        where,
-        limit: 100,
-        sort: "-publishedAt",
-      });
       const tagSlug = match[1];
-      return result.docs.filter((p) =>
+      result = result.filter((p) =>
         p.tags?.some((t) => t.tag === tagSlug)
       );
     }
   }
 
+  result.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+
   const limit = options.limit === "all" ? 0 : (options.limit ?? 0);
+  if (limit > 0) result = result.slice(0, limit);
 
-  const result = await payload.find({
-    collection: "posts",
-    where,
-    limit,
-    sort: "-publishedAt",
-  });
-
-  return result.docs;
+  return result;
 }
 
 export async function getPost(slug) {
-  const payload = await getPayloadClient();
-
-  const result = await payload.find({
-    collection: "posts",
-    where: {
-      and: [
-        { slug: { equals: slug } },
-        { status: { equals: "published" } },
-      ],
-    },
-    limit: 1,
-  });
-
-  if (!result.docs.length) throw new Error(`Post not found: ${slug}`);
-  return result.docs[0];
+  const post = published.find((p) => p.slug === slug);
+  if (!post) throw new Error(`Post not found: ${slug}`);
+  return post;
 }
 
 export async function getPostsByTag(tag) {
@@ -64,21 +34,12 @@ export async function getPostsByTag(tag) {
 }
 
 export async function getPostsByType(postType, options = {}) {
-  const payload = await getPayloadClient();
+  let result = published.filter((p) => p.postType === postType);
+
+  result.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
 
   const limit = options.limit === "all" ? 0 : (options.limit ?? 0);
+  if (limit > 0) result = result.slice(0, limit);
 
-  const result = await payload.find({
-    collection: "posts",
-    where: {
-      and: [
-        { postType: { equals: postType } },
-        { status: { equals: "published" } },
-      ],
-    },
-    limit,
-    sort: "-publishedAt",
-  });
-
-  return result.docs;
+  return result;
 }

@@ -160,7 +160,12 @@ export default function Header() {
 
         <button
           className="header__hamburger"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          onClick={() => {
+            alert("Burger clicked");
+            const next = !mobileMenuOpen;
+            setMobileMenuOpen(next);
+            alert(next ? "Menu is now open" : "Menu is now closed");
+          }}
           aria-label="Toggle menu"
           aria-expanded={mobileMenuOpen}
         >
@@ -169,22 +174,27 @@ export default function Header() {
           <span className="header__hamburger-line" />
         </button>
 
-        <nav className={`header__nav${mobileMenuOpen ? " header__nav--open" : ""}`}>
-          <Link href="/" className="header__nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+        <nav className="header__nav header__nav--desktop">
+          <Link href="/" className="header__nav-link">Home</Link>
           {renderMegaMenu("solutions", "Solutions", solutionsMegaMenu)}
           {renderDropdown("industries", industriesDropdown)}
-          {/* <Link href="/careers" className="header__nav-link" onClick={() => setMobileMenuOpen(false)}>Careers</Link> */}
-          {/* {renderDropdown("newsroom", newsroomDropdown)} */}
-          <Link href="/about" className="header__nav-link" onClick={() => setMobileMenuOpen(false)}>About us</Link>
-          <Link href="/contact" className="header__cta button header__cta--mobile" onClick={() => setMobileMenuOpen(false)}>
-            Contact us
-          </Link>
+          <Link href="/about" className="header__nav-link">About us</Link>
         </nav>
 
         <Link href="/contact" className="header__cta button header__cta--desktop">
           Contact us
         </Link>
       </div>
+
+      <nav className={`header__nav header__nav--mobile${mobileMenuOpen ? " header__nav--open" : ""}`}>
+        <Link href="/" className="header__nav-link" onClick={closeAll}>Home</Link>
+        {renderMegaMenu("solutions", "Solutions", solutionsMegaMenu)}
+        {renderDropdown("industries", industriesDropdown)}
+        <Link href="/about" className="header__nav-link" onClick={closeAll}>About us</Link>
+        <Link href="/contact" className="header__cta button" onClick={closeAll}>
+          Contact us
+        </Link>
+      </nav>
     </header>
   );
 }

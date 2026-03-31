@@ -43,6 +43,9 @@ export default function Expertise({
       </div>
       <div className="service-card__content">
         <h3 className="service-card__title">{item.title}</h3>
+        {item.description && (
+          <p className="service-card__description">{item.description}</p>
+        )}
       </div>
     </div>
   );

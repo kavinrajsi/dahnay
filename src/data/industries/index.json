@@ -33,12 +33,12 @@
     "expertise": {
       "content": "We design logistics workflows aligned to the automotive value chain. Each solution is structured to reduce downtime, manage risk and maintain production continuity.",
       "items": [
-        { "image": "/images/industries/automotive/inbound-outbound.png", "title": "Inbound and Outbound Transportation" },
-        { "image": "/images/industries/automotive/time-critical.png", "title": "Time-critical movements" },
-        { "image": "/images/industries/automotive/engines.png", "title": "Engines and mechanical parts" },
-        { "image": "/images/industries/automotive/accessories.png", "title": "Accessories" },
-        { "image": "/images/industries/automotive/finished-vehicles.png", "title": "Finished Vehicles Logistics" },
-        { "image": "/images/industries/automotive/tyres-tubes.png", "title": "Tyres and Tubes" }
+        { "image": "/images/industries/automotive/inbound-outbound.png", "title": "Inbound and Outbound Transportation", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/automotive/time-critical.png", "title": "Time-critical movements", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/automotive/engines.png", "title": "Engines and mechanical parts", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/automotive/accessories.png", "title": "Accessories", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/automotive/finished-vehicles.png", "title": "Finished Vehicles Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/automotive/tyres-tubes.png", "title": "Tyres and Tubes", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." }
       ]
     },
     "faq": {
@@ -64,11 +64,11 @@
     "expertise": {
       "content": "We design logistics workflows aligned to demand cycles, distribution networks and retail velocity. Every solution is engineered for speed, accuracy and consistency.",
       "items": [
-        { "image": "/images/industries/fmcg/primary-distribution.png", "title": "Primary Distribution Management" },
-        { "image": "/images/industries/fmcg/secondary-last-mile.png", "title": "Secondary & Last-Mile Distribution" },
-        { "image": "/images/industries/fmcg/high-velocity.png", "title": "High-Velocity Inventory Movement" },
-        { "image": "/images/industries/fmcg/warehousing.png", "title": "Warehousing Management" },
-        { "image": "/images/industries/fmcg/ecommerce.png", "title": "E-commerce Fulfilment Support" }
+        { "image": "/images/industries/fmcg/primary-distribution.png", "title": "Primary Distribution Management", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/fmcg/secondary-last-mile.png", "title": "Secondary & Last-Mile Distribution", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/fmcg/high-velocity.png", "title": "High-Velocity Inventory Movement", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/fmcg/warehousing.png", "title": "Warehousing Management", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/fmcg/ecommerce.png", "title": "E-commerce Fulfilment Support", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." }
       ]
     },
     "faq": {
@@ -94,12 +94,12 @@
     "expertise": {
       "content": "We design logistics workflows aligned to upstream, midstream and downstream operations. Every solution is engineered to manage complexity, minimise risk and protect project timelines.",
       "items": [
-        { "image": "/images/industries/energy-oil-gas/project-heavy-lift.png", "title": "Project & Heavy-Lift Logistics" },
-        { "image": "/images/industries/energy-oil-gas/upstream.png", "title": "Upstream Equipment Movement" },
-        { "image": "/images/industries/energy-oil-gas/midstream.png", "title": "Midstream & Pipeline Logistics" },
-        { "image": "/images/industries/energy-oil-gas/downstream.png", "title": "Downstream & Refinery Cargo" },
-        { "image": "/images/industries/energy-oil-gas/hazardous.png", "title": "Hazardous & Specialised Cargo" },
-        { "image": "/images/industries/energy-oil-gas/renewable-equipment.png", "title": "Renewable Equipment Transport" }
+        { "image": "/images/industries/energy-oil-gas/project-heavy-lift.png", "title": "Project & Heavy-Lift Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/energy-oil-gas/upstream.png", "title": "Upstream Equipment Movement", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/energy-oil-gas/midstream.png", "title": "Midstream & Pipeline Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/energy-oil-gas/downstream.png", "title": "Downstream & Refinery Cargo", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/energy-oil-gas/hazardous.png", "title": "Hazardous & Specialised Cargo", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/energy-oil-gas/renewable-equipment.png", "title": "Renewable Equipment Transport", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." }
       ]
     },
     "faq": {
@@ -125,12 +125,12 @@
     "expertise": {
       "content": "We design logistics workflows aligned to project timelines, site readiness and material dependencies. Every solution is engineered for reliability, efficiency and control.",
       "items": [
-        { "image": "/images/industries/construction-materials/bulk-material.png", "title": "Bulk Material Transportation" },
-        { "image": "/images/industries/construction-materials/steel-structural.png", "title": "Steel & Structural Logistics" },
-        { "image": "/images/industries/construction-materials/project-heavy.png", "title": "Project & Heavy Cargo Movement" },
-        { "image": "/images/industries/construction-materials/phased-delivery.png", "title": "Phased Site Delivery Planning" },
-        { "image": "/images/industries/construction-materials/last-mile-site.png", "title": "Last-Mile Site Access Solutions" },
-        { "image": "/images/industries/construction-materials/modular.png", "title": "Modular Component Transport" }
+        { "image": "/images/industries/construction-materials/bulk-material.png", "title": "Bulk Material Transportation", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/construction-materials/steel-structural.png", "title": "Steel & Structural Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/construction-materials/project-heavy.png", "title": "Project & Heavy Cargo Movement", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/construction-materials/phased-delivery.png", "title": "Phased Site Delivery Planning", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/construction-materials/last-mile-site.png", "title": "Last-Mile Site Access Solutions", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/construction-materials/modular.png", "title": "Modular Component Transport", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." }
       ]
     },
     "faq": {
@@ -156,11 +156,11 @@
     "expertise": {
       "content": "We design logistics workflows aligned to production cycles, storage conditions and distribution demand. Every solution is engineered to protect material quality while optimising scale.",
       "items": [
-        { "image": "/images/industries/paper-pulp/bulk-pulp.png", "title": "Bulk Pulp Transportation" },
-        { "image": "/images/industries/paper-pulp/paper-reel.png", "title": "Paper Reel & Sheet Handling" },
-        { "image": "/images/industries/paper-pulp/moisture-controlled.png", "title": "Moisture-Controlled Logistics" },
-        { "image": "/images/industries/paper-pulp/warehousing.png", "title": "Warehousing & Inventory Management" },
-        { "image": "/images/industries/paper-pulp/high-volume.png", "title": "High-Volume Distribution" }
+        { "image": "/images/industries/paper-pulp/bulk-pulp.png", "title": "Bulk Pulp Transportation", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/paper-pulp/paper-reel.png", "title": "Paper Reel & Sheet Handling", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/paper-pulp/moisture-controlled.png", "title": "Moisture-Controlled Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/paper-pulp/warehousing.png", "title": "Warehousing & Inventory Management", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/paper-pulp/high-volume.png", "title": "High-Volume Distribution", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." }
       ]
     },
     "faq": {
@@ -184,12 +184,12 @@
     "expertise": {
       "content": "We design logistics workflows aligned to rubber production cycles and export trade flows.",
       "items": [
-        { "image": "/images/industries/natural-rubber/plantation-to-port.png", "title": "Plantation-to-Port Movement" },
-        { "image": "/images/industries/natural-rubber/bulk-commodity.png", "title": "Bulk Commodity Transport" },
-        { "image": "/images/industries/natural-rubber/containerised-export.png", "title": "Containerised Export Logistics" },
-        { "image": "/images/industries/natural-rubber/multimodal.png", "title": "Multimodal Freight Coordination" },
-        { "image": "/images/industries/natural-rubber/processing-equipment.png", "title": "Rubber Processing Equipment" },
-        { "image": "/images/industries/natural-rubber/warehousing.png", "title": "Warehousing & Distribution" }
+        { "image": "/images/industries/natural-rubber/plantation-to-port.png", "title": "Plantation-to-Port Movement", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/natural-rubber/bulk-commodity.png", "title": "Bulk Commodity Transport", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/natural-rubber/containerised-export.png", "title": "Containerised Export Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/natural-rubber/multimodal.png", "title": "Multimodal Freight Coordination", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/natural-rubber/processing-equipment.png", "title": "Rubber Processing Equipment", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/natural-rubber/warehousing.png", "title": "Warehousing & Distribution", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." }
       ]
     },
     "faq": {
@@ -215,12 +215,12 @@
     "expertise": {
       "content": "We design logistics workflows aligned to appliance manufacturing output and retail distribution cycles, structured to protect cargo and maintain delivery commitments.",
       "items": [
-        { "image": "/images/industries/white-goods/factory-to-port.png", "title": "Factory-to-Port Coordination" },
-        { "image": "/images/industries/white-goods/container-optimize.png", "title": "Container Optimize & Load Planning" },
-        { "image": "/images/industries/white-goods/global-freight.png", "title": "Global Freight Management" },
-        { "image": "/images/industries/white-goods/customs.png", "title": "Customs & Regulatory Handling" },
-        { "image": "/images/industries/white-goods/warehousing.png", "title": "Warehousing & Distribution" },
-        { "image": "/images/industries/white-goods/aftermarket.png", "title": "Aftermarket & Spare Parts Logistics" }
+        { "image": "/images/industries/white-goods/factory-to-port.png", "title": "Factory-to-Port Coordination", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/white-goods/container-optimize.png", "title": "Container Optimize & Load Planning", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/white-goods/global-freight.png", "title": "Global Freight Management", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/white-goods/customs.png", "title": "Customs & Regulatory Handling", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/white-goods/warehousing.png", "title": "Warehousing & Distribution", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/white-goods/aftermarket.png", "title": "Aftermarket & Spare Parts Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." }
       ]
     },
     "faq": {
@@ -246,12 +246,12 @@
     "expertise": {
       "content": "We design logistics workflows aligned to industrial manufacturing and engineering supply chains.",
       "items": [
-        { "image": "/images/industries/machinery/heavy-machinery.png", "title": "Heavy Machinery Transport" },
-        { "image": "/images/industries/machinery/oversized-cargo.png", "title": "Oversized Cargo Movement" },
-        { "image": "/images/industries/machinery/multimodal.png", "title": "Multimodal Freight Coordination" },
-        { "image": "/images/industries/machinery/factory-to-site.png", "title": "Factory-to-Site Delivery" },
-        { "image": "/images/industries/machinery/breakbulk.png", "title": "Breakbulk Cargo Logistics" },
-        { "image": "/images/industries/machinery/distribution.png", "title": "Industrial Equipment Distribution" }
+        { "image": "/images/industries/machinery/heavy-machinery.png", "title": "Heavy Machinery Transport", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/machinery/oversized-cargo.png", "title": "Oversized Cargo Movement", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/machinery/multimodal.png", "title": "Multimodal Freight Coordination", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/machinery/factory-to-site.png", "title": "Factory-to-Site Delivery", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/machinery/breakbulk.png", "title": "Breakbulk Cargo Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/machinery/distribution.png", "title": "Industrial Equipment Distribution", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." }
       ]
     },
     "faq": {
@@ -275,12 +275,12 @@
     "expertise": {
       "content": "We design logistics workflows aligned to renewable energy projects, ensuring efficient movement of equipment, components and infrastructure.",
       "items": [
-        { "image": "/images/industries/renewables/wind-energy.png", "title": "Wind Energy Equipment Transport" },
-        { "image": "/images/industries/renewables/solar-module.png", "title": "Solar Module Logistics" },
-        { "image": "/images/industries/renewables/heavy-lift.png", "title": "Project & Heavy-Lift Logistics" },
-        { "image": "/images/industries/renewables/multimodal.png", "title": "Multimodal Project Coordination" },
-        { "image": "/images/industries/renewables/infrastructure.png", "title": "Infrastructure Component Movement" },
-        { "image": "/images/industries/renewables/warehousing.png", "title": "Warehousing & Distribution" }
+        { "image": "/images/industries/renewables/wind-energy.png", "title": "Wind Energy Equipment Transport", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/renewables/solar-module.png", "title": "Solar Module Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/renewables/heavy-lift.png", "title": "Project & Heavy-Lift Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/renewables/multimodal.png", "title": "Multimodal Project Coordination", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/renewables/infrastructure.png", "title": "Infrastructure Component Movement", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/renewables/warehousing.png", "title": "Warehousing & Distribution", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." }
       ]
     },
     "faq": {
@@ -304,11 +304,11 @@
     "expertise": {
       "content": "We design logistics workflows aligned to fashion production and retail cycles, structured to reduce delays and timelines.",
       "items": [
-        { "image": "/images/industries/retail-apparel/sourcing.png", "title": "Sourcing & Inbound Logistics" },
-        { "image": "/images/industries/retail-apparel/time-sensitive.png", "title": "Time-Sensitive Freight Solutions" },
-        { "image": "/images/industries/retail-apparel/global-export.png", "title": "Global Export & Distribution" },
-        { "image": "/images/industries/retail-apparel/ecommerce.png", "title": "E-commerce Fulfilment Support" },
-        { "image": "/images/industries/retail-apparel/replenishment.png", "title": "Retail Replenishment" }
+        { "image": "/images/industries/retail-apparel/sourcing.png", "title": "Sourcing & Inbound Logistics", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/retail-apparel/time-sensitive.png", "title": "Time-Sensitive Freight Solutions", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/retail-apparel/global-export.png", "title": "Global Export & Distribution", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/retail-apparel/ecommerce.png", "title": "E-commerce Fulfilment Support", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." },
+        { "image": "/images/industries/retail-apparel/replenishment.png", "title": "Retail Replenishment", "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt." }
       ]
     },
     "faq": {

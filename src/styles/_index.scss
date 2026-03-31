@@ -37,25 +37,21 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
     @media (min-width: 1200px) {
         max-width: 1140px;
-        padding-left: 90px;
-        padding-right: 90px;
+        padding-left: 80px;
+        padding-right: 80px;
     }
 
-    @media (min-width: 1400px) {
-        max-width: 1440px;
+    @media (min-width: 1440px) {
+        // max-width: 1440px;
         max-width: 1120px;
-        // padding-left: 180px;
-        // padding-right: 180px;
-        padding-left: 60px;
-        padding-right: 60px;
     }
     &--fluid {
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 

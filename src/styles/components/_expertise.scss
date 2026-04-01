@@ -49,23 +49,12 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .service-card__image-wrapper {
-      position: relative;
-      width: 100%;
-      // aspect-ratio: 360 / 216;
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: auto;
-      }
-    }
+    // @media (min-width: 768px) {
+    //   grid-template-columns: repeat(3, 1fr);
+    // }
 
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media (max-width: 640px) {
-      grid-template-columns: 1fr;
-    }
+    // @media (max-width: 640px) {
+    //   grid-template-columns: 1fr;
+    // }
   }
 }

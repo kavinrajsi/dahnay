@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Banner from "@/components/sections/Banner";
 import { getBlogPost } from "@/lib/ghost";
 
 export async function generateMetadata({ params }) {
@@ -38,46 +37,94 @@ export default async function BlogPostPage({ params }) {
     notFound();
   }
 
+  const pageUrl = `https://www.dahnay.com/blog/${slug}`;
+  const encodedUrl = encodeURIComponent(pageUrl);
+  const encodedTitle = encodeURIComponent(post.title);
+
   return (
-    <div className="page page--article">
-      <Banner
-        title={post.title}
-        desktopImage={
-          post.featuredImage?.url || "/images/banners/banner-desktop-newsroom.png"
-        }
-      />
-
-      <article className="article container">
-        <header className="article__header">
-          <span className="article__tag">Blog</span>
-          <time className="article__date" dateTime={post.publishedAt}>
-            {formatDate(post.publishedAt)}
-          </time>
-          {post.readingTime && (
-            <span className="article__reading-time">
-              {post.readingTime} min read
-            </span>
+    <div className="page page--blog-post">
+      {/* Header */}
+      <div className="blog-post__header container">
+        <div className="blog-post__meta">
+          <span className="blog-post__tag">Blog</span>
+          {post.publishedAt && (
+            <time className="blog-post__date" dateTime={post.publishedAt}>
+              {formatDate(post.publishedAt)}
+            </time>
           )}
-        </header>
+        </div>
+        <div className="blog-post__intro">
+          <h1 className="blog-post__title">{post.title}</h1>
+          {post.excerpt && (
+            <p className="blog-post__excerpt">{post.excerpt}</p>
+          )}
+        </div>
+      </div>
 
-        {post.featuredImage?.url && (
-          <div className="article__cover">
-            <Image
-              src={post.featuredImage.url}
-              alt={post.featuredImage.alt}
-              width={1200}
-              height={630}
-              className="article__cover-image"
-              priority
-            />
+      {/* Featured image — full width */}
+      {post.featuredImage?.url && (
+        <div className="blog-post__cover">
+          <Image
+            src={post.featuredImage.url}
+            alt={post.featuredImage.alt}
+            width={1440}
+            height={580}
+            className="blog-post__cover-image"
+            priority
+          />
+        </div>
+      )}
+
+      {/* Body */}
+      <div className="blog-post__body container">
+        {/* Share sidebar */}
+        <aside className="blog-post__share">
+          <span className="blog-post__share-label">Share:</span>
+          <div className="blog-post__share-icons">
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="blog-post__share-icon"
+              aria-label="Share on Facebook"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="#1877F2" />
+              </svg>
+            </a>
+            <a
+              href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="blog-post__share-icon"
+              aria-label="Share on X"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L2.25 2.25H8.08l4.253 5.622 5.91-5.622z" fill="#000" />
+              </svg>
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="blog-post__share-icon"
+              aria-label="Share on LinkedIn"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" fill="#0A66C2" />
+                <rect x="2" y="9" width="4" height="12" fill="#0A66C2" />
+                <circle cx="4" cy="4" r="2" fill="#0A66C2" />
+              </svg>
+            </a>
           </div>
-        )}
+        </aside>
 
+        {/* Article content from Ghost */}
         <div
-          className="article__body"
+          className="blog-post__content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-      </article>
+      </div>
     </div>
   );
 }

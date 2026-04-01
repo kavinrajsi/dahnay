@@ -3,6 +3,7 @@ import HomeServices from "@/components/sections/HomeServices";
 import HomeSupplyChain from "@/components/sections/HomeSupplyChain";
 import HomeAbout from "@/components/sections/HomeAbout";
 import WhyDahnay from "@/components/sections/WhyDahnay";
+import HomeIndustriesSlider from "@/components/sections/HomeIndustriesSlider";
 import HomeNewsroom from "@/components/sections/HomeNewsroom";
 import TrustCTA from "@/components/sections/TrustCTA";
 import GrowForm from "@/components/sections/GrowForm";
@@ -26,6 +27,7 @@ export default function Home() {
       <HomeSupplyChain />
       <HomeAbout />
       <WhyDahnay />
+      <HomeIndustriesSlider />
       <HomeNewsroom />
       <TrustCTA
         title={"Grow your business\nwith us today"}

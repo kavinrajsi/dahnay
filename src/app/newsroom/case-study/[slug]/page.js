@@ -78,6 +78,7 @@ export default async function CaseStudyPage({ params }) {
               alt={imageAlt}
               width={1200}
               height={630}
+              sizes="100vw"
               className="article__cover-image"
               priority
             />

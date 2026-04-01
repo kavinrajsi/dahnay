@@ -62,13 +62,15 @@ export default function HomeServices() {
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
       gsap.registerPlugin(ScrollTrigger);
 
+      if (!sectionRef.current || !cardsRef.current || !leftRef.current) return;
+
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 992px)", () => {
         ctx = ScrollTrigger.create({
           trigger: sectionRef.current,
           start: "top top",
-          end: () => `+=${cardsRef.current.offsetHeight - leftRef.current.offsetHeight}`,
+          end: () => `+=${(cardsRef.current?.offsetHeight || 0) - (leftRef.current?.offsetHeight || 0)}`,
           pin: leftRef.current,
           pinSpacing: false,
         });
@@ -110,6 +112,7 @@ export default function HomeServices() {
                     alt={service.title}
                     width={550}
                     height={260}
+                    sizes="(min-width: 992px) 550px, 100vw"
                     className="home-service-card__image"
                     loading={index === 0 ? "eager" : "lazy"}
                     priority={index === 0}

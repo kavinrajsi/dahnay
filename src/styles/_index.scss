@@ -34,6 +34,10 @@
 @forward "components/home-services";
 @forward "components/home-industries";
 @forward "components/careers";
+@forward "components/industries-slider";
+@forward "components/integrated-services";
+@forward "components/home-great-place";
+@forward "components/home-hero";
 
 .container {
     width: 100%;
@@ -46,10 +50,10 @@
         padding-left: 80px;
         padding-right: 80px;
     }
-
     @media (min-width: 1440px) {
-        // max-width: 1440px;
         max-width: 1120px;
+        padding-left: 0;
+        padding-right: 0;
     }
     &--fluid {
         padding-left: 20px;

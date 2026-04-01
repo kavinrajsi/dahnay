@@ -56,20 +56,31 @@
 @media (min-width: 768px) {
   .founder {
     &__grid {
-      display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
+      gap: 40px;
     }
 
     &__content {
-      width: 550px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    &__imageWrapper {
+      width: 40%;
       flex-shrink: 0;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .founder {
+    &__content {
+      max-width: 550px;
     }
 
     &__imageWrapper {
       width: 455px;
-      flex-shrink: 0;
     }
   }
 }

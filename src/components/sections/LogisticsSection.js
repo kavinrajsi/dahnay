@@ -95,6 +95,7 @@ export default function LogisticsSection() {
                   alt={service.title}
                   width={360}
                   height={170}
+                  sizes="(min-width: 992px) 360px, (min-width: 768px) 50vw, 100vw"
                   className="logistics-card__image"
                 />
               </div>

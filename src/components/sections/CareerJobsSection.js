@@ -34,40 +34,60 @@ export default function CareerJobsSection() {
   return (
     <section className="career-jobs container">
       <div className="career-jobs__filters">
-        <div className="career-jobs__filter-field">
-          <input
-            className="career-jobs__input"
-            type="text"
-            placeholder="Search job title..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-        <div className="career-jobs__filter-field">
-          <select
-            className="career-jobs__select"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          >
-            {LOCATIONS.map((l) => (
-              <option key={l} value={l}>
-                {l}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="career-jobs__filter-field">
-          <select
-            className="career-jobs__select"
-            value={jobType}
-            onChange={(e) => setJobType(e.target.value)}
-          >
-            {JOB_TYPES.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
+        <div className="career-jobs__filter-fields">
+          <div className="career-jobs__filter-field">
+            <label className="career-jobs__label">Search</label>
+            <div className="career-jobs__field-wrapper">
+              <input
+                className="career-jobs__input"
+                type="text"
+                placeholder="Job Title, Skills, Etc"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <svg className="career-jobs__field-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM21 21l-4.35-4.35" stroke="#6D6F71" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div className="career-jobs__filter-field">
+            <label className="career-jobs__label">Location</label>
+            <div className="career-jobs__field-wrapper">
+              <select
+                className="career-jobs__select"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              >
+                {LOCATIONS.map((l) => (
+                  <option key={l} value={l}>
+                    {l}
+                  </option>
+                ))}
+              </select>
+              <svg className="career-jobs__field-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM21 21l-4.35-4.35" stroke="#6D6F71" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div className="career-jobs__filter-field">
+            <label className="career-jobs__label">Job Type</label>
+            <div className="career-jobs__field-wrapper">
+              <select
+                className="career-jobs__select"
+                value={jobType}
+                onChange={(e) => setJobType(e.target.value)}
+              >
+                {JOB_TYPES.map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
+                ))}
+              </select>
+              <svg className="career-jobs__field-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM21 21l-4.35-4.35" stroke="#6D6F71" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </div>
         </div>
         <button className="career-jobs__search-btn" onClick={handleSearch}>
           Search Job
@@ -81,43 +101,32 @@ export default function CareerJobsSection() {
       ) : (
         <div className="career-jobs__grid">
           {filtered.map((job) => (
-            <div key={job.id} className="job-card">
+            <Link
+              key={job.id}
+              href={`/careers/${job.slug}`}
+              className="job-card"
+            >
               <div className="job-card__body">
-                <Link href={`/careers/${job.slug}`} className="job-card__title">
-                  {job.title}
-                </Link>
-                <div className="job-card__meta">
-                  <span className="job-card__location">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                        fill="#6d6f71"
-                      />
-                    </svg>
-                    {job.location}
-                  </span>
-                  <span className="job-card__date">{job.date}</span>
-                </div>
+                <p className="job-card__title">{job.title}</p>
+                <p className="job-card__location">{job.location}</p>
               </div>
               <div className="job-card__footer">
-                <span className="job-card__type">{job.type}</span>
-                <Link
-                  href={`/careers/${job.slug}`}
-                  className="job-card__apply"
-                  aria-label={`View ${job.title}`}
+                <span className="job-card__date">{job.date}</span>
+                <svg
+                  className="job-card__arrow"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M5 12h14M13 6l6 6-6 6"
-                      stroke="#ef4230"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link>
+                  <path
+                    d="M8.25005 20.25C8.05823 20.25 7.86623 20.1767 7.7198 20.0302C7.42673 19.7372 7.42673 19.2626 7.7198 18.9697L14.6895 12L7.7198 5.03023C7.42673 4.73716 7.42673 4.2626 7.7198 3.96973C8.01286 3.67685 8.48742 3.67666 8.7803 3.96973L16.2803 11.4697C16.5734 11.7628 16.5734 12.2374 16.2803 12.5302L8.7803 20.0302C8.63386 20.1767 8.44186 20.25 8.25005 20.25Z"
+                    fill="#EF4230"
+                  />
+                </svg>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       )}

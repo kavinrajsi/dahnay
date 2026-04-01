@@ -5,6 +5,17 @@
     background: #141414;
   }
 
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    svg {
+      max-width: 160px;
+      height: auto;
+    }
+  }
+
   &__link {
     font-family: var(--font-avenir), sans-serif;
     font-style: normal;
@@ -23,6 +34,16 @@
     font-size: 16px;
     line-height: 22px;
     color: #ffffff;
+  }
+
+  &__email {
+    display: inline-block;
+    padding-top: 8px;
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-roman);
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.7);
   }
 
   &__link-column {
@@ -44,7 +65,7 @@
     }
 
     @media (min-width: 768px) {
-      width: 170px;
+      width: auto;
 
       .footer__link-list {
         display: flex;
@@ -70,13 +91,12 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     width: 100%;
     text-align: left;
     background: none;
     border: none;
-    cursor: pointer;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
 
     @media (min-width: 768px) {
       display: block;
@@ -105,7 +125,7 @@
     @media (min-width: 768px) {
       flex-direction: row;
       justify-content: space-between;
-      gap: 0;
+      gap: 40px;
     }
   }
 
@@ -113,14 +133,21 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
+    width: 100%;
 
-    @media (min-width: 481px) {
+    @media (min-width: 576px) {
       grid-template-columns: repeat(2, 1fr);
       gap: 32px;
     }
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    @media (min-width: 992px) {
       gap: 68px;
     }
   }
@@ -131,12 +158,15 @@
       border-bottom: 0;
     }
     @media (min-width: 768px) {
-      border-top: 1px solid #d3d3d3;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
     }
   }
 
   &__popular-text {
     color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 20px;
+
     a {
       display: inline-block;
       font-family: var(--font-avenir), sans-serif;
@@ -151,7 +181,18 @@
   &__social {
     display: flex;
     gap: 16px;
-    padding-top: 40px;
+    padding-top: 24px;
+  }
+
+  &__social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &__bottom {

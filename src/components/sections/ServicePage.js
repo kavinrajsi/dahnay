@@ -5,6 +5,7 @@ import WhyDahnay from "@/components/sections/WhyDahnay";
 import Certifications from "@/components/sections/Certifications";
 import FAQSection from "@/components/sections/FAQSection";
 import GrowForm from "@/components/sections/GrowForm";
+import IndustriesSlider from "@/components/sections/IndustriesSlider";
 import serviceData from "@/data/services/index.json";
 
 export default function ServicePage({ slug }) {
@@ -24,6 +25,7 @@ export default function ServicePage({ slug }) {
         items={data.whyDahnay.items}
       />
       <Certifications {...data.certifications} />
+      <IndustriesSlider />
       <FAQSection {...data.faq} />
       <GrowForm />
     </div>

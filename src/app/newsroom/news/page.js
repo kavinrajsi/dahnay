@@ -1,36 +1,35 @@
-// Figma: node-id=616-4933
 import { getBlogPosts } from "@/lib/ghost";
 import Banner from "@/components/sections/Banner";
 import NewsroomContent from "@/components/sections/NewsroomContent";
 
 export const metadata = {
-  title: "Newsroom",
+  title: "News",
   description:
-    "Latest news, insights, and case studies from DahNAY on logistics, supply chain trends, and industry developments.",
+    "Stay updated with the latest news from DahNAY on logistics, supply chain developments, and industry milestones.",
   openGraph: {
-    title: "Newsroom | DahNAY",
+    title: "News | DahNAY",
     description:
-      "Latest news, insights, and case studies from DahNAY on logistics, supply chain trends, and industry developments.",
+      "Stay updated with the latest news from DahNAY on logistics, supply chain developments, and industry milestones.",
     images: [{ url: "/images/banners/banner-desktop-newsroom.png", width: 1200, height: 630 }],
   },
 };
 
-export default async function NewsroomPage() {
+export default async function NewsPage() {
   let posts = [];
   try {
     const data = await getBlogPosts({ limit: "all" });
     posts = data.posts;
   } catch {
-    // Ghost CMS unavailable or no posts yet
+    // Ghost CMS unavailable
   }
 
   return (
-    <div className="page page--newsroom">
+    <div className="page page--news">
       <Banner
-        title="Newsroom"
+        title="News"
         desktopImage="/images/banners/banner-desktop-newsroom.png"
       />
-      <NewsroomContent posts={posts} />
+      <NewsroomContent posts={posts} title="News" filterType="news" />
     </div>
   );
 }

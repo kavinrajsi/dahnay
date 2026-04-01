@@ -39,6 +39,7 @@ export default function Certifications({
             alt={imageAlt}
             width={550}
             height={400}
+            sizes="(min-width: 992px) 550px, 100vw"
             className={styles.certifications__image}
           />
         </div>

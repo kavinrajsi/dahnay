@@ -35,6 +35,7 @@ export default function SolutionsGrid() {
                   alt={solution.title}
                   width={360}
                   height={220}
+                  sizes="(min-width: 992px) 360px, (min-width: 768px) 50vw, 100vw"
                   className="solution-card__image"
                 />
               </div>

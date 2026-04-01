@@ -150,13 +150,23 @@
   padding: 40px 0;
 
   &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
+    justify-items: center;
+    text-align: center;
+
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     hr {
-      width: 185px;
+      width: 100%;
+      max-width: 185px;
       height: 1px;
       border: none;
       background: #d3d3d3;

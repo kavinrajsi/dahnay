@@ -83,6 +83,7 @@ export default function IndustriesGrid() {
                   alt={industry.title}
                   width={265}
                   height={180}
+                  sizes="(min-width: 992px) 265px, (min-width: 768px) 50vw, 100vw"
                   className="industry-card__image"
                 />
               </div>

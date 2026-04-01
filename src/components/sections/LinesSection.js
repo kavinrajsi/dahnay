@@ -47,6 +47,7 @@ export default function LinesSection() {
                   alt={service.title}
                   width={360}
                   height={170}
+                  sizes="(min-width: 992px) 360px, (min-width: 768px) 50vw, 100vw"
                   className="lines-card__image"
                 />
               </div>

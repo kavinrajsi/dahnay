@@ -1,0 +1,241 @@
+.industries-slider {
+  background: #ef4230;
+  padding: 48px 0;
+
+  @media (min-width: 768px) {
+    padding: 80px 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: rgba(246, 246, 246, 0.7);
+    border-radius: 16px 0 16px 0;
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-medium);
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #333;
+    align-self: flex-start;
+  }
+
+  &__title {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-heavy);
+    font-size: 24px;
+    line-height: 32px;
+    color: #fff;
+
+    @media (min-width: 768px) {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  &__desc {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-roman);
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    max-width: 454px;
+  }
+
+  &__btn {
+    background: #2a2a29;
+    border: none;
+    border-radius: 0 8px;
+    padding: 12px 40px;
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-roman);
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    white-space: nowrap;
+    align-self: flex-start;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  &__track-wrapper {
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__card {
+    flex: 0 0 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px 0 8px 0;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+
+    @media (min-width: 576px) {
+      flex: 0 0 calc(50% - 10px);
+    }
+
+    @media (min-width: 768px) {
+      flex: 0 0 calc(33.333% - 14px);
+    }
+
+    @media (min-width: 992px) {
+      flex: 0 0 calc(25% - 15px);
+    }
+  }
+
+  &__card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 265 / 180;
+    overflow: hidden;
+    border-radius: 8px 0 8px 0;
+  }
+
+  &__card-img {
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+    .industries-slider__card:hover & {
+      transform: scale(1.03);
+    }
+  }
+
+  &__card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  &__card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__card-title {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-medium);
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+  }
+
+  &__card-desc {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-roman);
+    font-size: 16px;
+    line-height: 22px;
+    color: #696e79;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__card-link {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-medium);
+    font-size: 18px;
+    line-height: 24px;
+    color: #ee412f;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+
+    @media (min-width: 768px) {
+      justify-content: space-between;
+      padding-left: 40%;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0;
+
+    &--active {
+      background: #fff;
+    }
+  }
+
+  &__arrows {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #fff;
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

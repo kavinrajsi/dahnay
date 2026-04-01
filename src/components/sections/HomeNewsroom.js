@@ -57,6 +57,7 @@ export default function HomeNewsroom() {
                   alt={article.title}
                   width={360}
                   height={216}
+                  sizes="(min-width: 992px) 360px, (min-width: 768px) 50vw, 100vw"
                   className="news-card__image"
                 />
                 <span className="news-card__tag">{article.tag}</span>

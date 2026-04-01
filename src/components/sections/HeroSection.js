@@ -10,6 +10,7 @@ export default function HeroSection({ image, alt, children }) {
           width={1440}
           height={580}
           priority
+          sizes="100vw"
           className="hero__image"
         />
       </div>

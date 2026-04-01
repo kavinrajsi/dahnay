@@ -18,6 +18,7 @@ export default function ContentBlock({
             width={645}
             height={400}
             className={styles.contentBlock__image}
+            sizes="(min-width: 992px) 645px, 100vw"
           />
         </div>
          <div className={styles.contentBlock__text}>

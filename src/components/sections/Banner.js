@@ -12,6 +12,7 @@ export default function Banner({ desktopImage, alt, title }) {
         width={1440}
         height={580}
         priority
+        sizes="100vw"
       />
     </section>
   );

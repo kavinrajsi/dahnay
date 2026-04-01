@@ -17,6 +17,7 @@ export default function CaseStudy() {
             alt="Case Study"
             width={550}
             height={400}
+            sizes="(min-width: 992px) 550px, 100vw"
             className="case-study__image"
           />
         </div>

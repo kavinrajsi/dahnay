@@ -1,7 +1,7 @@
 // Figma: node-id=624-5573
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Banner from "@/components/sections/Banner";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 
@@ -111,6 +111,46 @@ function OfficeCard({ city, country, address, phone, email }) {
 export default function ContactPage() {
   const [activeRegion, setActiveRegion] = useState("All Regions");
   const [searchQuery, setSearchQuery] = useState("");
+  const statsRef = useRef(null);
+
+  useEffect(() => {
+    let ctx;
+    const init = async () => {
+      const { gsap } = await import("gsap");
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      const valueEls = statsRef.current?.querySelectorAll(".contact-stats__value");
+      if (!valueEls?.length) return;
+
+      ctx = gsap.context(() => {
+        valueEls.forEach((el) => {
+          const raw = el.dataset.value;
+          const num = parseInt(raw, 10);
+          const suffix = raw.replace(/[0-9]/g, "");
+          const obj = { val: 0 };
+
+          gsap.to(obj, {
+            val: num,
+            duration: 2,
+            ease: "power1.out",
+            snap: { val: 1 },
+            scrollTrigger: {
+              trigger: statsRef.current,
+              start: "top 98%",
+              once: true,
+            },
+            onUpdate: () => {
+              el.textContent = obj.val + suffix;
+            },
+          });
+        });
+      }, statsRef);
+    };
+
+    init();
+    return () => ctx?.revert();
+  }, []);
 
   const regionFiltered = activeRegion === "All Regions"
     ? offices
@@ -140,11 +180,11 @@ export default function ContactPage() {
 
       <ContactFormSection />
 
-      <section className="contact-stats">
+      <section className="contact-stats" ref={statsRef}>
         <div className="container contact-stats__inner">
           {stats.map((stat) => (
             <div key={stat.label} className="contact-stats__item">
-              <p className="contact-stats__value">{stat.value}</p>
+              <p className="contact-stats__value" data-value={stat.value}>0{stat.value.replace(/[0-9]/g, "")}</p>
               <hr />
               <p className="contact-stats__label">{stat.label}</p>
             </div>

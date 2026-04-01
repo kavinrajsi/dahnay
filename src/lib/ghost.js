@@ -10,7 +10,15 @@ function ghostUrl(path, params = {}) {
   return url.toString();
 }
 
+function derivePostType(tags) {
+  const slugs = tags?.map((t) => t.slug) ?? [];
+  if (slugs.includes("case-study")) return "case-study";
+  if (slugs.includes("blog")) return "blog";
+  return "news";
+}
+
 function normalizePost(p) {
+  const tags = p.tags?.map((t) => ({ tag: t.slug, label: t.name })) ?? [];
   return {
     id: p.id,
     slug: p.slug,
@@ -22,7 +30,8 @@ function normalizePost(p) {
       : null,
     publishedAt: p.published_at,
     readingTime: p.reading_time,
-    tags: p.tags?.map((t) => ({ tag: t.slug, label: t.name })) ?? [],
+    tags,
+    postType: derivePostType(p.tags),
   };
 }
 

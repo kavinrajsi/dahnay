@@ -22,6 +22,7 @@ export default function HomeSupplyChain() {
             alt="DahNAY supply chain"
             width={1120}
             height={600}
+            sizes="(min-width: 1200px) 1120px, 100vw"
             className="home-supply-chain__image"
           />
         </div>

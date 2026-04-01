@@ -1,0 +1,130 @@
+.home-gptw {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    min-height: 500px;
+  }
+
+  @media (min-width: 992px) {
+    min-height: 600px;
+  }
+
+  &__bg {
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 9, 10, 0.5);
+    z-index: 1;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__title {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-heavy);
+    font-size: 28px;
+    line-height: 36px;
+    color: #fff;
+
+    @media (min-width: 768px) {
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 40px;
+      line-height: 48px;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 40px;
+    background: #ee412f;
+    border-radius: 0 8px;
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-roman);
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    align-self: flex-start;
+  }
+
+  &__badges {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media (min-width: 768px) {
+      gap: 32px;
+    }
+  }
+
+  &__badge-img {
+    height: 100px;
+    width: auto;
+
+    @media (min-width: 768px) {
+      height: 130px;
+    }
+
+    @media (min-width: 992px) {
+      height: 158px;
+    }
+  }
+
+  &__divider {
+    width: 1.5px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.4);
+
+    @media (min-width: 992px) {
+      height: 158px;
+    }
+  }
+
+  &__logo {
+    height: 50px;
+    width: auto;
+
+    @media (min-width: 768px) {
+      height: 65px;
+    }
+
+    @media (min-width: 992px) {
+      height: 83px;
+    }
+  }
+}

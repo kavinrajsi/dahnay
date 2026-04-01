@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 import styles from "./WhoWeAre.module.scss";
@@ -12,57 +12,47 @@ const stats = [
   { value: "45+", label: "Offices Worldwide" },
 ];
 
-function parseValue(value) {
-  const match = value.match(/^(\d+)(.*)$/);
-  return match ? { num: parseInt(match[1], 10), suffix: match[2] } : { num: 0, suffix: value };
-}
-
-function AnimatedStat({ value, label }) {
-  const { num, suffix } = parseValue(value);
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const hasRun = useRef(false);
+export default function WhoWeAre({ description, image, imageAlt = "" }) {
+  const statsRef = useRef(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    let ctx;
+    const init = async () => {
+      const { gsap } = await import("gsap");
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting || hasRun.current) return;
-        hasRun.current = true;
+      const valueEls = statsRef.current?.querySelectorAll(`.${styles.whoWeAre__statValue}`);
+      if (!valueEls?.length) return;
 
-        const duration = 1600;
-        const start = performance.now();
+      ctx = gsap.context(() => {
+        valueEls.forEach((el) => {
+          const raw = el.dataset.value;
+          const num = parseInt(raw, 10);
+          const suffix = raw.replace(/[0-9]/g, "");
+          const obj = { val: 0 };
 
-        function step(now) {
-          const t = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - t, 3);
-          setCount(Math.round(eased * num));
-          if (t < 1) requestAnimationFrame(step);
-        }
+          gsap.to(obj, {
+            val: num,
+            duration: 2,
+            ease: "power1.out",
+            snap: { val: 1 },
+            scrollTrigger: {
+              trigger: statsRef.current,
+              start: "top 98%",
+              once: true,
+            },
+            onUpdate: () => {
+              el.textContent = obj.val + suffix;
+            },
+          });
+        });
+      }, statsRef);
+    };
 
-        requestAnimationFrame(step);
-        observer.disconnect();
-      },
-      { threshold: 0.4 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [num]);
-
-  return (
-    <div className={styles.whoWeAre__stat} ref={ref}>
-      <span className={styles.whoWeAre__statValue}>
-        {count}{suffix}
-      </span>
-      <span className={styles.whoWeAre__statLabel}>{label}</span>
-    </div>
-  );
-}
-
-export default function WhoWeAre({ description, image, imageAlt = "" }) {
+    init();
+    return () => ctx?.revert();
+  }, []);
   return (
     <section className={styles.whoWeAre}>
       <div className={`container ${styles.whoWeAre__grid}`}>
@@ -72,6 +62,7 @@ export default function WhoWeAre({ description, image, imageAlt = "" }) {
             alt={imageAlt}
             width={550}
             height={400}
+            sizes="(min-width: 992px) 550px, 100vw"
             className={styles.whoWeAre__image}
           />
         </div>
@@ -80,9 +71,14 @@ export default function WhoWeAre({ description, image, imageAlt = "" }) {
             <SectionHeader tag="Who we are" />
             <p className={styles.whoWeAre__description}>{description}</p>
           </div>
-          <div className={styles.whoWeAre__stats}>
+          <div className={styles.whoWeAre__stats} ref={statsRef}>
             {stats.map((stat) => (
-              <AnimatedStat key={stat.label} {...stat} />
+              <div key={stat.label} className={styles.whoWeAre__stat}>
+                <span className={styles.whoWeAre__statValue} data-value={stat.value}>
+                  0{stat.value.replace(/[0-9]/g, "")}
+                </span>
+                <span className={styles.whoWeAre__statLabel}>{stat.label}</span>
+              </div>
             ))}
           </div>
         </div>

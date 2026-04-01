@@ -5,6 +5,8 @@ import WhyDahnay from "@/components/sections/WhyDahnay";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 import CaseStudy from "@/components/sections/CaseStudy";
+import RelatedBlogs from "@/components/sections/RelatedBlogs";
+import IndustriesSlider from "@/components/sections/IndustriesSlider";
 import industryData from "@/data/industries/index.json";
 import {
   ContinuityIcon,
@@ -53,6 +55,10 @@ export default function IndustryPage({ slug }) {
       />
 
       <CaseStudy />
+
+      <IndustriesSlider currentSlug={slug} />
+
+      <RelatedBlogs />
 
       <FAQSection
         tag={shared.faq.tag}

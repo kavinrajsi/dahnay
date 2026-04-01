@@ -1,11 +1,13 @@
 // Figma: node-id=354-4868
+import HomeHero from "@/components/sections/HomeHero";
 import HomeServices from "@/components/sections/HomeServices";
 import HomeSupplyChain from "@/components/sections/HomeSupplyChain";
-import HomeAbout from "@/components/sections/HomeAbout";
-import WhyDahnay from "@/components/sections/WhyDahnay";
-import HomeIndustriesSlider from "@/components/sections/HomeIndustriesSlider";
+import IndustriesSlider from "@/components/sections/IndustriesSlider";
+import HomeGreatPlace from "@/components/sections/HomeGreatPlace";
 import HomeNewsroom from "@/components/sections/HomeNewsroom";
 import TrustCTA from "@/components/sections/TrustCTA";
+import HomeAbout from "@/components/sections/HomeAbout";
+import WhyDahnay from "@/components/sections/WhyDahnay";
 import GrowForm from "@/components/sections/GrowForm";
 
 export const metadata = {
@@ -23,11 +25,11 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="page page--home">
+      <HomeHero />
       <HomeServices />
       <HomeSupplyChain />
-      <HomeAbout />
-      <WhyDahnay />
-      <HomeIndustriesSlider />
+      <IndustriesSlider />
+      <HomeGreatPlace />
       <HomeNewsroom />
       <TrustCTA
         title={"Grow your business\nwith us today"}
@@ -35,6 +37,8 @@ export default function Home() {
         ctaHref="/contact"
         image="/images/home/contact-cta.png"
       />
+      <HomeAbout />
+      <WhyDahnay />
       <GrowForm />
     </div>
   );

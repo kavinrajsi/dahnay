@@ -22,6 +22,7 @@ export default function Overview({
             alt={imageAlt}
             width={550}
             height={400}
+            sizes="(min-width: 992px) 550px, 100vw"
             className={styles.overview__image}
           />
         </div>

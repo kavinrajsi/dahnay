@@ -50,39 +50,17 @@ export default function CareersPage() {
 
       {/* Great Place to Work strip */}
       <div className="gptw-strip">
-        <div className="gptw-strip__inner container">
-          <Image
-            src="/images/careers/gptw-badge.png"
-            alt="Great Place To Work Certified"
-            width={80}
-            height={80}
-            className="gptw-strip__badge"
-          />
-          <div className="gptw-strip__text-group">
-            <span className="gptw-strip__label">Certified™ 2024–2025</span>
-            <span className="gptw-strip__title">
-              We are Great Place To Work® Certified™
-            </span>
-          </div>
-          <Image
-            src="/images/logo.svg"
-            alt="DahNAY"
-            width={120}
-            height={32}
-            className="gptw-strip__logo"
-          />
-        </div>
+        <Image
+          src="/images/careers/great-place-to-work.png"
+          alt="We are Great Place To Work® Certified™ 2024–2026"
+          width={1120}
+          height={230}
+          className="gptw-strip__image"
+        />
       </div>
 
       {/* Culture section */}
       <section className="career-culture container">
-        <div className="career-culture__header">
-          <SectionHeader
-            tag="OUR CULTURE"
-            title="Life at"
-            titleAccent="DahNAY"
-          />
-        </div>
         <div className="career-culture__grid">
           {CULTURE_CARDS.map((card) => (
             <div key={card.id} className="culture-card">

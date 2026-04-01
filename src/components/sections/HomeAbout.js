@@ -25,6 +25,7 @@ export default function HomeAbout() {
               alt="About DahNAY"
               width={712}
               height={400}
+              sizes="(min-width: 992px) 712px, 100vw"
               className="home-about__image"
             />
           </div>

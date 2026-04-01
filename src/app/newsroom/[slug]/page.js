@@ -81,6 +81,7 @@ export default async function ArticlePage({ params }) {
               alt={imageAlt}
               width={1200}
               height={630}
+              sizes="100vw"
               className="article__cover-image"
               priority
             />

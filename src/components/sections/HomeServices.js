@@ -102,7 +102,7 @@ export default function HomeServices() {
           </div>
 
           <div ref={cardsRef} className="home-services__cards">
-            {services.map((service) => (
+            {services.map((service, index) => (
               <Link key={service.href + service.title} href={service.href} className="home-service-card">
                 <div className="home-service-card__image-wrapper">
                   <Image
@@ -111,6 +111,8 @@ export default function HomeServices() {
                     width={550}
                     height={260}
                     className="home-service-card__image"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    priority={index === 0}
                   />
                 </div>
                 <div className="home-service-card__content">

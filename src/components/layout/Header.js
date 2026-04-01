@@ -199,8 +199,8 @@ export default function Header() {
           <Link href="/about" className="header__nav-link">About us</Link>
         </nav>
 
-        <Link href="/contact" className="header__cta button header__cta--desktop">
-          Contact us
+        <Link href="https://dahnaylogistics.logitrack.live/direct-tracking" target="_blank"  className="header__cta button header__cta--desktop">
+          Tracking
         </Link>
       </div>
 
@@ -209,8 +209,8 @@ export default function Header() {
         {renderMegaMenu("solutions", "Solutions", solutionsMegaMenu)}
         {renderDropdown("industries", industriesDropdown)}
         <Link href="/about" className="header__nav-link" onClick={closeAll}>About us</Link>
-        <Link href="/contact" className="header__cta button" onClick={closeAll}>
-          Contact us
+        <Link href="https://dahnaylogistics.logitrack.live/direct-tracking" target="_blank" className="header__cta button" onClick={closeAll}>
+          Tracking
         </Link>
       </nav>
     </header>

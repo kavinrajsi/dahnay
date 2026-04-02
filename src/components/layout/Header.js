@@ -231,24 +231,20 @@ export default function Header() {
         >
           {mobileMenuOpen ? (
             <svg
-              width="52"
-              height="52"
-              viewBox="0 0 52 52"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* <path
-                d="M0 12C0 5.37258 5.37258 0 12 0H52V40C52 46.6274 46.6274 52 40 52H0V12Z"
-                fill="#EF4230"
-              /> */}
               <path
-                d="M18 18L34 34"
+                d="M4 4L20 20"
                 stroke="#0B090A"
                 strokeWidth="1.3"
                 strokeLinecap="round"
               />
               <path
-                d="M34 18L18 34"
+                d="M20 4L4 20"
                 stroke="#0B090A"
                 strokeWidth="1.3"
                 strokeLinecap="round"
@@ -262,9 +258,9 @@ export default function Header() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M0 1H24" stroke="#0B090A" stroke-width="1.3" />
-              <path d="M0 9H24" stroke="#0B090A" stroke-width="1.3" />
-              <path d="M0 17H24" stroke="#0B090A" stroke-width="1.3" />
+              <path d="M0 1H24" stroke="#0B090A" strokeWidth="1.3" />
+              <path d="M0 9H24" stroke="#0B090A" strokeWidth="1.3" />
+              <path d="M0 17H24" stroke="#0B090A" strokeWidth="1.3" />
             </svg>
           )}
         </button>
@@ -308,7 +304,7 @@ export default function Header() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clip-path="url(#clip0_853_8523)">
+            <g clipPath="url(#clip0_853_8523)">
               <path
                 d="M22.0742 15.7533C20.6049 15.7533 19.1621 15.5234 17.7949 15.0716C17.125 14.8431 16.3014 15.0528 15.8926 15.4727L13.194 17.5098C10.0644 15.8393 8.13669 13.9121 6.48894 10.8061L8.46612 8.17781C8.97981 7.66481 9.16406 6.91544 8.94331 6.21231C8.48956 4.83794 8.25906 3.39587 8.25906 1.92587C8.25913 0.863937 7.39519 0 6.33331 0H1.92581C0.863937 0 0 0.863937 0 1.92581C0 14.0977 9.90237 24 22.0742 24C23.1361 24 24.0001 23.1361 24.0001 22.0742V17.679C24 16.6172 23.1361 15.7533 22.0742 15.7533Z"
                 fill="#0B090A"

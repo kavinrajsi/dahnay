@@ -24,9 +24,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
-    width: 52px;
-    height: 52px;
+    // gap: 5px;
+    // width: 52px;
+    // height: 52px;
     background: none;
     border: none;
     cursor: pointer;
@@ -52,17 +52,18 @@
     &--mobile {
       display: none;
       flex-direction: column;
-      position: absolute;
-      top: 100%;
+      position: fixed;
+      top: 0;
       left: 0;
       right: 0;
+      bottom: 0;
       background: #ffffff;
       padding: 24px 16px;
+      padding-top: 90px;
       gap: 16px;
-      z-index: 100;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      max-height: calc(100vh - 100%);
+      z-index: 999;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
 
       @media (min-width: 992px) {
         display: none !important;
@@ -150,7 +151,10 @@
   &__dropdown-link {
     display: flex;
     align-items: flex-start;
+    padding: 8px 20px;
+    @media (min-width: 992px) {
     padding: 12px 16px;
+    }
     font-family: var(--font-avenir), sans-serif;
     font-style: normal;
     font-weight: var(--font-weight-roman);
@@ -168,7 +172,7 @@
       color: #ffffff;
     }
   }
-
+ &__mega-link,
   &__mega-menu {
     background: #ffffff;
     z-index: 200;
@@ -230,24 +234,24 @@
     flex-direction: column;
   }
 
-  &__mega-link {
-    padding: 4px 0;
-    font-family: var(--font-avenir), sans-serif;
-    font-style: normal;
-    font-weight: var(--font-weight-roman);
-    font-size: 16px;
-    line-height: 22px;
-    color: #1f1f1f;
-    transition: color 0.2s;
+  // &__mega-link {
+  //   padding: 4px 0;
+  //   font-family: var(--font-avenir), sans-serif;
+  //   font-style: normal;
+  //   font-weight: var(--font-weight-roman);
+  //   font-size: 16px;
+  //   line-height: 22px;
+  //   color: #1f1f1f;
+  //   transition: color 0.2s;
 
-    &:hover {
-      color: #ef4230;
-    }
+  //   &:hover {
+  //     color: #ef4230;
+  //   }
 
-    &--active {
-      color: #ef4230;
-    }
-  }
+  //   &--active {
+  //     color: #ef4230;
+  //   }
+  // }
 
   &__phone {
     display: flex;

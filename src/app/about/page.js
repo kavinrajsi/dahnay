@@ -4,6 +4,7 @@ import WhoWeAre from "@/components/sections/WhoWeAre";
 import WhatDrivesUs from "@/components/sections/WhatDrivesUs";
 import FounderSection from "@/components/sections/FounderSection";
 import TrustCTA from "@/components/sections/TrustCTA";
+import FAQSection from "@/components/sections/FAQSection";
 import GrowForm from "@/components/sections/GrowForm";
 
 export const metadata = {
@@ -137,6 +138,20 @@ export default function AboutPage() {
         ctaHref="/contact"
         image="/images/about/trust-cta-bg.png"
         imageAlt="Cargo containers at port"
+      />
+      <FAQSection
+        tag="FAQ's"
+        title="Frequently Asked"
+        titleAccent="Questions"
+        content="Learn more about DahNAY, our story, values and the team driving innovation in global logistics."
+        items={[
+          { question: "Is DahNAY only a freight forwarding company?", answer: "No, DahNAY is an integrated logistics solutions provider. In addition to freight forwarding, DahNAY offers warehousing, customs brokerage, consolidation, project cargo handling and last mile delivery." },
+          { question: "How long has DahNAY been in business?", answer: "DahNAY has built a strong presence in the logistics industry over the years, delivering reliable freight and supply chain solutions across global markets." },
+          { question: "Where is DahNAY headquartered?", answer: "DahNAY is headquartered in India, with strategic operations and partnerships across global markets to support international logistics." },
+          { question: "Is DahNAY involved in sustainability or CSR initiatives?", answer: "DahNAY is committed to responsible logistics practices by optimising routes, reducing inefficiencies and supporting sustainable supply chain operations wherever possible." },
+          { question: "Who leads DahNAY?", answer: "DahNAY was founded by Mr. Murali Babu. Since its inception, the company has shown remarkable growth, evolving from a single person operation into a large scale international logistics organization with a global presence." },
+          { question: "What values guide DahNAY?", answer: "DahNAY is guided by integrity, curiosity, empathy, responsibility, and inclusion. These values shape every logistics solution and client partnership." },
+        ]}
       />
       <GrowForm />
     </div>

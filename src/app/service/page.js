@@ -16,9 +16,13 @@ export const metadata = {
 };
 
 const faqItems = [
-  { question: "Lorem ipsum dolor sit amet consectetur?", answer: "Lorem ipsum dolor sit amet consectetur." },
-  { question: "Eu aenean non orci adipiscing odio?", answer: "Lorem ipsum dolor sit amet consectetur." },
-  { question: "Lorem ipsum dolor sit amet consectetur. Senectus platea in nunc quis. Viverra libero quam fames vitae felis eu?", answer: "Lorem ipsum dolor sit amet consectetur." },
+  { question: "What are the additional services DahNAY offers?", answer: "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery." },
+  { question: "Do you handle both import and export shipments?", answer: "DahNAY manages both import and export logistics with expertise in international shipping regulations, customs compliance and global trade documentation." },
+  { question: "How does DahNAY ensure shipment visibility?", answer: "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
+  { question: "What is DahNAY's approach to air freight?", answer: "DahNAY focuses on speed, reliability and flexibility in air freight. The company works with leading airlines to ensure timely delivery, even for urgent and high-value cargo." },
+  { question: "Do you provide warehousing and distribution services?", answer: "Yes, DahNAY offers integrated warehousing and distribution solutions, including inventory management, storage and order fulfilment across key global locations." },
+  { question: "What is a Container Freight Station (CFS), and how does DahNAY support it?", answer: "A Container Freight Station is a facility where cargo is consolidated or deconsolidated for shipping. DahNAY provides CFS services with 2 CFS in India, including cargo handling, storage, customs clearance and container management." },
+  { question: "How do you customize logistics solutions?", answer: "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." },
 ];
 
 export default function ServicePage() {

@@ -50,12 +50,16 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our logistics services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our air freight services and how we can support your supply chain.",
       "items": [
-        { "question": "What regions do you operate in?", "answer": "DahNAY operates across major international trade corridors spanning Asia, the Middle East, Africa, Europe and the Americas." },
-        { "question": "How do I get a quote?", "answer": "Contact our team through the website or email us directly. We provide tailored quotes based on your cargo type, volume and destination." },
-        { "question": "Do you handle customs clearance?", "answer": "Yes, we provide end-to-end customs clearance services including documentation, tariff classification and compliance management." },
-        { "question": "What types of cargo do you handle?", "answer": "We handle everything from standard containerised cargo to oversized, heavy-lift, hazardous and temperature-controlled shipments." }
+        { "question": "What air freight services does DahNAY provide?", "answer": "DahNAY offers comprehensive air freight services including express shipping, consolidated air cargo, charter services and door-to-door delivery for international shipments." },
+        { "question": "When should I choose air freight over sea freight?", "answer": "Air freight is ideal for time-sensitive shipments, high-value goods and urgent deliveries where speed is critical compared to sea freight." },
+        { "question": "Can DahNAY handle time-critical or same-day air shipments?", "answer": "DahNAY specialises in time-critical logistics and can arrange expedited or same-day air freight solutions based on cargo urgency." },
+        { "question": "What types of cargo can be transported via air freight?", "answer": "DahNAY handles a wide range of air cargo including perishable goods, pharmaceuticals, electronics, high-value shipments and urgent consignments." },
+        { "question": "How does DahNAY ensure cargo safety in air freight?", "answer": "DahNAY ensures cargo safety through secure packaging, compliance with airline regulations and continuous monitoring throughout transit." },
+        { "question": "How do you manage rising air freight rates and capacity constraints?", "answer": "DahNAY leverages strong airline partnerships, flexible routing options and strategic planning to manage capacity challenges and optimise costs." },
+        { "question": "What makes DahNAY's air freight approach different?", "answer": "DahNAY combines speed, flexibility and personalised service with global reach, ensuring efficient and reliable air freight solutions." },
+        { "question": "Does DahNAY provide on-demand air freight capacity?", "answer": "Yes, DahNAY offers on-demand air freight capacity including charter solutions for urgent and high-priority shipments." }
       ]
     }
   },
@@ -110,12 +114,12 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our logistics services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our customs brokerage services and how we can support your supply chain.",
       "items": [
-        { "question": "What regions do you operate in?", "answer": "DahNAY operates across major international trade corridors spanning Asia, the Middle East, Africa, Europe and the Americas." },
-        { "question": "How do I get a quote?", "answer": "Contact our team through the website or email us directly. We provide tailored quotes based on your cargo type, volume and destination." },
-        { "question": "Do you handle customs clearance?", "answer": "Yes, we provide end-to-end customs clearance services including documentation, tariff classification and compliance management." },
-        { "question": "What types of cargo do you handle?", "answer": "We handle everything from standard containerised cargo to oversized, heavy-lift, hazardous and temperature-controlled shipments." }
+        { "question": "How does DahNAY help me avoid expensive customs delays and fines?", "answer": "DahNAY ensures compliance with international trade regulations, accurate documentation and proactive customs coordination to avoid delays and penalties." },
+        { "question": "How does DahNAY ensure faster customs clearance?", "answer": "With its own CFS in Chennai and Tuticorin, DahNAY speeds up customs clearance through experienced customs brokers, digital documentation and strong relationships with authorities." },
+        { "question": "Can DahNAY handle international import and export compliance?", "answer": "Yes, DahNAY manages complete import and export compliance, including regulatory requirements, documentation and tariff classification." },
+        { "question": "What is the role of CHA in custom brokerage?", "answer": "A Customs House Agent (CHA) facilitates customs clearance by handling documentation, duty payments and compliance with customs regulations." }
       ]
     }
   },
@@ -170,12 +174,12 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our logistics services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our domestic trucking services and how we can support your supply chain.",
       "items": [
-        { "question": "What regions do you operate in?", "answer": "DahNAY operates across major international trade corridors spanning Asia, the Middle East, Africa, Europe and the Americas." },
-        { "question": "How do I get a quote?", "answer": "Contact our team through the website or email us directly. We provide tailored quotes based on your cargo type, volume and destination." },
-        { "question": "Do you handle customs clearance?", "answer": "Yes, we provide end-to-end customs clearance services including documentation, tariff classification and compliance management." },
-        { "question": "What types of cargo do you handle?", "answer": "We handle everything from standard containerised cargo to oversized, heavy-lift, hazardous and temperature-controlled shipments." }
+        { "question": "What are the additional services DahNAY offers?", "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery." },
+        { "question": "Do you handle both import and export shipments?", "answer": "DahNAY manages both import and export logistics with expertise in international shipping regulations, customs compliance and global trade documentation." },
+        { "question": "How does DahNAY ensure shipment visibility?", "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
+        { "question": "How do you customize logistics solutions?", "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." }
       ]
     }
   },
@@ -230,12 +234,12 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our logistics services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our e-commerce fulfilment services and how we can support your supply chain.",
       "items": [
-        { "question": "What regions do you operate in?", "answer": "DahNAY operates across major international trade corridors spanning Asia, the Middle East, Africa, Europe and the Americas." },
-        { "question": "How do I get a quote?", "answer": "Contact our team through the website or email us directly. We provide tailored quotes based on your cargo type, volume and destination." },
-        { "question": "Do you handle customs clearance?", "answer": "Yes, we provide end-to-end customs clearance services including documentation, tariff classification and compliance management." },
-        { "question": "What types of cargo do you handle?", "answer": "We handle everything from standard containerised cargo to oversized, heavy-lift, hazardous and temperature-controlled shipments." }
+        { "question": "What are the additional services DahNAY offers?", "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery." },
+        { "question": "Do you provide warehousing and distribution services?", "answer": "Yes, DahNAY offers integrated warehousing and distribution solutions, including inventory management, storage and order fulfilment across key global locations." },
+        { "question": "How does DahNAY ensure shipment visibility?", "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
+        { "question": "How do you customize logistics solutions?", "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." }
       ]
     }
   },
@@ -290,12 +294,14 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our logistics services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our last mile delivery services and how we can support your supply chain.",
       "items": [
-        { "question": "What regions do you operate in?", "answer": "DahNAY operates across major international trade corridors spanning Asia, the Middle East, Africa, Europe and the Americas." },
-        { "question": "How do I get a quote?", "answer": "Contact our team through the website or email us directly. We provide tailored quotes based on your cargo type, volume and destination." },
-        { "question": "Do you handle customs clearance?", "answer": "Yes, we provide end-to-end customs clearance services including documentation, tariff classification and compliance management." },
-        { "question": "What types of cargo do you handle?", "answer": "We handle everything from standard containerised cargo to oversized, heavy-lift, hazardous and temperature-controlled shipments." }
+        { "question": "What is last mile connectivity in logistics?", "answer": "Last mile connectivity refers to the final stage of the delivery process, where goods are transported from a distribution centre to the end customer efficiently and on time." },
+        { "question": "Which industries benefit most from DahNAY's last mile services?", "answer": "Industries such as e-commerce, retail, manufacturing, FMCG and healthcare benefit from DahNAY's last mile delivery solutions due to their need for fast and reliable distribution." },
+        { "question": "Does DahNAY offer last mile delivery across India?", "answer": "Yes, DahNAY provides last mile delivery services across India, ensuring efficient and timely delivery to urban and remote locations." },
+        { "question": "Does DahNAY provide real-time tracking for last mile deliveries?", "answer": "Yes, DahNAY offers real-time tracking and delivery updates, giving businesses full visibility into last mile operations." },
+        { "question": "Does DahNAY's last mile connectivity include reverse logistics?", "answer": "Yes, DahNAY supports reverse logistics including returns, pickups and product exchanges as part of its last mile services." },
+        { "question": "How can I integrate DahNAY's last mile services into my supply chain?", "answer": "DahNAY integrates seamlessly with your supply chain through customised logistics solutions, technology integration and scalable delivery networks." }
       ]
     }
   },
@@ -350,12 +356,15 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our logistics services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our project logistics services and how we can support your supply chain.",
       "items": [
-        { "question": "What regions do you operate in?", "answer": "DahNAY operates across major international trade corridors spanning Asia, the Middle East, Africa, Europe and the Americas." },
-        { "question": "How do I get a quote?", "answer": "Contact our team through the website or email us directly. We provide tailored quotes based on your cargo type, volume and destination." },
-        { "question": "Do you handle customs clearance?", "answer": "Yes, we provide end-to-end customs clearance services including documentation, tariff classification and compliance management." },
-        { "question": "What types of cargo do you handle?", "answer": "We handle everything from standard containerised cargo to oversized, heavy-lift, hazardous and temperature-controlled shipments." }
+        { "question": "What is project cargo in logistics?", "answer": "Project cargo refers to the transportation of large, complex or high-value equipment that requires specialised handling, planning and logistics." },
+        { "question": "What industries does DahNAY serve with its project logistics?", "answer": "DahNAY serves industries such as oil and gas, construction, infrastructure, energy and manufacturing." },
+        { "question": "What is a route survey in project cargo?", "answer": "A route survey evaluates transportation routes to identify challenges such as road conditions, clearances and infrastructure limitations." },
+        { "question": "How does DahNAY handle cargo that is too large for standard containers?", "answer": "DahNAY manages oversized cargo through breakbulk shipping, heavy-lift equipment and specialised transport solutions." },
+        { "question": "Is my high-value machinery insured during complex lifting operations?", "answer": "Yes, DahNAY ensures cargo insurance coverage for high-value shipments during handling and transportation." },
+        { "question": "Looking for a breakbulk and heavy-lift specialist in India or the UAE?", "answer": "DahNAY provides expert breakbulk and heavy-lift logistics services across India and the UAE with end-to-end project support." },
+        { "question": "How do you optimise costs for oversized shipping?", "answer": "DahNAY optimises costs through route planning, mode selection, consolidation and efficient resource utilisation." }
       ]
     }
   },
@@ -410,12 +419,12 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our logistics services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our reverse logistics services and how we can support your supply chain.",
       "items": [
-        { "question": "What regions do you operate in?", "answer": "DahNAY operates across major international trade corridors spanning Asia, the Middle East, Africa, Europe and the Americas." },
-        { "question": "How do I get a quote?", "answer": "Contact our team through the website or email us directly. We provide tailored quotes based on your cargo type, volume and destination." },
-        { "question": "Do you handle customs clearance?", "answer": "Yes, we provide end-to-end customs clearance services including documentation, tariff classification and compliance management." },
-        { "question": "What types of cargo do you handle?", "answer": "We handle everything from standard containerised cargo to oversized, heavy-lift, hazardous and temperature-controlled shipments." }
+        { "question": "What are the additional services DahNAY offers?", "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery." },
+        { "question": "Does DahNAY's last mile connectivity include reverse logistics?", "answer": "Yes, DahNAY supports reverse logistics including returns, pickups and product exchanges as part of its last mile services." },
+        { "question": "How does DahNAY ensure shipment visibility?", "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
+        { "question": "How do you customize logistics solutions?", "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." }
       ]
     }
   },
@@ -470,12 +479,12 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our logistics services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our road transportation services and how we can support your supply chain.",
       "items": [
-        { "question": "What regions do you operate in?", "answer": "DahNAY operates across major international trade corridors spanning Asia, the Middle East, Africa, Europe and the Americas." },
-        { "question": "How do I get a quote?", "answer": "Contact our team through the website or email us directly. We provide tailored quotes based on your cargo type, volume and destination." },
-        { "question": "Do you handle customs clearance?", "answer": "Yes, we provide end-to-end customs clearance services including documentation, tariff classification and compliance management." },
-        { "question": "What types of cargo do you handle?", "answer": "We handle everything from standard containerised cargo to oversized, heavy-lift, hazardous and temperature-controlled shipments." }
+        { "question": "What are the additional services DahNAY offers?", "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery." },
+        { "question": "Do you handle both import and export shipments?", "answer": "DahNAY manages both import and export logistics with expertise in international shipping regulations, customs compliance and global trade documentation." },
+        { "question": "How does DahNAY ensure shipment visibility?", "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
+        { "question": "How do you customize logistics solutions?", "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." }
       ]
     }
   },
@@ -532,12 +541,17 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our logistics services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our sea freight services and how we can support your supply chain.",
       "items": [
-        { "question": "What regions do you operate in?", "answer": "DahNAY operates across major international trade corridors spanning Asia, the Middle East, Africa, Europe and the Americas." },
-        { "question": "How do I get a quote?", "answer": "Contact our team through the website or email us directly. We provide tailored quotes based on your cargo type, volume and destination." },
-        { "question": "Do you handle customs clearance?", "answer": "Yes, we provide end-to-end customs clearance services including documentation, tariff classification and compliance management." },
-        { "question": "What types of cargo do you handle?", "answer": "We handle everything from standard containerised cargo to oversized, heavy-lift, hazardous and temperature-controlled shipments." }
+        { "question": "What sea freight services does DahNAY offer?", "answer": "DahNAY provides end-to-end sea freight services including Full Container Load (FCL), Less than Container Load (LCL), breakbulk shipping, project cargo handling and door-to-door ocean freight solutions for global trade." },
+        { "question": "Does DahNAY offer both FCL and LCL services?", "answer": "Yes, DahNAY offers both FCL and LCL shipping services. FCL is ideal for large shipments requiring a dedicated container, while LCL is a cost-effective solution for smaller shipments sharing container space." },
+        { "question": "Can DahNAY handle temperature-sensitive cargo?", "answer": "Yes, DahNAY handles temperature-controlled cargo through refrigerated containers (reefers), ensuring safe transport of perishable goods, pharmaceuticals and sensitive materials." },
+        { "question": "Do you manage customs clearance for sea shipments?", "answer": "DahNAY provides complete customs clearance services for sea freight, including documentation, compliance and coordination with customs authorities to ensure smooth import and export processes." },
+        { "question": "What ports and trade routes does DahNAY operate on?", "answer": "DahNAY operates across major global ports and trade routes connecting India, the UAE, the USA and key international markets, ensuring reliable ocean freight connectivity." },
+        { "question": "How does DahNAY manage sea freight disruptions or port congestion?", "answer": "DahNAY proactively manages disruptions through alternative routing, strong carrier partnerships and real-time shipment monitoring to minimise delays caused by port congestion or global supply chain issues." },
+        { "question": "How does DahNAY make sea freight less complex for shippers?", "answer": "DahNAY simplifies sea freight by offering end-to-end logistics management, transparent pricing, real-time tracking and dedicated support, reducing operational complexity for shippers." },
+        { "question": "What is the transit time for sea freight with DahNAY?", "answer": "Sea freight transit time depends on the shipping route, cargo type and port conditions. DahNAY provides accurate transit estimates and optimised routing to ensure timely delivery." },
+        { "question": "Does DahNAY provide tracking for sea freight shipments?", "answer": "Yes, DahNAY offers real-time tracking and shipment visibility for sea freight, allowing customers to monitor cargo throughout the journey." }
       ]
     }
   },
@@ -592,12 +606,12 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our logistics services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our time-critical delivery services and how we can support your supply chain.",
       "items": [
-        { "question": "What regions do you operate in?", "answer": "DahNAY operates across major international trade corridors spanning Asia, the Middle East, Africa, Europe and the Americas." },
-        { "question": "How do I get a quote?", "answer": "Contact our team through the website or email us directly. We provide tailored quotes based on your cargo type, volume and destination." },
-        { "question": "Do you handle customs clearance?", "answer": "Yes, we provide end-to-end customs clearance services including documentation, tariff classification and compliance management." },
-        { "question": "What types of cargo do you handle?", "answer": "We handle everything from standard containerised cargo to oversized, heavy-lift, hazardous and temperature-controlled shipments." }
+        { "question": "Do you handle time-critical shipments?", "answer": "Yes. Our solutions support industries operating on strict production and project timelines." },
+        { "question": "Can DahNAY handle time-critical or same-day air shipments?", "answer": "DahNAY specialises in time-critical logistics and can arrange expedited or same-day air freight solutions based on cargo urgency." },
+        { "question": "How does DahNAY ensure shipment visibility?", "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
+        { "question": "How do you customize logistics solutions?", "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." }
       ]
     }
   }

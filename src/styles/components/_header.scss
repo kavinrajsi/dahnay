@@ -45,7 +45,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 8px;
+        gap: 16px;
       }
     }
 
@@ -114,15 +114,11 @@
     @media (min-width: 992px) {
       display: flex;
       align-items: flex-end;
-      // padding-bottom: 24px;
+    }
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: -32px;
-        right: -32px;
-        height: 37px;
+    &:has(.header__mega-menu) {
+      @media (min-width: 992px) {
+        position: static;
       }
     }
   }
@@ -180,12 +176,10 @@
 
     @media (min-width: 992px) {
       position: absolute;
-      top: calc(100% + 37px);
+      top: 100%;
       left: 0;
       right: 0;
-      margin: 0 auto;
-      transform: translateX(-43%);
-      width: calc(100vw + 10px);
+      width: 100%;
       padding: 24px 0;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }

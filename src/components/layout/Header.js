@@ -77,9 +77,9 @@ const industriesDropdown = [
 ];
 
 const newsroomDropdown = [
-  { label: "News", href: "/newsroom" },
-  { label: "Blog", href: "/newsroom" },
-  { label: "Case Studies", href: "/newsroom" },
+  { label: "Blog", href: "/blog" },
+  { label: "Case Study", href: "/newsroom/case-study" },
+  { label: "News", href: "/newsroom/news" },
 ];
 
 export default function Header() {
@@ -345,9 +345,7 @@ export default function Header() {
           <Link href="/careers" className="header__nav-link">
             Careers
           </Link>
-          <Link href="/newsroom" className="header__nav-link">
-            Newsroom
-          </Link>
+          {renderDropdown("newsroom", newsroomDropdown)}
           <Link href="/contact" className="header__nav-link">
             Contact us
           </Link>
@@ -376,9 +374,7 @@ export default function Header() {
         <Link href="/careers" className="header__nav-link" onClick={closeAll}>
           Careers
         </Link>
-        <Link href="/newsroom" className="header__nav-link" onClick={closeAll}>
-          Newsroom
-        </Link>
+        {renderDropdown("newsroom", newsroomDropdown)}
         <Link href="/contact" className="header__nav-link" onClick={closeAll}>
           Contact us
         </Link>

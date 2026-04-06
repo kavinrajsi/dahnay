@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -101,8 +101,15 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  const handleMouseEnter = (menu) => setActiveDropdown(menu);
-  const handleMouseLeave = () => setActiveDropdown(null);
+  const leaveTimerRef = useRef(null);
+
+  const handleMouseEnter = (menu) => {
+    clearTimeout(leaveTimerRef.current);
+    setActiveDropdown(menu);
+  };
+  const handleMouseLeave = () => {
+    leaveTimerRef.current = setTimeout(() => setActiveDropdown(null), 150);
+  };
   const closeAll = () => {
     setActiveDropdown(null);
     setMobileMenuOpen(false);
@@ -137,7 +144,11 @@ export default function Header() {
           </svg>
         </button>
         {activeDropdown === id && (
-          <div className="header__dropdown">
+          <div
+            className="header__dropdown"
+            onMouseEnter={() => clearTimeout(leaveTimerRef.current)}
+            onMouseLeave={handleMouseLeave}
+          >
             {items.map((item) => (
               <Link
                 key={item.href + item.label}
@@ -188,7 +199,11 @@ export default function Header() {
           </svg>
         </Link>
         {activeDropdown === id && (
-          <div className="header__mega-menu">
+          <div
+            className="header__mega-menu"
+            onMouseEnter={() => clearTimeout(leaveTimerRef.current)}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="container header__mega-menu-inner">
               {columns.map((col) => (
                 <div key={col.title} className="header__mega-col">

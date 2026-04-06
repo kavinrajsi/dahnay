@@ -9,8 +9,12 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   .icon-card {
@@ -18,7 +22,21 @@
     border-radius: 16px;
     align-items: center;
     text-align: center;
-    padding: 32px 16px;
+    padding: 24px 16px;
+
+    @media (min-width: 992px) {
+      padding: 32px 16px;
+    }
+
+    .icon-card__icon img {
+      width: 56px;
+      height: 56px;
+
+      @media (min-width: 992px) {
+        width: 64px;
+        height: 64px;
+      }
+    }
 
     .icon-card__title {
       padding-top: 24px;
@@ -40,21 +58,6 @@
       line-height: 20px;
       text-align: center;
       color: var(--neutral-grey);
-    }
-  }
-
-  @media (max-width: 1024px) {
-    &__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 640px) {
-    padding: 40px 0;
-
-    &__grid {
-      grid-template-columns: 1fr;
-      gap: 24px;
     }
   }
 }

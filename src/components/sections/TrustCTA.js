@@ -17,7 +17,7 @@ export default function TrustCTA({
       <div className="container">
         <div className="trust-cta__content">
           <h2 className="trust-cta__title">{title}</h2>
-          <p className="trust-cta__description">{description}</p>
+
           <Link href={ctaHref} className="button">
             {ctaText}
           </Link>

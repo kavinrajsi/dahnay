@@ -22,6 +22,7 @@
     flex-shrink: 0;
 
     @media (min-width: 992px) {
+      display: inline-block;
       width: 455px;
     }
   }
@@ -72,14 +73,45 @@
     }
   }
 
-  &__image-wrapper {
+  &__video-wrapper {
+    position: relative;
     border-radius: 16px;
     overflow: hidden;
   }
 
-  &__image {
+  &__video {
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  &__progress {
+    position: absolute;
+    bottom: 16px;
+    left: 22px;
+    right: 22px;
+    height: 10px;
+    cursor: pointer;
+
+    @media (min-width: 992px) {
+      bottom: 20px;
+    }
+  }
+
+  &__progress-track {
+    position: absolute;
+    inset: 0;
+    background: rgba(217, 217, 217, 0.4);
+    border-radius: 5px;
+  }
+
+  &__progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #ee412f;
+    border-radius: 5px;
+    transition: width 0.1s linear;
   }
 }

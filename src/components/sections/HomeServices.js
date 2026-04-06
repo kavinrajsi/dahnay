@@ -67,10 +67,17 @@ export default function HomeServices() {
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 992px)", () => {
+        const headerOffset = 112;
+        const sectionPadding = 80;
+
         ctx = ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top top",
-          end: () => `+=${(cardsRef.current?.offsetHeight || 0) - (leftRef.current?.offsetHeight || 0)}`,
+          start: `top ${headerOffset}px`,
+          end: () => {
+            const cardsH = cardsRef.current?.offsetHeight || 0;
+            const leftH = leftRef.current?.offsetHeight || 0;
+            return `+=${cardsH - leftH - sectionPadding}`;
+          },
           pin: leftRef.current,
           pinSpacing: false,
         });

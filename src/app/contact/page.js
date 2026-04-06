@@ -111,7 +111,13 @@ function OfficeCard({ city, country, address, phone, email }) {
 export default function ContactPage() {
   const [activeRegion, setActiveRegion] = useState("All Regions");
   const [searchQuery, setSearchQuery] = useState("");
+  const [filterOpen, setFilterOpen] = useState(false);
   const statsRef = useRef(null);
+
+  useEffect(() => {
+    document.body.style.overflow = filterOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [filterOpen]);
 
   useEffect(() => {
     let ctx;
@@ -214,6 +220,57 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+
+          <button
+            className="contact-offices__filter-trigger"
+            onClick={() => setFilterOpen(true)}
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 2h14M4 8h8M6 14h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+            Filter
+          </button>
+
+          {filterOpen && (
+            <div className="contact-offices__filter-overlay" onClick={() => setFilterOpen(false)}>
+              <div className="contact-offices__filter-sheet" onClick={(e) => e.stopPropagation()}>
+                <div className="contact-offices__filter-sheet-header">
+                  <h3 className="contact-offices__filter-sheet-title">Filter</h3>
+                  <button className="contact-offices__filter-sheet-close" onClick={() => setFilterOpen(false)}>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <div className="contact-offices__filter-sheet-search">
+                  <svg className="contact-offices__search-icon" width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 0C3.13 0 0 3.13 0 7c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z" fill="#D3D3D3"/>
+                  </svg>
+                  <input
+                    type="text"
+                    className="contact-offices__search-input"
+                    placeholder="Search location"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+                </div>
+                <div className="contact-offices__filter-sheet-list">
+                  {regions.map((region) => (
+                    <button
+                      key={region}
+                      className={`contact-offices__filter-sheet-item${activeRegion === region ? " contact-offices__filter-sheet-item--active" : ""}`}
+                      onClick={() => {
+                        setActiveRegion(region);
+                        setFilterOpen(false);
+                      }}
+                    >
+                      {region}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="contact-offices__filters">
             {regions.map((region) => (

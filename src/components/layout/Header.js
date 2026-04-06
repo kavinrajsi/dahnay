@@ -342,6 +342,15 @@ export default function Header() {
           <Link href="/about" className="header__nav-link">
             About us
           </Link>
+          <Link href="/careers" className="header__nav-link">
+            Careers
+          </Link>
+          <Link href="/newsroom" className="header__nav-link">
+            Newsroom
+          </Link>
+          <Link href="/contact" className="header__nav-link">
+            Contact us
+          </Link>
         </nav>
 
         <Link
@@ -363,6 +372,15 @@ export default function Header() {
         {renderDropdown("industries", industriesDropdown)}
         <Link href="/about" className="header__nav-link" onClick={closeAll}>
           About us
+        </Link>
+        <Link href="/careers" className="header__nav-link" onClick={closeAll}>
+          Careers
+        </Link>
+        <Link href="/newsroom" className="header__nav-link" onClick={closeAll}>
+          Newsroom
+        </Link>
+        <Link href="/contact" className="header__nav-link" onClick={closeAll}>
+          Contact us
         </Link>
         <Link
           href="https://dahnaylogistics.logitrack.live/direct-tracking"

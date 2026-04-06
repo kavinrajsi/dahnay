@@ -17,14 +17,8 @@
   }
 
   &__header-left {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex-shrink: 0;
-
-    @media (min-width: 992px) {
-      width: 455px;
-    }
+    display: inline-block;
+    max-width: 455px;
   }
 
   &__tag {
@@ -42,6 +36,7 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: #333333;
+    margin-bottom: 8px;
   }
 
   &__title {
@@ -51,10 +46,12 @@
     font-size: 28px;
     line-height: 36px;
     color: #0b090a;
+    padding-bottom: 8px;
 
     @media (min-width: 992px) {
       font-size: 32px;
       line-height: 40px;
+      padding-bottom: 8px;
     }
   }
 

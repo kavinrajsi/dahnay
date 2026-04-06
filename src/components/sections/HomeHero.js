@@ -10,6 +10,18 @@ const slides = [
     title: "Your complete global logistics partner for growth",
     description: "From freight and warehousing to customs clearance - everything you need to move, in one place: DahNAY",
   },
+    {
+    image: "/images/home/hero-1.png",
+    tag: "Services and Industries",
+    title: "Your complete global logistics partner for growth",
+    description: "From freight and warehousing to customs clearance - everything you need to move, in one place: DahNAY",
+  },
+    {
+    image: "/images/home/hero-1.png",
+    tag: "Services and Industries",
+    title: "Your complete global logistics partner for growth",
+    description: "From freight and warehousing to customs clearance - everything you need to move, in one place: DahNAY",
+  },
 ];
 
 export default function HomeHero() {

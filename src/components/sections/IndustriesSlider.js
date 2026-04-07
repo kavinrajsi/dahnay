@@ -9,21 +9,10 @@ import { Pagination, Keyboard, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const industries = [
-  { slug: "automotive", title: "Automotive", description: "Driving global supply chains with reliable, time-sensitive automotive logistics.", image: "/industries/automotive.png" },
-  { slug: "white-goods", title: "White Goods", description: "Ensuring fresh and secure transport of white goods with efficiency and care.", image: "/industries/white-goods.png" },
-  { slug: "machinery", title: "Heavy Machinery", description: "Providing specialised logistics for heavy and oversized machinery shipments.", image: "/industries/machinery.png" },
-  { slug: "retail-apparel", title: "Retail & Apparel", description: "Fast-fashion logistics with speed, precision and global reach.", image: "/industries/retail-apparel.png" },
-  { slug: "renewables", title: "Renewables", description: "Powering the future with efficient logistics for the renewable energy sector.", image: "/industries/renewables.png" },
-  { slug: "natural-rubber", title: "Natural Rubber", description: "From plantation to production — reliable rubber supply chain solutions.", image: "/industries/natural-rubber.png" },
-  { slug: "energy-oil-gas", title: "Energy, Oil & Gas", description: "Complex logistics solutions for the energy and oil & gas industry.", image: "/industries/energy-oil-gas.png" },
-  { slug: "fmcg", title: "FMCG", description: "High-velocity logistics keeping FMCG products moving from factory to shelf.", image: "/industries/fmcg.png" },
-  { slug: "construction-materials", title: "Construction Materials", description: "Bulk and project logistics for construction materials and infrastructure.", image: "/industries/construction-materials.png" },
-  { slug: "paper-pulp", title: "Paper & Pulp", description: "Volume-efficient logistics for paper and pulp supply chains.", image: "/industries/paper-pulp.png" },
-];
+import { industries } from "@/data/industries";
 
 export default function IndustriesSlider({ currentSlug }) {
-  const filtered = industries.filter((i) => i.slug !== currentSlug);
+  const filtered = industries.filter((i) => !i.href.endsWith(`/${currentSlug}`));
   const swiperRef = useRef(null);
 
   return (
@@ -62,8 +51,8 @@ export default function IndustriesSlider({ currentSlug }) {
           }}
         >
           {filtered.map((item) => (
-            <SwiperSlide key={item.slug}>
-              <Link href={`/industries/${item.slug}`} className="industries-slider__card">
+            <SwiperSlide key={item.href}>
+              <Link href={item.href} className="industries-slider__card">
                 <div className="industries-slider__card-image">
                   <Image
                     src={item.image}

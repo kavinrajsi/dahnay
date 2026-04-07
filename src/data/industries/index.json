@@ -317,5 +317,35 @@
         { "question": "Which markets do you serve?", "answer": "DahNAY supports domestic and international movements across key global trade lanes." }
       ]
     }
+  },
+  "food-agro": {
+    "banner": {
+      "title": "Food & Agro",
+      "desktopImage": "/images/banners/banner-desktop-food-agro.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "From farm to market, delivered fresh",
+      "content": "Food and agricultural supply chains demand speed, hygiene and temperature integrity at every stage. From bulk grain exports to chilled produce distribution, DahNAY ensures your cargo reaches its destination fresh, compliant and on time."
+    },
+    "expertise": {
+      "content": "We design logistics solutions aligned to perishability, seasonality and regulatory compliance. Every workflow is built for safety, speed and supply chain continuity.",
+      "items": [
+        { "image": "/images/industries/food-agro/cold-chain.png", "title": "Cold Chain Logistics", "description": "Temperature-controlled transport and storage for perishable food products across the supply chain." },
+        { "image": "/images/industries/food-agro/bulk-agro.png", "title": "Bulk Agro Commodity Movement", "description": "Efficient handling and transport of grains, pulses, spices and other agricultural commodities." },
+        { "image": "/images/industries/food-agro/warehousing.png", "title": "Food-Grade Warehousing", "description": "Hygienic, temperature-monitored storage facilities designed for food safety compliance." },
+        { "image": "/images/industries/food-agro/export.png", "title": "Export & Cross-Border Logistics", "description": "End-to-end export logistics with documentation, customs clearance and phytosanitary compliance." },
+        { "image": "/images/industries/food-agro/last-mile.png", "title": "Last-Mile Distribution", "description": "Timely delivery to retail outlets, markets and distribution centres with full chain-of-custody." }
+      ]
+    },
+    "faq": {
+      "items": [
+        { "question": "Does DahNAY handle temperature-sensitive food cargo?", "answer": "Yes. We provide end-to-end cold chain logistics with temperature monitoring, reefer containers and climate-controlled warehousing." },
+        { "question": "Can DahNAY manage bulk agricultural exports?", "answer": "Yes. We handle bulk grain, pulses, spices and other agro commodities with efficient port-to-port and farm-to-port logistics." },
+        { "question": "Do you ensure food safety compliance?", "answer": "All our food logistics operations follow strict hygiene and safety protocols, aligned with FSSAI, FDA and international food safety standards." },
+        { "question": "What packaging and handling standards do you follow?", "answer": "We use food-grade packaging, contamination-free handling and segregated storage to maintain product integrity." },
+        { "question": "Do you support seasonal agricultural shipments?", "answer": "Yes. Our solutions are designed to scale with seasonal harvest cycles and demand fluctuations." }
+      ]
+    }
   }
 }

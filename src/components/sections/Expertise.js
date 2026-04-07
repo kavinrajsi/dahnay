@@ -11,29 +11,6 @@ export default function Expertise({
   layout = "slider",
   children,
 }) {
-  const sliderSettings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dotsClass: "slider__control",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 3, slidesToScroll: 1 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 2, slidesToScroll: 1 },
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 1, slidesToScroll: 1 },
-      },
-    ],
-  };
-
   const renderCard = (item, index) => (
     <div key={index} className="service-card">
       <div className="service-card__image-wrapper">
@@ -67,7 +44,15 @@ export default function Expertise({
       </div>
       {items.length > 0 && layout === "slider" && (
         <div className="expertise__slider container">
-          <Slider settings={sliderSettings}>
+          <Slider
+            slidesPerView={1}
+            spaceBetween={20}
+            breakpoints={{
+              480: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
             {items.map((item, index) => (
               <div key={index} className="expertise__slide">
                 {renderCard(item, index)}

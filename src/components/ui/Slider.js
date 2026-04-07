@@ -1,13 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import dynamic from "next/dynamic";
-import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Keyboard, Mousewheel } from "swiper/modules";
 
-const Slick = dynamic(() => import("react-slick"), { ssr: false });
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "swiper/css";
+import "swiper/css/pagination";
 
 function PrevArrow({ onClick }) {
   return (
@@ -31,77 +29,52 @@ function NextArrow({ onClick }) {
   );
 }
 
-const defaultSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  arrows: false,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: { slidesToShow: 2 },
-    },
-    {
-      breakpoint: 768,
-      settings: { slidesToShow: 1 },
-    },
-  ],
-};
-
-export function SliderSlide({ desktopImage, mobileImage, alt, href, children }) {
-  const Wrapper = href ? Link : "div";
-  const wrapperProps = href ? { href, className: "slider__link" } : { className: "slider__slide" };
-
-  return (
-    <Wrapper {...wrapperProps}>
-      <picture className="slider__picture">
-        {desktopImage && (
-          <source
-            media="(min-width: 768px)"
-            srcSet={`${desktopImage} 1x`}
-            width={1440}
-            height={580}
-          />
-        )}
-        <img
-          className="slider__image"
-          src={mobileImage || desktopImage}
-          alt={alt}
-          width={768}
-          height={480}
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
-      {children && <div className="slider__content">{children}</div>}
-    </Wrapper>
-  );
-}
-
-export default function Slider({ children, className = "", settings = {}, ...props }) {
-  const slickRef = useRef(null);
-
-  const mergedSettings = {
-    ...defaultSettings,
-    ...settings,
-    appendDots: (dots) => (
-      <div className="slider__control">
-        <ul className="slider__dots">{dots}</ul>
-        <div className="slider__arrows">
-          <PrevArrow onClick={() => slickRef.current?.slickPrev()} />
-          <NextArrow onClick={() => slickRef.current?.slickNext()} />
-        </div>
-      </div>
-    ),
-  };
+export default function Slider({
+  children,
+  className = "",
+  slidesPerView = 3,
+  spaceBetween = 20,
+  breakpoints,
+  loop = false,
+  speed = 500,
+  ...rest
+}) {
+  const swiperRef = useRef(null);
 
   return (
     <div className={`slider ${className}`}>
-      <Slick ref={slickRef} {...mergedSettings} {...props}>
-        {children}
-      </Slick>
+      <Swiper
+        modules={[Pagination, Keyboard, Mousewheel]}
+        onSwiper={(swiper) => { swiperRef.current = swiper; }}
+        slidesPerView={slidesPerView}
+        spaceBetween={spaceBetween}
+        breakpoints={breakpoints}
+        loop={loop}
+        speed={speed}
+        keyboard={{ enabled: true }}
+        mousewheel={{ forceToAxis: true }}
+        pagination={{
+          clickable: true,
+          el: `.slider__dots`,
+          bulletClass: "slider__dot",
+          bulletActiveClass: "slider__dot--active",
+        }}
+        {...rest}
+      >
+        {Array.isArray(children)
+          ? children.map((child, i) => (
+              <SwiperSlide key={i}>{child}</SwiperSlide>
+            ))
+          : <SwiperSlide>{children}</SwiperSlide>
+        }
+      </Swiper>
+      <div className="slider__control">
+        <div className="slider__dots" />
+        <div className="slider__arrows">
+          <PrevArrow onClick={() => swiperRef.current?.slidePrev()} />
+          <NextArrow onClick={() => swiperRef.current?.slideNext()} />
+        </div>
+      </div>
     </div>
   );
 }

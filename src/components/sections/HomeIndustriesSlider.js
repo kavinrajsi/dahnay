@@ -77,16 +77,6 @@ const INDUSTRIES = [
   },
 ];
 
-const sliderSettings = {
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  responsive: [
-    { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3 } },
-    { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-  ],
-};
-
 export default function HomeIndustriesSlider() {
   return (
     <section className="home-industries">
@@ -107,7 +97,17 @@ export default function HomeIndustriesSlider() {
           </Link>
         </div>
 
-        <Slider className="home-industries__slider" settings={sliderSettings}>
+        <Slider
+          className="home-industries__slider"
+          slidesPerView={1}
+          spaceBetween={20}
+          breakpoints={{
+            480: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1200: { slidesPerView: 4 },
+          }}
+        >
           {INDUSTRIES.map((industry) => (
             <div key={industry.slug} className="industry-slide">
               <Link

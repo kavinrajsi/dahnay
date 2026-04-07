@@ -10,29 +10,6 @@ export default function ServiceExpertise({
   items = [],
   children,
 }) {
-  const sliderSettings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dotsClass: "slider__control",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 3, slidesToScroll: 1 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 2, slidesToScroll: 1 },
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 1, slidesToScroll: 1 },
-      },
-    ],
-  };
-
   return (
     <section className="expertise expertise--no-bg">
       <div className="container">
@@ -45,7 +22,15 @@ export default function ServiceExpertise({
       </div>
       {items.length > 0 && (
         <div className="expertise__slider container">
-          <Slider settings={sliderSettings}>
+          <Slider
+            slidesPerView={1}
+            spaceBetween={20}
+            breakpoints={{
+              480: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
             {items.map((item, index) => (
               <div key={index} className="expertise__slide">
                 <div className="service-card">

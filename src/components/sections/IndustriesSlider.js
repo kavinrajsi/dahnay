@@ -1,8 +1,13 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Keyboard, Mousewheel } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 const industries = [
   { slug: "automotive", title: "Automotive", description: "Driving global supply chains with reliable, time-sensitive automotive logistics.", image: "/images/industries/cards/automotive.png" },
@@ -19,38 +24,7 @@ const industries = [
 
 export default function IndustriesSlider({ currentSlug }) {
   const filtered = industries.filter((i) => i.slug !== currentSlug);
-  const trackRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(4);
-
-  useEffect(() => {
-    const update = () => {
-      const w = window.innerWidth;
-      if (w >= 992) setVisibleCount(4);
-      else if (w >= 768) setVisibleCount(3);
-      else if (w >= 576) setVisibleCount(2);
-      else setVisibleCount(1);
-    };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  const maxIndex = Math.max(0, filtered.length - visibleCount);
-  const totalDots = maxIndex + 1;
-
-  const scrollTo = (index) => {
-    const clamped = Math.max(0, Math.min(index, maxIndex));
-    setCurrentIndex(clamped);
-    if (trackRef.current) {
-      const card = trackRef.current.children[0];
-      if (card) {
-        const gap = 20;
-        const cardWidth = card.offsetWidth + gap;
-        trackRef.current.scrollTo({ left: clamped * cardWidth, behavior: "smooth" });
-      }
-    }
-  };
+  const swiperRef = useRef(null);
 
   return (
     <section className="industries-slider">
@@ -68,10 +42,28 @@ export default function IndustriesSlider({ currentSlug }) {
           </Link>
         </div>
 
-        <div className="industries-slider__track-wrapper">
-          <div className="industries-slider__track" ref={trackRef}>
-            {filtered.map((item) => (
-              <Link key={item.slug} href={`/industries/${item.slug}`} className="industries-slider__card">
+        <Swiper
+          modules={[Pagination, Keyboard, Mousewheel]}
+          onSwiper={(swiper) => { swiperRef.current = swiper; }}
+          spaceBetween={20}
+          slidesPerView={1}
+          keyboard={{ enabled: true }}
+          mousewheel={{ forceToAxis: true }}
+          pagination={{
+            clickable: true,
+            el: ".industries-slider__dots",
+            bulletClass: "industries-slider__dot",
+            bulletActiveClass: "industries-slider__dot--active",
+          }}
+          breakpoints={{
+            576: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            992: { slidesPerView: 4 },
+          }}
+        >
+          {filtered.map((item) => (
+            <SwiperSlide key={item.slug}>
+              <Link href={`/industries/${item.slug}`} className="industries-slider__card">
                 <div className="industries-slider__card-image">
                   <Image
                     src={item.image}
@@ -90,26 +82,16 @@ export default function IndustriesSlider({ currentSlug }) {
                   <span className="industries-slider__card-link">Learn more</span>
                 </div>
               </Link>
-            ))}
-          </div>
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
         <div className="industries-slider__controls">
-          <div className="industries-slider__dots">
-            {Array.from({ length: totalDots }, (_, i) => (
-              <button
-                key={i}
-                className={`industries-slider__dot${currentIndex === i ? " industries-slider__dot--active" : ""}`}
-                onClick={() => scrollTo(i)}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
+          <div className="industries-slider__dots" />
           <div className="industries-slider__arrows">
             <button
               className="industries-slider__arrow"
-              disabled={currentIndex === 0}
-              onClick={() => scrollTo(currentIndex - 1)}
+              onClick={() => swiperRef.current?.slidePrev()}
               aria-label="Previous"
             >
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -119,8 +101,7 @@ export default function IndustriesSlider({ currentSlug }) {
             </button>
             <button
               className="industries-slider__arrow"
-              disabled={currentIndex === maxIndex}
-              onClick={() => scrollTo(currentIndex + 1)}
+              onClick={() => swiperRef.current?.slideNext()}
               aria-label="Next"
             >
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none">

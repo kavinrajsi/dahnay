@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import "@/styles/components/_industries-grid.scss";
 
 export default function IndustryCard({ image, title, description, href }) {
   return (

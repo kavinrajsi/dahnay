@@ -46,7 +46,6 @@ export default function IndustryPage({ slug }) {
         title={shared.expertise.title}
         content={data.expertise.content}
         items={data.expertise.items}
-        layout="grid"
       />
 
       <WhyDahnay

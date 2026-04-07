@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -50,54 +47,11 @@ const services = [
 ];
 
 export default function HomeServices() {
-  const sectionRef = useRef(null);
-  const leftRef = useRef(null);
-  const cardsRef = useRef(null);
-
-  useEffect(() => {
-    let ctx;
-
-    const init = async () => {
-      const { gsap } = await import("gsap");
-      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-      gsap.registerPlugin(ScrollTrigger);
-
-      if (!sectionRef.current || !cardsRef.current || !leftRef.current) return;
-
-      const mm = gsap.matchMedia();
-
-      mm.add("(min-width: 992px)", () => {
-        const headerOffset = 112;
-        const sectionPadding = 80;
-
-        ctx = ScrollTrigger.create({
-          trigger: sectionRef.current,
-          start: `top ${headerOffset}px`,
-          end: () => {
-            const cardsH = cardsRef.current?.offsetHeight || 0;
-            const leftH = leftRef.current?.offsetHeight || 0;
-            return `+=${cardsH - leftH - sectionPadding}`;
-          },
-          pin: leftRef.current,
-          pinSpacing: false,
-        });
-
-        return () => ctx.kill();
-      });
-    };
-
-    init();
-
-    return () => {
-      if (ctx) ctx.kill();
-    };
-  }, []);
-
   return (
-    <section ref={sectionRef} className="home-services">
+    <section className="home-services">
       <div className="container">
         <div className="home-services__inner">
-          <div ref={leftRef} className="home-services__left">
+          <div className="home-services__left">
             <span className="home-services__tag">Services we offer</span>
             <h2 className="home-services__title">
               Integrated logistics solutions
@@ -110,7 +64,7 @@ export default function HomeServices() {
             </Link>
           </div>
 
-          <div ref={cardsRef} className="home-services__cards">
+          <div className="home-services__cards">
             {services.map((service, index) => (
               <Link key={service.href + service.title} href={service.href} className="home-service-card">
                 <div className="home-service-card__image-wrapper">

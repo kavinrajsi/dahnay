@@ -15,7 +15,8 @@
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 16px 0 16px 0;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
   }
 
   @media (min-width: 768px) {

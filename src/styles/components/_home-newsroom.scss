@@ -27,7 +27,8 @@
     justify-content: center;
     padding: 12px 24px;
     background: #f6f6f6;
-    border-radius: 0 16px 0 16px;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     font-family: var(--font-avenir), sans-serif;
     font-weight: var(--font-weight-medium);
     font-size: 10px;
@@ -44,7 +45,7 @@
     font-size: 28px;
     line-height: 36px;
     color: #0b090a;
-      padding-bottom: 8px;
+    padding-bottom: 8px;
 
     @media (min-width: 992px) {
       font-size: 32px;
@@ -88,7 +89,8 @@
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  border-radius: 8px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
   overflow: hidden;
 
   &__image-wrapper {
@@ -101,7 +103,9 @@
     height: 216px;
     object-fit: cover;
     display: block;
-    border-radius: 5px 0 5px 0;
+
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
   }
 
   &__tag {
@@ -113,7 +117,8 @@
     justify-content: center;
     padding: 12px 24px;
     background: #ffffff;
-    border-radius: 0 16px 0 16px;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     font-family: var(--font-avenir), sans-serif;
     font-weight: var(--font-weight-medium);
     font-size: 10px;

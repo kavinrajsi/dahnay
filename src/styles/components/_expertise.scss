@@ -22,6 +22,26 @@
   &__slide {
     padding: 0 10px;
 
+    .service-card {
+      pointer-events: none;
+    }
+
+    .service-card__content {
+      position: static;
+      gap: 8px;
+      padding-top: 16px;
+    }
+
+    .service-card__title {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .service-card__description {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
     .service-card__image-wrapper {
       position: relative;
       width: 100%;

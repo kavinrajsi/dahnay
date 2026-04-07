@@ -28,7 +28,8 @@
     justify-content: center;
     padding: 12px 24px;
     background: #d3d3d3;
-    border-radius: 16px 0 16px 0;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     font-family: var(--font-avenir), sans-serif;
     font-weight: var(--font-weight-medium);
     font-size: 10px;
@@ -303,7 +304,8 @@
     left: 10px;
     padding: 12px 24px;
     background: #fff;
-    border-radius: 16px 0 16px 0;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     font-family: var(--font-avenir), sans-serif;
     font-weight: var(--font-weight-medium);
     font-size: 10px;
@@ -409,7 +411,8 @@
     display: flex;
     align-items: center;
     border: 1px solid #d3d3d3;
-    border-radius: 16px 0 16px 0;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     padding: 12px 12px 12px 24px;
     background: #fff;
     gap: 16px;
@@ -540,7 +543,8 @@
     left: 10px;
     padding: 12px 24px;
     background: #fff;
-    border-radius: 16px 0 16px 0;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     font-family: var(--font-avenir), sans-serif;
     font-weight: var(--font-weight-medium);
     font-size: 10px;
@@ -643,7 +647,8 @@
 
   &__cover {
     margin-bottom: 40px;
-    border-radius: 16px 0 16px 0;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     overflow: hidden;
   }
 
@@ -682,7 +687,8 @@
     text-transform: uppercase;
     color: var(--neutral-black);
     background: var(--neutral-white2);
-    border-radius: 16px 0 16px 0;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
   }
 
   &__date {

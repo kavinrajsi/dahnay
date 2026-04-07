@@ -42,7 +42,8 @@
     position: relative;
     width: 100%;
     aspect-ratio: 455 / 516;
-    border-radius: 16px 0 16px 0;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     overflow: hidden;
   }
 

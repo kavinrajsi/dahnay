@@ -1,7 +1,8 @@
 .service-card {
   position: relative;
   overflow-y: hidden;
-  border-radius: 16px 0 16px 0;
+  border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       transition: all 0.2s ease-in;

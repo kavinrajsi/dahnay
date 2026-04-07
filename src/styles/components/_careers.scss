@@ -25,7 +25,8 @@
 
 .culture-card {
   background: var(--neutral-grey);
-  border-radius: 16px 0 16px 0;
+  border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;

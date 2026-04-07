@@ -137,7 +137,8 @@
       top: 100%;
       left: 0;
       width: 257px;
-      border-radius: 16px 0 16px 0;
+      border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
       box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.18);
       z-index: 200;
       top: calc(100% + 37px);

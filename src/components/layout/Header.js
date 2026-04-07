@@ -177,9 +177,10 @@ export default function Header() {
         onMouseEnter={() => handleMouseEnter(id)}
         onMouseLeave={handleMouseLeave}
       >
-        <Link
-          href={`/${id}`}
+        <button
+          type="button"
           className={`header__nav-link${hasActive ? " header__nav-link--active" : ""}`}
+          onClick={() => setActiveDropdown(activeDropdown === id ? null : id)}
         >
           {label}
           <svg
@@ -197,7 +198,7 @@ export default function Header() {
               strokeLinejoin="round"
             />
           </svg>
-        </Link>
+        </button>
         {activeDropdown === id && (
           <div
             className="header__mega-menu"

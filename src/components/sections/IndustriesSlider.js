@@ -76,7 +76,8 @@ export default function IndustriesSlider({ currentSlug }) {
                   <Image
                     src={item.image}
                     alt={item.title}
-                    fill
+                    width={265}
+                    height={180}
                     className="industries-slider__card-img"
                     sizes="(max-width: 575px) 100vw, (max-width: 767px) 50vw, (max-width: 991px) 33vw, 25vw"
                   />

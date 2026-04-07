@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,6 +14,13 @@ import { industries } from "@/data/industries";
 export default function IndustriesSlider({ currentSlug }) {
   const filtered = industries.filter((i) => !i.href.endsWith(`/${currentSlug}`));
   const swiperRef = useRef(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const updateNav = (swiper) => {
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+  };
 
   return (
     <section className="industries-slider">
@@ -33,7 +40,8 @@ export default function IndustriesSlider({ currentSlug }) {
 
         <Swiper
           modules={[Pagination, Keyboard, Mousewheel]}
-          onSwiper={(swiper) => { swiperRef.current = swiper; }}
+          onSwiper={(swiper) => { swiperRef.current = swiper; updateNav(swiper); }}
+          onSlideChange={updateNav}
           spaceBetween={20}
           slidesPerView={1}
           keyboard={{ enabled: true }}
@@ -80,6 +88,7 @@ export default function IndustriesSlider({ currentSlug }) {
           <div className="industries-slider__arrows">
             <button
               className="industries-slider__arrow"
+              style={{ opacity: isBeginning ? 0.5 : 1 }}
               onClick={() => swiperRef.current?.slidePrev()}
               aria-label="Previous"
             >
@@ -90,6 +99,7 @@ export default function IndustriesSlider({ currentSlug }) {
             </button>
             <button
               className="industries-slider__arrow"
+              style={{ opacity: isEnd ? 0.5 : 1 }}
               onClick={() => swiperRef.current?.slideNext()}
               aria-label="Next"
             >

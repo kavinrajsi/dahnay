@@ -25,7 +25,6 @@ const solutionsMegaMenu = [
         label: "E-commerce Fulfilment Support",
         href: "/service/ecommerce-fulfilment",
       },
-      { label: "Green Logistics", href: "/solutions/logistics" },
     ],
   },
   {
@@ -75,6 +74,12 @@ const industriesDropdown = [
   },
   { label: "FMCG", href: "/industries/fmcg" },
   { label: "Paper & Pulp", href: "/industries/paper-pulp" },
+];
+
+const aboutDropdown = [
+  { label: "Who we are", href: "/about" },
+  { label: "ESG & CSR", href: "/about/esg-csr" },
+  { label: "Careers", href: "/careers" },
 ];
 
 const newsroomDropdown = [
@@ -341,12 +346,7 @@ export default function Header() {
           </Link>
           {renderMegaMenu("solutions", "Solutions", solutionsMegaMenu)}
           {renderDropdown("industries", industriesDropdown)}
-          <Link href="/about" className="header__nav-link">
-            About us
-          </Link>
-          <Link href="/careers" className="header__nav-link">
-            Careers
-          </Link>
+          {renderDropdown("about us", aboutDropdown)}
           {renderDropdown("newsroom", newsroomDropdown)}
           <Link href="/contact" className="header__nav-link">
             Contact us
@@ -370,12 +370,7 @@ export default function Header() {
         </Link>
         {renderMegaMenu("solutions", "Solutions", solutionsMegaMenu)}
         {renderDropdown("industries", industriesDropdown)}
-        <Link href="/about" className="header__nav-link" onClick={closeAll}>
-          About us
-        </Link>
-        <Link href="/careers" className="header__nav-link" onClick={closeAll}>
-          Careers
-        </Link>
+        {renderDropdown("about us", aboutDropdown)}
         {renderDropdown("newsroom", newsroomDropdown)}
         <Link href="/contact" className="header__nav-link" onClick={closeAll}>
           Contact us

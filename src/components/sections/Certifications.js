@@ -33,16 +33,18 @@ export default function Certifications({
             </Link>
           )}
         </div>
-        <div className={styles.certifications__imageWrapper}>
-          <Image
-            src={image}
-            alt={imageAlt}
-            width={550}
-            height={400}
-            sizes="(min-width: 992px) 550px, 100vw"
-            className={styles.certifications__image}
-          />
-        </div>
+        {image && (
+          <div className={styles.certifications__imageWrapper}>
+            <Image
+              src={image}
+              alt={imageAlt}
+              width={550}
+              height={400}
+              sizes="(min-width: 992px) 550px, 100vw"
+              className={styles.certifications__image}
+            />
+          </div>
+        )}
       </div>
     </section>
   );

@@ -24,7 +24,7 @@ export default function ServicePage({ slug }) {
         content={data.whyDahnay.content}
         items={data.whyDahnay.items}
       />
-      <Certifications {...data.certifications} />
+      {data.certifications && <Certifications {...data.certifications} />}
       <IndustriesSlider />
       <FAQSection {...data.faq} />
       <GrowForm />

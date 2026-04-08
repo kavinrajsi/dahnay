@@ -30,7 +30,7 @@ export default function IndustriesSlider({ currentSlug }) {
             <span className="industries-slider__tag">Industries We Offer</span>
             <h2 className="industries-slider__title">Logistics for every sector</h2>
             <p className="industries-slider__desc">
-              If it moves, we ship it. From Pharma to renewables and automotive, get your goods delivered to your doorstep, well and safe.
+              If it moves, we ship it. From Pharma to renewables and automotive, get your goods delivered to your doorstep, well and safe. 
             </p>
           </div>
           <Link href="/contact" className="industries-slider__btn">

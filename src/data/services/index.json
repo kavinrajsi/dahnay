@@ -1,71 +1,4 @@
 {
-
-  "sea-freight": {
-    "banner": {
-      "title": "Sea Freight",
-      "desktopImage": "/images/banners/banner-desktop-sea-freight.png"
-    },
-    "overview": {
-      "tag": "Overview",
-      "title": "Your cargo. Our commitment.",
-      "descriptions": [
-        "From raw materials to finished products, global trade travels by sea. DahNAY enables that movement with discipline, foresight and control.",
-        "Across major international trade corridors, we manage high-volume ocean freight with structured planning, regulatory clarity and end-to-end visibility. Whether containerised cargo or complex project shipments, we move scale without losing precision.",
-        "Because what moves the world should never be left to chance."
-      ],
-      "image": "/images/overview/sea-freight.png",
-      "imageAlt": "Container ship at port",
-      "ctaText": "Get started",
-      "ctaHref": "/contact"
-    },
-    "expertise": {
-      "tag": "Expertise",
-      "title": "Core and value added services",
-      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
-    },
-    "expertiseItems": [
-      { "image": "/expertise/ocean-freight-management.png", "title": "Ocean Freight Management", "description": "Full Container Load (FCL) Less than Container Load (LCL) Consolidation & Deconsolidation Break-bulk cargo handling Cross-trade shipment coordination Charter vessel arrangements" },
-      { "image": "/expertise/specialised-cargo-execution.png", "title": "Specialised Cargo Execution", "description": "Oversized and heavy-lift cargo, Open Top and Flat Rack container movements, Reefer (temperature-controlled) shipments, IMDG-compliant hazardous cargo handling, Industrial machinery & infrastructure movements" },
-      { "image": "/expertise/cha-activities.png", "title": "CHA Activities", "description": "Export & import documentation, Customs clearance coordination, HS classification support, International trade compliance management, Port supervision and milestone monitoring" },
-      { "image": "/expertise/multimodal-inland-integration.png", "title": "Multimodal & Inland Integration", "description": "Port-to-door and door-to-port solutions, Inland haulage coordination, Rail–road–sea multimodal connectivity, Sea–Air hybrid routing during disruptions" },
-      { "image": "/expertise/roro-finished-vehicles.png", "title": "RoRo Finished Vehicles", "description": "Lorem ipsum dolor sit amet consectetur. Morbi facilisis sed diam morbi. Justo amet dui elit pharetra eu pharetra quis. Ac leo proin integer aliquam vestibulum" }
-    ],
-    "whyDahnay": {
-      "title": "Why DahNAY",
-      "content": "We combine deep industry knowledge with operational discipline to deliver logistics you can rely on.",
-      "items": [
-        { "icon": "/icon/global-network.png", "title": "Global Network", "content": "Strategic partnerships across major trade corridors worldwide." },
-        { "icon": "/icon/expert-handling.png", "title": "Regulatory Expertise", "content": "Deep compliance knowledge across jurisdictions and cargo types." },
-        { "icon": "/icon/speed-reliability.png", "title": "Real-Time Visibility", "content": "End-to-end tracking and milestone monitoring for every shipment." },
-        { "icon": "/icon/custom-solutions.png", "title": "Dedicated Support", "content": "Single point of contact with proactive communication throughout." }
-      ]
-    },
-    "certifications": {
-      "tag": "Certifications",
-      "title": "Certified for",
-      "titleAccent": "excellence.",
-      "descriptions": ["DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."],
-      "image": "/images/overview/sea-freight.png",
-      "imageAlt": "DahNAY certifications"
-    },
-    "faq": {
-      "tag": "FAQ's",
-      "title": "Frequently Asked",
-      "titleAccent": "Questions",
-      "content": "Find answers to common questions about our sea freight services and how we can support your supply chain.",
-      "items": [
-        { "question": "What sea freight services does DahNAY offer?", "answer": "DahNAY provides end-to-end sea freight services including Full Container Load (FCL), Less than Container Load (LCL), breakbulk shipping, project cargo handling and door-to-door ocean freight solutions for global trade." },
-        { "question": "Does DahNAY offer both FCL and LCL services?", "answer": "Yes, DahNAY offers both FCL and LCL shipping services. FCL is ideal for large shipments requiring a dedicated container, while LCL is a cost-effective solution for smaller shipments sharing container space." },
-        { "question": "Can DahNAY handle temperature-sensitive cargo?", "answer": "Yes, DahNAY handles temperature-controlled cargo through refrigerated containers (reefers), ensuring safe transport of perishable goods, pharmaceuticals and sensitive materials." },
-        { "question": "Do you manage customs clearance for sea shipments?", "answer": "DahNAY provides complete customs clearance services for sea freight, including documentation, compliance and coordination with customs authorities to ensure smooth import and export processes." },
-        { "question": "What ports and trade routes does DahNAY operate on?", "answer": "DahNAY operates across major global ports and trade routes connecting India, the UAE, the USA and key international markets, ensuring reliable ocean freight connectivity." },
-        { "question": "How does DahNAY manage sea freight disruptions or port congestion?", "answer": "DahNAY proactively manages disruptions through alternative routing, strong carrier partnerships and real-time shipment monitoring to minimise delays caused by port congestion or global supply chain issues." },
-        { "question": "How does DahNAY make sea freight less complex for shippers?", "answer": "DahNAY simplifies sea freight by offering end-to-end logistics management, transparent pricing, real-time tracking and dedicated support, reducing operational complexity for shippers." },
-        { "question": "What is the transit time for sea freight with DahNAY?", "answer": "Sea freight transit time depends on the shipping route, cargo type and port conditions. DahNAY provides accurate transit estimates and optimised routing to ensure timely delivery." },
-        { "question": "Does DahNAY provide tracking for sea freight shipments?", "answer": "Yes, DahNAY offers real-time tracking and shipment visibility for sea freight, allowing customers to monitor cargo throughout the journey." }
-      ]
-    }
-  },
   "air-freight": {
     "banner": {
       "title": "Air Freight",
@@ -90,26 +23,59 @@
       "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
     },
     "expertiseItems": [
-      { "image": "/images/overview/air-freight.png", "title": "Express Air Cargo", "description": "Time-definite delivery, Priority handling, Airport-to-airport and door-to-door options" },
-      { "image": "/images/overview/project-logistics.png", "title": "Charter & Part-Charter", "description": "Dedicated aircraft for urgent or oversized cargo, Full payload management, On-demand scheduling" },
-      { "image": "/images/overview/customs-clearance.png", "title": "Dangerous Goods Handling", "description": "IATA DGR-compliant packaging and documentation, Certified handling for all classes, End-to-end compliance management" },
-      { "image": "/images/overview/road-transportation.png", "title": "Multimodal Air Solutions", "description": "Air-sea and air-road hybrid routing, Last-mile integration, Cost-optimised transit planning" }
+      {
+        "image": "/expertise/time-critical-air-operations.png",
+        "title": "Time-Critical Air Operations",
+        "description": "Express and priority air freight, Direct and consolidated shipments, Airport-to-airport and door-to-door execution, Charter aircraft coordination, Cross-border shipment management"
+      },
+      {
+        "image": "/expertise/specialised-cargo-handling.png",
+        "title": "Specialised Cargo Handling",
+        "description": "High-value and sensitive cargo Temperature-controlled shipments Dangerous goods (IATA-compliant) handling Electronics and precision equipment Aerospace and critical components"
+      },
+      {
+        "image": "/expertise/regulatory-documentation-control.png",
+        "title": "Regulatory & Documentation Control",
+        "description": "Airway bill management Export and import documentation Customs clearance coordination HS classification support International aviation compliance adherence"
+      },
+      {
+        "image": "/expertise/network-capacity-strategy.png",
+        "title": "Network & Capacity Strategy",
+        "description": "Strategic partnerships with global airlines Access to major international airports Space assurance during peak demand cycles Alternative routing during disruptions"
+      }
     ],
     "whyDahnay": {
       "title": "Why DahNAY for Air freight?",
       "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY.",
       "items": [
-        { "icon": "/icon/global-network.png", "title": "Global Network", "content": "Strategic partnerships across major trade corridors worldwide." },
-        { "icon": "/icon/expert-handling.png", "title": "Regulatory Expertise", "content": "Deep compliance knowledge across jurisdictions and cargo types." },
-        { "icon": "/icon/speed-reliability.png", "title": "Real-Time Visibility", "content": "End-to-end tracking and milestone monitoring for every shipment." },
-        { "icon": "/icon/custom-solutions.png", "title": "Dedicated Support", "content": "Single point of contact with proactive communication throughout." }
+        {
+          "icon": "/icon/global-network.png",
+          "title": "Speed with Structure",
+          "content": "Urgency managed through disciplined planning, not reactive execution."
+        },
+        {
+          "icon": "/icon/expert-handling.png",
+          "title": "Cost–Transit Optimisation",
+          "content": "Routing strategies that balance speed and financial efficiency."
+        },
+        {
+          "icon": "/icon/speed-reliability.png",
+          "title": "24/7 Operational Monitoring",
+          "content": "Continuous tracking and proactive communication from pickup to final delivery."
+        },
+        {
+          "icon": "/icon/custom-solutions.png",
+          "title": "Hybrid Sea–Air Integration",
+          "content": "Flexible routing solutions when traditional lanes face disruption."
+        }
       ]
     },
     "certifications": {
       "tag": "Certifications",
-      "title": "Certified for",
-      "titleAccent": "excellence.",
-      "descriptions": ["DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."],
+      "title": "Prepared to handle your freight with precision",
+      "descriptions": [
+        "Our operations are IATA-compliant, supported by DG-certified handling teams and aligned with global aviation security standards. With strict adherence to trade and customs compliance protocols, we ensure cargo is handled safely, securely and in full regulatory compliance at every stage of the journey."
+      ],
       "image": "/images/overview/sea-freight.png",
       "imageAlt": "DahNAY certifications"
     },
@@ -119,32 +85,56 @@
       "titleAccent": "Questions",
       "content": "Find answers to common questions about our air freight services and how we can support your supply chain.",
       "items": [
-        { "question": "What air freight services does DahNAY provide?", "answer": "DahNAY offers comprehensive air freight services including express shipping, consolidated air cargo, charter services and door-to-door delivery for international shipments." },
-        { "question": "When should I choose air freight over sea freight?", "answer": "Air freight is ideal for time-sensitive shipments, high-value goods and urgent deliveries where speed is critical compared to sea freight." },
-        { "question": "Can DahNAY handle time-critical or same-day air shipments?", "answer": "DahNAY specialises in time-critical logistics and can arrange expedited or same-day air freight solutions based on cargo urgency." },
-        { "question": "What types of cargo can be transported via air freight?", "answer": "DahNAY handles a wide range of air cargo including perishable goods, pharmaceuticals, electronics, high-value shipments and urgent consignments." },
-        { "question": "How does DahNAY ensure cargo safety in air freight?", "answer": "DahNAY ensures cargo safety through secure packaging, compliance with airline regulations and continuous monitoring throughout transit." },
-        { "question": "How do you manage rising air freight rates and capacity constraints?", "answer": "DahNAY leverages strong airline partnerships, flexible routing options and strategic planning to manage capacity challenges and optimise costs." },
-        { "question": "What makes DahNAY's air freight approach different?", "answer": "DahNAY combines speed, flexibility and personalised service with global reach, ensuring efficient and reliable air freight solutions." },
-        { "question": "Does DahNAY provide on-demand air freight capacity?", "answer": "Yes, DahNAY offers on-demand air freight capacity including charter solutions for urgent and high-priority shipments." }
+        {
+          "question": "What air freight services does DahNAY provide?",
+          "answer": "DahNAY offers comprehensive air freight services including express shipping, consolidated air cargo, charter services and door-to-door delivery for international shipments."
+        },
+        {
+          "question": "When should I choose air freight over sea freight?",
+          "answer": "Air freight is ideal for time-sensitive shipments, high-value goods and urgent deliveries where speed is critical compared to sea freight."
+        },
+        {
+          "question": "Can DahNAY handle time-critical or same-day air shipments?",
+          "answer": "DahNAY specialises in time-critical logistics and can arrange expedited or same-day air freight solutions based on cargo urgency."
+        },
+        {
+          "question": "What types of cargo can be transported via air freight?",
+          "answer": "DahNAY handles a wide range of air cargo including perishable goods, pharmaceuticals, electronics, high-value shipments and urgent consignments."
+        },
+        {
+          "question": "How does DahNAY ensure cargo safety in air freight?",
+          "answer": "DahNAY ensures cargo safety through secure packaging, compliance with airline regulations and continuous monitoring throughout transit."
+        },
+        {
+          "question": "How do you manage rising air freight rates and capacity constraints?",
+          "answer": "DahNAY leverages strong airline partnerships, flexible routing options and strategic planning to manage capacity challenges and optimise costs."
+        },
+        {
+          "question": "What makes DahNAY's air freight approach different?",
+          "answer": "DahNAY combines speed, flexibility and personalised service with global reach, ensuring efficient and reliable air freight solutions."
+        },
+        {
+          "question": "Does DahNAY provide on-demand air freight capacity?",
+          "answer": "Yes, DahNAY offers on-demand air freight capacity including charter solutions for urgent and high-priority shipments."
+        }
       ]
     }
   },
-  "customs-clearance": {
+  "sea-freight": {
     "banner": {
-      "title": "Customs Clearance",
-      "desktopImage": "/images/banners/banner-desktop-customs-clearance.png"
+      "title": "Sea Freight",
+      "desktopImage": "/images/banners/banner-desktop-sea-freight.png"
     },
     "overview": {
       "tag": "Overview",
-      "title": "Clear borders.",
-      "titleAccent": "Zero delays.",
+      "title": "Your cargo. Our commitment.",
       "descriptions": [
-        "Navigating customs regulations across multiple jurisdictions requires precision and deep regulatory knowledge. DahNAY handles documentation, compliance and clearance so your cargo moves without hold-ups.",
-        "From tariff classification to duty management, we ensure every shipment clears smoothly — keeping your trade flowing and your business compliant."
+        "From raw materials to finished products, global trade travels by sea. DahNAY enables that movement with discipline, foresight and control.",
+        "Across major international trade corridors, we manage high-volume ocean freight with structured planning, regulatory clarity and end-to-end visibility. Whether containerised cargo or complex project shipments, we move scale without losing precision.",
+        "Because what moves the world should never be left to chance."
       ],
-      "image": "/images/overview/customs-clearance.png",
-      "imageAlt": "Customs documentation and clearance",
+      "image": "/images/overview/sea-freight.png",
+      "imageAlt": "Container ship at port",
       "ctaText": "Get started",
       "ctaHref": "/contact"
     },
@@ -154,86 +144,65 @@
       "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
     },
     "expertiseItems": [
-      { "image": "/images/overview/customs-clearance.png", "title": "Time-Critical Air Operations", "description": "End-to-end documentation, Duty and tariff management, Port and airport clearance coordination" },
-      { "image": "/images/overview/sea-freight.png", "title": "HS Classification", "description": "Accurate tariff classification, Duty optimisation advisory, Regulatory compliance audits" },
-      { "image": "/images/overview/air-freight.png", "title": "Trade Compliance", "description": "Sanctions screening, License and permit management, Origin certification" },
-      { "image": "/images/overview/road-transportation.png", "title": "Bonded Warehousing", "description": "In-bond storage management, Duty deferral coordination, Re-export facilitation" }
+      {
+        "image": "/expertise/ocean-freight-management.png",
+        "title": "Ocean Freight Management",
+        "description": "Full Container Load (FCL) Less than Container Load (LCL) Consolidation & Deconsolidation Break-bulk cargo handling Cross-trade shipment coordination Charter vessel arrangements"
+      },
+      {
+        "image": "/expertise/specialised-cargo-execution.png",
+        "title": "Specialised Cargo Execution",
+        "description": "Oversized and heavy-lift cargo, Open Top and Flat Rack container movements, Reefer (temperature-controlled) shipments, IMDG-compliant hazardous cargo handling, Industrial machinery & infrastructure movements"
+      },
+      {
+        "image": "/expertise/cha-activities.png",
+        "title": "CHA Activities",
+        "description": "Export & import documentation, Customs clearance coordination, HS classification support, International trade compliance management, Port supervision and milestone monitoring"
+      },
+      {
+        "image": "/expertise/inland-and-domestic-trucking.png",
+        "title": "Multimodal & Inland Integration",
+        "description": "Port-to-door and door-to-port solutions, Inland haulage coordination, Rail–road–sea multimodal connectivity, Sea–Air hybrid routing during disruptions"
+      },
+      {
+        "image": "/expertise/roro-finished-vehicles.png",
+        "title": "RoRo Finished Vehicles",
+        "description": "Lorem ipsum dolor sit amet consectetur. Morbi facilisis sed diam morbi. Justo amet dui elit pharetra eu pharetra quis. Ac leo proin integer aliquam vestibulum"
+      }
     ],
     "whyDahnay": {
-      "title": "Why DahNAY",
-      "content": "We combine deep industry knowledge with operational discipline to deliver logistics you can rely on.",
+      "title": "Why DahNAY for Sea freight?",
+      "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY.",
       "items": [
-        { "icon": "/icon/global-network.png", "title": "Global Network", "content": "Strategic partnerships across major trade corridors worldwide." },
-        { "icon": "/icon/expert-handling.png", "title": "Regulatory Expertise", "content": "Deep compliance knowledge across jurisdictions and cargo types." },
-        { "icon": "/icon/speed-reliability.png", "title": "Real-Time Visibility", "content": "End-to-end tracking and milestone monitoring for every shipment." },
-        { "icon": "/icon/custom-solutions.png", "title": "Dedicated Support", "content": "Single point of contact with proactive communication throughout." }
+        {
+          "icon": "/icon/global-network.png",
+          "title": "Extensive Network",
+          "content": "Partnerships with leading airlines and agents across major destinations."
+        },
+        {
+          "icon": "/icon/expert-handling.png",
+          "title": "Speed & Reliability",
+          "content": "Optimized routes and real-time tracking for faster delivery."
+        },
+        {
+          "icon": "/icon/speed-reliability.png",
+          "title": "Custom Solutions",
+          "content": "Tailored freight options based on your cargo type and priority."
+        },
+        {
+          "icon": "/icon/custom-solutions.png",
+          "title": "Expert Handling",
+          "content": "Experienced team ensuring compliance with all international regulations."
+        }
       ]
     },
     "certifications": {
       "tag": "Certifications",
-      "title": "Certified for",
-      "titleAccent": "excellence.",
-      "descriptions": ["DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."],
-      "image": "/images/overview/sea-freight.png",
-      "imageAlt": "DahNAY certifications"
-    },
-    "faq": {
-      "tag": "FAQ's",
-      "title": "Frequently Asked",
-      "titleAccent": "Questions",
-      "content": "Find answers to common questions about our customs brokerage services and how we can support your supply chain.",
-      "items": [
-        { "question": "How does DahNAY help me avoid expensive customs delays and fines?", "answer": "DahNAY ensures compliance with international trade regulations, accurate documentation and proactive customs coordination to avoid delays and penalties." },
-        { "question": "How does DahNAY ensure faster customs clearance?", "answer": "With its own CFS in Chennai and Tuticorin, DahNAY speeds up customs clearance through experienced customs brokers, digital documentation and strong relationships with authorities." },
-        { "question": "Can DahNAY handle international import and export compliance?", "answer": "Yes, DahNAY manages complete import and export compliance, including regulatory requirements, documentation and tariff classification." },
-        { "question": "What is the role of CHA in custom brokerage?", "answer": "A Customs House Agent (CHA) facilitates customs clearance by handling documentation, duty payments and compliance with customs regulations." }
-      ]
-    }
-  },
-  "domestic-trucking": {
-    "banner": {
-      "title": "Domestic Trucking",
-      "desktopImage": "/images/banners/banner-desktop-domestic-trucking.png"
-    },
-    "overview": {
-      "tag": "Overview",
-      "title": "Local reach.",
-      "titleAccent": "National scale.",
+      "title": "Prepared to handle your freight with precision",
       "descriptions": [
-        "Domestic distribution requires consistency, coverage and speed. DahNAY manages trucking operations across key inland corridors with reliable fleet networks and real-time tracking.",
-        "Whether single-drop or multi-point distribution, we move your goods efficiently from warehouse to destination — every time."
+        "Our ocean freight services are backed by a comprehensive set of global certifications that ensure safety, transparency, and compliance at every stage.",
+        "We meet internationally recognised standards including ISO 9001 and ISO 14001, and adhere to HAZMAT and IMDG regulations for hazardous materials. We also support trade integrity through AEO certification, ISPM 15 compliance for wood packaging, and rigorous training and protocols in trade compliance and forklift operations."
       ],
-      "image": "/images/overview/domestic-trucking.png",
-      "imageAlt": "Truck on domestic route",
-      "ctaText": "Get started",
-      "ctaHref": "/contact"
-    },
-    "expertise": {
-      "tag": "Expertise",
-      "title": "Core and value added services",
-      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
-    },
-    "expertiseItems": [
-      { "image": "/images/overview/domestic-trucking.png", "title": "Scheduled Distribution", "description": "Fixed-route delivery networks, Multi-point drop scheduling, Warehouse-to-destination coverage" },
-      { "image": "/images/overview/road-transportation.png", "title": "Fleet Management", "description": "GPS-tracked fleet operations, Driver allocation and scheduling, Vehicle maintenance coordination" },
-      { "image": "/images/overview/last-mile-delivery.png", "title": "Express Domestic", "description": "Same-day and next-day delivery, Priority routing for urgent shipments, Real-time status updates" },
-      { "image": "/images/overview/reverse-logistics.png", "title": "Returns Collection", "description": "Scheduled pickup runs, Consolidation hub management, Reverse distribution coordination" }
-    ],
-    "whyDahnay": {
-      "title": "Why DahNAY",
-      "content": "We combine deep industry knowledge with operational discipline to deliver logistics you can rely on.",
-      "items": [
-        { "icon": "/icon/global-network.png", "title": "Global Network", "content": "Strategic partnerships across major trade corridors worldwide." },
-        { "icon": "/icon/expert-handling.png", "title": "Regulatory Expertise", "content": "Deep compliance knowledge across jurisdictions and cargo types." },
-        { "icon": "/icon/speed-reliability.png", "title": "Real-Time Visibility", "content": "End-to-end tracking and milestone monitoring for every shipment." },
-        { "icon": "/icon/custom-solutions.png", "title": "Dedicated Support", "content": "Single point of contact with proactive communication throughout." }
-      ]
-    },
-    "certifications": {
-      "tag": "Certifications",
-      "title": "Certified for",
-      "titleAccent": "excellence.",
-      "descriptions": ["DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."],
       "image": "/images/overview/sea-freight.png",
       "imageAlt": "DahNAY certifications"
     },
@@ -241,257 +210,44 @@
       "tag": "FAQ's",
       "title": "Frequently Asked",
       "titleAccent": "Questions",
-      "content": "Find answers to common questions about our domestic trucking services and how we can support your supply chain.",
+      "content": "Find answers to common questions about our sea freight services and how we can support your supply chain.",
       "items": [
-        { "question": "What are the additional services DahNAY offers?", "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery." },
-        { "question": "Do you handle both import and export shipments?", "answer": "DahNAY manages both import and export logistics with expertise in international shipping regulations, customs compliance and global trade documentation." },
-        { "question": "How does DahNAY ensure shipment visibility?", "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
-        { "question": "How do you customize logistics solutions?", "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." }
-      ]
-    }
-  },
-  "ecommerce-fulfilment": {
-    "banner": {
-      "title": "Ecommerce Fulfilment Support",
-      "desktopImage": "/images/banners/banner-desktop-ecommerce-fulfilment.png"
-    },
-    "overview": {
-      "tag": "Overview",
-      "title": "Built for",
-      "titleAccent": "digital commerce.",
-      "descriptions": [
-        "E-commerce logistics demands speed, accuracy and scalability. DahNAY supports fulfilment operations with warehousing coordination, pick-and-pack management and multi-channel distribution.",
-        "From order to doorstep, we help brands deliver consistent customer experiences — even at peak volumes."
-      ],
-      "image": "/images/overview/ecommerce-fulfilment-support.png",
-      "imageAlt": "Ecommerce fulfilment warehouse",
-      "ctaText": "Get started",
-      "ctaHref": "/contact"
-    },
-    "expertise": {
-      "tag": "Expertise",
-      "title": "Core and value added services",
-      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
-    },
-    "expertiseItems": [
-      { "image": "/images/overview/ecommerce-fulfilment-support.png", "title": "Order Fulfilment", "description": "Pick, pack and ship operations, Multi-channel order management, Same-day dispatch capability" },
-      { "image": "/images/overview/last-mile-delivery.png", "title": "Last Mile Integration", "description": "Carrier selection and management, Delivery tracking APIs, Customer notification workflows" },
-      { "image": "/images/overview/reverse-logistics.png", "title": "Returns Processing", "description": "Automated returns intake, Quality inspection and grading, Restocking and refund triggers" },
-      { "image": "/images/overview/domestic-trucking.png", "title": "Inventory Management", "description": "Real-time stock visibility, Reorder point automation, Multi-warehouse coordination" }
-    ],
-    "whyDahnay": {
-      "title": "Why DahNAY",
-      "content": "We combine deep industry knowledge with operational discipline to deliver logistics you can rely on.",
-      "items": [
-        { "icon": "/icon/global-network.png", "title": "Global Network", "content": "Strategic partnerships across major trade corridors worldwide." },
-        { "icon": "/icon/expert-handling.png", "title": "Regulatory Expertise", "content": "Deep compliance knowledge across jurisdictions and cargo types." },
-        { "icon": "/icon/speed-reliability.png", "title": "Real-Time Visibility", "content": "End-to-end tracking and milestone monitoring for every shipment." },
-        { "icon": "/icon/custom-solutions.png", "title": "Dedicated Support", "content": "Single point of contact with proactive communication throughout." }
-      ]
-    },
-    "certifications": {
-      "tag": "Certifications",
-      "title": "Certified for",
-      "titleAccent": "excellence.",
-      "descriptions": ["DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."],
-      "image": "/images/overview/sea-freight.png",
-      "imageAlt": "DahNAY certifications"
-    },
-    "faq": {
-      "tag": "FAQ's",
-      "title": "Frequently Asked",
-      "titleAccent": "Questions",
-      "content": "Find answers to common questions about our e-commerce fulfilment services and how we can support your supply chain.",
-      "items": [
-        { "question": "What are the additional services DahNAY offers?", "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery." },
-        { "question": "Do you provide warehousing and distribution services?", "answer": "Yes, DahNAY offers integrated warehousing and distribution solutions, including inventory management, storage and order fulfilment across key global locations." },
-        { "question": "How does DahNAY ensure shipment visibility?", "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
-        { "question": "How do you customize logistics solutions?", "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." }
-      ]
-    }
-  },
-  "last-mile-delivery": {
-    "banner": {
-      "title": "Last Mile Delivery",
-      "desktopImage": "/images/banners/banner-desktop-last-mile-delivery.png"
-    },
-    "overview": {
-      "tag": "Overview",
-      "title": "The final stretch",
-      "titleAccent": "perfected.",
-      "descriptions": [
-        "The last mile is where delivery promises are kept or broken. DahNAY manages end-point distribution with route intelligence, delivery scheduling and proof-of-delivery tracking.",
-        "From urban doorsteps to remote locations, we ensure your shipments complete their journey with precision and care."
-      ],
-      "image": "/images/overview/last-mile-delivery.png",
-      "imageAlt": "Last mile delivery vehicle",
-      "ctaText": "Get started",
-      "ctaHref": "/contact"
-    },
-    "expertise": {
-      "tag": "Expertise",
-      "title": "Core and value added services",
-      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
-    },
-    "expertiseItems": [
-      { "image": "/images/overview/last-mile-delivery.png", "title": "Urban Distribution", "description": "City-centre delivery networks, Time-window scheduling, Proof-of-delivery capture" },
-      { "image": "/images/overview/domestic-trucking.png", "title": "Rural & Remote Delivery", "description": "Extended coverage networks, Route optimisation for remote areas, Reliable scheduling" },
-      { "image": "/images/overview/ecommerce-fulfilment-support.png", "title": "White Glove Service", "description": "Installation and setup, Room-of-choice delivery, Packaging removal and disposal" },
-      { "image": "/images/overview/reverse-logistics.png", "title": "Returns Pickup", "description": "Customer-scheduled collection, QR code and label management, Seamless reverse integration" }
-    ],
-    "whyDahnay": {
-      "title": "Why DahNAY",
-      "content": "We combine deep industry knowledge with operational discipline to deliver logistics you can rely on.",
-      "items": [
-        { "icon": "/icon/global-network.png", "title": "Global Network", "content": "Strategic partnerships across major trade corridors worldwide." },
-        { "icon": "/icon/expert-handling.png", "title": "Regulatory Expertise", "content": "Deep compliance knowledge across jurisdictions and cargo types." },
-        { "icon": "/icon/speed-reliability.png", "title": "Real-Time Visibility", "content": "End-to-end tracking and milestone monitoring for every shipment." },
-        { "icon": "/icon/custom-solutions.png", "title": "Dedicated Support", "content": "Single point of contact with proactive communication throughout." }
-      ]
-    },
-    "certifications": {
-      "tag": "Certifications",
-      "title": "Certified for",
-      "titleAccent": "excellence.",
-      "descriptions": ["DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."],
-      "image": "/images/overview/sea-freight.png",
-      "imageAlt": "DahNAY certifications"
-    },
-    "faq": {
-      "tag": "FAQ's",
-      "title": "Frequently Asked",
-      "titleAccent": "Questions",
-      "content": "Find answers to common questions about our last mile delivery services and how we can support your supply chain.",
-      "items": [
-        { "question": "What is last mile connectivity in logistics?", "answer": "Last mile connectivity refers to the final stage of the delivery process, where goods are transported from a distribution centre to the end customer efficiently and on time." },
-        { "question": "Which industries benefit most from DahNAY's last mile services?", "answer": "Industries such as e-commerce, retail, manufacturing, FMCG and healthcare benefit from DahNAY's last mile delivery solutions due to their need for fast and reliable distribution." },
-        { "question": "Does DahNAY offer last mile delivery across India?", "answer": "Yes, DahNAY provides last mile delivery services across India, ensuring efficient and timely delivery to urban and remote locations." },
-        { "question": "Does DahNAY provide real-time tracking for last mile deliveries?", "answer": "Yes, DahNAY offers real-time tracking and delivery updates, giving businesses full visibility into last mile operations." },
-        { "question": "Does DahNAY's last mile connectivity include reverse logistics?", "answer": "Yes, DahNAY supports reverse logistics including returns, pickups and product exchanges as part of its last mile services." },
-        { "question": "How can I integrate DahNAY's last mile services into my supply chain?", "answer": "DahNAY integrates seamlessly with your supply chain through customised logistics solutions, technology integration and scalable delivery networks." }
-      ]
-    }
-  },
-  "project-logistics": {
-    "banner": {
-      "title": "Project Logistics",
-      "desktopImage": "/images/banners/banner-desktop-project-logistics.png"
-    },
-    "overview": {
-      "tag": "Overview",
-      "title": "Engineered for",
-      "titleAccent": "complexity.",
-      "descriptions": [
-        "Oversized, heavy-lift and high-value cargo demands more than standard logistics. DahNAY delivers end-to-end project logistics with route surveys, specialised equipment and regulatory coordination.",
-        "From energy infrastructure to industrial machinery, we plan and execute large-scale shipments that leave nothing to chance."
-      ],
-      "image": "/images/overview/project-logistics.png",
-      "imageAlt": "Heavy cargo transport",
-      "ctaText": "Get started",
-      "ctaHref": "/contact"
-    },
-    "expertise": {
-      "tag": "Expertise",
-      "title": "Core and value added services",
-      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
-    },
-    "expertiseItems": [
-      { "image": "/images/overview/project-logistics.png", "title": "Route & Feasibility Surveys", "description": "Site assessments, Road surveys, Bridge and clearance analysis, Permit requirements mapping" },
-      { "image": "/images/overview/sea-freight.png", "title": "Heavy-Lift & Oversized Cargo", "description": "Crane and rigging coordination, Specialised trailers and vessels, Multi-modal heavy transport" },
-      { "image": "/images/overview/customs-clearance.png", "title": "Regulatory Coordination", "description": "Government and port authority liaison, Customs pre-clearance, Environmental compliance documentation" },
-      { "image": "/images/overview/road-transportation.png", "title": "On-Site Logistics Management", "description": "Dedicated project managers, Milestone tracking and reporting, Risk assessment and mitigation" }
-    ],
-    "whyDahnay": {
-      "title": "Why DahNAY",
-      "content": "We combine deep industry knowledge with operational discipline to deliver logistics you can rely on.",
-      "items": [
-        { "icon": "/icon/global-network.png", "title": "Global Network", "content": "Strategic partnerships across major trade corridors worldwide." },
-        { "icon": "/icon/expert-handling.png", "title": "Regulatory Expertise", "content": "Deep compliance knowledge across jurisdictions and cargo types." },
-        { "icon": "/icon/speed-reliability.png", "title": "Real-Time Visibility", "content": "End-to-end tracking and milestone monitoring for every shipment." },
-        { "icon": "/icon/custom-solutions.png", "title": "Dedicated Support", "content": "Single point of contact with proactive communication throughout." }
-      ]
-    },
-    "certifications": {
-      "tag": "Certifications",
-      "title": "Certified for",
-      "titleAccent": "excellence.",
-      "descriptions": ["DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."],
-      "image": "/images/overview/sea-freight.png",
-      "imageAlt": "DahNAY certifications"
-    },
-    "faq": {
-      "tag": "FAQ's",
-      "title": "Frequently Asked",
-      "titleAccent": "Questions",
-      "content": "Find answers to common questions about our project logistics services and how we can support your supply chain.",
-      "items": [
-        { "question": "What is project cargo in logistics?", "answer": "Project cargo refers to the transportation of large, complex or high-value equipment that requires specialised handling, planning and logistics." },
-        { "question": "What industries does DahNAY serve with its project logistics?", "answer": "DahNAY serves industries such as oil and gas, construction, infrastructure, energy and manufacturing." },
-        { "question": "What is a route survey in project cargo?", "answer": "A route survey evaluates transportation routes to identify challenges such as road conditions, clearances and infrastructure limitations." },
-        { "question": "How does DahNAY handle cargo that is too large for standard containers?", "answer": "DahNAY manages oversized cargo through breakbulk shipping, heavy-lift equipment and specialised transport solutions." },
-        { "question": "Is my high-value machinery insured during complex lifting operations?", "answer": "Yes, DahNAY ensures cargo insurance coverage for high-value shipments during handling and transportation." },
-        { "question": "Looking for a breakbulk and heavy-lift specialist in India or the UAE?", "answer": "DahNAY provides expert breakbulk and heavy-lift logistics services across India and the UAE with end-to-end project support." },
-        { "question": "How do you optimise costs for oversized shipping?", "answer": "DahNAY optimises costs through route planning, mode selection, consolidation and efficient resource utilisation." }
-      ]
-    }
-  },
-  "reverse-logistics": {
-    "banner": {
-      "title": "Reverse Logistics",
-      "desktopImage": "/images/banners/banner-desktop-reverse-logistics.png"
-    },
-    "overview": {
-      "tag": "Overview",
-      "title": "Returns done",
-      "titleAccent": "right.",
-      "descriptions": [
-        "Efficient reverse logistics is critical to customer satisfaction and cost recovery. DahNAY manages returns, recalls and redistribution with the same rigour as forward supply chains.",
-        "From collection to inspection to restocking or disposal, we close the loop on your logistics — turning returns into recoverable value."
-      ],
-      "image": "/images/overview/reverse-logistics.png",
-      "imageAlt": "Reverse logistics warehouse operations",
-      "ctaText": "Get started",
-      "ctaHref": "/contact"
-    },
-    "expertise": {
-      "tag": "Expertise",
-      "title": "Core and value added services",
-      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
-    },
-    "expertiseItems": [
-      { "image": "/images/overview/reverse-logistics.png", "title": "Returns Management", "description": "Collection scheduling, Inspection and grading, Restocking or disposal coordination" },
-      { "image": "/images/overview/domestic-trucking.png", "title": "Recall Logistics", "description": "Rapid collection networks, Regulatory-compliant handling, Status tracking and reporting" },
-      { "image": "/images/overview/ecommerce-fulfilment-support.png", "title": "Refurbishment Support", "description": "Inspection and testing coordination, Repackaging management, Secondary market distribution" },
-      { "image": "/images/overview/customs-clearance.png", "title": "Compliance & Reporting", "description": "Waste disposal compliance, Environmental reporting, Recovery rate analytics" }
-    ],
-    "whyDahnay": {
-      "title": "Why DahNAY",
-      "content": "We combine deep industry knowledge with operational discipline to deliver logistics you can rely on.",
-      "items": [
-        { "icon": "/icon/global-network.png", "title": "Global Network", "content": "Strategic partnerships across major trade corridors worldwide." },
-        { "icon": "/icon/expert-handling.png", "title": "Regulatory Expertise", "content": "Deep compliance knowledge across jurisdictions and cargo types." },
-        { "icon": "/icon/speed-reliability.png", "title": "Real-Time Visibility", "content": "End-to-end tracking and milestone monitoring for every shipment." },
-        { "icon": "/icon/custom-solutions.png", "title": "Dedicated Support", "content": "Single point of contact with proactive communication throughout." }
-      ]
-    },
-    "certifications": {
-      "tag": "Certifications",
-      "title": "Certified for",
-      "titleAccent": "excellence.",
-      "descriptions": ["DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."],
-      "image": "/images/overview/sea-freight.png",
-      "imageAlt": "DahNAY certifications"
-    },
-    "faq": {
-      "tag": "FAQ's",
-      "title": "Frequently Asked",
-      "titleAccent": "Questions",
-      "content": "Find answers to common questions about our reverse logistics services and how we can support your supply chain.",
-      "items": [
-        { "question": "What are the additional services DahNAY offers?", "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery." },
-        { "question": "Does DahNAY's last mile connectivity include reverse logistics?", "answer": "Yes, DahNAY supports reverse logistics including returns, pickups and product exchanges as part of its last mile services." },
-        { "question": "How does DahNAY ensure shipment visibility?", "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
-        { "question": "How do you customize logistics solutions?", "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." }
+        {
+          "question": "What sea freight services does DahNAY offer?",
+          "answer": "DahNAY provides end-to-end sea freight services including Full Container Load (FCL), Less than Container Load (LCL), breakbulk shipping, project cargo handling and door-to-door ocean freight solutions for global trade."
+        },
+        {
+          "question": "Does DahNAY offer both FCL and LCL services?",
+          "answer": "Yes, DahNAY offers both FCL and LCL shipping services. FCL is ideal for large shipments requiring a dedicated container, while LCL is a cost-effective solution for smaller shipments sharing container space."
+        },
+        {
+          "question": "Can DahNAY handle temperature-sensitive cargo?",
+          "answer": "Yes, DahNAY handles temperature-controlled cargo through refrigerated containers (reefers), ensuring safe transport of perishable goods, pharmaceuticals and sensitive materials."
+        },
+        {
+          "question": "Do you manage customs clearance for sea shipments?",
+          "answer": "DahNAY provides complete customs clearance services for sea freight, including documentation, compliance and coordination with customs authorities to ensure smooth import and export processes."
+        },
+        {
+          "question": "What ports and trade routes does DahNAY operate on?",
+          "answer": "DahNAY operates across major global ports and trade routes connecting India, the UAE, the USA and key international markets, ensuring reliable ocean freight connectivity."
+        },
+        {
+          "question": "How does DahNAY manage sea freight disruptions or port congestion?",
+          "answer": "DahNAY proactively manages disruptions through alternative routing, strong carrier partnerships and real-time shipment monitoring to minimise delays caused by port congestion or global supply chain issues."
+        },
+        {
+          "question": "How does DahNAY make sea freight less complex for shippers?",
+          "answer": "DahNAY simplifies sea freight by offering end-to-end logistics management, transparent pricing, real-time tracking and dedicated support, reducing operational complexity for shippers."
+        },
+        {
+          "question": "What is the transit time for sea freight with DahNAY?",
+          "answer": "Sea freight transit time depends on the shipping route, cargo type and port conditions. DahNAY provides accurate transit estimates and optimised routing to ensure timely delivery."
+        },
+        {
+          "question": "Does DahNAY provide tracking for sea freight shipments?",
+          "answer": "Yes, DahNAY offers real-time tracking and shipment visibility for sea freight, allowing customers to monitor cargo throughout the journey."
+        }
       ]
     }
   },
@@ -502,11 +258,10 @@
     },
     "overview": {
       "tag": "Overview",
-      "title": "Reliable routes.",
-      "titleAccent": "Real results.",
+      "title": "Connecting every mile",
       "descriptions": [
-        "Road freight is the backbone of regional trade. DahNAY manages cross-border and domestic road transportation with fleet reliability, route optimisation and full shipment visibility.",
-        "From full truckloads to less-than-truckload consignments, we keep your supply chain moving on schedule across every terrain and corridor."
+        "Beyond ports and airports, logistics is completed on the ground. DahNAY’s road transportation ensures seamless inland movement with consistency, control and visibility.",
+        "From first-mile pickup to last-mile delivery, we connect supply chains across cities, regions and industrial corridors, keeping cargo moving without interruption."
       ],
       "image": "/images/overview/road-transportation.png",
       "imageAlt": "Fleet of trucks on highway",
@@ -519,28 +274,52 @@
       "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
     },
     "expertiseItems": [
-      { "image": "/images/overview/road-transportation.png", "title": "Full Truckload (FTL)", "description": "Dedicated fleet for large shipments, Direct point-to-point delivery, Real-time GPS tracking" },
-      { "image": "/images/overview/domestic-trucking.png", "title": "Less Than Truckload (LTL)", "description": "Cost-effective shared capacity, Scheduled consolidation runs, Multi-drop distribution" },
-      { "image": "/images/overview/project-logistics.png", "title": "Cross-Border Transport", "description": "Multi-country corridor management, Customs documentation support, Transit permit coordination" },
-      { "image": "/images/overview/sea-freight.png", "title": "Specialised Vehicles", "description": "Temperature-controlled transport, Flatbed and low-loader for heavy cargo, ADR-compliant hazardous goods vehicles" }
+      {
+        "image": "/expertise/inland-and-domestic-trucking.png",
+        "title": "Inland and Domestic Trucking",
+        "description": "DahNAY enables seamless, point-to-point domestic trucking across regional and national networks, supporting both FTL and LTL operations."
+      },
+      {
+        "image": "/expertise/cargo-handling-and-specialisation.png",
+        "title": "Cargo Handling and Specialisation",
+        "description": "We handle diverse cargo requirements across ports, ICDs and warehouses, including temperature-controlled trucking, high-value goods and project cargo."
+      },
+      {
+        "image": "/expertise/network-and-fleet-capability.png",
+        "title": "Network and Fleet Capability",
+        "description": "Our robust network and scalable fleet ensures access across urban, semi-urban and remote locations. With real-time monitoring, we ensure complete visibility and flexibility."
+      },
+      {
+        "image": "/expertise/compliance-and-operational-control.png",
+        "title": "Compliance and Operational Control",
+        "description": "We ensure compliance through structured documentation, e-bill management and state-wise coordination, minimising delays and ensuring consistent execution."
+      }
     ],
     "whyDahnay": {
-      "title": "Why DahNAY",
-      "content": "We combine deep industry knowledge with operational discipline to deliver logistics you can rely on.",
+      "title": "Why DahNAY for Road Transportation?",
+      "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY.",
       "items": [
-        { "icon": "/icon/global-network.png", "title": "Global Network", "content": "Strategic partnerships across major trade corridors worldwide." },
-        { "icon": "/icon/expert-handling.png", "title": "Regulatory Expertise", "content": "Deep compliance knowledge across jurisdictions and cargo types." },
-        { "icon": "/icon/speed-reliability.png", "title": "Real-Time Visibility", "content": "End-to-end tracking and milestone monitoring for every shipment." },
-        { "icon": "/icon/custom-solutions.png", "title": "Dedicated Support", "content": "Single point of contact with proactive communication throughout." }
+        {
+          "icon": "/icon/global-network.png",
+          "title": "End-to-End Visibility",
+          "content": "Track movement across every mile with structured milestone updates."
+        },
+        {
+          "icon": "/icon/expert-handling.png",
+          "title": "Reliable Execution",
+          "content": "Planned routes and disciplined operations ensure on-time delivery."
+        },
+        {
+          "icon": "/icon/speed-reliability.png",
+          "title": "Flexible & Scalable",
+          "content": "Capacity that adapts to volume, urgency and geography."
+        },
+        {
+          "icon": "/icon/custom-solutions.png",
+          "title": "Multimodal Integration",
+          "content": "Seamlessly connected with air and sea freight for end-to-end logistics."
+        }
       ]
-    },
-    "certifications": {
-      "tag": "Certifications",
-      "title": "Certified for",
-      "titleAccent": "excellence.",
-      "descriptions": ["DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."],
-      "image": "/images/overview/sea-freight.png",
-      "imageAlt": "DahNAY certifications"
     },
     "faq": {
       "tag": "FAQ's",
@@ -548,10 +327,22 @@
       "titleAccent": "Questions",
       "content": "Find answers to common questions about our road transportation services and how we can support your supply chain.",
       "items": [
-        { "question": "What are the additional services DahNAY offers?", "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery." },
-        { "question": "Do you handle both import and export shipments?", "answer": "DahNAY manages both import and export logistics with expertise in international shipping regulations, customs compliance and global trade documentation." },
-        { "question": "How does DahNAY ensure shipment visibility?", "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
-        { "question": "How do you customize logistics solutions?", "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." }
+        {
+          "question": "What are the additional services DahNAY offers?",
+          "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery."
+        },
+        {
+          "question": "Do you handle both import and export shipments?",
+          "answer": "DahNAY manages both import and export logistics with expertise in international shipping regulations, customs compliance and global trade documentation."
+        },
+        {
+          "question": "How does DahNAY ensure shipment visibility?",
+          "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain."
+        },
+        {
+          "question": "How do you customize logistics solutions?",
+          "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations."
+        }
       ]
     }
   },
@@ -562,11 +353,10 @@
     },
     "overview": {
       "tag": "Overview",
-      "title": "Every minute",
-      "titleAccent": "counts.",
+      "title": "When every minute matters",
       "descriptions": [
-        "When downtime costs more than shipping, speed becomes non-negotiable. DahNAY coordinates time-critical deliveries with dedicated routing, priority handling and real-time status updates.",
-        "From emergency spare parts to production-line replenishments, we get what you need where it needs to be — fast, tracked and reliable."
+        "Some shipments cannot wait. When delays impact operations, production or outcomes, DahNAY ensures immediate, priority-driven movement with speed and control.",
+        "We manage time-critical deliveries with accelerated execution, dedicated handling and continuous visibility, ensuring urgent cargo reaches its destination without compromise."
       ],
       "image": "/images/overview/time-critical-delivery.png",
       "imageAlt": "Express delivery operations",
@@ -579,26 +369,60 @@
       "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
     },
     "expertiseItems": [
-      { "image": "/images/overview/time-critical-delivery.png", "title": "Emergency Spare Parts", "description": "24/7 dispatch capability, Dedicated courier networks, Airport-to-site direct delivery" },
-      { "image": "/images/overview/air-freight.png", "title": "Production Line Supply", "description": "Just-in-time delivery coordination, Assembly line replenishment, Zero-downtime logistics" },
-      { "image": "/images/overview/road-transportation.png", "title": "On-Board Courier", "description": "Hand-carry for critical documents and parts, Next-flight-out booking, Real-time tracking and confirmation" },
-      { "image": "/images/overview/project-logistics.png", "title": "Shutdown & Turnaround", "description": "Planned maintenance logistics, Equipment staging and delivery, Multi-vendor coordination" }
+      {
+        "image": "/expertise/priority-movement-execution.png",
+        "title": "Priority Movement & Execution",
+        "description": "With fast decition-making, DahNAY enables rapid dispatch through express logistics, including same-day and next-flight-out solutions."
+      },
+      {
+        "image": "/expertise/multimodal-acceleration.png",
+        "title": "Multimodal Acceleration",
+        "description": "With the ability to switch modes dynamically during disruptions from air to road and hybrid, we ensure first-mile to last-mile continuity without delays."
+      },
+      {
+        "image": "/expertise/control-visibility.png",
+        "title": "Control & Visibility",
+        "description": "Every time-critical shipment is supported by 24/7 monitoring, real-time tracking and proactive management, ensuring clear communication at every stage."
+      },
+      {
+        "image": "/expertise/specialised-handling.png",
+        "title": "Specialised Handling",
+        "description": "From high-value cargo and critical components to healthcare supplies, we handle urgent goods with precision, ensuring both speed and cargo integrity."
+      }
     ],
     "whyDahnay": {
-      "title": "Why DahNAY",
-      "content": "We combine deep industry knowledge with operational discipline to deliver logistics you can rely on.",
+      "title": "Why DahNAY for Time-Critical Delivery?",
+      "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY.",
       "items": [
-        { "icon": "/icon/global-network.png", "title": "Global Network", "content": "Strategic partnerships across major trade corridors worldwide." },
-        { "icon": "/icon/expert-handling.png", "title": "Regulatory Expertise", "content": "Deep compliance knowledge across jurisdictions and cargo types." },
-        { "icon": "/icon/speed-reliability.png", "title": "Real-Time Visibility", "content": "End-to-end tracking and milestone monitoring for every shipment." },
-        { "icon": "/icon/custom-solutions.png", "title": "Dedicated Support", "content": "Single point of contact with proactive communication throughout." }
+        {
+          "icon": "/icon/global-network.png",
+          "title": "Immediate Response",
+          "content": "Rapid activation and dispatch for urgent requirements."
+        },
+        {
+          "icon": "/icon/expert-handling.png",
+          "title": "Speed with Control",
+          "content": "Fast movement backed by structured execution and oversight."
+        },
+        {
+          "icon": "/icon/speed-reliability.png",
+          "title": "End-to-End Visibility",
+          "content": "Continuous tracking and proactive communication at every stage."
+        },
+        {
+          "icon": "/icon/custom-solutions.png",
+          "title": "Adaptive Routing",
+          "content": "Flexible multimodal strategies to meet tight deadlines."
+        }
       ]
     },
     "certifications": {
       "tag": "Certifications",
       "title": "Certified for",
       "titleAccent": "excellence.",
-      "descriptions": ["DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."],
+      "descriptions": [
+        "DahNAY holds internationally recognised certifications that reflect our commitment to quality, safety and operational integrity across every service we deliver."
+      ],
       "image": "/images/overview/sea-freight.png",
       "imageAlt": "DahNAY certifications"
     },
@@ -608,10 +432,612 @@
       "titleAccent": "Questions",
       "content": "Find answers to common questions about our time-critical delivery services and how we can support your supply chain.",
       "items": [
-        { "question": "Do you handle time-critical shipments?", "answer": "Yes. Our solutions support industries operating on strict production and project timelines." },
-        { "question": "Can DahNAY handle time-critical or same-day air shipments?", "answer": "DahNAY specialises in time-critical logistics and can arrange expedited or same-day air freight solutions based on cargo urgency." },
-        { "question": "How does DahNAY ensure shipment visibility?", "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain." },
-        { "question": "How do you customize logistics solutions?", "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations." }
+        {
+          "question": "Do you handle time-critical shipments?",
+          "answer": "Yes. Our solutions support industries operating on strict production and project timelines."
+        },
+        {
+          "question": "Can DahNAY handle time-critical or same-day air shipments?",
+          "answer": "DahNAY specialises in time-critical logistics and can arrange expedited or same-day air freight solutions based on cargo urgency."
+        },
+        {
+          "question": "How does DahNAY ensure shipment visibility?",
+          "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain."
+        },
+        {
+          "question": "How do you customize logistics solutions?",
+          "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations."
+        }
+      ]
+    }
+  },
+  "project-logistics": {
+    "banner": {
+      "title": "Project Logistics",
+      "desktopImage": "/images/banners/banner-desktop-project-logistics.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Moving complexity with control",
+      "descriptions": [
+        "Some cargo demands more than movement, it demands planning, coordination and precision at scale. DahNAY’s project logistics solutions are built to manage complex, oversized and high-value shipments with complete control.",
+        "From site readiness to final delivery, we plan every stage, ensuring timelines, compliance and execution stay aligned across stakeholders and geographies."
+      ],
+      "image": "/images/overview/project-logistics.png",
+      "imageAlt": "Heavy cargo transport",
+      "ctaText": "Get started",
+      "ctaHref": "/contact"
+    },
+    "expertise": {
+      "tag": "Expertise",
+      "title": "Core and value added services",
+      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
+    },
+    "expertiseItems": [
+      {
+        "image": "/expertise/end-to-end-project-planning.png",
+        "title": "End-to-End Project Planning",
+        "description": "DahNAY manages project logistics from initial assessment to final delivery. We align timelines, resources and stakeholders to ensure seamless coordination."
+      },
+      {
+        "image": "/expertise/strategic-loading-route-planning.png",
+        "title": "Strategic loading & Route planning",
+        "description": "With each movement designed to address weight, dimension and infrastructure constraints. we handle oversized cargo with engineered loading and route planning."
+      },
+      {
+        "image": "/expertise/multimodal-execution.png",
+        "title": "Multimodal Execution",
+        "description": "Our capabilities span road, sea, air and hybrid transport, enabling flexible routing based on project timelines and cargo requirements."
+      },
+      {
+        "image": "/expertise/site-on-ground-coordination.png",
+        "title": "Site & On-Ground Coordination",
+        "description": "From port handling to site delivery, we manage on-ground execution including loading, unloading, staging and installation support. Close coordination ensures readiness at every touchpoint."
+      }
+    ],
+    "whyDahnay": {
+      "title": "Why DahNAY for Project Logistics?",
+      "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY.",
+      "items": [
+        {
+          "icon": "/icon/global-network.png",
+          "title": "Structured Execution",
+          "content": "Complex projects managed through disciplined planning and control."
+        },
+        {
+          "icon": "/icon/expert-handling.png",
+          "title": "Engineering-Led Approach",
+          "content": "Movement designed around cargo specifications and infrastructure realities."
+        },
+        {
+          "icon": "/icon/speed-reliability.png",
+          "title": "End-to-End Visibility",
+          "content": "Continuous monitoring and coordination across all stages."
+        },
+        {
+          "icon": "/icon/custom-solutions.png",
+          "title": "Multimodal Expertise",
+          "content": "Seamless integration across transport modes for efficient execution."
+        }
+      ]
+    },
+    "faq": {
+      "tag": "FAQ's",
+      "title": "Frequently Asked",
+      "titleAccent": "Questions",
+      "content": "Find answers to common questions about our project logistics services and how we can support your supply chain.",
+      "items": [
+        {
+          "question": "What is project cargo in logistics?",
+          "answer": "Project cargo refers to the transportation of large, complex or high-value equipment that requires specialised handling, planning and logistics."
+        },
+        {
+          "question": "What industries does DahNAY serve with its project logistics?",
+          "answer": "DahNAY serves industries such as oil and gas, construction, infrastructure, energy and manufacturing."
+        },
+        {
+          "question": "What is a route survey in project cargo?",
+          "answer": "A route survey evaluates transportation routes to identify challenges such as road conditions, clearances and infrastructure limitations."
+        },
+        {
+          "question": "How does DahNAY handle cargo that is too large for standard containers?",
+          "answer": "DahNAY manages oversized cargo through breakbulk shipping, heavy-lift equipment and specialised transport solutions."
+        },
+        {
+          "question": "Is my high-value machinery insured during complex lifting operations?",
+          "answer": "Yes, DahNAY ensures cargo insurance coverage for high-value shipments during handling and transportation."
+        },
+        {
+          "question": "Looking for a breakbulk and heavy-lift specialist in India or the UAE?",
+          "answer": "DahNAY provides expert breakbulk and heavy-lift logistics services across India and the UAE with end-to-end project support."
+        },
+        {
+          "question": "How do you optimise costs for oversized shipping?",
+          "answer": "DahNAY optimises costs through route planning, mode selection, consolidation and efficient resource utilisation."
+        }
+      ]
+    }
+  },
+  "reverse-logistics": {
+    "banner": {
+      "title": "Reverse Logistics",
+      "desktopImage": "/images/banners/banner-desktop-reverse-logistics.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Closing the loop, seamlessly",
+      "descriptions": [
+        "Movement doesn’t end at delivery. Returns, recoveries and redistributions are just as critical to the supply chain.",
+        "DahNAY’s reverse logistics solutions ensure efficient, controlled movement of goods back through the network, minimising loss, optimising value and maintaining visibility at every stage."
+      ],
+      "image": "/images/overview/reverse-logistics.png",
+      "imageAlt": "Reverse logistics warehouse operations",
+      "ctaText": "Get started",
+      "ctaHref": "/contact"
+    },
+    "expertise": {
+      "tag": "Expertise",
+      "title": "Core and value added services",
+      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
+    },
+    "expertiseItems": [
+      {
+        "image": "/expertise/returns-recall-management.png",
+        "title": "Returns & Recall Management",
+        "description": "DahNAY manages product returns, recalls and exchanges with structured workflows and coordinated movement. From pickup to consolidation, we ensure speed, accuracy and minimal disruption."
+      },
+      {
+        "image": "/expertise/repair-refurbishment-redistribution.png",
+        "title": "Repair, Refurbishment & Redistribution",
+        "description": "We enable the movement of goods for repair, refurbishment or redeployment across locations. Each cycle is managed to maximise asset value while maintaining traceability."
+      },
+      {
+        "image": "/expertise/inventory-recovery-optimisation.png",
+        "title": "Inventory Recovery & Optimisation",
+        "description": "Returned goods are assessed, sorted and routed efficiently for reuse, resale or disposal. We help reduce waste and recover value through controlled reverse flows."
+      },
+      {
+        "image": "/expertise/network-visibility-control.png",
+        "title": "Network & Visibility Control",
+        "description": "With real-time tracking, centralised coordination and defined processes, we maintain visibility across every return movement, ensuring accountability and operational clarity."
+      }
+    ],
+    "whyDahnay": {
+      "title": "Why DahNAY for Reverse Logistics?",
+      "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY.",
+      "items": [
+        {
+          "icon": "/icon/global-network.png",
+          "title": "Built for Scale",
+          "content": "Proven capability to manage high-volume return flows across multiple locations."
+        },
+        {
+          "icon": "/icon/expert-handling.png",
+          "title": "Structured Reverse Flow",
+          "content": "Returns managed with the same discipline as forward logistics."
+        },
+        {
+          "icon": "/icon/speed-reliability.png",
+          "title": "Value Recovery Focus",
+          "content": "Optimising reuse, redistribution and asset lifecycle."
+        },
+        {
+          "icon": "/icon/custom-solutions.png",
+          "title": "End-to-End Visibility",
+          "content": "Complete tracking and operational transparency across the reverse chain."
+        }
+      ]
+    },
+    "faq": {
+      "tag": "FAQ's",
+      "title": "Frequently Asked",
+      "titleAccent": "Questions",
+      "content": "Find answers to common questions about our reverse logistics services and how we can support your supply chain.",
+      "items": [
+        {
+          "question": "What are the additional services DahNAY offers?",
+          "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery."
+        },
+        {
+          "question": "Does DahNAY's last mile connectivity include reverse logistics?",
+          "answer": "Yes, DahNAY supports reverse logistics including returns, pickups and product exchanges as part of its last mile services."
+        },
+        {
+          "question": "How does DahNAY ensure shipment visibility?",
+          "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain."
+        },
+        {
+          "question": "How do you customize logistics solutions?",
+          "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations."
+        }
+      ]
+    }
+  },
+  "customs-clearance": {
+    "banner": {
+      "title": "Customs Clearance",
+      "desktopImage": "/images/banners/banner-desktop-customs-clearance.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Clearing complexity, enabling movement",
+      "descriptions": [
+        "Cross-border movement depends on more than transport, it depends on precision in documentation, compliance and coordination.",
+        "DahNAY’s customs clearance services ensure smooth, timely movement of cargo across borders by managing regulatory requirements with accuracy and control. From documentation to duty management, we enable uninterrupted global trade."
+      ],
+      "image": "/images/overview/customs-clearance.png",
+      "imageAlt": "Customs documentation and clearance",
+      "ctaText": "Get started",
+      "ctaHref": "/contact"
+    },
+    "expertise": {
+      "tag": "Expertise",
+      "title": "Core and value added services",
+      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
+    },
+    "expertiseItems": [
+      {
+        "image": "/expertise/documentation-compliance-management.png",
+        "title": "Documentation & Compliance Management",
+        "description": "DahNAY manages end-to-end export and import documentation with accuracy and consistency. From classification to filing, we ensure every shipment meets regulatory requirements, reducing the risk of delays or penalties."
+      },
+      {
+        "image": "/expertise/customs-coordination-clearance.png",
+        "title": "Customs Coordination & Clearance",
+        "description": "We coordinate closely with customs authorities to enable efficient cargo clearance across ports, airports and inland terminals. Our structured processes ensure faster turnaround and minimal intervention."
+      },
+      {
+        "image": "/expertise/classification-advisory.png",
+        "title": "Classification & Advisory",
+        "description": "We provide support on HS classification, duty structures and regulatory requirements, helping businesses navigate complex trade frameworks with clarity and confidence."
+      },
+      {
+        "image": "/expertise/duty-regulatory-management.png",
+        "title": "Duty & Regulatory Management",
+        "description": "From duty calculation to compliance with evolving trade regulations, we ensure adherence to all statutory requirements, maintaining transparency and control throughout the process."
+      }
+    ],
+    "whyDahnay": {
+      "title": "Why DahNAY for Customs Clearance?",
+      "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY.",
+      "items": [
+        {
+          "icon": "/icon/global-network.png",
+          "title": "Regulatory Expertise",
+          "content": "Strong understanding of global and local customs frameworks."
+        },
+        {
+          "icon": "/icon/expert-handling.png",
+          "title": "Accuracy & Compliance",
+          "content": "Documentation and processes designed to minimise errors and delays."
+        },
+        {
+          "icon": "/icon/speed-reliability.png",
+          "title": "Faster Clearance",
+          "content": "Efficient coordination reduces dwell time and improves turnaround."
+        },
+        {
+          "icon": "/icon/custom-solutions.png",
+          "title": "Integrated with Logistics",
+          "content": "Seamlessly aligned with air, sea and road operations."
+        }
+      ]
+    },
+    "faq": {
+      "tag": "FAQ's",
+      "title": "Frequently Asked",
+      "titleAccent": "Questions",
+      "content": "Find answers to common questions about our customs brokerage services and how we can support your supply chain.",
+      "items": [
+        {
+          "question": "How does DahNAY help me avoid expensive customs delays and fines?",
+          "answer": "DahNAY ensures compliance with international trade regulations, accurate documentation and proactive customs coordination to avoid delays and penalties."
+        },
+        {
+          "question": "How does DahNAY ensure faster customs clearance?",
+          "answer": "With its own CFS in Chennai and Tuticorin, DahNAY speeds up customs clearance through experienced customs brokers, digital documentation and strong relationships with authorities."
+        },
+        {
+          "question": "Can DahNAY handle international import and export compliance?",
+          "answer": "Yes, DahNAY manages complete import and export compliance, including regulatory requirements, documentation and tariff classification."
+        },
+        {
+          "question": "What is the role of CHA in custom brokerage?",
+          "answer": "A Customs House Agent (CHA) facilitates customs clearance by handling documentation, duty payments and compliance with customs regulations."
+        }
+      ]
+    }
+  },
+  "domestic-trucking": {
+    "banner": {
+      "title": "Domestic Trucking",
+      "desktopImage": "/images/banners/banner-desktop-domestic-trucking.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Keeping goods moving, coast to coast",
+      "descriptions": [
+        "Domestic movement is the backbone of any supply chain. DahNAY’s domestic trucking services ensure reliable, efficient and controlled transportation across regional and national networks.",
+        "From first-mile pickup to last-mile delivery, we enable seamless cargo movement across cities, industrial hubs and remote locations, maintaining consistency, visibility and on-time execution."
+      ],
+      "image": "/images/overview/domestic-trucking.png",
+      "imageAlt": "Truck on domestic route",
+      "ctaText": "Get started",
+      "ctaHref": "/contact"
+    },
+    "expertise": {
+      "tag": "Expertise",
+      "title": "Core and value added services",
+      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
+    },
+    "expertiseItems": [
+      {
+        "image": "/expertise/nationwide-transport-execution.png",
+        "title": "Nationwide Transport Execution",
+        "description": "DahNAY manages Full Truck Load (FTL) and Less than Truck Load (LTL) movements across a wide network, supporting both point-to-point and hub-based distribution. We align routes, schedules and fleet capacity to ensure dependable transit across regions."
+      },
+      {
+        "image": "/expertise/first-mile-to-last-mile-delivery.png",
+        "title": "First-Mile to Last-Mile Delivery",
+        "description": "We handle complete movement from origin to destination, including first-mile pickups and last-mile delivery. Our structured approach ensures continuity, reducing hand of delays and improving delivery timelines."
+      },
+      {
+        "image": "/expertise/fleet-network-capability.png",
+        "title": "Fleet & Network Capability",
+        "description": "Our owned fleet, combined with a strong transporter ecosystem, enables scalable and flexible movement across geographies. With GPS-enabled tracking and real-time monitoring, we maintain visibility and control across every shipment."
+      },
+      {
+        "image": "/expertise/compliance-operational-control.png",
+        "title": "Compliance & Operational Control",
+        "description": "DahNAY ensures adherence to regulatory requirements through e-way bill management, documentation control and state-wise coordination. Defined safety and operational protocols ensure consistency and minimise disruption."
+      }
+    ],
+    "whyDahnay": {
+      "title": "Why DahNAY for Domestic Trucking?",
+      "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY.",
+      "items": [
+        {
+          "icon": "/icon/global-network.png",
+          "title": "Consistent Execution",
+          "content": "Reliable movement backed by structured planning and control."
+        },
+        {
+          "icon": "/icon/expert-handling.png",
+          "title": "Nationwide Reach",
+          "content": "Access across key markets, industrial zones and remote locations."
+        },
+        {
+          "icon": "/icon/speed-reliability.png",
+          "title": "Scalable Capacity",
+          "content": "Fleet flexibility aligned to volume and urgency."
+        },
+        {
+          "icon": "/icon/custom-solutions.png",
+          "title": "End-to-End Visibility",
+          "content": "Real-time tracking and coordinated execution across every mile."
+        }
+      ]
+    },
+    "faq": {
+      "tag": "FAQ's",
+      "title": "Frequently Asked",
+      "titleAccent": "Questions",
+      "content": "Find answers to common questions about our domestic trucking services and how we can support your supply chain.",
+      "items": [
+        {
+          "question": "What are the additional services DahNAY offers?",
+          "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery."
+        },
+        {
+          "question": "Do you handle both import and export shipments?",
+          "answer": "DahNAY manages both import and export logistics with expertise in international shipping regulations, customs compliance and global trade documentation."
+        },
+        {
+          "question": "How does DahNAY ensure shipment visibility?",
+          "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain."
+        },
+        {
+          "question": "How do you customize logistics solutions?",
+          "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations."
+        }
+      ]
+    }
+  },
+  "last-mile-delivery": {
+    "banner": {
+      "title": "Last Mile Delivery",
+      "desktopImage": "/images/banners/banner-desktop-last-mile-delivery.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Delivering the final mile, right",
+      "descriptions": [
+        "The last mile is where logistics meets the customer. DahNAY ensures reliable, timely and controlled last-mile delivery across urban and regional networks, turning movement into completed outcomes.",
+        "From distribution hubs to final destinations, we manage delivery with precision, visibility and consistency, ensuring every shipment reaches where it should, when it should."
+      ],
+      "image": "/images/overview/last-mile-delivery.png",
+      "imageAlt": "Last mile delivery vehicle",
+      "ctaText": "Get started",
+      "ctaHref": "/contact"
+    },
+    "expertise": {
+      "tag": "Expertise",
+      "title": "Core and value added services",
+      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
+    },
+    "expertiseItems": [
+      {
+        "image": "/expertise/last-mile-execution.png",
+        "title": "Last-Mile Execution",
+        "description": "DahNAY manages high-volume last-mile deliveries across cities and regions, supporting both scheduled and on-demand distribution. With structured route planning and execution control, we ensure timely and efficient delivery across every drop point."
+      },
+      {
+        "image": "/expertise/fleet-delivery-network.png",
+        "title": "Fleet & Delivery Network",
+        "description": "Powered by our owned fleet and extended delivery network, we enable flexible and scalable last-mile operations. From dense urban routes to remote locations, we maintain reach, speed and consistency."
+      },
+      {
+        "image": "/expertise/route-optimisation-efficiency.png",
+        "title": "Route Optimisation & Efficiency",
+        "description": "We optimise delivery routes and schedules to reduce transit time, improve drop efficiency and ensure better utilisation of fleet capacity enabling faster and more reliable deliveries."
+      },
+      {
+        "image": "/expertise/visibility-control.png",
+        "title": "Visibility & Control",
+        "description": "With real-time tracking, delivery updates and centralised coordination, we provide complete visibility across the last mile. Every shipment is monitored to ensure accuracy, accountability and closure."
+      }
+    ],
+    "whyDahnay": {
+      "title": "Why DahNAY for Last Mile Delivery?",
+      "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY.",
+      "items": [
+        {
+          "icon": "/icon/global-network.png",
+          "title": "Reliable Final Delivery",
+          "content": "Consistent execution across high-volume delivery networks."
+        },
+        {
+          "icon": "/icon/expert-handling.png",
+          "title": "Fleet Control Advantage",
+          "content": "Owned fleet ensures better reliability and operational control."
+        },
+        {
+          "icon": "/icon/speed-reliability.png",
+          "title": "Optimised Routes",
+          "content": "Improved efficiency through structured planning and execution."
+        },
+        {
+          "icon": "/icon/custom-solutions.png",
+          "title": "End-to-End Integration",
+          "content": "Seamlessly connected with warehousing, road, air and sea logistics."
+        }
+      ]
+    },
+    "faq": {
+      "tag": "FAQ's",
+      "title": "Frequently Asked",
+      "titleAccent": "Questions",
+      "content": "Find answers to common questions about our last mile delivery services and how we can support your supply chain.",
+      "items": [
+        {
+          "question": "What is last mile connectivity in logistics?",
+          "answer": "Last mile connectivity refers to the final stage of the delivery process, where goods are transported from a distribution centre to the end customer efficiently and on time."
+        },
+        {
+          "question": "Which industries benefit most from DahNAY's last mile services?",
+          "answer": "Industries such as e-commerce, retail, manufacturing, FMCG and healthcare benefit from DahNAY's last mile delivery solutions due to their need for fast and reliable distribution."
+        },
+        {
+          "question": "Does DahNAY offer last mile delivery across India?",
+          "answer": "Yes, DahNAY provides last mile delivery services across India, ensuring efficient and timely delivery to urban and remote locations."
+        },
+        {
+          "question": "Does DahNAY provide real-time tracking for last mile deliveries?",
+          "answer": "Yes, DahNAY offers real-time tracking and delivery updates, giving businesses full visibility into last mile operations."
+        },
+        {
+          "question": "Does DahNAY's last mile connectivity include reverse logistics?",
+          "answer": "Yes, DahNAY supports reverse logistics including returns, pickups and product exchanges as part of its last mile services."
+        },
+        {
+          "question": "How can I integrate DahNAY's last mile services into my supply chain?",
+          "answer": "DahNAY integrates seamlessly with your supply chain through customised logistics solutions, technology integration and scalable delivery networks."
+        }
+      ]
+    }
+  },
+  "ecommerce-fulfilment": {
+    "banner": {
+      "title": "Ecommerce Fulfilment Support",
+      "desktopImage": "/images/banners/banner-desktop-ecommerce-fulfilment.png"
+    },
+    "overview": {
+      "tag": "Overview",
+      "title": "Powering every order, end to end",
+      "descriptions": [
+        "E-commerce runs on speed, accuracy and scale. DahNAY’s fulfilment support ensures seamless order processing, storage and delivery, enabling businesses to meet rising customer expectations without operational strain.",
+        "With owned warehousing in the USA and UAE, and proven experience in handling high-volume, multi-location operations, we manage fulfilment with precision, visibility and control across global networks."
+      ],
+      "image": "/images/overview/ecommerce-fulfilment-support.png",
+      "imageAlt": "Ecommerce fulfilment warehouse",
+      "ctaText": "Get started",
+      "ctaHref": "/contact"
+    },
+    "expertise": {
+      "tag": "Expertise",
+      "title": "Core and value added services",
+      "content": "From planning to delivery, our logistics experts manage every detail with precision. Your cargo moves safely, efficiently, and on time, every time."
+    },
+    "expertiseItems": [
+      {
+        "image": "/expertise/order-processing-fulfilment.png",
+        "title": "Order Processing & Fulfilment",
+        "description": "DahNAY manages end-to-end order fulfilment, including pick, pack and dispatch operations. Structured workflows ensure accuracy and speed across high-volume order cycles, enabling consistent and timely execution."
+      },
+      {
+        "image": "/expertise/inventory-warehouse-integration.png",
+        "title": "Inventory & Warehouse Integration",
+        "description": "With owned warehouse infrastructure in key global locations such as the USA and UAE, we enable efficient inventory management, optimal storage and faster turnaround for order processing across markets."
+      },
+      {
+        "image": "/expertise/high-volume-operations.png",
+        "title": "High-Volume Operations",
+        "description": "Our systems and processes are built to handle large-scale e-commerce flows, supporting peak volumes, seasonal demand spikes and multi-location distribution with reliability and control."
+      },
+      {
+        "image": "/expertise/last-mile-reverse-integration.png",
+        "title": "Last-Mile & Reverse Integration",
+        "description": "Fulfilment is seamlessly connected with last-mile delivery and reverse logistics, ensuring smooth forward movement and efficient returns management within a unified ecosystem."
+      }
+    ],
+    "whyDahnay": {
+      "title": "Why DahNAY for Ecommerce Fulfilment Support?",
+      "content": "Ensure every shipment is precise, on time and fully optimised with DahNAY.",
+      "items": [
+        {
+          "icon": "/icon/global-network.png",
+          "title": "Global Fulfilment Presence",
+          "content": "Owned warehousing in the USA and UAE enables faster, localised fulfilment."
+        },
+        {
+          "icon": "/icon/expert-handling.png",
+          "title": "Built for Scale",
+          "content": "Proven capability to manage high-volume order cycles."
+        },
+        {
+          "icon": "/icon/speed-reliability.png",
+          "title": "Accuracy & Speed",
+          "content": "Streamlined processes ensure reliable and timely fulfilment."
+        },
+        {
+          "icon": "/icon/custom-solutions.png",
+          "title": "End-to-End Integration",
+          "content": "Connected across warehousing, transportation and reverse logistics."
+        }
+      ]
+    },
+    "faq": {
+      "tag": "FAQ's",
+      "title": "Frequently Asked",
+      "titleAccent": "Questions",
+      "content": "Find answers to common questions about our e-commerce fulfilment services and how we can support your supply chain.",
+      "items": [
+        {
+          "question": "What are the additional services DahNAY offers?",
+          "answer": "DahNAY offers a wide range of logistics services including warehousing, distribution, customs clearance, cargo consolidation, project logistics and last mile delivery."
+        },
+        {
+          "question": "Do you provide warehousing and distribution services?",
+          "answer": "Yes, DahNAY offers integrated warehousing and distribution solutions, including inventory management, storage and order fulfilment across key global locations."
+        },
+        {
+          "question": "How does DahNAY ensure shipment visibility?",
+          "answer": "DahNAY provides real-time tracking, proactive updates and digital visibility tools that allow clients to monitor shipments across the supply chain."
+        },
+        {
+          "question": "How do you customize logistics solutions?",
+          "answer": "DahNAY designs tailored logistics solutions based on cargo type, industry requirements, timelines and cost considerations, ensuring efficient and scalable supply chain operations."
+        }
       ]
     }
   }

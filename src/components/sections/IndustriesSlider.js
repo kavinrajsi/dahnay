@@ -34,7 +34,7 @@ export default function IndustriesSlider({ currentSlug }) {
             </p>
           </div>
           <Link href="/contact" className="industries-slider__btn">
-            Talk to an expert
+            See More
           </Link>
         </div>
 

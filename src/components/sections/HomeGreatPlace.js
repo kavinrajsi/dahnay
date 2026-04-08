@@ -32,7 +32,6 @@ export default function HomeGreatPlace() {
             height={158}
             className="home-gptw__badge-img"
           />
-          <div className="home-gptw__divider" />
           <Image
             src="/images/home/gptw-cert-strip.png"
             alt="Great Place To Work Certified 2026"

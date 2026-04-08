@@ -57,7 +57,6 @@
     align-items: center;
     gap: 8px;
     padding: 0 40px;
-    border-bottom: 1px solid var(--neutral-white3);
     padding-bottom: 8px;
   }
 
@@ -78,6 +77,7 @@
     color: var(--neutral-black1);
     text-align: center;
     padding: 4px 0;
+    border-top: 1px solid var(--neutral-white3);
   }
 }
 

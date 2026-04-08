@@ -45,7 +45,7 @@ function formatDate(dateStr) {
 function getPostHref(post) {
   return post.postType === "case-study"
     ? `/newsroom/case-study/${post.slug}`
-    : `/newsroom/${post.slug}`;
+    : `/blog/${post.slug}`;
 }
 
 function getTagLabel(postType) {

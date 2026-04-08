@@ -10,7 +10,7 @@ export default function ServiceCard({ image, title, description, href }) {
           alt={title}
           width={360}
           height={216}
-          sizes="(min-width: 992px) 360px, (min-width: 768px) 50vw, 100vw"
+          // sizes="(min-width: 992px) 360px, (min-width: 768px) 50vw, 100vw"
           className="service-card__image"
         />
       </div>

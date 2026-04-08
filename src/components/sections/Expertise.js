@@ -31,7 +31,7 @@ export default function Expertise({
                   alt={item.title}
                   width={360}
                   height={216}
-                  sizes="(min-width: 1024px) 360px, (min-width: 768px) 33vw, 100vw"
+                  // sizes="(min-width: 1024px) 360px, (min-width: 768px) 33vw, 100vw"
                   className="service-card__image"
                 />
               </div>

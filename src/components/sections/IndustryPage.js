@@ -21,7 +21,7 @@ export default function IndustryPage({ slug }) {
   const { shared } = industryData;
   const data = industryData[slug];
 
-  const whyItems = shared.whyDahnay.items.map((item) => {
+  const whyItems = data.whyDahnay.items.map((item) => {
     const Icon = iconMap[item.icon];
     return { ...item, icon: <Icon /> };
   });
@@ -49,13 +49,13 @@ export default function IndustryPage({ slug }) {
       />
 
       <WhyDahnay
-        title={shared.whyDahnay.title}
+        title={data.whyDahnay.title}
         items={whyItems}
       />
 
       <CaseStudy />
 
-      <IndustriesSlider currentSlug={slug} />
+      {/* <IndustriesSlider currentSlug={slug} /> */}
 
       <RelatedBlogs />
 

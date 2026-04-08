@@ -1,3 +1,5 @@
+// url : industries/{detail}/expertise.js
+
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 

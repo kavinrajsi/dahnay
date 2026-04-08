@@ -22,7 +22,11 @@ export default function SectionHeader({
         </h2>
       )}
 
-      {content && <p className="section-header__content">{content}</p>}
+      {content && (
+        Array.isArray(content)
+          ? content.map((text, i) => <p key={i} className="section-header__content">{text}</p>)
+          : <p className="section-header__content">{content}</p>
+      )}
     </div>
   );
 }

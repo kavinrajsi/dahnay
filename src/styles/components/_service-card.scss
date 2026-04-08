@@ -2,12 +2,12 @@
   position: relative;
   overflow-y: hidden;
   border-top-left-radius: 16px;
-    border-bottom-right-radius: 16px;
+  border-bottom-right-radius: 16px;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      transition: all 0.2s ease-in;
+      transition: all 300ms ease-out;
       .service-card__content {
-        bottom: -42px;
+        bottom: -180px;
         gap: 4px;
         .service-card__title {
           padding-bottom: 0;
@@ -23,12 +23,10 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    // aspect-ratio: 360 / 216;
     img {
       object-fit: cover;
       width: 100%;
       height: auto;
-      height: 100%;
     }
   }
 
@@ -41,9 +39,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: transform 300ms;
-
-    bottom: -151px;
+    transition: bottom 300ms ease-out;
+    bottom: -224px;
     @media (hover: none) {
       bottom: -0px;
     }
@@ -57,10 +54,9 @@
     font-size: 18px;
     line-height: 22px;
     color: var(--neutral-black1);
-    // display: -webkit-box;
-    // -webkit-line-clamp: 1;
-    // -webkit-box-orient: vertical;
-    // overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__description {

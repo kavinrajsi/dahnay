@@ -68,6 +68,7 @@ const industriesDropdown = [
   { label: "Natural Rubber", href: "/industries/natural-rubber" },
   { label: "White Goods", href: "/industries/white-goods" },
   { label: "Energy, Oil & Gas", href: "/industries/energy-oil-gas" },
+  { label: "Food & Agro", href: "/industries/food-agro" },
   {
     label: "Construction Materials",
     href: "/industries/construction-materials",

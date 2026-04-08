@@ -132,7 +132,7 @@ export default function AboutPage() {
         linkedinHref="https://linkedin.com"
       />
       <TrustCTA
-        title="For a Beautiful World"
+        title="Need a partner you can Trust?"
         description="Partner with DahNAY for smarter logistics: transparent pricing, proactive support and solutions designed to fit your growth."
         ctaText="Join us"
         ctaHref="/contact"

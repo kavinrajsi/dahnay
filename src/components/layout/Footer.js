@@ -203,7 +203,7 @@ export default function Footer() {
                 Industry-specific efficiency with our powerful, unified freight
                 tools.
               </p>
-              <a href="mailto:info@dahnay.com" className="footer__email">info@dahnay.com</a>
+              {/* <a href="mailto:info@dahnay.com" className="footer__email">info@dahnay.com</a> */}
               <div className="footer__social">
                 {socialLinks.map((item) => (
                   <a

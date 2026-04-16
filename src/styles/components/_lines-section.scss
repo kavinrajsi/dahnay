@@ -9,7 +9,7 @@
 
     @media (min-width: 992px) {
       flex-direction: row;
-      align-items: flex-end;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 40px;
       padding-bottom: 56px;
@@ -18,7 +18,7 @@
 
   &__header-left {
     display: inline-block;
-    max-width: 455px;
+    max-width: 550px;
   }
 
   &__tag {

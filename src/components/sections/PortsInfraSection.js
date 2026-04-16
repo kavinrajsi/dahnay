@@ -4,19 +4,22 @@ import Link from "next/link";
 const services = [
   {
     title: "Warehousing",
-    description: "Secure storage for efficient cargo handling and inventory management.",
+    description:
+      "Secure storage for efficient cargo handling and inventory management.",
     image: "/images/ports-infra/warehousing.png",
     href: "/solutions/ports-infra#warehousing",
   },
   {
     title: "Free Trade Warehousing Zone",
-    description: "Duty-advantaged warehousing for smoother international trade operations.",
+    description:
+      "Duty-advantaged warehousing for smoother international trade operations.",
     image: "/images/ports-infra/ftwz.png",
     href: "/solutions/ports-infra#ftwz",
   },
   {
     title: "Container Freight Stations",
-    description: "Port-side facilities for cargo consolidation, deconsolidation and customs processing.",
+    description:
+      "Port-side facilities for cargo consolidation, deconsolidation and customs processing.",
     image: "/images/ports-infra/cfs.png",
     href: "/solutions/ports-infra#cfs",
   },
@@ -28,14 +31,20 @@ export default function PortsInfraSection() {
       <div className="container">
         <div className="ports-infra-section__header">
           <div className="ports-infra-section__header-left">
-            <span className="ports-infra-section__tag">Services we offer</span>
+            <span className="ports-infra-section__tag">Our Services</span>
             <h2 className="ports-infra-section__title">
-              Infrastructure at<br />key trade hubs
+              Infrastructure at key trade hubs
             </h2>
+            <p className="ports-infra-section__description">
+              Strategically located infrastructure designed to support seamless
+              cargo movement across global supply chains. From warehousing and
+              FTWZ facilities to container freight stations, our capabilities
+              ensure efficient storage, handling and distribution.
+            </p>
           </div>
-          <p className="ports-infra-section__description">
-            Strategically located infrastructure designed to support seamless cargo movement across global supply chains. From warehousing and FTWZ facilities to container freight stations, our capabilities ensure efficient storage, handling and distribution.
-          </p>
+          <Link href="/contact" className="logistics-section__btn">
+            Talk to us
+          </Link>
         </div>
 
         <div className="ports-infra-section__grid">
@@ -54,7 +63,9 @@ export default function PortsInfraSection() {
               <div className="ports-infra-card__content">
                 <div className="ports-infra-card__text">
                   <p className="ports-infra-card__title">{service.title}</p>
-                  <p className="ports-infra-card__desc">{service.description}</p>
+                  <p className="ports-infra-card__desc">
+                    {service.description}
+                  </p>
                 </div>
                 <Link href={service.href} className="ports-infra-card__link">
                   Learn more

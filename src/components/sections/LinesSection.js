@@ -28,14 +28,20 @@ export default function LinesSection() {
       <div className="container">
         <div className="lines-section__header">
           <div className="lines-section__header-left">
-            <span className="lines-section__tag">Services we offer</span>
+            <span className="lines-section__tag">Our Services</span>
             <h2 className="lines-section__title">
-              Solutions that move<br />your cargo forward
+              Seamlessly connecting your cargo to the world
             </h2>
-          </div>
           <p className="lines-section__description">
-            Through DahNAY Lines, we bring together our core NVOCC capabilities, LCL consolidation, efficient documentation, and dedicated customer service, to ensure smooth and reliable container movement across global trade routes.
+           Through DahNAY Lines, we bring together our core NVOCC capabilities, LCL consolidation, efficient documentation, and dedicated customer service, to ensure smooth and reliable container movement across global trade routes.
           </p>
+          <p className="lines-section__description" style={{ padding: "10px 0 0" }}>
+           From consolidating smaller shipments to managing the paperwork and keeping customers informed at every stage, DahNAY Lines simplifies ocean freight with dependable coordination and end-to-end support.
+          </p>
+          </div>
+          <Link href="/contact" className="logistics-section__btn">
+            Talk to us
+           </Link>
         </div>
 
         <div className="lines-section__grid">

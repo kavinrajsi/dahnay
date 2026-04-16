@@ -67,19 +67,18 @@
   }
 
   &__btn {
-    background: #2a2a29;
+    background: #ffffff;
     border: none;
-    border-radius: 0 8px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     padding: 12px 40px;
     font-family: var(--font-avenir), sans-serif;
-    font-weight: var(--font-weight-roman);
+    font-style: normal;
+    font-weight: 400;
     font-size: 16px;
     line-height: 20px;
-    color: #fff;
-    white-space: nowrap;
-    align-self: flex-start;
     text-align: center;
-    flex-shrink: 0;
+    color: #ef4230;
   }
 
   &__track-wrapper {

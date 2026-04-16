@@ -36,15 +36,8 @@ export default function Home() {
       <HomeSupplyChain />
       <HomeServices />
       <IndustriesSlider />
-      <HomeGreatPlace />
-      <HomeNewsroom />
-      <TrustCTA
-        title={"Grow your business\nwith us today"}
-        ctaText="Contact us"
-        ctaHref="/contact"
-        image="/images/home/contact-cta.png"
-      />
       <HomeAbout />
+
       <WhyDahnay
         title="Why DahNAY?"
         content="With DahNAY, expect world-class services, delivered by people who genuinely care, every step of the way."
@@ -74,6 +67,16 @@ export default function Home() {
               "Experienced team ensuring compliance with all international regulations.",
           },
         ]}
+      />
+
+      <HomeGreatPlace />
+      <HomeNewsroom />
+      <TrustCTA
+        title={"Let's connect"}
+        description=""
+        ctaText="Locate us"
+        ctaHref="/contact"
+        image="/images/home/contact-cta.png"
       />
       <FAQSection
         tag="FAQ's"

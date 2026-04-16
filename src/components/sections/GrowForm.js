@@ -97,9 +97,9 @@ export default function GrowForm() {
         <div className="grow-form__left">
           <div className="grow-form__header">
             <SectionHeader
-              tag="Forms"
-              title="Let's grow the now,"
-              titleAccent="together!"
+              tag="Reach us"
+              title=" "
+              titleAccent="Grow the Now"
               content="Wherever your business takes you, DahNAY is there to drive your success."
             />
           </div>

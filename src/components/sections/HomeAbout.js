@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function HomeAbout() {
@@ -7,9 +6,9 @@ export default function HomeAbout() {
       <div className="container">
         <div className="home-about__inner">
           <div className="home-about__left">
-            <span className="home-about__tag">Why DahNAY</span>
+            <span className="home-about__tag">WHO WE ARE</span>
             <h2 className="home-about__title">
-              20 years. One purpose:{" "}
+              Twenty years. One purpose:{" "}
               <span className="home-about__title-accent">Growth</span>
             </h2>
             <p className="home-about__body">
@@ -20,13 +19,14 @@ export default function HomeAbout() {
             </Link>
           </div>
           <div className="home-about__right">
-            <Image
-              src="/images/home/about-dahnay.png"
-              alt="About DahNAY"
-              width={712}
-              height={400}
-              sizes="(min-width: 992px) 712px, 100vw"
-              className="home-about__image"
+            <video
+              className="home-supply-chain__video"
+              src="/video/about-video.mp4"
+              poster="/video/about-video.png"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
           </div>
         </div>

@@ -71,13 +71,13 @@
 
   &__right {
     flex: 1;
+    video{
+      width: 100%;
+      height: auto;
+      display: block;
+      border-top-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
   }
 
-  &__image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-top-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-  }
 }

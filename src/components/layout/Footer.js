@@ -228,9 +228,8 @@ export default function Footer() {
           </div>
 
           <div className="footer__popular">
-            <h4 className="footer__column-title">Popular Links</h4>
             <p className="footer__popular-text">
-              <Link href="/about">Global logistics company</Link> | <Link href="/solutions/logistics">International logistics services</Link> | <Link href="/solutions/logistics">Freight forwarding company</Link> | <Link href="/service/air-freight">Air freight services</Link> | <Link href="/service/sea-freight">Sea freight shipping solutions</Link> | <Link href="/service/road-transportation">Road transportation services</Link> | <Link href="/solutions/ports-infra">Warehousing and distribution services</Link> | <Link href="/solutions/logistics">Third-party logistics provider</Link> | <Link href="/solutions/logistics">Supply chain management solutions</Link> | <Link href="/service/sea-freight">Worldwide shipping services</Link> | <Link href="/service/customs-clearance">Cross-border logistics solutions</Link> | <Link href="/service/project-logistics">Multimodal transportation services</Link>
+             <span className="footer__popular-title">Popular Links:</span> <Link href="/about">Global logistics company</Link> | <Link href="/solutions/logistics">International logistics services</Link> | <Link href="/solutions/logistics">Freight forwarding company</Link> | <Link href="/service/air-freight">Air freight services</Link> | <Link href="/service/sea-freight">Sea freight shipping solutions</Link> | <Link href="/service/road-transportation">Road transportation services</Link> | <Link href="/solutions/ports-infra">Warehousing and distribution services</Link> | <Link href="/solutions/logistics">Third-party logistics provider</Link> | <Link href="/solutions/logistics">Supply chain management solutions</Link> | <Link href="/service/sea-freight">Worldwide shipping services</Link> | <Link href="/service/customs-clearance">Cross-border logistics solutions</Link> | <Link href="/service/project-logistics">Multimodal transportation services</Link>
             </p>
           </div>
         </div>

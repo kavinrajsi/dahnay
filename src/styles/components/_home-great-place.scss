@@ -18,12 +18,7 @@
     z-index: 0;
   }
 
-  &__overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(11, 9, 10, 0.5);
-    z-index: 1;
-  }
+
 
   &__container {
     position: relative;

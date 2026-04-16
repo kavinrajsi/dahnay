@@ -79,6 +79,7 @@
 .home-service-card {
   background: #f5f3f4;
   border-radius: 16px 0 16px;
+  border-bottom-left-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -101,38 +102,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 16px;
     padding: 24px 32px;
     flex: 1;
-  }
-
-  &__text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    border-radius: 16px;
+    overflow: hidden;
   }
 
   &__title {
     font-family: var(--font-avenir), sans-serif;
-    font-weight: var(--font-weight-medium);
-    font-size: 18px;
-    line-height: 24px;
-    color: #333333;
-  }
-
-  &__desc {
-    font-family: var(--font-avenir), sans-serif;
-    font-weight: var(--font-weight-roman);
-    font-size: 16px;
-    line-height: 22px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 30px;
     color: #6d6f71;
+    strong {
+      color: #ef4230;
+    }
   }
 
-  &__link {
-    font-family: var(--font-avenir), sans-serif;
-    font-weight: var(--font-weight-medium);
-    font-size: 18px;
-    line-height: 24px;
-    color: #ef4230;
-  }
 }

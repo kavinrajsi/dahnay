@@ -21,7 +21,6 @@ export default function ServicePage({ slug }) {
       />
       <WhyDahnay
         title={data.whyDahnay.title}
-        content={data.whyDahnay.content}
         items={data.whyDahnay.items}
       />
       {data.certifications && <Certifications {...data.certifications} />}

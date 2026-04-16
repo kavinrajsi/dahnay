@@ -6,7 +6,6 @@ export default function ServiceExpertise({
   tag = "Expertise",
   title,
   titleAccent,
-  content,
   items = [],
   children,
 }) {
@@ -17,7 +16,6 @@ export default function ServiceExpertise({
           tag={tag}
           title={title}
           titleAccent={titleAccent}
-          content={content}
         />
       </div>
       {items.length > 0 && (

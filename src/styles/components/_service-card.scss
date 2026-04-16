@@ -60,7 +60,7 @@
     text-overflow: ellipsis;
     padding: 24px 24px 0;
     @media (min-width: 768px) {
-      padding: 16px 24px;
+      padding: 16px 16px;
     }
   }
 
@@ -74,7 +74,7 @@
 
     padding: 0 24px 16px;
     @media (min-width: 768px) {
-      padding: 16px 24px;
+      padding: 16px 16px;
     }
     // display: -webkit-box;
     // -webkit-line-clamp: 4;

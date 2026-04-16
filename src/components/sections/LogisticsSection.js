@@ -4,67 +4,67 @@ import Link from "next/link";
 const services = [
   {
     title: "Sea Freight",
-    description: "Full and less-than-container load solutions connecting major ports worldwide.",
+    description: "Efficient and reliable sea freight solutions that deliver your cargo across the globe.",
     image: "/images/logistics/sea-freight.png",
     href: "/solutions/logistics#sea-freight",
   },
   {
     title: "Air Freight",
-    description: "Fast, reliable air cargo services for time-sensitive and high-value shipments.",
+    description: "Fast, secure air freight services ensuring timely deliveries, no matter the destination.",
     image: "/images/logistics/air-freight.png",
     href: "/solutions/logistics#air-freight",
   },
   {
     title: "Road Transportation",
-    description: "Flexible overland freight solutions for regional and cross-border cargo movement.",
+    description: "Efficient road logistics connecting ports, warehouses, and final destinations.",
     image: "/images/logistics/road-transportation.png",
     href: "/solutions/logistics#road-transportation",
   },
   {
     title: "Time Critical Delivery",
-    description: "Express and priority shipment services engineered for urgent cargo requirements.",
+    description: "Fast, reliable delivery for time-sensitive cargo when every minute matters.",
     image: "/images/logistics/time-critical-delivery.png",
     href: "/solutions/logistics#time-critical-delivery",
   },
   {
     title: "Project Logistics",
-    description: "End-to-end logistics management for complex, oversized and heavy-lift projects.",
+    description: "Specialised project logistics solutions for seamless execution of large and complex shipments.",
     image: "/images/logistics/project-logistics.png",
     href: "/solutions/logistics#project-logistics",
   },
   {
     title: "Reverse Logistics",
-    description: "Efficient returns management and reverse supply chain solutions for businesses.",
+    description: "Effortless fulfilment, returns and reverse movement that close the loop without slowing you down.",
     image: "/images/logistics/reverse-logistics.png",
     href: "/solutions/logistics#reverse-logistics",
   },
   {
     title: "Customs Clearance",
-    description: "Expert customs brokerage ensuring compliant and smooth cross-border trade.",
+    description: "Expert customs clearance ensuring compliant, efficient and hassle-free cargo movement with minimal delays.",
     image: "/images/logistics/customs-clearance.png",
     href: "/solutions/logistics#customs-clearance",
   },
   {
     title: "Domestic Trucking",
-    description: "Comprehensive inland trucking network covering full-truckload and part-load needs.",
+    description: "We keep your cargo moving like clockwork with dependable trucking and real-time coordination.",
     image: "/images/logistics/domestic-trucking.png",
     href: "/solutions/logistics#domestic-trucking",
   },
   {
     title: "Last Mile Delivery",
-    description: "Reliable final-leg delivery services ensuring cargo reaches its destination on time.",
+    description: "From the final hub to the customer's doorstep, we handle the last mile with care, coordination and on-time.",
     image: "/images/logistics/last-mile-delivery.png",
     href: "/solutions/logistics#last-mile-delivery",
   },
   {
     title: "E-commerce Fulfillment Support",
-    description: "Integrated fulfilment and delivery solutions tailored for online retail operations.",
+    description: "Every order, picked, packed and delivered with precision - so your customers keep coming back",
     image: "/images/logistics/ecommerce-fulfillment.png",
     href: "/solutions/logistics#ecommerce-fulfillment",
   },
   {
     title: "Green Logistics",
-    description: "Sustainable shipping practices that reduce carbon footprint across the supply chain.",
+    description: "Driving greener supply chains with smarter routes, lower emissions, and responsible operations.",
     image: "/images/logistics/green-logistics.png",
     href: "/solutions/logistics#green-logistics",
   },
@@ -76,14 +76,17 @@ export default function LogisticsSection() {
       <div className="container">
         <div className="logistics-section__header">
           <div className="logistics-section__header-left">
-            <span className="logistics-section__tag">Services we offer</span>
+            <span className="logistics-section__tag">Our Services</span>
             <h2 className="logistics-section__title">
-              Solutions that move<br />your cargo forward
+              Solutions that move your cargo forward
             </h2>
-          </div>
-          <p className="logistics-section__description">
-            From ocean and air freight to last-mile delivery and green logistics, DahNAY delivers end-to-end solutions across every mode of transport — keeping your supply chain moving with precision and reliability.
+            <p className="logistics-section__description">
+            From global freight movement to warehousing and supply chain solutions, our services are designed to keep your cargo moving efficiently across markets. With strong networks, reliable infrastructure and experienced teams, we deliver logistics solutions you can depend on.
           </p>
+          </div>
+          <Link href="/contact" className="logistics-section__btn">
+            Talk to us
+           </Link>
         </div>
 
         <div className="logistics-section__grid">

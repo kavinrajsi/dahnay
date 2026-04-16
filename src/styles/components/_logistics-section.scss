@@ -9,7 +9,7 @@
 
     @media (min-width: 992px) {
       flex-direction: row;
-      align-items: flex-end;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 40px;
       padding-bottom: 56px;
@@ -68,6 +68,21 @@
       width: 455px;
       flex-shrink: 0;
     }
+  }
+  &__btn {
+    /* desktop/b2 */
+    font-family: var(--font-avenir), sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+    text-align: center;
+    color: #ffffff;
+    padding: 12px 40px;
+    background: #ee412f;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
 
   &__grid {

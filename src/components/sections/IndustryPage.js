@@ -53,7 +53,11 @@ export default function IndustryPage({ slug }) {
         items={whyItems}
       />
 
-      <CaseStudy />
+      <CaseStudy
+        title={data.caseStudy.title}
+        content={data.caseStudy.content}
+        link={data.caseStudy.link}
+      />
 
       {/* <IndustriesSlider currentSlug={slug} /> */}
 

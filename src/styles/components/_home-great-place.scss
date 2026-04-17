@@ -16,6 +16,10 @@
   &__bg {
     object-fit: cover;
     z-index: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100vw;
   }
 
 

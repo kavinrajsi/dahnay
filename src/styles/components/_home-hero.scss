@@ -5,16 +5,16 @@
   &__slide {
     position: relative;
     width: 100%;
-    min-height: 400px;
+    height: 400px;
     display: flex;
     align-items: flex-end;
 
     @media (min-width: 768px) {
-      min-height: 500px;
+      height: 500px;
     }
 
     @media (min-width: 992px) {
-      min-height: 580px;
+      height: 580px;
     }
   }
 

@@ -36,7 +36,7 @@ export default function HomeNewsroom() {
           <div className="home-newsroom__header-left">
             <span className="home-newsroom__tag">Newsroom</span>
             <h2 className="home-newsroom__title">
-              The latest buzz at
+              The latest buzz at {" "}
               <span className="home-newsroom__title-accent">DahNAY</span>
             </h2>
           </div>

@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { GoogleTagManager } from "@next/third-parties/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.scss";
@@ -47,9 +48,14 @@ export const metadata = {
   },
 };
 
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+const isOnVercel = Boolean(process.env.VERCEL);
+const shouldLoadGTM = Boolean(gtmId) && !isOnVercel;
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={avenir.variable}>
+      {shouldLoadGTM && <GoogleTagManager gtmId={gtmId} />}
       <body>
         <Header />
         <main>{children}</main>

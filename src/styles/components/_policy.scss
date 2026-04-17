@@ -44,6 +44,14 @@
       padding-bottom: 12px;
     }
 
+    ul {
+      list-style: disc;
+    }
+
+    ol {
+      list-style: decimal;
+    }
+
     li {
       font-family: var(--font-avenir), sans-serif;
       font-weight: var(--font-weight-roman);

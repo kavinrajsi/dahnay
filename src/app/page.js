@@ -79,7 +79,7 @@ export default function Home() {
         image="/images/home/contact-cta.png"
       />
       <FAQSection
-        tag="FAQ's"
+        tag="FAQs"
         title="Frequently Asked"
         titleAccent="Questions"
         content="Find answers to common questions about our logistics services and how we can support your supply chain."

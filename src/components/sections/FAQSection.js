@@ -2,7 +2,7 @@ import SectionHeader from "./SectionHeader";
 import FAQ from "../ui/FAQ";
 
 export default function FAQSection({
-  tag = "FAQ's",
+  tag = "FAQs",
   title = "Frequently Asked",
   titleAccent = "Questions",
   content,

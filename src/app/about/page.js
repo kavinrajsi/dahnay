@@ -140,7 +140,7 @@ export default function AboutPage() {
         imageAlt="Cargo containers at port"
       />
       <FAQSection
-        tag="FAQ's"
+        tag="FAQs"
         title="Frequently Asked"
         titleAccent="Questions"
         content="Learn more about DahNAY, our story, values and the team driving innovation in global logistics."

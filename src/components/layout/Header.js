@@ -78,7 +78,7 @@ const industriesDropdown = [
 
 const aboutDropdown = [
   { label: "Who we are", href: "/about" },
-  { label: "ESG & CSR", href: "/about/esg-csr" },
+  { label: "ESG & CSR", href: "/esg-csr" },
   { label: "Careers", href: "/careers" },
 ];
 
@@ -354,7 +354,7 @@ export default function Header() {
         </nav>
 
         <Link
-          href="https://dahnaylogistics.logitrack.live/direct-tracking"
+          href="https://dahnaylogistics.logitrack.live/?utm_source=dahnay&utm_medium=referral&utm_campaign=header_tracking_cta"
           target="_blank"
           className="header__cta button header__cta--desktop"
         >
@@ -376,7 +376,7 @@ export default function Header() {
           Contact us
         </Link>
         <Link
-          href="https://dahnaylogistics.logitrack.live/direct-tracking"
+          href="https://dahnaylogistics.logitrack.live/?utm_source=dahnay&utm_medium=referral&utm_campaign=header_tracking_cta"
           target="_blank"
           className="header__cta button"
           onClick={closeAll}

@@ -34,7 +34,7 @@ export default function LinesPage() {
       <LinesSection />
 
       <FAQSection
-        tag="FAQ's"
+        tag="FAQs"
         title="Frequently Asked"
         titleAccent="Questions"
         content="Ensure every shipment is precise, on time and fully optimised with DahNAY's intelligent logistics network and real-time visibility"

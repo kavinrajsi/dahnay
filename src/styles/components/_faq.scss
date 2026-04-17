@@ -62,6 +62,10 @@
     .section-header {
       max-width: 455px;
     }
+
+    .section-header__tag {
+      text-transform: none;
+    }
   }
 
   &__right {

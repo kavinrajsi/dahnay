@@ -287,12 +287,12 @@ export default function NewsroomContent({ posts, title = "Newsroom", filterType 
             <p className="newsroom-cta__social-desc">Get the latest news and travel inspiration.</p>
           </div>
           <div className="newsroom-cta__social-icons">
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">
+            <a href="https://x.com/DahNAY_Official" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">
               <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                 <path d="M14.855 10.588L24.137 0h-2.2l-8.06 9.192L7.55 0H0l9.732 13.89L0 25h2.2l8.51-9.705L17.45 25H25L14.855 10.588Zm-3.013 3.437l-.987-1.385L2.98 1.624h3.38l6.336 8.893.987 1.385 8.235 11.561h-3.38l-6.716-9.438Z" fill="#fff"/>
               </svg>
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+            <a href="https://www.facebook.com/DahnayLogisticsofficial/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
               <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                 <path d="M25 12.5C25 5.596 19.404 0 12.5 0S0 5.596 0 12.5c0 6.238 4.57 11.41 10.547 12.348v-8.735H7.373V12.5h3.174V9.746c0-3.134 1.867-4.865 4.724-4.865 1.369 0 2.8.244 2.8.244v3.077h-1.577c-1.554 0-2.038.964-2.038 1.953V12.5h3.467l-.554 3.613h-2.913v8.735C20.43 23.91 25 18.738 25 12.5Z" fill="#fff"/>
               </svg>

@@ -12,6 +12,11 @@ const nextConfig = {
         protocol: "http",
         hostname: "20.219.8.121",
       },
+      {
+        protocol: 'http',
+        hostname: 'studio.dahnay.com',
+        pathname: '/content/images/**',
+      },
     ],
   },
 };

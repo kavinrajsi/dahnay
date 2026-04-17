@@ -5,11 +5,18 @@ export default function CaseStudy({ title, content, link }) {
   return (
     <section className="container case-study">
       <div className="case-study__container">
-        <SectionHeader
-          tag="CASE STUDY"
-          title={title}
-          content={content}
-        />
+        <div>
+          <SectionHeader
+            tag="CASE STUDY"
+            title={title}
+            content={content}
+          />
+          {link && (
+            <a href={link} target="_blank" rel="noopener noreferrer" className="button case-study__link">
+              Read more
+            </a>
+          )}
+        </div>
 
         <div className="case-study__imageWrapper">
           <Image
@@ -20,11 +27,6 @@ export default function CaseStudy({ title, content, link }) {
             sizes="(min-width: 992px) 550px, 100vw"
             className="case-study__image"
           />
-          {link && (
-            <a href={link} target="_blank" rel="noopener noreferrer" className="button case-study__link">
-              Read more
-            </a>
-          )}
         </div>
       </div>
     </section>

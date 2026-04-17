@@ -21,7 +21,7 @@ DahNAY delivers end-to-end logistics solutions across air freight, sea freight, 
 
 ## Industries Served
 
-Automotive, FMCG, Energy & Oil & Gas, Construction Materials, Paper & Pulp, Natural Rubber, White Goods, Machinery, Renewables, Retail & Apparel
+Automotive, Renewables, Machinery, Retail & Apparel, Natural Rubber, White Goods, Energy Oil & Gas, Food & Agro, FMCG, Paper & Pulp, Construction Materials
 
 ## Technology Solutions
 
@@ -33,6 +33,7 @@ Automotive, FMCG, Energy & Oil & Gas, Construction Materials, Paper & Pulp, Natu
 
 - Website: https://www.dahnay.com
 - Email: info@dahnay.com
+- Careers: career@dahnay.com
 - Contact form: https://www.dahnay.com/contact
 
 ## Key Pages
@@ -43,6 +44,9 @@ Automotive, FMCG, Energy & Oil & Gas, Construction Materials, Paper & Pulp, Natu
 - Solutions: https://www.dahnay.com/solutions
 - About: https://www.dahnay.com/about
 - Careers: https://www.dahnay.com/careers
-- Newsroom: https://www.dahnay.com/newsroom
+- Newsroom (all): https://www.dahnay.com/newsroom
+- Blog: https://www.dahnay.com/newsroom/blog
+- Case Studies: https://www.dahnay.com/newsroom/case-study
+- News: https://www.dahnay.com/newsroom/news
 - ESG & CSR: https://www.dahnay.com/esg-csr
 - Contact: https://www.dahnay.com/contact

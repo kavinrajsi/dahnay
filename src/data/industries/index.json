@@ -104,7 +104,7 @@
     "caseStudy": {
       "title": "Monsoon and the Journey of Automotive Parts",
       "content": "When monsoon arrives, automotive supply chains face new complexities as roads slow, warehouses prepare for moisture, and delivery schedules face weather pressure.",
-      "link": "https://dahnay.com/monsoon-and-the-journey-of-automotive-parts/",
+      "link": "/newsroom/blog/monsoon-and-the-journey-of-automotive-parts",
       "image": "/images/case-study/automotive.jpg"
     }
   },
@@ -201,7 +201,7 @@
     "caseStudy": {
       "title": "Top 5 Solar Panel Manufacturers in India by Manufacturing Capacity",
       "content": "The solar industry has experienced remarkable growth in recent years, with Asia emerging as a major hub for solar panel manufacturing.",
-      "link": "https://dahnay.com/top-5-solar-panel-manufacturers-in-india-by-manufacturing-capacity/",
+      "link": "/newsroom/blog/top-5-solar-panel-manufacturers-in-india-by-manufacturing-capacity",
       "image": "/images/case-study/renewables.jpg"
     }
   },
@@ -298,7 +298,7 @@
     "caseStudy": {
       "title": "Top 5 Logistics Trends for 2024",
       "content": "The logistics sector faces significant transformation in 2024 driven by tech advancements, sustainability efforts, and shifting customer needs.",
-      "link": "https://dahnay.com/top-5-logistics-trends-for-2024/",
+      "link": "/newsroom/blog/top-5-logistics-trends-for-2024",
       "image": "/images/case-study/machinery.png"
     }
   },
@@ -390,7 +390,7 @@
     "caseStudy": {
       "title": "Seizing the 'China Plus One' Opportunity: India's Path to Global Manufacturing Hub",
       "content": "India has a critical window to attract investment through the 'China Plus One' strategy. With its young workforce, economic reforms, and digital infrastructure, India can become a manufacturing alternative for global corporations seeking to diversify from China.",
-      "link": "https://dahnay.com/seizing-the-china-plus-one-opportunity-indias-path-to-global-manufacturing-hub/",
+      "link": "/newsroom/blog/seizing-the-china-plus-one-opportunity-indias-path-to-global-manufacturing-hub",
       "image": "/images/case-study/retail-apparel.png"
     }
   },
@@ -487,7 +487,7 @@
     "caseStudy": {
       "title": "Green Packaging and Why It's Important to Your Business",
       "content": "The logistics sector accounts for roughly 8% of global CO2 emissions. Explore seven key strategies companies can implement to foster sustainable logistics operations, including adopting greener vehicles, optimizing routes, and utilizing eco-friendly packaging.",
-      "link": "https://dahnay.com/green-packaging-and-why-its-important-to-your-business/",
+      "link": "/newsroom/blog/green-packaging-and-why-its-important-to-your-business",
       "image": "/images/case-study/natural-rubber.jpg"
     }
   },
@@ -587,7 +587,7 @@
     "caseStudy": {
       "title": "Everything You Need to Know About White Goods Logistics",
       "content": "Exploring white goods logistics amid a 2.1% annual market growth, covering definitions, challenges in shipping large appliances, and solutions for seamless delivery.",
-      "link": "https://dahnay.com/everything-you-need-to-know-about-white-goods-logistics/",
+      "link": "/newsroom/blog/everything-you-need-to-know-about-white-goods-logistics",
       "image": "/images/case-study/white-goods.png"
     }
   },
@@ -684,7 +684,7 @@
     "caseStudy": {
       "title": "Opting for a Sustainable Fuel: Hydrogen or EV?",
       "content": "Explore how hydrogen fuel cells and electric vehicles compare for green logistics, considering factors like cost, distance, load capacity, and infrastructure accessibility.",
-      "link": "https://dahnay.com/opting-for-a-sustainable-fuel-hydrogen-or-ev/",
+      "link": "/newsroom/blog/opting-for-a-sustainable-fuel-hydrogen-or-ev",
       "image": "/images/case-study/energy-oil-gas.jpg"
     }
   },
@@ -785,7 +785,7 @@
     "caseStudy": {
       "title": "The Crucial Role of Cold Chain Logistics in the Food & Beverage Industry",
       "content": "Cold chain logistics drives remarkable growth in F&B logistics, with market expected to reach USD 320.91B by 2034. Explore how temperature control addresses key industry challenges like product perishability and regulatory compliance.",
-      "link": "https://dahnay.com/the-crucial-role-of-cold-chain-logistics-in-the-food-beverage-industry/",
+      "link": "/newsroom/blog/the-crucial-role-of-cold-chain-logistics-in-the-food-beverage-industry",
       "image": "/images/case-study/food-agro.jpeg"
     }
   },
@@ -881,7 +881,7 @@
     "caseStudy": {
       "title": "5 Reasons Why You Should Hire the Right Freight Forwarder",
       "content": "Engaging a freight forwarder provides greater control over shipping processes and enables selection of optimal routes according to specific requirements, ensuring timely delivery with transparency and competitive rates.",
-      "link": "https://dahnay.com/5-reasons-why-you-should-hire-the-right-freight-forwarder/",
+      "link": "/newsroom/blog/5-reasons-why-you-should-hire-the-right-freight-forwarder",
       "image": "/images/case-study/fmcg.png"
     }
   },
@@ -926,20 +926,7 @@
       ]
     },
     "faq": {
-      "items": [
-        {
-          "question": "Lorem ipsum dolor sit amet consectetur?",
-          "answer": "Lorem ipsum dolor sit amet consectetur."
-        },
-        {
-          "question": "Eu aenean non orci adipiscing odio?",
-          "answer": "Lorem ipsum dolor sit amet consectetur."
-        },
-        {
-          "question": "Lorem ipsum dolor sit amet consectetur. Senectus platea in nunc quis. Viverra libero quam fames vitae felis eu?",
-          "answer": "Lorem ipsum dolor sit amet consectetur."
-        }
-      ]
+      "items": []
     },
     "whyDahnay": {
       "title": "Why DahNAY?",
@@ -969,7 +956,7 @@
     "caseStudy": {
       "title": "5 Pain Points in Paper Shipping and How You Can Overcome Them",
       "content": "Papers face shipping challenges from moisture and temperature damage to customs complexities. Learn strategies to overcome these obstacles in paper logistics.",
-      "link": "https://dahnay.com/5-pain-points-in-paper-shipping-and-how-you-can-overcome-them/",
+      "link": "/newsroom/blog/5-pain-points-in-paper-shipping-and-how-you-can-overcome-them",
       "image": "/images/case-study/paper-pulp.png"
     }
   },
@@ -1070,7 +1057,7 @@
     "caseStudy": {
       "title": "India's Initiatives in Turning India into a Manufacturing Hub",
       "content": "India is shifting to become a global manufacturing hub through initiatives like Make in India, PLI schemes, infrastructure transformation, and digital logistics solutions.",
-      "link": "https://dahnay.com/indias-initiatives-in-turning-india-into-a-manufacturing-hub/",
+      "link": "/newsroom/blog/indias-initiatives-in-turning-india-into-a-manufacturing-hub",
       "image": "/images/case-study/construction-materials.jpg"
     }
   }

@@ -64,13 +64,15 @@ export default function IndustryPage({ slug }) {
 
       <RelatedBlogs />
 
-      <FAQSection
-        tag={shared.faq.tag}
-        title={shared.faq.title}
-        titleAccent={shared.faq.titleAccent}
-        content={shared.faq.content}
-        items={data.faq.items}
-      />
+      {data.faq?.items?.length > 0 && (
+        <FAQSection
+          tag={shared.faq.tag}
+          title={shared.faq.title}
+          titleAccent={shared.faq.titleAccent}
+          content={shared.faq.content}
+          items={data.faq.items}
+        />
+      )}
 
       <ContactFormSection />
     </div>

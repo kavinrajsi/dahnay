@@ -6,10 +6,11 @@ export default function HomeGreatPlace() {
     <section className="home-gptw">
       <Image
         src="/images/home/gptw-bg.png"
-        alt=""
-        fill
-        className="home-gptw__bg"
+        alt="Great Place to Work"
+        width={1200}
+        height={630}
         sizes="100vw"
+        className="home-gptw__bg"
         priority={false}
       />
       <div className="home-gptw__overlay" />

@@ -48,8 +48,8 @@ export default function HomeSupplyChain() {
           <video
             ref={videoRef}
             className="home-supply-chain__video"
-            src="/video/about-video.mp4"
-            poster="/video/about-video.png"
+            src="/video/about-intro.mp4"
+            poster="/video/about-intro.png"
             autoPlay
             muted
             loop

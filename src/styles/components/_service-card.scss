@@ -57,7 +57,7 @@
     color: var(--neutral-black1);
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    // text-overflow: ellipsis;
     padding: 24px 24px 0;
     @media (min-width: 768px) {
       padding: 16px 16px;

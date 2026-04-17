@@ -26,33 +26,33 @@
       "items": [
         {
           "image": "/images/industries/automotive/inbound-outbound.png",
-          "title": "Inbound and Outbound Transportation",
-          "description": "Ensuring seamless flows that keep production and distribution running without disruptions."
+          "title": "Inbound & Outbound Flow",
+          "description": "Ensuring seamless production and distribution flows across networks."
         },
         {
           "image": "/images/industries/automotive/time-critical.png",
-          "title": "Time-critical movements",
-          "description": "Delivering urgent shipments within strict timelines to avoid costly operational delays."
+          "title": "Time-Critical Logistics",
+          "description": "Delivering urgent shipments within strict timelines to avoid delays."
         },
         {
           "image": "/images/industries/automotive/engines.png",
-          "title": "Engines and mechanical parts",
-          "description": "Handling high-value components securely to maintain performance and reliability standards."
+          "title": "Component Handling",
+          "description": "Securing high-value engines and components with reliable handling."
         },
         {
           "image": "/images/industries/automotive/accessories.png",
-          "title": "Accessories",
-          "description": "Supporting dealer networks with efficient availability across diverse aftermarket requirements."
+          "title": "Accessories Movement",
+          "description": "Enabling fast, efficient shipment of accessories across global markets."
         },
         {
           "image": "/images/industries/automotive/finished-vehicles.png",
-          "title": "Finished Vehicles Logistics",
-          "description": "Moving vehicles safely across regions ensuring timely delivery and minimal damage."
+          "title": "Finished Vehicle Logistics",
+          "description": "Ensuring safe vehicle movement with timely delivery and minimal damage."
         },
         {
           "image": "/images/industries/automotive/tyres-tubes.png",
-          "title": "Tyres and Tubes",
-          "description": "Maintaining steady supply across markets with efficient and reliable distribution."
+          "title": "Tyres & Tubes Distribution",
+          "description": "Maintaining steady supply across markets with reliable distribution."
         }
       ]
     },
@@ -123,33 +123,33 @@
       "items": [
         {
           "image": "/images/industries/renewables/wind-energy.png",
-          "title": "Wind Energy Equipment Transport",
-          "description": "Moving oversized components safely across challenging terrains and remote installation sites."
+          "title": "Wind Equipment Transport",
+          "description": "Moving oversized wind components safely across terrains and remote sites."
         },
         {
           "image": "/images/industries/renewables/solar-module.png",
-          "title": "Solar Module Logistics",
-          "description": "Ensuring careful handling to prevent damage and maintain performance efficiency."
+          "title": "Solar Module Handling",
+          "description": "Ensuring careful handling to prevent damage and maintain efficiency."
         },
         {
           "image": "/images/industries/renewables/heavy-lift.png",
-          "title": "Project & Heavy-Lift Logistics",
-          "description": "Executing complex movements with precision planning and specialised heavy-lift capabilities."
+          "title": "Heavy-Lift Logistics",
+          "description": "Executing complex heavy-lift movements with precision and expertise."
         },
         {
           "image": "/images/industries/renewables/multimodal.png",
-          "title": "Multimodal Project Coordination",
-          "description": "Coordinating multiple transport modes to ensure timely and cost-efficient execution."
+          "title": "Multimodal Coordination",
+          "description": "Coordinating transport modes for timely and cost-efficient execution."
         },
         {
           "image": "/images/industries/renewables/infrastructure.png",
-          "title": "Infrastructure Component Movement",
-          "description": "Delivering critical components reliably across sites supporting large-scale energy infrastructure."
+          "title": "Infrastructure Movement",
+          "description": "Delivering critical components reliably across large-scale project sites."
         },
         {
           "image": "/images/industries/renewables/warehousing.png",
           "title": "Warehousing & Distribution",
-          "description": "Enabling organised storage and efficient distribution across project and operational needs."
+          "description": "Enabling efficient storage and distribution across project operations."
         }
       ]
     },
@@ -220,33 +220,33 @@
       "items": [
         {
           "image": "/images/industries/machinery/heavy-machinery.png",
-          "title": "Heavy Machinery Transport",
-          "description": "Ensuring safe movement of high-value equipment across complex industrial environments."
+          "title": "Heavy Equipment Transport",
+          "description": "Ensuring safe transport of high-value machinery across industrial sites."
         },
         {
           "image": "/images/industries/machinery/oversized-cargo.png",
-          "title": "Oversized Cargo Movement",
-          "description": "Handling large shipments with precision planning across challenging routes and terrains."
+          "title": "Oversized Cargo Handling",
+          "description": "Managing oversized cargo with precision across challenging routes."
         },
         {
           "image": "/images/industries/machinery/multimodal.png",
-          "title": "Multimodal Freight Coordination",
-          "description": "Integrating transport modes to balance cost, speed and operational efficiency."
+          "title": "Multimodal Integration",
+          "description": "Integrating transport modes to balance cost, speed and efficiency."
         },
         {
           "image": "/images/industries/machinery/factory-to-site.png",
           "title": "Factory-to-Site Delivery",
-          "description": "Connecting production facilities to project sites with reliable and timely execution."
+          "description": "Connecting production facilities to sites with reliable execution."
         },
         {
           "image": "/images/industries/machinery/breakbulk.png",
-          "title": "Breakbulk Cargo Logistics",
-          "description": "Managing non-containerised shipments efficiently with specialised handling and coordination."
+          "title": "Breakbulk Logistics",
+          "description": "Handling non-containerised cargo with specialised coordination."
         },
         {
           "image": "/images/industries/machinery/distribution.png",
-          "title": "Industrial Equipment Distribution",
-          "description": "Ensuring consistent availability across networks supporting operations and maintenance requirements."
+          "title": "Equipment Distribution",
+          "description": "Ensuring consistent equipment availability across operations."
         }
       ]
     },
@@ -317,28 +317,28 @@
       "items": [
         {
           "image": "/images/industries/retail-apparel/sourcing.png",
-          "title": "Sourcing & Inbound Logistics",
-          "description": "Ensuring steady material flow from suppliers into production and retail networks."
+          "title": "Sourcing & Inbound Flow",
+          "description": "Ensuring steady material flow from suppliers into retail networks."
         },
         {
           "image": "/images/industries/retail-apparel/time-sensitive.png",
-          "title": "Time-Sensitive Freight Solutions",
-          "description": "Meeting tight timelines to keep collections aligned with market demand cycles."
+          "title": "Time-Sensitive Logistics",
+          "description": "Meeting tight timelines aligned with fast-changing demand cycles."
         },
         {
           "image": "/images/industries/retail-apparel/global-export.png",
-          "title": "Global Export & Distribution",
-          "description": "Enabling seamless movement across markets with consistent delivery and visibility."
+          "title": "Global Distribution",
+          "description": "Enabling seamless movement across markets with consistent delivery."
         },
         {
           "image": "/images/industries/retail-apparel/ecommerce.png",
-          "title": "E-commerce Fulfilment Support",
-          "description": "Supporting fast order processing and delivery across digital commerce platforms."
+          "title": "E-commerce Fulfilment",
+          "description": "Supporting fast order processing across digital commerce channels."
         },
         {
           "image": "/images/industries/retail-apparel/replenishment.png",
           "title": "Retail Replenishment",
-          "description": "Maintaining stock availability across stores with responsive and efficient restocking."
+          "description": "Maintaining stock availability across stores with efficient restocking."
         }
       ]
     },
@@ -410,32 +410,32 @@
         {
           "image": "/images/industries/natural-rubber/plantation-to-port.png",
           "title": "Plantation-to-Port Movement",
-          "description": "Ensuring steady flow from estates to ports with minimal delays."
+          "description": "Ensuring steady movement from plantations to ports with minimal delays."
         },
         {
           "image": "/images/industries/natural-rubber/bulk-commodity.png",
-          "title": "Bulk Commodity Transport",
-          "description": "Handling large volumes efficiently while maintaining consistency and supply chain reliability."
+          "title": "Bulk Transport",
+          "description": "Handling large volumes efficiently with supply chain consistency."
         },
         {
           "image": "/images/industries/natural-rubber/containerised-export.png",
-          "title": "Containerised Export Logistics",
-          "description": "Enabling secure shipments globally with compliance, visibility and timely delivery."
+          "title": "Export Logistics",
+          "description": "Enabling secure global shipments with timely and compliant delivery."
         },
         {
           "image": "/images/industries/natural-rubber/multimodal.png",
-          "title": "Multimodal Freight Coordination",
-          "description": "Integrating transport modes to optimise cost, speed and overall efficiency."
+          "title": "Multimodal Coordination",
+          "description": "Integrating transport modes to optimise cost, speed and efficiency."
         },
         {
           "image": "/images/industries/natural-rubber/processing-equipment.png",
-          "title": "Rubber Processing Equipment",
-          "description": "Moving specialised machinery safely to support processing operations and productivity."
+          "title": "Equipment Movement",
+          "description": "Transporting specialised machinery safely to support operations."
         },
         {
           "image": "/images/industries/natural-rubber/warehousing.png",
           "title": "Warehousing & Distribution",
-          "description": "Supporting storage and distribution with organised systems ensuring efficient inventory movement."
+          "description": "Supporting storage and distribution with efficient inventory flow."
         }
       ]
     },
@@ -499,40 +499,43 @@
     "overview": {
       "tag": "Overview",
       "title": "The infrastructure behind appliances",
-      "content": ["White goods supply chains move high-volume, high-cubic and damage-sensitive cargo across domestic and international markets. Every shipment must align with production schedules, retail commitments and distributor timelines.", "DahNAY delivers logistics solutions engineered for appliance scale, optimising container utilisation, protecting cargo integrity and ensuring seamless movement from manufacturing hubs to distribution networks."]
+      "content": [
+        "White goods supply chains move high-volume, high-cubic and damage-sensitive cargo across domestic and international markets. Every shipment must align with production schedules, retail commitments and distributor timelines.",
+        "DahNAY delivers logistics solutions engineered for appliance scale, optimising container utilisation, protecting cargo integrity and ensuring seamless movement from manufacturing hubs to distribution networks."
+      ]
     },
     "expertise": {
       "content": "We design logistics workflows aligned to appliance manufacturing output and retail distribution cycles, structured to protect cargo and maintain delivery commitments.",
       "items": [
         {
           "image": "/images/industries/white-goods/factory-to-port.png",
-          "title": "Factory-to-Port Coordination",
-          "description": "Ensuring smooth transitions from manufacturing units to ports with minimal delays."
+          "title": "Factory-to-Port Movement",
+          "description": "Ensuring smooth movement from manufacturing units to ports."
         },
         {
           "image": "/images/industries/white-goods/container-optimize.png",
-          "title": "Container Optimize & Load Planning",
-          "description": "Maximising space utilisation to reduce costs and improve shipment efficiency."
+          "title": "Load Optimisation",
+          "description": "Maximising container space utilisation to improve efficiency."
         },
         {
           "image": "/images/industries/white-goods/global-freight.png",
           "title": "Global Freight Management",
-          "description": "Managing international shipments with visibility, reliability and consistent transit performance."
+          "description": "Managing international shipments with reliable transit performance."
         },
         {
           "image": "/images/industries/white-goods/customs.png",
-          "title": "Customs & Regulatory Handling",
-          "description": "Ensuring compliance with regulations to enable seamless cross-border movement globally."
+          "title": "Customs & Compliance",
+          "description": "Ensuring regulatory compliance for seamless cross-border movement."
         },
         {
           "image": "/images/industries/white-goods/warehousing.png",
-          "title": "Warehousing & Distribution",
-          "description": "Supporting organised storage and efficient dispatch across regional distribution networks."
+          "title": "Warehousing & Dispatch",
+          "description": "Supporting efficient storage and dispatch across distribution networks."
         },
         {
           "image": "/images/industries/white-goods/aftermarket.png",
-          "title": "Aftermarket & Spare Parts Logistics",
-          "description": "Maintaining availability across service networks to support repairs and customer satisfaction."
+          "title": "Aftermarket Logistics",
+          "description": "Maintaining spare parts availability across service networks."
         }
       ]
     },
@@ -603,33 +606,33 @@
       "items": [
         {
           "image": "/images/industries/energy-oil-gas/project-heavy-lift.png",
-          "title": "Project & Heavy-Lift Logistics",
-          "description": "Executing complex moves with precision planning and specialised lifting capabilities."
+          "title": "Heavy-Lift Logistics",
+          "description": "Executing complex project movements with precision and planning."
         },
         {
           "image": "/images/industries/energy-oil-gas/upstream.png",
           "title": "Upstream Equipment Movement",
-          "description": "Delivering critical equipment to remote sites ensuring operational readiness consistently."
+          "description": "Delivering critical equipment to remote sites with reliability."
         },
         {
           "image": "/images/industries/energy-oil-gas/midstream.png",
-          "title": "Midstream & Pipeline Logistics",
-          "description": "Supporting infrastructure flow across networks with reliability and coordinated execution."
+          "title": "Midstream Logistics Flow",
+          "description": "Supporting infrastructure flow across networks with coordination."
         },
         {
           "image": "/images/industries/energy-oil-gas/downstream.png",
-          "title": "Downstream & Refinery Cargo",
-          "description": "Ensuring timely movement supporting refining operations and distribution across markets."
+          "title": "Downstream Cargo Movement",
+          "description": "Ensuring timely movement supporting refining and distribution."
         },
         {
           "image": "/images/industries/energy-oil-gas/hazardous.png",
-          "title": "Hazardous & Specialised Cargo",
-          "description": "Handling sensitive materials with strict compliance, safety protocols and risk management."
+          "title": "Hazardous Cargo Handling",
+          "description": "Handling sensitive materials with strict safety and compliance."
         },
         {
           "image": "/images/industries/energy-oil-gas/renewable-equipment.png",
           "title": "Renewable Equipment Transport",
-          "description": "Supporting transition needs by enabling movement of components for cleaner energy."
+          "description": "Supporting energy transition through movement of clean energy components."
         }
       ]
     },
@@ -701,32 +704,32 @@
         {
           "image": "/images/industries/food-agro/farm-gate.png",
           "title": "Cold Chain Logistics",
-          "description": "Temperature-controlled movement preserving freshness across sensitive perishable supply chains."
+          "description": "Maintaining temperature-controlled logistics to preserve freshness."
         },
         {
           "image": "/images/industries/food-agro/temperature-controlled.png",
           "title": "Farm-to-Market Transport",
-          "description": "Reliable farm-to-market transport ensuring timely delivery of agricultural produce."
+          "description": "Ensuring timely delivery of agricultural produce to markets."
         },
         {
           "image": "/images/industries/food-agro/bulk-agro.png",
           "title": "Cold Storage Systems",
-          "description": "Cold chain systems maintaining product integrity across storage and transit."
+          "description": "Maintaining product integrity across storage and transit stages."
         },
         {
           "image": "/images/industries/food-agro/processing.png",
           "title": "Bulk Handling",
-          "description": "Efficient bulk handling for grains, pulses and agricultural commodities movement."
+          "description": "Handling grains and commodities efficiently across supply chains."
         },
         {
           "image": "/images/industries/food-agro/seasonal.png",
           "title": "Export Logistics",
-          "description": "Export readiness ensuring compliance, quality preservation and timely global distribution."
+          "description": "Ensuring export readiness with compliance and timely delivery."
         },
         {
           "image": "/images/industries/food-agro/export.png",
           "title": "Warehousing",
-          "description": "Safe warehousing supporting structured storage and efficient inventory management practices."
+          "description": "Supporting structured storage and efficient inventory management."
         }
       ]
     },
@@ -801,28 +804,28 @@
       "items": [
         {
           "image": "/images/industries/fmcg/primary-distribution.png",
-          "title": "Primary Distribution Management",
-          "description": "Ensuring efficient movement from factories to regional hubs with consistent flow."
+          "title": "Primary Distribution",
+          "description": "Ensuring efficient movement from factories to regional hubs."
         },
         {
           "image": "/images/industries/fmcg/secondary-last-mile.png",
-          "title": "Secondary & Last-Mile Distribution",
-          "description": "Delivering products quickly to retailers ensuring availability across diverse markets."
+          "title": "Last-Mile Delivery",
+          "description": "Delivering products quickly to retailers across diverse markets."
         },
         {
           "image": "/images/industries/fmcg/high-velocity.png",
-          "title": "High-Velocity Inventory Movement",
-          "description": "Maintaining rapid stock flow to match fast-moving consumer demand patterns."
+          "title": "High-Velocity Movement",
+          "description": "Maintaining rapid stock flow to meet fast-moving demand patterns."
         },
         {
           "image": "/images/industries/fmcg/warehousing.png",
           "title": "Warehousing Management",
-          "description": "Organising storage efficiently to support quick dispatch and accurate inventory control."
+          "description": "Organising storage for quick dispatch and accurate inventory control."
         },
         {
           "image": "/images/industries/fmcg/ecommerce.png",
-          "title": "E-commerce Fulfilment Support",
-          "description": "Enabling fast order processing and delivery across growing digital commerce channels."
+          "title": "E-commerce Fulfilment",
+          "description": "Enabling fast fulfilment across growing digital commerce channels."
         }
       ]
     },
@@ -897,28 +900,28 @@
       "items": [
         {
           "image": "/images/industries/paper-pulp/bulk-pulp.png",
-          "title": "Bulk Pulp Transportation",
-          "description": "Ensuring efficient movement of raw pulp across production and processing locations."
+          "title": "Bulk Pulp Transport",
+          "description": "Ensuring efficient movement of raw pulp across production locations."
         },
         {
           "image": "/images/industries/paper-pulp/paper-reel.png",
-          "title": "Paper Reel & Sheet Handling",
-          "description": "Handling paper formats carefully to prevent damage and maintain product quality."
+          "title": "Reel & Sheet Handling",
+          "description": "Handling paper formats carefully to prevent damage."
         },
         {
           "image": "/images/industries/paper-pulp/moisture-controlled.png",
           "title": "Moisture-Controlled Logistics",
-          "description": "Maintaining controlled environments to protect material integrity during storage and transit."
-        },
-        {
-          "image": "/images/industries/paper-pulp/warehousing.png",
-          "title": "Warehousing & Inventory Management",
-          "description": "Supporting organised storage and accurate tracking to optimise inventory availability levels."
+          "description": "Maintaining controlled environments to protect material integrity."
         },
         {
           "image": "/images/industries/paper-pulp/high-volume.png",
           "title": "High-Volume Distribution",
-          "description": "Managing large-scale dispatch efficiently across networks with consistent delivery performance."
+          "description": "Managing large-scale distribution with consistent delivery performance."
+        },
+        {
+          "image": "/images/industries/paper-pulp/warehousing.png",
+          "title": "Warehousing & Inventory",
+          "description": "Supporting organised storage with accurate inventory tracking."
         }
       ]
     },
@@ -985,33 +988,33 @@
       "items": [
         {
           "image": "/images/industries/construction-materials/bulk-material.png",
-          "title": "Bulk Material Transportation",
-          "description": "Moving large quantities efficiently across routes supporting continuous project execution."
+          "title": "Bulk Material Transport",
+          "description": "Moving large quantities efficiently to support project execution."
         },
         {
           "image": "/images/industries/construction-materials/steel-structural.png",
           "title": "Steel & Structural Logistics",
-          "description": "Handling heavy materials safely across sites supporting infrastructure and industrial operations."
+          "description": "Handling heavy materials safely across infrastructure sites."
         },
         {
           "image": "/images/industries/construction-materials/project-heavy.png",
-          "title": "Project & Heavy Cargo Movement",
-          "description": "Executing complex shipments with precision across challenging routes and environments."
+          "title": "Heavy Cargo Movement",
+          "description": "Executing complex cargo movement across challenging routes."
         },
         {
           "image": "/images/industries/construction-materials/phased-delivery.png",
-          "title": "Phased Site Delivery Planning",
-          "description": "Coordinating deliveries in stages aligning with project timelines and site readiness."
+          "title": "Phased Delivery Planning",
+          "description": "Coordinating deliveries aligned with project timelines."
         },
         {
           "image": "/images/industries/construction-materials/last-mile-site.png",
-          "title": "Last-Mile Site Access Solutions",
-          "description": "Overcoming access challenges ensuring reliable delivery to remote and constrained sites."
+          "title": "Last-Mile Access Solutions",
+          "description": "Ensuring reliable delivery to remote and constrained sites."
         },
         {
           "image": "/images/industries/construction-materials/modular.png",
-          "title": "Modular Component Transport",
-          "description": "Transporting prefabricated units efficiently supporting faster assembly and project completion."
+          "title": "Modular Transport",
+          "description": "Transporting prefabricated units to enable faster project completion."
         }
       ]
     },

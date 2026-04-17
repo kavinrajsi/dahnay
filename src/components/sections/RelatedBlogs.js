@@ -18,9 +18,9 @@ function getTagLabel(postType) {
 }
 
 function getPostHref(post) {
-  return post.postType === "case-study"
-    ? `/newsroom/case-study/${post.slug}`
-    : `/newsroom/${post.slug}`;
+  if (post.postType === "case-study") return `/newsroom/case-study/${post.slug}`;
+  if (post.postType === "news") return `/newsroom/news/${post.slug}`;
+  return `/newsroom/blog/${post.slug}`;
 }
 
 export default async function RelatedBlogs() {

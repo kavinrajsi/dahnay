@@ -43,9 +43,9 @@ function formatDate(dateStr) {
 }
 
 function getPostHref(post) {
-  return post.postType === "case-study"
-    ? `/newsroom/case-study/${post.slug}`
-    : `/blog/${post.slug}`;
+  if (post.postType === "case-study") return `/newsroom/case-study/${post.slug}`;
+  if (post.postType === "news") return `/newsroom/news/${post.slug}`;
+  return `/newsroom/blog/${post.slug}`;
 }
 
 function getTagLabel(postType) {

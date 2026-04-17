@@ -7,8 +7,8 @@ import Image from "next/image";
 const informationLinks = [
   { label: "Home", href: "/" },
   { label: "About us", href: "/about" },
-  { label: "News", href: "/newsroom" },
-  { label: "Blog", href: "/newsroom" },
+  { label: "Newsroom", href: "/newsroom" },
+  { label: "Blog", href: "/newsroom/blog" },
   { label: "Careers", href: "/careers" },
   { label: "ESG & CSR", href: "/esg-csr" },
   { label: "POSH", href: "/posh-policy" },

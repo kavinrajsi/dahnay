@@ -83,7 +83,7 @@ const aboutDropdown = [
 ];
 
 const newsroomDropdown = [
-  { label: "Blog", href: "/blog" },
+  { label: "Blog", href: "/newsroom/blog" },
   { label: "Case Study", href: "/newsroom/case-study" },
   { label: "News", href: "/newsroom/news" },
 ];

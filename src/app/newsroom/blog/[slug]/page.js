@@ -1,17 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { getBlogPost, getBlogPosts } from "@/lib/ghost";
-
-export async function generateStaticParams() {
-  try {
-    const { posts } = await getBlogPosts({ limit: "all" });
-    return posts
-      .filter((p) => p.postType === "case-study")
-      .map((p) => ({ slug: p.slug }));
-  } catch {
-    return [];
-  }
-}
+import { getBlogPost } from "@/lib/ghost";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -25,7 +14,7 @@ export async function generateMetadata({ params }) {
         : undefined,
     };
   } catch {
-    return { title: "Case Study - DahNAY" };
+    return { title: "Blog - DahNAY" };
   }
 }
 
@@ -38,7 +27,7 @@ function formatDate(dateStr) {
   });
 }
 
-export default async function CaseStudyPostPage({ params }) {
+export default async function BlogPostPage({ params }) {
   const { slug } = await params;
 
   let post;
@@ -48,7 +37,7 @@ export default async function CaseStudyPostPage({ params }) {
     notFound();
   }
 
-  const pageUrl = `https://www.dahnay.com/newsroom/case-study/${slug}`;
+  const pageUrl = `https://www.dahnay.com/newsroom/blog/${slug}`;
   const encodedUrl = encodeURIComponent(pageUrl);
   const encodedTitle = encodeURIComponent(post.title);
 
@@ -57,7 +46,7 @@ export default async function CaseStudyPostPage({ params }) {
       {/* Header */}
       <div className="blog-post__header container">
         <div className="blog-post__meta">
-          <span className="blog-post__tag">Case Study</span>
+          <span className="blog-post__tag">Blog</span>
           {post.publishedAt && (
             <time className="blog-post__date" dateTime={post.publishedAt}>
               {formatDate(post.publishedAt)}

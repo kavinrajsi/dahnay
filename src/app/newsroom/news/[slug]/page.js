@@ -1,6 +1,17 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { getBlogPost } from "@/lib/ghost";
+import { getBlogPost, getBlogPosts } from "@/lib/ghost";
+
+export async function generateStaticParams() {
+  try {
+    const { posts } = await getBlogPosts({ limit: "all" });
+    return posts
+      .filter((p) => p.postType === "news")
+      .map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
+}
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -14,7 +25,7 @@ export async function generateMetadata({ params }) {
         : undefined,
     };
   } catch {
-    return { title: "Blog - DahNAY" };
+    return { title: "News - DahNAY" };
   }
 }
 
@@ -27,7 +38,7 @@ function formatDate(dateStr) {
   });
 }
 
-export default async function BlogPostPage({ params }) {
+export default async function NewsPostPage({ params }) {
   const { slug } = await params;
 
   let post;
@@ -37,7 +48,7 @@ export default async function BlogPostPage({ params }) {
     notFound();
   }
 
-  const pageUrl = `https://www.dahnay.com/blog/${slug}`;
+  const pageUrl = `https://www.dahnay.com/newsroom/news/${slug}`;
   const encodedUrl = encodeURIComponent(pageUrl);
   const encodedTitle = encodeURIComponent(post.title);
 
@@ -46,7 +57,7 @@ export default async function BlogPostPage({ params }) {
       {/* Header */}
       <div className="blog-post__header container">
         <div className="blog-post__meta">
-          <span className="blog-post__tag">Blog</span>
+          <span className="blog-post__tag">News</span>
           {post.publishedAt && (
             <time className="blog-post__date" dateTime={post.publishedAt}>
               {formatDate(post.publishedAt)}

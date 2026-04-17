@@ -35,18 +35,40 @@ function normalizePost(p) {
   };
 }
 
-export async function getBlogPosts({ limit = 12, page = 1 } = {}) {
+const POST_FIELDS =
+  "id,slug,title,custom_excerpt,excerpt,feature_image,feature_image_alt,published_at,reading_time";
+
+async function fetchPostsPage({ limit, page }) {
   const url = ghostUrl("posts/", {
     include: "tags",
     limit,
     page,
-    fields:
-      "id,slug,title,custom_excerpt,excerpt,feature_image,feature_image_alt,published_at,reading_time",
+    fields: POST_FIELDS,
   });
   const res = await fetch(url, { next: { revalidate: 300 } });
   if (!res.ok) throw new Error(`Ghost API error: ${res.status}`);
-  const { posts, meta } = await res.json();
-  return { posts: posts.map(normalizePost), meta };
+  return res.json();
+}
+
+export async function getBlogPosts({ limit = 12, page = 1 } = {}) {
+  if (limit !== "all") {
+    const { posts, meta } = await fetchPostsPage({ limit, page });
+    return { posts: posts.map(normalizePost), meta };
+  }
+
+  // Ghost's Content API caps responses at 100 per request regardless of
+  // limit=all, so walk the pagination manually.
+  const all = [];
+  let currentPage = 1;
+  let lastMeta;
+  while (true) {
+    const { posts, meta } = await fetchPostsPage({ limit: 100, page: currentPage });
+    all.push(...posts);
+    lastMeta = meta;
+    if (!meta?.pagination?.next) break;
+    currentPage = meta.pagination.next;
+  }
+  return { posts: all.map(normalizePost), meta: lastMeta };
 }
 
 export async function getBlogPost(slug) {

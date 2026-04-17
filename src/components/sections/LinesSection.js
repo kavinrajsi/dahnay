@@ -62,9 +62,9 @@ export default function LinesSection() {
                   <p className="lines-card__title">{service.title}</p>
                   <p className="lines-card__desc">{service.description}</p>
                 </div>
-                <Link href={service.href} className="lines-card__link">
+                {/* <Link href={service.href} className="lines-card__link">
                   Learn more
-                </Link>
+                </Link> */}
               </div>
             </div>
           ))}

@@ -26,12 +26,7 @@
   &__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.15) 60%,
-      transparent 100%
-    );
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.15) 60%, transparent 100%);
     z-index: 1;
   }
 
@@ -58,11 +53,16 @@
 
   &__text {
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
     gap: 8px;
     max-width: 523px;
   }
 
+  .home-hero__logo {
+    width: auto;
+    max-height: 158px;
+  }
   &__title {
     font-family: var(--font-avenir), sans-serif;
     font-weight: var(--font-weight-heavy);
@@ -110,6 +110,23 @@
 
     &--active {
       background: #ef4230;
+    }
+  }
+}
+
+.home-hero__image--slide-1{
+  object-position: bottom center;
+  object-fit: cover;
+}
+
+.home-hero__content--slide-1{
+  .home-hero__text {
+    svg{
+      width: 252px;
+      height: 160px;
+    }
+    @media (min-width: 992px) {
+      max-width: initial;
     }
   }
 }

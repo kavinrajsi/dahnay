@@ -62,12 +62,6 @@ const services = [
     image: "/images/logistics/ecommerce-fulfillment.png",
     href: "/solutions/logistics#ecommerce-fulfillment",
   },
-  {
-    title: "Green Logistics",
-    description: "Driving greener supply chains with smarter routes, lower emissions, and responsible operations.",
-    image: "/images/logistics/green-logistics.png",
-    href: "/solutions/logistics#green-logistics",
-  },
 ];
 
 export default function LogisticsSection() {

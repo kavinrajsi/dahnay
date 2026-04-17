@@ -62,12 +62,6 @@ const services = [
     image: "/images/logistics/ecommerce-fulfillment.png",
     href: "/service/ecommerce-fulfilment",
   },
-  {
-    title: "Green Logistics",
-    description: "Sustainable shipping practices that reduce carbon footprint across the supply chain.",
-    image: "/images/logistics/green-logistics.png",
-    href: "/solutions/logistics#green-logistics",
-  },
 ];
 
 export default function ServicesGrid() {

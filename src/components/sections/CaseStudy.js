@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 
-export default function CaseStudy({ title, content, link }) {
+export default function CaseStudy({ title, content, link, image }) {
   return (
     <section className="container case-study">
       <div className="case-study__container">
@@ -20,8 +20,8 @@ export default function CaseStudy({ title, content, link }) {
 
         <div className="case-study__imageWrapper">
           <Image
-            src="/images/case-study/case-study.png"
-            alt="Case Study"
+            src={image || "/images/case-study/case-study.png"}
+            alt={title || "Case Study"}
             width={550}
             height={400}
             sizes="(min-width: 992px) 550px, 100vw"

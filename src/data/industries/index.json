@@ -27,32 +27,32 @@
         {
           "image": "/images/industries/automotive/inbound-outbound.png",
           "title": "Inbound and Outbound Transportation",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring seamless flows that keep production and distribution running without disruptions."
         },
         {
           "image": "/images/industries/automotive/time-critical.png",
           "title": "Time-critical movements",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Delivering urgent shipments within strict timelines to avoid costly operational delays."
         },
         {
           "image": "/images/industries/automotive/engines.png",
           "title": "Engines and mechanical parts",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Handling high-value components securely to maintain performance and reliability standards."
         },
         {
           "image": "/images/industries/automotive/accessories.png",
           "title": "Accessories",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Supporting dealer networks with efficient availability across diverse aftermarket requirements."
         },
         {
           "image": "/images/industries/automotive/finished-vehicles.png",
           "title": "Finished Vehicles Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Moving vehicles safely across regions ensuring timely delivery and minimal damage."
         },
         {
           "image": "/images/industries/automotive/tyres-tubes.png",
           "title": "Tyres and Tubes",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Maintaining steady supply across markets with efficient and reliable distribution."
         }
       ]
     },
@@ -104,7 +104,8 @@
     "caseStudy": {
       "title": "Monsoon and the Journey of Automotive Parts",
       "content": "When monsoon arrives, automotive supply chains face new complexities as roads slow, warehouses prepare for moisture, and delivery schedules face weather pressure.",
-      "link": "https://dahnay.com/monsoon-and-the-journey-of-automotive-parts/"
+      "link": "https://dahnay.com/monsoon-and-the-journey-of-automotive-parts/",
+      "image": "/images/case-study/automotive.jpg"
     }
   },
   "renewables": {
@@ -123,32 +124,32 @@
         {
           "image": "/images/industries/renewables/wind-energy.png",
           "title": "Wind Energy Equipment Transport",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Moving oversized components safely across challenging terrains and remote installation sites."
         },
         {
           "image": "/images/industries/renewables/solar-module.png",
           "title": "Solar Module Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring careful handling to prevent damage and maintain performance efficiency."
         },
         {
           "image": "/images/industries/renewables/heavy-lift.png",
           "title": "Project & Heavy-Lift Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Executing complex movements with precision planning and specialised heavy-lift capabilities."
         },
         {
           "image": "/images/industries/renewables/multimodal.png",
           "title": "Multimodal Project Coordination",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Coordinating multiple transport modes to ensure timely and cost-efficient execution."
         },
         {
           "image": "/images/industries/renewables/infrastructure.png",
           "title": "Infrastructure Component Movement",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Delivering critical components reliably across sites supporting large-scale energy infrastructure."
         },
         {
           "image": "/images/industries/renewables/warehousing.png",
           "title": "Warehousing & Distribution",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Enabling organised storage and efficient distribution across project and operational needs."
         }
       ]
     },
@@ -200,7 +201,8 @@
     "caseStudy": {
       "title": "Top 5 Solar Panel Manufacturers in India by Manufacturing Capacity",
       "content": "The solar industry has experienced remarkable growth in recent years, with Asia emerging as a major hub for solar panel manufacturing.",
-      "link": "https://dahnay.com/top-5-solar-panel-manufacturers-in-india-by-manufacturing-capacity/"
+      "link": "https://dahnay.com/top-5-solar-panel-manufacturers-in-india-by-manufacturing-capacity/",
+      "image": "/images/case-study/renewables.jpg"
     }
   },
   "machinery": {
@@ -219,32 +221,32 @@
         {
           "image": "/images/industries/machinery/heavy-machinery.png",
           "title": "Heavy Machinery Transport",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring safe movement of high-value equipment across complex industrial environments."
         },
         {
           "image": "/images/industries/machinery/oversized-cargo.png",
           "title": "Oversized Cargo Movement",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Handling large shipments with precision planning across challenging routes and terrains."
         },
         {
           "image": "/images/industries/machinery/multimodal.png",
           "title": "Multimodal Freight Coordination",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Integrating transport modes to balance cost, speed and operational efficiency."
         },
         {
           "image": "/images/industries/machinery/factory-to-site.png",
           "title": "Factory-to-Site Delivery",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Connecting production facilities to project sites with reliable and timely execution."
         },
         {
           "image": "/images/industries/machinery/breakbulk.png",
           "title": "Breakbulk Cargo Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Managing non-containerised shipments efficiently with specialised handling and coordination."
         },
         {
           "image": "/images/industries/machinery/distribution.png",
           "title": "Industrial Equipment Distribution",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring consistent availability across networks supporting operations and maintenance requirements."
         }
       ]
     },
@@ -296,7 +298,8 @@
     "caseStudy": {
       "title": "Top 5 Logistics Trends for 2024",
       "content": "The logistics sector faces significant transformation in 2024 driven by tech advancements, sustainability efforts, and shifting customer needs.",
-      "link": "https://dahnay.com/top-5-logistics-trends-for-2024/"
+      "link": "https://dahnay.com/top-5-logistics-trends-for-2024/",
+      "image": "/images/case-study/machinery.png"
     }
   },
   "retail-apparel": {
@@ -315,27 +318,27 @@
         {
           "image": "/images/industries/retail-apparel/sourcing.png",
           "title": "Sourcing & Inbound Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring steady material flow from suppliers into production and retail networks."
         },
         {
           "image": "/images/industries/retail-apparel/time-sensitive.png",
           "title": "Time-Sensitive Freight Solutions",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Meeting tight timelines to keep collections aligned with market demand cycles."
         },
         {
           "image": "/images/industries/retail-apparel/global-export.png",
           "title": "Global Export & Distribution",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Enabling seamless movement across markets with consistent delivery and visibility."
         },
         {
           "image": "/images/industries/retail-apparel/ecommerce.png",
           "title": "E-commerce Fulfilment Support",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Supporting fast order processing and delivery across digital commerce platforms."
         },
         {
           "image": "/images/industries/retail-apparel/replenishment.png",
           "title": "Retail Replenishment",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Maintaining stock availability across stores with responsive and efficient restocking."
         }
       ]
     },
@@ -387,7 +390,8 @@
     "caseStudy": {
       "title": "Seizing the 'China Plus One' Opportunity: India's Path to Global Manufacturing Hub",
       "content": "India has a critical window to attract investment through the 'China Plus One' strategy. With its young workforce, economic reforms, and digital infrastructure, India can become a manufacturing alternative for global corporations seeking to diversify from China.",
-      "link": "https://dahnay.com/seizing-the-china-plus-one-opportunity-indias-path-to-global-manufacturing-hub/"
+      "link": "https://dahnay.com/seizing-the-china-plus-one-opportunity-indias-path-to-global-manufacturing-hub/",
+      "image": "/images/case-study/retail-apparel.png"
     }
   },
   "natural-rubber": {
@@ -406,32 +410,32 @@
         {
           "image": "/images/industries/natural-rubber/plantation-to-port.png",
           "title": "Plantation-to-Port Movement",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring steady flow from estates to ports with minimal delays."
         },
         {
           "image": "/images/industries/natural-rubber/bulk-commodity.png",
           "title": "Bulk Commodity Transport",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Handling large volumes efficiently while maintaining consistency and supply chain reliability."
         },
         {
           "image": "/images/industries/natural-rubber/containerised-export.png",
           "title": "Containerised Export Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Enabling secure shipments globally with compliance, visibility and timely delivery."
         },
         {
           "image": "/images/industries/natural-rubber/multimodal.png",
           "title": "Multimodal Freight Coordination",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Integrating transport modes to optimise cost, speed and overall efficiency."
         },
         {
           "image": "/images/industries/natural-rubber/processing-equipment.png",
           "title": "Rubber Processing Equipment",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Moving specialised machinery safely to support processing operations and productivity."
         },
         {
           "image": "/images/industries/natural-rubber/warehousing.png",
           "title": "Warehousing & Distribution",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Supporting storage and distribution with organised systems ensuring efficient inventory movement."
         }
       ]
     },
@@ -483,7 +487,8 @@
     "caseStudy": {
       "title": "Green Packaging and Why It's Important to Your Business",
       "content": "The logistics sector accounts for roughly 8% of global CO2 emissions. Explore seven key strategies companies can implement to foster sustainable logistics operations, including adopting greener vehicles, optimizing routes, and utilizing eco-friendly packaging.",
-      "link": "https://dahnay.com/green-packaging-and-why-its-important-to-your-business/"
+      "link": "https://dahnay.com/green-packaging-and-why-its-important-to-your-business/",
+      "image": "/images/case-study/natural-rubber.jpg"
     }
   },
   "white-goods": {
@@ -502,32 +507,32 @@
         {
           "image": "/images/industries/white-goods/factory-to-port.png",
           "title": "Factory-to-Port Coordination",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring smooth transitions from manufacturing units to ports with minimal delays."
         },
         {
           "image": "/images/industries/white-goods/container-optimize.png",
           "title": "Container Optimize & Load Planning",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Maximising space utilisation to reduce costs and improve shipment efficiency."
         },
         {
           "image": "/images/industries/white-goods/global-freight.png",
           "title": "Global Freight Management",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Managing international shipments with visibility, reliability and consistent transit performance."
         },
         {
           "image": "/images/industries/white-goods/customs.png",
           "title": "Customs & Regulatory Handling",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring compliance with regulations to enable seamless cross-border movement globally."
         },
         {
           "image": "/images/industries/white-goods/warehousing.png",
           "title": "Warehousing & Distribution",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Supporting organised storage and efficient dispatch across regional distribution networks."
         },
         {
           "image": "/images/industries/white-goods/aftermarket.png",
           "title": "Aftermarket & Spare Parts Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Maintaining availability across service networks to support repairs and customer satisfaction."
         }
       ]
     },
@@ -579,7 +584,8 @@
     "caseStudy": {
       "title": "Everything You Need to Know About White Goods Logistics",
       "content": "Exploring white goods logistics amid a 2.1% annual market growth, covering definitions, challenges in shipping large appliances, and solutions for seamless delivery.",
-      "link": "https://dahnay.com/everything-you-need-to-know-about-white-goods-logistics/"
+      "link": "https://dahnay.com/everything-you-need-to-know-about-white-goods-logistics/",
+      "image": "/images/case-study/white-goods.png"
     }
   },
   "energy-oil-gas": {
@@ -598,32 +604,32 @@
         {
           "image": "/images/industries/energy-oil-gas/project-heavy-lift.png",
           "title": "Project & Heavy-Lift Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Executing complex moves with precision planning and specialised lifting capabilities."
         },
         {
           "image": "/images/industries/energy-oil-gas/upstream.png",
           "title": "Upstream Equipment Movement",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Delivering critical equipment to remote sites ensuring operational readiness consistently."
         },
         {
           "image": "/images/industries/energy-oil-gas/midstream.png",
           "title": "Midstream & Pipeline Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Supporting infrastructure flow across networks with reliability and coordinated execution."
         },
         {
           "image": "/images/industries/energy-oil-gas/downstream.png",
           "title": "Downstream & Refinery Cargo",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring timely movement supporting refining operations and distribution across markets."
         },
         {
           "image": "/images/industries/energy-oil-gas/hazardous.png",
           "title": "Hazardous & Specialised Cargo",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Handling sensitive materials with strict compliance, safety protocols and risk management."
         },
         {
           "image": "/images/industries/energy-oil-gas/renewable-equipment.png",
           "title": "Renewable Equipment Transport",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Supporting transition needs by enabling movement of components for cleaner energy."
         }
       ]
     },
@@ -675,7 +681,8 @@
     "caseStudy": {
       "title": "Opting for a Sustainable Fuel: Hydrogen or EV?",
       "content": "Explore how hydrogen fuel cells and electric vehicles compare for green logistics, considering factors like cost, distance, load capacity, and infrastructure accessibility.",
-      "link": "https://dahnay.com/opting-for-a-sustainable-fuel-hydrogen-or-ev/"
+      "link": "https://dahnay.com/opting-for-a-sustainable-fuel-hydrogen-or-ev/",
+      "image": "/images/case-study/energy-oil-gas.jpg"
     }
   },
   "food-agro": {
@@ -693,33 +700,33 @@
       "items": [
         {
           "image": "/images/industries/food-agro/farm-gate.png",
-          "title": "Farm-Gate Collection & Primary Movement",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "title": "Cold Chain Logistics",
+          "description": "Temperature-controlled movement preserving freshness across sensitive perishable supply chains."
         },
         {
           "image": "/images/industries/food-agro/temperature-controlled.png",
-          "title": "Temperature-Controlled Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "title": "Farm-to-Market Transport",
+          "description": "Reliable farm-to-market transport ensuring timely delivery of agricultural produce."
         },
         {
           "image": "/images/industries/food-agro/bulk-agro.png",
-          "title": "Bulk Agro Commodity Transport",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "title": "Cold Storage Systems",
+          "description": "Cold chain systems maintaining product integrity across storage and transit."
         },
         {
           "image": "/images/industries/food-agro/processing.png",
-          "title": "Processing & Distribution Movement",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "title": "Bulk Handling",
+          "description": "Efficient bulk handling for grains, pulses and agricultural commodities movement."
         },
         {
           "image": "/images/industries/food-agro/seasonal.png",
-          "title": "Seasonal Demand Planning",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "title": "Export Logistics",
+          "description": "Export readiness ensuring compliance, quality preservation and timely global distribution."
         },
         {
           "image": "/images/industries/food-agro/export.png",
-          "title": "Export & Reefer Container Movement",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "title": "Warehousing",
+          "description": "Safe warehousing supporting structured storage and efficient inventory management practices."
         }
       ]
     },
@@ -775,7 +782,8 @@
     "caseStudy": {
       "title": "The Crucial Role of Cold Chain Logistics in the Food & Beverage Industry",
       "content": "Cold chain logistics drives remarkable growth in F&B logistics, with market expected to reach USD 320.91B by 2034. Explore how temperature control addresses key industry challenges like product perishability and regulatory compliance.",
-      "link": "https://dahnay.com/the-crucial-role-of-cold-chain-logistics-in-the-food-beverage-industry/"
+      "link": "https://dahnay.com/the-crucial-role-of-cold-chain-logistics-in-the-food-beverage-industry/",
+      "image": "/images/case-study/food-agro.jpeg"
     }
   },
   "fmcg": {
@@ -794,27 +802,27 @@
         {
           "image": "/images/industries/fmcg/primary-distribution.png",
           "title": "Primary Distribution Management",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring efficient movement from factories to regional hubs with consistent flow."
         },
         {
           "image": "/images/industries/fmcg/secondary-last-mile.png",
           "title": "Secondary & Last-Mile Distribution",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Delivering products quickly to retailers ensuring availability across diverse markets."
         },
         {
           "image": "/images/industries/fmcg/high-velocity.png",
           "title": "High-Velocity Inventory Movement",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Maintaining rapid stock flow to match fast-moving consumer demand patterns."
         },
         {
           "image": "/images/industries/fmcg/warehousing.png",
           "title": "Warehousing Management",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Organising storage efficiently to support quick dispatch and accurate inventory control."
         },
         {
           "image": "/images/industries/fmcg/ecommerce.png",
           "title": "E-commerce Fulfilment Support",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Enabling fast order processing and delivery across growing digital commerce channels."
         }
       ]
     },
@@ -870,7 +878,8 @@
     "caseStudy": {
       "title": "5 Reasons Why You Should Hire the Right Freight Forwarder",
       "content": "Engaging a freight forwarder provides greater control over shipping processes and enables selection of optimal routes according to specific requirements, ensuring timely delivery with transparency and competitive rates.",
-      "link": "https://dahnay.com/5-reasons-why-you-should-hire-the-right-freight-forwarder/"
+      "link": "https://dahnay.com/5-reasons-why-you-should-hire-the-right-freight-forwarder/",
+      "image": "/images/case-study/fmcg.png"
     }
   },
   "paper-pulp": {
@@ -889,27 +898,27 @@
         {
           "image": "/images/industries/paper-pulp/bulk-pulp.png",
           "title": "Bulk Pulp Transportation",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Ensuring efficient movement of raw pulp across production and processing locations."
         },
         {
           "image": "/images/industries/paper-pulp/paper-reel.png",
           "title": "Paper Reel & Sheet Handling",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Handling paper formats carefully to prevent damage and maintain product quality."
         },
         {
           "image": "/images/industries/paper-pulp/moisture-controlled.png",
           "title": "Moisture-Controlled Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Maintaining controlled environments to protect material integrity during storage and transit."
         },
         {
           "image": "/images/industries/paper-pulp/warehousing.png",
           "title": "Warehousing & Inventory Management",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Supporting organised storage and accurate tracking to optimise inventory availability levels."
         },
         {
           "image": "/images/industries/paper-pulp/high-volume.png",
           "title": "High-Volume Distribution",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Managing large-scale dispatch efficiently across networks with consistent delivery performance."
         }
       ]
     },
@@ -957,7 +966,8 @@
     "caseStudy": {
       "title": "5 Pain Points in Paper Shipping and How You Can Overcome Them",
       "content": "Papers face shipping challenges from moisture and temperature damage to customs complexities. Learn strategies to overcome these obstacles in paper logistics.",
-      "link": "https://dahnay.com/5-pain-points-in-paper-shipping-and-how-you-can-overcome-them/"
+      "link": "https://dahnay.com/5-pain-points-in-paper-shipping-and-how-you-can-overcome-them/",
+      "image": "/images/case-study/paper-pulp.png"
     }
   },
   "construction-materials": {
@@ -976,32 +986,32 @@
         {
           "image": "/images/industries/construction-materials/bulk-material.png",
           "title": "Bulk Material Transportation",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Moving large quantities efficiently across routes supporting continuous project execution."
         },
         {
           "image": "/images/industries/construction-materials/steel-structural.png",
           "title": "Steel & Structural Logistics",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Handling heavy materials safely across sites supporting infrastructure and industrial operations."
         },
         {
           "image": "/images/industries/construction-materials/project-heavy.png",
           "title": "Project & Heavy Cargo Movement",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Executing complex shipments with precision across challenging routes and environments."
         },
         {
           "image": "/images/industries/construction-materials/phased-delivery.png",
           "title": "Phased Site Delivery Planning",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Coordinating deliveries in stages aligning with project timelines and site readiness."
         },
         {
           "image": "/images/industries/construction-materials/last-mile-site.png",
           "title": "Last-Mile Site Access Solutions",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Overcoming access challenges ensuring reliable delivery to remote and constrained sites."
         },
         {
           "image": "/images/industries/construction-materials/modular.png",
           "title": "Modular Component Transport",
-          "description": "Lorem ipsum dolor sit amet consectetur. Enim purus amet ac proin nullam tincidunt."
+          "description": "Transporting prefabricated units efficiently supporting faster assembly and project completion."
         }
       ]
     },
@@ -1057,7 +1067,8 @@
     "caseStudy": {
       "title": "India's Initiatives in Turning India into a Manufacturing Hub",
       "content": "India is shifting to become a global manufacturing hub through initiatives like Make in India, PLI schemes, infrastructure transformation, and digital logistics solutions.",
-      "link": "https://dahnay.com/indias-initiatives-in-turning-india-into-a-manufacturing-hub/"
+      "link": "https://dahnay.com/indias-initiatives-in-turning-india-into-a-manufacturing-hub/",
+      "image": "/images/case-study/construction-materials.jpg"
     }
   }
 }

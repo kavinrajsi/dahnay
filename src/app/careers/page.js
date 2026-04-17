@@ -3,6 +3,8 @@ import Banner from "@/components/sections/Banner";
 import SectionHeader from "@/components/sections/SectionHeader";
 import CareerJobsSection from "@/components/sections/CareerJobsSection";
 import CareerFormSection from "@/components/sections/CareerFormSection";
+import CareerApplyForm from "@/components/sections/CareerApplyForm";
+import { JOBS } from "@/data/careers/jobs";
 
 export const metadata = {
   title: "Careers",
@@ -82,11 +84,15 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Job listings */}
-      <CareerJobsSection />
+      {/* Job listings when there are openings, else show the apply form */}
+      {JOBS.length > 0 ? (
+        <CareerJobsSection />
+      ) : (
+        <div className="container">
+          <CareerApplyForm />
+        </div>
+      )}
 
-      {/* Career contact form */}
-      <CareerFormSection />
     </div>
   );
 }

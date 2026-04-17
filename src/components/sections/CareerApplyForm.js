@@ -2,9 +2,12 @@
 
 import { useRef, useState } from "react";
 
+const MAX_FILE_BYTES = 10 * 1024 * 1024; // 10MB
+
 export default function CareerApplyForm({ jobTitle }) {
   const fileInputRef = useRef(null);
   const [fileName, setFileName] = useState("");
+  const [resumeFile, setResumeFile] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -13,27 +16,70 @@ export default function CareerApplyForm({ jobTitle }) {
     experience: "",
     location: "",
   });
+  const [errors, setErrors] = useState({});
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
-    if (file) setFileName(file.name);
+    if (!file) return;
+
+    if (file.type !== "application/pdf") {
+      setErrors((prev) => ({ ...prev, resume: "Only .pdf files are allowed." }));
+      setFileName("");
+      setResumeFile(null);
+      return;
+    }
+    if (file.size > MAX_FILE_BYTES) {
+      setErrors((prev) => ({ ...prev, resume: "File must be 10MB or smaller." }));
+      setFileName("");
+      setResumeFile(null);
+      return;
+    }
+
+    setFileName(file.name);
+    setResumeFile(file);
+    setErrors((prev) => ({ ...prev, resume: undefined }));
   };
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
+
+  function validate(data, file) {
+    const errs = {};
+    if (!file) errs.resume = "Resume is required.";
+    if (!data.firstName.trim()) errs.firstName = "First name is required.";
+    if (!data.lastName.trim()) errs.lastName = "Last name is required.";
+    if (!data.email.trim()) {
+      errs.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      errs.email = "Enter a valid email address.";
+    }
+    if (!data.mobile.trim()) {
+      errs.mobile = "Mobile number is required.";
+    } else if (!/^[+\d][\d\s\-()]{6,}$/.test(data.mobile)) {
+      errs.mobile = "Enter a valid mobile number.";
+    }
+    if (!data.experience.trim()) errs.experience = "Experience is required.";
+    if (!data.location.trim()) errs.location = "Current location is required.";
+    return errs;
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const errs = validate(formData, resumeFile);
+    setErrors(errs);
+    if (Object.keys(errs).length > 0) return;
   };
 
   return (
     <div className="career-apply-form" id="apply-form">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
         <div className="career-apply-form__fields">
           {/* Resume upload */}
           <div
-            className="career-apply-form__upload-area"
+            className={`career-apply-form__upload-area${errors.resume ? " career-apply-form__upload-area--error" : ""}`}
             onClick={() => fileInputRef.current?.click()}
             role="button"
             tabIndex={0}
@@ -42,7 +88,7 @@ export default function CareerApplyForm({ jobTitle }) {
             <input
               ref={fileInputRef}
               type="file"
-              accept=".doc,.docx,.pdf,.rtf,.odt"
+              accept=".pdf,application/pdf"
               className="career-apply-form__upload-input"
               onChange={handleFileChange}
             />
@@ -56,9 +102,12 @@ export default function CareerApplyForm({ jobTitle }) {
             </p>
             <p className="career-apply-form__upload-hint">
               This will auto-fill the fields below. 10MB max file size
-              (Allowed file types are .doc, .pdf, .docx, .rtf, .odt).
+              (Only .pdf files are allowed).
             </p>
           </div>
+          {errors.resume && (
+            <span className="career-apply-form__error">{errors.resume}</span>
+          )}
 
           {/* Row 1 */}
           <div className="career-apply-form__row">
@@ -67,28 +116,40 @@ export default function CareerApplyForm({ jobTitle }) {
                 First Name <span className="career-apply-form__required">*</span>
               </label>
               <input
-                className="career-apply-form__input"
+                className={`career-apply-form__input${errors.firstName ? " career-apply-form__input--error" : ""}`}
                 type="text"
                 id="apply-firstName"
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                required
+                aria-invalid={Boolean(errors.firstName)}
+                aria-describedby={errors.firstName ? "apply-firstName-error" : undefined}
               />
+              {errors.firstName && (
+                <span id="apply-firstName-error" className="career-apply-form__error">
+                  {errors.firstName}
+                </span>
+              )}
             </div>
             <div className="career-apply-form__field">
               <label className="career-apply-form__label" htmlFor="apply-lastName">
                 Last Name <span className="career-apply-form__required">*</span>
               </label>
               <input
-                className="career-apply-form__input"
+                className={`career-apply-form__input${errors.lastName ? " career-apply-form__input--error" : ""}`}
                 type="text"
                 id="apply-lastName"
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                required
+                aria-invalid={Boolean(errors.lastName)}
+                aria-describedby={errors.lastName ? "apply-lastName-error" : undefined}
               />
+              {errors.lastName && (
+                <span id="apply-lastName-error" className="career-apply-form__error">
+                  {errors.lastName}
+                </span>
+              )}
             </div>
           </div>
 
@@ -99,28 +160,40 @@ export default function CareerApplyForm({ jobTitle }) {
                 Email Address <span className="career-apply-form__required">*</span>
               </label>
               <input
-                className="career-apply-form__input"
+                className={`career-apply-form__input${errors.email ? " career-apply-form__input--error" : ""}`}
                 type="email"
                 id="apply-email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                required
+                aria-invalid={Boolean(errors.email)}
+                aria-describedby={errors.email ? "apply-email-error" : undefined}
               />
+              {errors.email && (
+                <span id="apply-email-error" className="career-apply-form__error">
+                  {errors.email}
+                </span>
+              )}
             </div>
             <div className="career-apply-form__field">
               <label className="career-apply-form__label" htmlFor="apply-mobile">
                 Mobile Number <span className="career-apply-form__required">*</span>
               </label>
               <input
-                className="career-apply-form__input"
+                className={`career-apply-form__input${errors.mobile ? " career-apply-form__input--error" : ""}`}
                 type="tel"
                 id="apply-mobile"
                 name="mobile"
                 value={formData.mobile}
                 onChange={handleChange}
-                required
+                aria-invalid={Boolean(errors.mobile)}
+                aria-describedby={errors.mobile ? "apply-mobile-error" : undefined}
               />
+              {errors.mobile && (
+                <span id="apply-mobile-error" className="career-apply-form__error">
+                  {errors.mobile}
+                </span>
+              )}
             </div>
           </div>
 
@@ -131,29 +204,41 @@ export default function CareerApplyForm({ jobTitle }) {
                 Experience <span className="career-apply-form__required">*</span>
               </label>
               <input
-                className="career-apply-form__input"
+                className={`career-apply-form__input${errors.experience ? " career-apply-form__input--error" : ""}`}
                 type="text"
                 id="apply-experience"
                 name="experience"
                 placeholder="e.g. 3 years"
                 value={formData.experience}
                 onChange={handleChange}
-                required
+                aria-invalid={Boolean(errors.experience)}
+                aria-describedby={errors.experience ? "apply-experience-error" : undefined}
               />
+              {errors.experience && (
+                <span id="apply-experience-error" className="career-apply-form__error">
+                  {errors.experience}
+                </span>
+              )}
             </div>
             <div className="career-apply-form__field">
               <label className="career-apply-form__label" htmlFor="apply-location">
                 Current Location <span className="career-apply-form__required">*</span>
               </label>
               <input
-                className="career-apply-form__input"
+                className={`career-apply-form__input${errors.location ? " career-apply-form__input--error" : ""}`}
                 type="text"
                 id="apply-location"
                 name="location"
                 value={formData.location}
                 onChange={handleChange}
-                required
+                aria-invalid={Boolean(errors.location)}
+                aria-describedby={errors.location ? "apply-location-error" : undefined}
               />
+              {errors.location && (
+                <span id="apply-location-error" className="career-apply-form__error">
+                  {errors.location}
+                </span>
+              )}
             </div>
           </div>
         </div>

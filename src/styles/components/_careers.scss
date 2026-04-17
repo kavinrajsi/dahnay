@@ -369,6 +369,10 @@
     font-family: var(--font-avenir), sans-serif;
     font-size: 16px;
     outline: none;
+
+    &--error {
+      border-color: var(--primary-orange);
+    }
   }
 
   &__textarea {
@@ -381,6 +385,27 @@
     resize: none;
     outline: none;
     min-height: 100px;
+
+    &--error {
+      border-color: var(--primary-orange);
+    }
+  }
+
+  &__error {
+    font-family: var(--font-avenir), sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--primary-orange);
+  }
+
+  &__message {
+    font-family: var(--font-avenir), sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+
+    &--error {
+      color: var(--primary-orange);
+    }
   }
 
   &__submit {
@@ -561,6 +586,7 @@
   border-radius: 16px;
   padding: 32px 24px;
   margin-top: 8px;
+  margin-bottom: 64px;
 
   @media (min-width: 768px) {
     padding: 48px;
@@ -599,7 +625,7 @@
     font-weight: var(--font-weight-medium);
     font-size: 18px;
     line-height: 24px;
-    color: #2b61eb;
+    color: var(--neutral-black);
   }
 
   &__upload-hint {
@@ -654,6 +680,33 @@
 
     &:focus {
       border-color: var(--primary-orange);
+    }
+
+    &--error {
+      border-color: var(--primary-orange);
+    }
+  }
+
+  &__upload-area {
+    &--error {
+      border-color: var(--primary-orange);
+    }
+  }
+
+  &__error {
+    font-family: var(--font-avenir), sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--primary-orange);
+  }
+
+  &__message {
+    font-family: var(--font-avenir), sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+
+    &--error {
+      color: var(--primary-orange);
     }
   }
 

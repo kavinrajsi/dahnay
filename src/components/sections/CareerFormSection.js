@@ -10,13 +10,35 @@ export default function CareerFormSection() {
     mobile: "",
     message: "",
   });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
+
+  function validate(data) {
+    const errs = {};
+    if (!data.name.trim()) errs.name = "Name is required.";
+    if (!data.email.trim()) {
+      errs.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      errs.email = "Enter a valid email address.";
+    }
+    if (!data.mobile.trim()) {
+      errs.mobile = "Mobile number is required.";
+    } else if (!/^[+\d][\d\s\-()]{6,}$/.test(data.mobile)) {
+      errs.mobile = "Enter a valid mobile number.";
+    }
+    return errs;
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const errs = validate(formData);
+    setErrors(errs);
+    if (Object.keys(errs).length > 0) return;
   };
 
   return (
@@ -54,48 +76,66 @@ export default function CareerFormSection() {
           </div>
 
           <div className="career-form-section__right">
-            <form className="career-form" onSubmit={handleSubmit}>
+            <form className="career-form" onSubmit={handleSubmit} noValidate>
               <div className="career-form__field">
                 <label className="career-form__label" htmlFor="career-name">
-                  Name *
+                  Name <span className="career-form__required">*</span>
                 </label>
                 <input
-                  className="career-form__input"
+                  className={`career-form__input${errors.name ? " career-form__input--error" : ""}`}
                   type="text"
                   id="career-name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
+                  aria-invalid={Boolean(errors.name)}
+                  aria-describedby={errors.name ? "career-name-error" : undefined}
                 />
+                {errors.name && (
+                  <span id="career-name-error" className="career-form__error">
+                    {errors.name}
+                  </span>
+                )}
               </div>
               <div className="career-form__field">
                 <label className="career-form__label" htmlFor="career-email">
-                  Email Address *
+                  Email Address <span className="career-form__required">*</span>
                 </label>
                 <input
-                  className="career-form__input"
+                  className={`career-form__input${errors.email ? " career-form__input--error" : ""}`}
                   type="email"
                   id="career-email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? "career-email-error" : undefined}
                 />
+                {errors.email && (
+                  <span id="career-email-error" className="career-form__error">
+                    {errors.email}
+                  </span>
+                )}
               </div>
               <div className="career-form__field">
                 <label className="career-form__label" htmlFor="career-mobile">
-                  Mobile Number *
+                  Mobile Number <span className="career-form__required">*</span>
                 </label>
                 <input
-                  className="career-form__input"
+                  className={`career-form__input${errors.mobile ? " career-form__input--error" : ""}`}
                   type="tel"
                   id="career-mobile"
                   name="mobile"
                   value={formData.mobile}
                   onChange={handleChange}
-                  required
+                  aria-invalid={Boolean(errors.mobile)}
+                  aria-describedby={errors.mobile ? "career-mobile-error" : undefined}
                 />
+                {errors.mobile && (
+                  <span id="career-mobile-error" className="career-form__error">
+                    {errors.mobile}
+                  </span>
+                )}
               </div>
               <div className="career-form__field">
                 <label className="career-form__label" htmlFor="career-message">

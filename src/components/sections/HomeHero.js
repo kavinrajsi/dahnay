@@ -10,6 +10,36 @@ const slides = [
     description:
       "Entering 20th year with the same commitment to growth.<br />- for our people, partners and the planet.",
   },
+  {
+    image: "/images/home/slider/wharehouse.png",
+    title: "Warehousing solutions at key trade hubs",
+    description:
+      "With our own warehouses in India, USA and UAE, we keep your cargo moving without delays.",
+  },
+  {
+    image: "/images/home/slider/greener-moves.png",
+    title: "Greener moves at DahNAY Tuticorin CFS",
+    description:
+      "EV Reach Stacker in action, driving efficiency and low-emission operations.",
+  },
+  {
+    image: "/images/home/slider/end-to-end.png",
+    title: "End-to-end project logistics with precision",
+    description:
+      "Handling oversized, complex cargo with precision , care and reliability.",
+  },
+  {
+    image: "/images/home/slider/complete-logistics.png",
+    title: "Your complete logistics partner for growth",
+    description:
+      "From air to sea and land, everything you need to move, in one place: DahNAY",
+  },
+  {
+    image: "/images/home/slider/dahnay-dubai.png",
+    title: "DahNAY opens a new warehouse in Dubai",
+    description:
+      "Strengthening the supply chain, DahNAY opened a new warehouse in Jebel Ali, Dubai - the hub of all trade.",
+  },
 ];
 
 export default function HomeHero() {

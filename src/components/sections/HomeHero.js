@@ -62,25 +62,29 @@ export default function HomeHero() {
           className="home-hero__image"
           sizes="100vw"
         />
-        <div className="home-hero__overlay" />
-        <div className="container home-hero__content">
-          <div className="home-hero__text">
-            <h1 className="home-hero__title">{slide.title}</h1>
-            <p className="home-hero__desc">{slide.description}</p>
-          </div>
-          {slides.length > 1 && (
-            <div className="home-hero__dots">
-              {slides.map((_, i) => (
-                <button
-                  key={i}
-                  className={`home-hero__dot${current === i ? " home-hero__dot--active" : ""}`}
-                  onClick={() => setCurrent(i)}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
+        {current !== 0 && (
+          <>
+            <div className="home-hero__overlay" />
+            <div className="container home-hero__content">
+              <div className="home-hero__text">
+                <h1 className="home-hero__title">{slide.title}</h1>
+                <p className="home-hero__desc">{slide.description}</p>
+              </div>
+              {slides.length > 1 && (
+                <div className="home-hero__dots">
+                  {slides.map((_, i) => (
+                    <button
+                      key={i}
+                      className={`home-hero__dot${current === i ? " home-hero__dot--active" : ""}`}
+                      onClick={() => setCurrent(i)}
+                      aria-label={`Go to slide ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          </>
+        )}
       </div>
     </section>
   );

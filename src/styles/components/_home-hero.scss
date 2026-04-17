@@ -59,10 +59,6 @@
     max-width: 523px;
   }
 
-  .home-hero__logo {
-    width: auto;
-    max-height: 158px;
-  }
   &__title {
     font-family: var(--font-avenir), sans-serif;
     font-weight: var(--font-weight-heavy);
@@ -123,7 +119,7 @@
   .home-hero__text {
     svg{
       width: 252px;
-      height: 160px;
+      height: auto;
     }
     @media (min-width: 992px) {
       max-width: initial;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { isValidEmail, isValidMobile } from "@/lib/validators";
 import SectionHeader from "./SectionHeader";
 
 function getUTMParams() {
@@ -46,12 +47,12 @@ export default function CareerFormSection() {
     if (!data.name.trim()) errs.name = "Name is required.";
     if (!data.email.trim()) {
       errs.email = "Email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+    } else if (!isValidEmail(data.email)) {
       errs.email = "Enter a valid email address.";
     }
     if (!data.mobile.trim()) {
       errs.mobile = "Mobile number is required.";
-    } else if (!/^[+\d][\d\s\-()]{6,}$/.test(data.mobile)) {
+    } else if (!isValidMobile(data.mobile)) {
       errs.mobile = "Enter a valid mobile number.";
     }
     return errs;

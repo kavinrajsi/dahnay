@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { isValidEmail, isValidMobile } from "@/lib/validators";
 import SectionHeader from "./SectionHeader";
 
 function getUTMParams() {
@@ -26,7 +27,9 @@ export default function ContactFormSection() {
     email: "",
     mobile: "",
     message: "",
+    website: "",
   });
+  const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
   const referrer = useRef("");
 
@@ -35,11 +38,40 @@ export default function ContactFormSection() {
   }, []);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
+
+  function validate(data) {
+    const errs = {};
+    if (!data.name.trim()) errs.name = "Name is required.";
+    if (!data.email.trim()) {
+      errs.email = "Email is required.";
+    } else if (!isValidEmail(data.email)) {
+      errs.email = "Enter a valid email address.";
+    }
+    if (!data.mobile.trim()) {
+      errs.mobile = "Mobile number is required.";
+    } else if (!isValidMobile(data.mobile)) {
+      errs.mobile = "Enter a valid mobile number.";
+    }
+    return errs;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Honeypot — bots tend to fill every field
+    if (formData.website) {
+      setStatus("success");
+      return;
+    }
+
+    const errs = validate(formData);
+    setErrors(errs);
+    if (Object.keys(errs).length > 0) return;
+
     setStatus("submitting");
 
     try {
@@ -47,7 +79,10 @@ export default function ContactFormSection() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name,
+          email: formData.email,
+          mobile: formData.mobile,
+          message: formData.message,
           utm: getUTMParams(),
           previousPage: referrer.current,
           pageUrl: window.location.href,
@@ -56,7 +91,14 @@ export default function ContactFormSection() {
 
       if (res.ok) {
         setStatus("success");
-        setFormData({ name: "", email: "", mobile: "", message: "" });
+        setErrors({});
+        setFormData({
+          name: "",
+          email: "",
+          mobile: "",
+          message: "",
+          website: "",
+        });
       } else {
         setStatus("error");
       }
@@ -101,20 +143,41 @@ export default function ContactFormSection() {
           </div>
 
           <div className="contact-form-section__right">
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form" onSubmit={handleSubmit} noValidate>
+              <input
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                autoComplete="off"
+                tabIndex={-1}
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  left: "-9999px",
+                  opacity: 0,
+                  height: 0,
+                }}
+              />
               <div className="contact-form__field">
                 <label className="contact-form__label" htmlFor="name">
                   Name *
                 </label>
                 <input
-                  className="contact-form__input"
+                  className={`contact-form__input${errors.name ? " contact-form__input--error" : ""}`}
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
+                  aria-invalid={Boolean(errors.name)}
+                  aria-describedby={errors.name ? "contact-name-error" : undefined}
                 />
+                {errors.name && (
+                  <span id="contact-name-error" className="contact-form__error">
+                    {errors.name}
+                  </span>
+                )}
               </div>
 
               <div className="contact-form__field">
@@ -122,14 +185,20 @@ export default function ContactFormSection() {
                   Email Address *
                 </label>
                 <input
-                  className="contact-form__input"
+                  className={`contact-form__input${errors.email ? " contact-form__input--error" : ""}`}
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? "contact-email-error" : undefined}
                 />
+                {errors.email && (
+                  <span id="contact-email-error" className="contact-form__error">
+                    {errors.email}
+                  </span>
+                )}
               </div>
 
               <div className="contact-form__field">
@@ -137,14 +206,20 @@ export default function ContactFormSection() {
                   Mobile Number *
                 </label>
                 <input
-                  className="contact-form__input"
+                  className={`contact-form__input${errors.mobile ? " contact-form__input--error" : ""}`}
                   type="tel"
                   id="mobile"
                   name="mobile"
                   value={formData.mobile}
                   onChange={handleChange}
-                  required
+                  aria-invalid={Boolean(errors.mobile)}
+                  aria-describedby={errors.mobile ? "contact-mobile-error" : undefined}
                 />
+                {errors.mobile && (
+                  <span id="contact-mobile-error" className="contact-form__error">
+                    {errors.mobile}
+                  </span>
+                )}
               </div>
 
               <div className="contact-form__field">

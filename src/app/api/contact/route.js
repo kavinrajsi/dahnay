@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
+import { isValidEmail, isValidMobile } from "@/lib/validators";
 
 function logEmail(entry) {
   console.log("[ZeptoMail Log]", JSON.stringify(entry));
@@ -20,9 +21,23 @@ export async function POST(request) {
     const { name, email, mobile, message, utm, previousPage, pageUrl } =
       await request.json();
 
-    if (!name || !email || !mobile) {
+    if (!name?.trim() || !email?.trim() || !mobile?.trim()) {
       return NextResponse.json(
         { error: "Name, email and mobile are required." },
+        { status: 400 }
+      );
+    }
+
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { error: "Enter a valid email address." },
+        { status: 400 }
+      );
+    }
+
+    if (!isValidMobile(mobile)) {
+      return NextResponse.json(
+        { error: "Enter a valid mobile number." },
         { status: 400 }
       );
     }

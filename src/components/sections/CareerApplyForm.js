@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { isValidEmail, isValidMobile } from "@/lib/validators";
 
 const MAX_FILE_BYTES = 15 * 1024 * 1024; // 15MB
 
@@ -76,12 +77,12 @@ export default function CareerApplyForm({ jobTitle }) {
     if (!data.lastName.trim()) errs.lastName = "Last name is required.";
     if (!data.email.trim()) {
       errs.email = "Email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+    } else if (!isValidEmail(data.email)) {
       errs.email = "Enter a valid email address.";
     }
     if (!data.mobile.trim()) {
       errs.mobile = "Mobile number is required.";
-    } else if (!/^[+\d][\d\s\-()]{6,}$/.test(data.mobile)) {
+    } else if (!isValidMobile(data.mobile)) {
       errs.mobile = "Enter a valid mobile number.";
     }
     if (!data.experience.trim()) errs.experience = "Experience is required.";

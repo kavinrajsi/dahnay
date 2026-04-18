@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
+import { isValidEmail, isValidMobile } from "@/lib/validators";
 
 const MAX_FILE_BYTES = 15 * 1024 * 1024;
 
@@ -43,6 +44,20 @@ export async function POST(request) {
     ) {
       return NextResponse.json(
         { error: "All fields are required." },
+        { status: 400 }
+      );
+    }
+
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { error: "Enter a valid email address." },
+        { status: 400 }
+      );
+    }
+
+    if (!isValidMobile(mobile)) {
+      return NextResponse.json(
+        { error: "Enter a valid mobile number." },
         { status: 400 }
       );
     }

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
+import { isValidEmail } from "@/lib/validators";
 
 function logEmail(entry) {
   console.log("[ZeptoMail Log]", JSON.stringify(entry));
@@ -19,7 +20,7 @@ export async function POST(request) {
     const ip = getClientIP(headersList);
     const { email, utm, previousPage, pageUrl } = await request.json();
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!isValidEmail(email)) {
       return NextResponse.json(
         { error: "A valid email is required." },
         { status: 400 }

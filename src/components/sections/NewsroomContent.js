@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { isValidEmail } from "@/lib/validators";
 
 function getUTMParams() {
   if (typeof window === "undefined") return {};
@@ -164,7 +165,7 @@ export default function NewsroomContent({ posts, title = "Newsroom", filterType 
   const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newsletterEmail.trim())) {
+    if (!isValidEmail(newsletterEmail)) {
       setNewsletterStatus("error");
       setNewsletterError("Enter a valid email address.");
       return;

@@ -27,8 +27,23 @@ export async function POST(request) {
       );
     }
 
-    const token = process.env.ZEPTOMAIL_TOKEN;
-    if (!token) {
+    const {
+      ZEPTOMAIL_URL,
+      ZEPTOMAIL_TOKEN,
+      ZEPTOMAIL_FROM_EMAIL,
+      ZEPTOMAIL_FROM_NAME,
+      ZEPTOMAIL_TO_EMAIL,
+      ZEPTOMAIL_TO_NAME,
+    } = process.env;
+
+    if (
+      !ZEPTOMAIL_URL ||
+      !ZEPTOMAIL_TOKEN ||
+      !ZEPTOMAIL_FROM_EMAIL ||
+      !ZEPTOMAIL_FROM_NAME ||
+      !ZEPTOMAIL_TO_EMAIL ||
+      !ZEPTOMAIL_TO_NAME
+    ) {
       return NextResponse.json(
         { error: "Email service not configured." },
         { status: 500 }
@@ -43,14 +58,14 @@ export async function POST(request) {
 
     const payload = {
       from: {
-        address: process.env.ZEPTOMAIL_FROM_EMAIL || "noreply@dahnay.com",
-        name: "DahNAY Website",
+        address: ZEPTOMAIL_FROM_EMAIL,
+        name: ZEPTOMAIL_FROM_NAME,
       },
       to: [
         {
           email_address: {
-            address: process.env.ZEPTOMAIL_TO_EMAIL || "info@dahnay.com",
-            name: "DahNAY",
+            address: ZEPTOMAIL_TO_EMAIL,
+            name: ZEPTOMAIL_TO_NAME,
           },
         },
       ],
@@ -71,12 +86,12 @@ export async function POST(request) {
       `,
     };
 
-    const response = await fetch("https://api.zeptomail.com/v1.1/email", {
+    const response = await fetch(ZEPTOMAIL_URL, {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `Zoho-enczapikey ${token}`,
+        Authorization: ZEPTOMAIL_TOKEN,
       },
       body: JSON.stringify(payload),
     });

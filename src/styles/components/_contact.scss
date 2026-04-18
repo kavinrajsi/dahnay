@@ -142,6 +142,27 @@
     line-height: 20px;
     text-align: center;
     color: var(--neutral-white);
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &__success,
+  &__error {
+    font-family: var(--font-avenir), sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  &__success {
+    color: #2e7d32;
+  }
+
+  &__error {
+    color: #c62828;
   }
 }
 

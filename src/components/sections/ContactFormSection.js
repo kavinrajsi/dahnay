@@ -1,7 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import SectionHeader from "./SectionHeader";
+
+function getUTMParams() {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+  const utms = {};
+  for (const key of [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+  ]) {
+    const val = params.get(key);
+    if (val) utms[key] = val;
+  }
+  return utms;
+}
 
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({
@@ -10,13 +27,42 @@ export default function ContactFormSection() {
     mobile: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle");
+  const referrer = useRef("");
+
+  useEffect(() => {
+    referrer.current = document.referrer || window.location.pathname;
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("submitting");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          utm: getUTMParams(),
+          previousPage: referrer.current,
+          pageUrl: window.location.href,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", mobile: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -114,8 +160,22 @@ export default function ContactFormSection() {
                 />
               </div>
 
-              <button className="contact-form__submit" type="submit">
-                Submit
+              {status === "success" && (
+                <p className="contact-form__success">
+                  Thanks! We&rsquo;ll be in touch shortly.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="contact-form__error">
+                  Something went wrong. Please try again.
+                </p>
+              )}
+              <button
+                className="contact-form__submit"
+                type="submit"
+                disabled={status === "submitting"}
+              >
+                {status === "submitting" ? "Submitting..." : "Submit"}
               </button>
             </form>
           </div>

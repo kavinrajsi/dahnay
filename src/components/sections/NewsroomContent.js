@@ -1,8 +1,25 @@
 "use client";
 
-import { useState, useMemo, useRef } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
+function getUTMParams() {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+  const utms = {};
+  for (const key of [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+  ]) {
+    const val = params.get(key);
+    if (val) utms[key] = val;
+  }
+  return utms;
+}
 
 const TABS = [
   { label: "All", value: "all" },
@@ -134,7 +151,52 @@ export default function NewsroomContent({ posts, title = "Newsroom", filterType 
   const [activeTab, setActiveTab] = useState(filterType || "all");
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState("idle");
+  const [newsletterError, setNewsletterError] = useState("");
   const sectionRef = useRef(null);
+  const referrer = useRef("");
+
+  useEffect(() => {
+    referrer.current = document.referrer || window.location.pathname;
+  }, []);
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newsletterEmail.trim())) {
+      setNewsletterStatus("error");
+      setNewsletterError("Enter a valid email address.");
+      return;
+    }
+
+    setNewsletterStatus("submitting");
+    setNewsletterError("");
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: newsletterEmail.trim(),
+          utm: getUTMParams(),
+          previousPage: referrer.current,
+          pageUrl: window.location.href,
+        }),
+      });
+
+      if (res.ok) {
+        setNewsletterStatus("success");
+        setNewsletterEmail("");
+      } else {
+        setNewsletterStatus("error");
+        setNewsletterError("Something went wrong. Please try again.");
+      }
+    } catch {
+      setNewsletterStatus("error");
+      setNewsletterError("Something went wrong. Please try again.");
+    }
+  };
 
   const scrollToTop = () => {
     sectionRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -267,7 +329,7 @@ export default function NewsroomContent({ posts, title = "Newsroom", filterType 
           <p className="newsroom-cta__heading">
             Get the latest updates, success stories, and industry trends from DahNAY straight to your inbox.
           </p>
-          <form className="newsroom-cta__form" onSubmit={(e) => e.preventDefault()}>
+          <form className="newsroom-cta__form" onSubmit={handleNewsletterSubmit} noValidate>
             <div className="newsroom-cta__input-group">
               <svg className="newsroom-cta__mail-icon" width="20" height="16" viewBox="0 0 20 16" fill="none">
                 <path d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM18 4L10 9L2 4V2L10 7L18 2V4Z" fill="#6D6F71"/>
@@ -276,9 +338,26 @@ export default function NewsroomContent({ posts, title = "Newsroom", filterType 
                 type="email"
                 className="newsroom-cta__input"
                 placeholder="Enter your work email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                disabled={newsletterStatus === "submitting"}
               />
-              <button type="submit" className="newsroom-cta__send">Send</button>
+              <button
+                type="submit"
+                className="newsroom-cta__send"
+                disabled={newsletterStatus === "submitting"}
+              >
+                {newsletterStatus === "submitting" ? "Sending..." : "Send"}
+              </button>
             </div>
+            {newsletterStatus === "success" && (
+              <p className="newsroom-cta__success">
+                Thanks! You&rsquo;ll hear from us soon.
+              </p>
+            )}
+            {newsletterStatus === "error" && (
+              <p className="newsroom-cta__error">{newsletterError}</p>
+            )}
           </form>
         </div>
         <div className="newsroom-cta__social">

@@ -453,6 +453,27 @@
     cursor: pointer;
     white-space: nowrap;
     flex-shrink: 0;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &__success,
+  &__error {
+    font-family: var(--font-avenir), sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 12px 0 0;
+  }
+
+  &__success {
+    color: #2e7d32;
+  }
+
+  &__error {
+    color: #ee412f;
   }
 
   &__social {

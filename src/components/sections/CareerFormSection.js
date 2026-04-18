@@ -150,7 +150,7 @@ export default function CareerFormSection() {
                 />
               </div>
               <button className="career-form__submit" type="submit">
-                Submit inquiry
+                Submit
               </button>
             </form>
           </div>

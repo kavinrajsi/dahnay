@@ -115,7 +115,7 @@ export default function ContactFormSection() {
               </div>
 
               <button className="contact-form__submit" type="submit">
-                Submit inquiry
+                Submit
               </button>
             </form>
           </div>

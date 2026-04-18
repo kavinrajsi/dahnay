@@ -229,7 +229,7 @@ export default function GrowForm() {
                 className="button grow-form__submit"
                 disabled={status === "submitting"}
               >
-                {status === "submitting" ? "Submitting..." : "Submit inquiry"}
+                {status === "submitting" ? "Submitting..." : "Submit"}
               </button>
             </form>
           )}

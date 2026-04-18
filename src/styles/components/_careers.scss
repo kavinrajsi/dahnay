@@ -398,6 +398,14 @@
     color: var(--primary-orange);
   }
 
+  &__success {
+    font-family: var(--font-avenir), sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2e7d32;
+    margin: 0;
+  }
+
   &__message {
     font-family: var(--font-avenir), sans-serif;
     font-size: 14px;
@@ -421,6 +429,11 @@
     line-height: 20px;
     text-align: center;
     color: var(--neutral-white);
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
   }
 }
 
@@ -700,6 +713,14 @@
     color: var(--primary-orange);
   }
 
+  &__success {
+    font-family: var(--font-avenir), sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2e7d32;
+    margin: 0;
+  }
+
   &__message {
     font-family: var(--font-avenir), sans-serif;
     font-size: 14px;
@@ -712,7 +733,9 @@
 
   &__footer {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
   }
 
   &__submit {
@@ -726,5 +749,10 @@
     line-height: 20px;
     color: var(--neutral-white);
     cursor: pointer;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
   }
 }

@@ -1,8 +1,25 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const MAX_FILE_BYTES = 10 * 1024 * 1024; // 10MB
+const MAX_FILE_BYTES = 15 * 1024 * 1024; // 15MB
+
+function getUTMParams() {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+  const utms = {};
+  for (const key of [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+  ]) {
+    const val = params.get(key);
+    if (val) utms[key] = val;
+  }
+  return utms;
+}
 
 export default function CareerApplyForm({ jobTitle }) {
   const fileInputRef = useRef(null);
@@ -17,6 +34,12 @@ export default function CareerApplyForm({ jobTitle }) {
     location: "",
   });
   const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState("idle");
+  const referrer = useRef("");
+
+  useEffect(() => {
+    referrer.current = document.referrer || window.location.pathname;
+  }, []);
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
@@ -29,7 +52,7 @@ export default function CareerApplyForm({ jobTitle }) {
       return;
     }
     if (file.size > MAX_FILE_BYTES) {
-      setErrors((prev) => ({ ...prev, resume: "File must be 10MB or smaller." }));
+      setErrors((prev) => ({ ...prev, resume: "File must be 15MB or smaller." }));
       setFileName("");
       setResumeFile(null);
       return;
@@ -66,11 +89,52 @@ export default function CareerApplyForm({ jobTitle }) {
     return errs;
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate(formData, resumeFile);
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
+
+    setStatus("submitting");
+
+    const body = new FormData();
+    body.append("firstName", formData.firstName);
+    body.append("lastName", formData.lastName);
+    body.append("email", formData.email);
+    body.append("mobile", formData.mobile);
+    body.append("experience", formData.experience);
+    body.append("location", formData.location);
+    body.append("resume", resumeFile);
+    if (jobTitle) body.append("jobTitle", jobTitle);
+    body.append("utm", JSON.stringify(getUTMParams()));
+    body.append("previousPage", referrer.current);
+    body.append("pageUrl", window.location.href);
+
+    try {
+      const res = await fetch("/api/career-apply", {
+        method: "POST",
+        body,
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          mobile: "",
+          experience: "",
+          location: "",
+        });
+        setFileName("");
+        setResumeFile(null);
+        if (fileInputRef.current) fileInputRef.current.value = "";
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -101,7 +165,7 @@ export default function CareerApplyForm({ jobTitle }) {
               )}
             </p>
             <p className="career-apply-form__upload-hint">
-              This will auto-fill the fields below. 10MB max file size
+              This will auto-fill the fields below. 15MB max file size
               (Only .pdf files are allowed).
             </p>
           </div>
@@ -244,8 +308,22 @@ export default function CareerApplyForm({ jobTitle }) {
         </div>
 
         <div className="career-apply-form__footer">
-          <button className="career-apply-form__submit" type="submit">
-            Submit
+          {status === "success" && (
+            <p className="career-apply-form__success">
+              Thanks! Your application has been submitted. We&rsquo;ll be in touch shortly.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="career-apply-form__error">
+              Something went wrong. Please try again.
+            </p>
+          )}
+          <button
+            className="career-apply-form__submit"
+            type="submit"
+            disabled={status === "submitting"}
+          >
+            {status === "submitting" ? "Submitting..." : "Submit"}
           </button>
         </div>
       </form>

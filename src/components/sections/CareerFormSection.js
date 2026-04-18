@@ -1,7 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import SectionHeader from "./SectionHeader";
+
+function getUTMParams() {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+  const utms = {};
+  for (const key of [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+  ]) {
+    const val = params.get(key);
+    if (val) utms[key] = val;
+  }
+  return utms;
+}
 
 export default function CareerFormSection() {
   const [formData, setFormData] = useState({
@@ -11,6 +28,12 @@ export default function CareerFormSection() {
     message: "",
   });
   const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState("idle");
+  const referrer = useRef("");
+
+  useEffect(() => {
+    referrer.current = document.referrer || window.location.pathname;
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,11 +57,35 @@ export default function CareerFormSection() {
     return errs;
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate(formData);
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
+
+    setStatus("submitting");
+
+    try {
+      const res = await fetch("/api/career", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          utm: getUTMParams(),
+          previousPage: referrer.current,
+          pageUrl: window.location.href,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", mobile: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -149,8 +196,22 @@ export default function CareerFormSection() {
                   onChange={handleChange}
                 />
               </div>
-              <button className="career-form__submit" type="submit">
-                Submit
+              {status === "success" && (
+                <p className="career-form__success">
+                  Thanks! We&rsquo;ll be in touch shortly.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="career-form__error">
+                  Something went wrong. Please try again.
+                </p>
+              )}
+              <button
+                className="career-form__submit"
+                type="submit"
+                disabled={status === "submitting"}
+              >
+                {status === "submitting" ? "Submitting..." : "Submit"}
               </button>
             </form>
           </div>

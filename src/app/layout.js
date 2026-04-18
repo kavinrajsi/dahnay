@@ -1,7 +1,9 @@
 import localFont from "next/font/local";
+import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ConsentBanner from "@/components/layout/ConsentBanner";
 import "./globals.scss";
 
 const avenir = localFont({
@@ -55,11 +57,26 @@ const shouldLoadGTM = Boolean(gtmId) && !isOnVercel;
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={avenir.variable}>
+      <Script id="gtag-consent-default" strategy="beforeInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            functionality_storage: 'granted',
+            personalization_storage: 'denied',
+            security_storage: 'granted',
+            wait_for_update: 500
+          });`}
+      </Script>
       {shouldLoadGTM && <GoogleTagManager gtmId={gtmId} />}
       <body>
         <Header />
         <main>{children}</main>
         <Footer />
+        <ConsentBanner />
       </body>
     </html>
   );

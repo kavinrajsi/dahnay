@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { CONSENT_EVENT } from "@/lib/consent";
 
 const informationLinks = [
   { label: "Home", href: "/" },
@@ -244,6 +245,13 @@ export default function Footer() {
             <Link href="/privacy-policy" className="footer__legal-link">Privacy Policy</Link>
             <Link href="/terms-conditions" className="footer__legal-link">Terms &amp; Conditions</Link>
             <Link href="/cookie-policy" className="footer__legal-link">Cookie Policy</Link>
+            <button
+              type="button"
+              className="footer__legal-link footer__legal-link--button"
+              onClick={() => window.dispatchEvent(new CustomEvent(CONSENT_EVENT))}
+            >
+              Consent Settings
+            </button>
           </div>
           <p className="footer__made-by">
             Made by <a href="https://madarth.com/?utm_source=dahnay&utm_medium=referral&utm_campaign=website_footer" target="_blank" rel="noopener noreferrer">Madarth <sup>&reg;</sup></a>

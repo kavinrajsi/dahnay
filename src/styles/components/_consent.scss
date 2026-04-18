@@ -1,0 +1,138 @@
+.consent-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+
+  @media (min-width: 768px) {
+    padding: 24px;
+  }
+
+  &__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-bold);
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 0 12px;
+    color: #000;
+  }
+
+  &__body {
+    font-family: var(--font-avenir), sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    margin: 0 0 16px;
+  }
+
+  &__link {
+    color: var(--primary-orange);
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    @media (min-width: 768px) {
+      gap: 16px;
+    }
+  }
+
+  &__btn {
+    padding: 10px 20px;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px 0;
+    background: #fff;
+    color: #000;
+    font-family: var(--font-avenir), sans-serif;
+    font-weight: var(--font-weight-roman);
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--primary-orange);
+      color: var(--primary-orange);
+    }
+
+    &--primary {
+      background: var(--primary-orange-btn);
+      border-color: var(--primary-orange-btn);
+      color: var(--neutral-white);
+
+      &:hover {
+        color: var(--neutral-white);
+        opacity: 0.9;
+      }
+    }
+
+    &--ghost {
+      border-color: transparent;
+      text-decoration: underline;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+
+  &__categories {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__category {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 12px;
+  }
+
+  &__category-label {
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+
+    input[type="checkbox"]:disabled {
+      cursor: not-allowed;
+    }
+
+    input[type="checkbox"] {
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__category-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: var(--font-avenir), sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+
+    strong {
+      font-weight: var(--font-weight-bold);
+      color: #000;
+    }
+  }
+}

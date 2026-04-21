@@ -3,31 +3,33 @@ import { JOBS } from "@/data/careers/jobs";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.dahnay.com";
 
+// Order of services, industries, and the sitemap return below mirrors the
+// header nav in src/components/layout/Header.js — keep in sync when nav changes.
 const services = [
   "air-freight",
-  "customs-clearance",
-  "domestic-trucking",
-  "ecommerce-fulfilment",
-  "last-mile-delivery",
+  "sea-freight",
+  "road-transportation",
+  "time-critical-delivery",
   "project-logistics",
   "reverse-logistics",
-  "road-transportation",
-  "sea-freight",
-  "time-critical-delivery",
+  "customs-clearance",
+  "domestic-trucking",
+  "last-mile-delivery",
+  "ecommerce-fulfilment",
 ];
 
 const industries = [
   "automotive",
-  "construction-materials",
-  "energy-oil-gas",
-  "fmcg",
-  "food-agro",
-  "machinery",
-  "natural-rubber",
-  "paper-pulp",
   "renewables",
+  "machinery",
   "retail-apparel",
+  "natural-rubber",
   "white-goods",
+  "energy-oil-gas",
+  "food-agro",
+  "construction-materials",
+  "fmcg",
+  "paper-pulp",
 ];
 
 const POST_TYPE_PATH = {
@@ -38,31 +40,12 @@ const POST_TYPE_PATH = {
 
 export default async function sitemap() {
   const now = new Date();
-
-  const staticPages = [
-    { url: "/", priority: 1.0, changeFrequency: "weekly" },
-    { url: "/about", priority: 0.8, changeFrequency: "monthly" },
-    { url: "/contact", priority: 0.9, changeFrequency: "monthly" },
-    { url: "/careers", priority: 0.7, changeFrequency: "weekly" },
-    { url: "/newsroom", priority: 0.7, changeFrequency: "weekly" },
-    { url: "/newsroom/blog", priority: 0.7, changeFrequency: "weekly" },
-    { url: "/newsroom/case-study", priority: 0.7, changeFrequency: "weekly" },
-    { url: "/newsroom/news", priority: 0.7, changeFrequency: "weekly" },
-    { url: "/industries", priority: 0.9, changeFrequency: "monthly" },
-    { url: "/solutions/lines", priority: 0.8, changeFrequency: "monthly" },
-    { url: "/solutions/logistics", priority: 0.8, changeFrequency: "monthly" },
-    { url: "/solutions/ports-infra", priority: 0.8, changeFrequency: "monthly" },
-    { url: "/esg-csr", priority: 0.6, changeFrequency: "monthly" },
-    { url: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" },
-    { url: "/terms-conditions", priority: 0.3, changeFrequency: "yearly" },
-    { url: "/cookie-policy", priority: 0.3, changeFrequency: "yearly" },
-    { url: "/posh-policy", priority: 0.2, changeFrequency: "yearly" },
-    { url: "/whistleblower-policy", priority: 0.2, changeFrequency: "yearly" },
-  ].map(({ url, ...rest }) => ({
+  const staticEntry = ({ url, priority, changeFrequency }) => ({
     url: `${siteUrl}${url}`,
     lastModified: now,
-    ...rest,
-  }));
+    changeFrequency,
+    priority,
+  });
 
   const servicePages = services.map((slug) => ({
     url: `${siteUrl}/service/${slug}`,
@@ -113,10 +96,33 @@ export default async function sitemap() {
   }
 
   return [
-    ...staticPages,
+    staticEntry({ url: "/", priority: 1.0, changeFrequency: "weekly" }),
+
+    staticEntry({ url: "/solutions/logistics", priority: 0.8, changeFrequency: "monthly" }),
     ...servicePages,
+    staticEntry({ url: "/solutions/lines", priority: 0.8, changeFrequency: "monthly" }),
+    staticEntry({ url: "/solutions/ports-infra", priority: 0.8, changeFrequency: "monthly" }),
+
+    staticEntry({ url: "/industries", priority: 0.9, changeFrequency: "monthly" }),
     ...industryPages,
+
+    staticEntry({ url: "/about", priority: 0.8, changeFrequency: "monthly" }),
+    staticEntry({ url: "/esg-csr", priority: 0.6, changeFrequency: "monthly" }),
+    staticEntry({ url: "/careers", priority: 0.7, changeFrequency: "weekly" }),
     ...careerPages,
+
+    staticEntry({ url: "/newsroom", priority: 0.7, changeFrequency: "weekly" }),
+    staticEntry({ url: "/newsroom/blog", priority: 0.7, changeFrequency: "weekly" }),
+    staticEntry({ url: "/newsroom/case-study", priority: 0.7, changeFrequency: "weekly" }),
+    staticEntry({ url: "/newsroom/news", priority: 0.7, changeFrequency: "weekly" }),
     ...postPages,
+
+    staticEntry({ url: "/contact", priority: 0.9, changeFrequency: "monthly" }),
+
+    staticEntry({ url: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" }),
+    staticEntry({ url: "/terms-conditions", priority: 0.3, changeFrequency: "yearly" }),
+    staticEntry({ url: "/cookie-policy", priority: 0.3, changeFrequency: "yearly" }),
+    staticEntry({ url: "/posh-policy", priority: 0.2, changeFrequency: "yearly" }),
+    staticEntry({ url: "/whistleblower-policy", priority: 0.2, changeFrequency: "yearly" }),
   ];
 }

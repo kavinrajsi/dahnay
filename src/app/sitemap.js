@@ -1,4 +1,5 @@
 import { getBlogPosts } from "@/lib/ghost";
+import { JOBS } from "@/data/careers/jobs";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.dahnay.com";
 
@@ -20,6 +21,7 @@ const industries = [
   "construction-materials",
   "energy-oil-gas",
   "fmcg",
+  "food-agro",
   "machinery",
   "natural-rubber",
   "paper-pulp",
@@ -47,8 +49,6 @@ export default async function sitemap() {
     { url: "/newsroom/case-study", priority: 0.7, changeFrequency: "weekly" },
     { url: "/newsroom/news", priority: 0.7, changeFrequency: "weekly" },
     { url: "/industries", priority: 0.9, changeFrequency: "monthly" },
-    { url: "/service", priority: 0.9, changeFrequency: "monthly" },
-    { url: "/solutions", priority: 0.8, changeFrequency: "monthly" },
     { url: "/solutions/lines", priority: 0.8, changeFrequency: "monthly" },
     { url: "/solutions/logistics", priority: 0.8, changeFrequency: "monthly" },
     { url: "/solutions/ports-infra", priority: 0.8, changeFrequency: "monthly" },
@@ -78,6 +78,21 @@ export default async function sitemap() {
     priority: 0.9,
   }));
 
+  // TODO: map each job in JOBS to a sitemap entry for /careers/{slug}.
+  // Trade-offs to consider:
+  //   - priority: job postings are high-intent SEO targets — higher than blog?
+  //   - changeFrequency: postings don't change often, but freshness signals
+  //     "still hiring". What cadence reflects your hiring pipeline?
+  //   - lastModified: use job.updatedAt if present, else job.postedAt, else now.
+  //   - guard: skip entries without a slug.
+  const careerPages = JOBS
+    .map((job) => {
+      // TODO: return a sitemap entry shaped like the other *Pages arrays above,
+      // or return null to skip.
+      return null;
+    })
+    .filter(Boolean);
+
   let postPages = [];
   try {
     const { posts } = await getBlogPosts({ limit: "all" });
@@ -97,5 +112,11 @@ export default async function sitemap() {
     // Ghost unreachable at build time — ship the static portion.
   }
 
-  return [...staticPages, ...servicePages, ...industryPages, ...postPages];
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...industryPages,
+    ...careerPages,
+    ...postPages,
+  ];
 }

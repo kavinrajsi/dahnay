@@ -4,23 +4,7 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { isValidEmail } from "@/lib/validators";
-
-function getUTMParams() {
-  if (typeof window === "undefined") return {};
-  const params = new URLSearchParams(window.location.search);
-  const utms = {};
-  for (const key of [
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_term",
-    "utm_content",
-  ]) {
-    const val = params.get(key);
-    if (val) utms[key] = val;
-  }
-  return utms;
-}
+import { getUTMParams } from "@/lib/utm";
 
 const TABS = [
   { label: "All", value: "all" },

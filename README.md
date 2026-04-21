@@ -22,7 +22,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ### Environment variables
 
-Create a `.env.local` at the repo root. Minimum for CMS integration:
+Create a `.env.local` at the repo root.
 
 ```env
 # Public site URL (used in sitemap + canonical + JSON-LD)
@@ -32,14 +32,24 @@ NEXT_PUBLIC_SITE_URL=https://www.dahnay.com
 GHOST_URL=http://studio.dahnay.com
 GHOST_CONTENT_API_KEY=<your-content-api-key>
 
-# Contact form (ZeptoMail)
-ZEPTOMAIL_TOKEN=<token>
+# ZeptoMail — shared
+ZEPTOMAIL_URL=https://api.zeptomail.in/v1.1/email
+ZEPTOMAIL_TOKEN=<zoho-zeptomail-send-token>
 ZEPTOMAIL_FROM_EMAIL=noreply@dahnay.com
-ZEPTOMAIL_TO_EMAIL=info@dahnay.com
+ZEPTOMAIL_FROM_NAME=DahNAY Website
+ZEPTOMAIL_TO_NAME=DahNAY Team
+
+# ZeptoMail — per-form recipients
+ZEPTOMAIL_TO_EMAIL=info@dahnay.com                 # /api/contact
+ZEPTOMAIL_CAREER_TO_EMAIL=careers@dahnay.com       # /api/career (inquiry)
+ZEPTOMAIL_CAREER_APPLY_TO_EMAIL=careers@dahnay.com # /api/career-apply (resume upload)
+ZEPTOMAIL_NEWSLETTER_TO_EMAIL=info@dahnay.com      # /api/newsletter
 
 # Optional
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 ```
+
+All `ZEPTOMAIL_*` values above are required at runtime — API routes return a 500 "Email service not configured." if any are missing.
 
 ## Scripts
 

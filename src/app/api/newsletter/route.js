@@ -1,18 +1,8 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { isValidEmail } from "@/lib/validators";
-
-function logEmail(entry) {
-  console.log("[ZeptoMail Log]", JSON.stringify(entry));
-}
-
-function getClientIP(headersList) {
-  return (
-    headersList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-    headersList.get("x-real-ip") ||
-    "unknown"
-  );
-}
+import { escapeHtml, sanitizeSubject, buildTrackingHtml } from "@/lib/html";
+import { getClientIP, logEmail, sendZeptoMail, maskEmail } from "@/lib/zeptomail";
 
 export async function POST(request) {
   try {
@@ -27,72 +17,25 @@ export async function POST(request) {
       );
     }
 
-    const {
-      ZEPTOMAIL_URL,
-      ZEPTOMAIL_TOKEN,
-      ZEPTOMAIL_FROM_EMAIL,
-      ZEPTOMAIL_FROM_NAME,
-      ZEPTOMAIL_NEWSLETTER_TO_EMAIL,
-      ZEPTOMAIL_TO_NAME,
-    } = process.env;
+    const html = `
+      <h2>New Newsletter Subscription</h2>
+      <p>The following address submitted the newsletter signup form. Please add them to the mailing list manually.</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      ${buildTrackingHtml({ ip, pageUrl, previousPage, utm })}
+    `;
 
-    if (
-      !ZEPTOMAIL_URL ||
-      !ZEPTOMAIL_TOKEN ||
-      !ZEPTOMAIL_FROM_EMAIL ||
-      !ZEPTOMAIL_FROM_NAME ||
-      !ZEPTOMAIL_NEWSLETTER_TO_EMAIL ||
-      !ZEPTOMAIL_TO_NAME
-    ) {
+    const { ok, configError, result } = await sendZeptoMail({
+      toEmail: process.env.ZEPTOMAIL_NEWSLETTER_TO_EMAIL,
+      subject: sanitizeSubject(`Newsletter Subscription: ${maskEmail(email)}`),
+      html,
+    });
+
+    if (configError) {
       return NextResponse.json(
         { error: "Email service not configured." },
         { status: 500 }
       );
     }
-
-    const utmHtml =
-      utm && Object.keys(utm).length > 0
-        ? Object.entries(utm)
-            .map(([k, v]) => `<p><strong>${k}:</strong> ${v}</p>`)
-            .join("")
-        : "<p>N/A</p>";
-
-    const payload = {
-      from: { address: ZEPTOMAIL_FROM_EMAIL, name: ZEPTOMAIL_FROM_NAME },
-      to: [
-        {
-          email_address: {
-            address: ZEPTOMAIL_NEWSLETTER_TO_EMAIL,
-            name: ZEPTOMAIL_TO_NAME,
-          },
-        },
-      ],
-      subject: `Newsletter Subscription: ${email}`,
-      htmlbody: `
-        <h2>New Newsletter Subscription</h2>
-        <p>The following address submitted the newsletter signup form. Please add them to the mailing list manually.</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <hr />
-        <h3>Tracking Info</h3>
-        <p><strong>IP Address:</strong> ${ip}</p>
-        <p><strong>Page URL:</strong> ${pageUrl || "N/A"}</p>
-        <p><strong>Previous Page:</strong> ${previousPage || "N/A"}</p>
-        <h4>UTM Parameters</h4>
-        ${utmHtml}
-      `,
-    };
-
-    const response = await fetch(ZEPTOMAIL_URL, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: ZEPTOMAIL_TOKEN,
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const result = await response.json();
 
     logEmail({
       timestamp: new Date().toISOString(),
@@ -102,17 +45,16 @@ export async function POST(request) {
       utm: utm || {},
       previousPage: previousPage || "",
       pageUrl: pageUrl || "",
-      status: response.ok ? "sent" : "failed",
+      status: ok ? "sent" : "failed",
       zeptoResponse: result,
     });
 
-    if (!response.ok) {
+    if (!ok) {
       return NextResponse.json(
         { error: "Failed to send email.", details: result },
         { status: 500 }
       );
     }
-
     return NextResponse.json({ success: true });
   } catch (error) {
     logEmail({

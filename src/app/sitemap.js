@@ -1,3 +1,5 @@
+import { getBlogPosts } from "@/lib/ghost";
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.dahnay.com";
 
 const services = [
@@ -26,7 +28,13 @@ const industries = [
   "white-goods",
 ];
 
-export default function sitemap() {
+const POST_TYPE_PATH = {
+  blog: "blog",
+  "case-study": "case-study",
+  news: "news",
+};
+
+export default async function sitemap() {
   const now = new Date();
 
   const staticPages = [
@@ -35,6 +43,9 @@ export default function sitemap() {
     { url: "/contact", priority: 0.9, changeFrequency: "monthly" },
     { url: "/careers", priority: 0.7, changeFrequency: "weekly" },
     { url: "/newsroom", priority: 0.7, changeFrequency: "weekly" },
+    { url: "/newsroom/blog", priority: 0.7, changeFrequency: "weekly" },
+    { url: "/newsroom/case-study", priority: 0.7, changeFrequency: "weekly" },
+    { url: "/newsroom/news", priority: 0.7, changeFrequency: "weekly" },
     { url: "/industries", priority: 0.9, changeFrequency: "monthly" },
     { url: "/service", priority: 0.9, changeFrequency: "monthly" },
     { url: "/solutions", priority: 0.8, changeFrequency: "monthly" },
@@ -67,5 +78,24 @@ export default function sitemap() {
     priority: 0.9,
   }));
 
-  return [...staticPages, ...servicePages, ...industryPages];
+  let postPages = [];
+  try {
+    const { posts } = await getBlogPosts({ limit: "all" });
+    postPages = posts
+      .map((p) => {
+        const segment = POST_TYPE_PATH[p.postType];
+        if (!segment || !p.slug) return null;
+        return {
+          url: `${siteUrl}/newsroom/${segment}/${p.slug}`,
+          lastModified: p.publishedAt ? new Date(p.publishedAt) : now,
+          changeFrequency: "monthly",
+          priority: 0.6,
+        };
+      })
+      .filter(Boolean);
+  } catch {
+    // Ghost unreachable at build time — ship the static portion.
+  }
+
+  return [...staticPages, ...servicePages, ...industryPages, ...postPages];
 }

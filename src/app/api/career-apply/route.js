@@ -1,20 +1,10 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
+import { escapeHtml, sanitizeSubject, buildTrackingHtml } from "@/lib/html";
+import { getClientIP, logEmail, sendZeptoMail } from "@/lib/zeptomail";
 
 const MAX_FILE_BYTES = 15 * 1024 * 1024;
-
-function logEmail(entry) {
-  console.log("[ZeptoMail Log]", JSON.stringify(entry));
-}
-
-function getClientIP(headersList) {
-  return (
-    headersList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-    headersList.get("x-real-ip") ||
-    "unknown"
-  );
-}
 
 export async function POST(request) {
   try {
@@ -47,68 +37,36 @@ export async function POST(request) {
         { status: 400 }
       );
     }
-
     if (!isValidEmail(email)) {
       return NextResponse.json(
         { error: "Enter a valid email address." },
         { status: 400 }
       );
     }
-
     if (!isValidMobile(mobile)) {
       return NextResponse.json(
         { error: "Enter a valid mobile number." },
         { status: 400 }
       );
     }
-
     if (!resume || typeof resume === "string") {
       return NextResponse.json(
         { error: "Resume is required." },
         { status: 400 }
       );
     }
-
     if (resume.type !== "application/pdf") {
       return NextResponse.json(
         { error: "Resume must be a PDF." },
         { status: 400 }
       );
     }
-
     if (resume.size > MAX_FILE_BYTES) {
       return NextResponse.json(
         { error: "Resume must be 15MB or smaller." },
         { status: 400 }
       );
     }
-
-    const {
-      ZEPTOMAIL_URL,
-      ZEPTOMAIL_TOKEN,
-      ZEPTOMAIL_FROM_EMAIL,
-      ZEPTOMAIL_FROM_NAME,
-      ZEPTOMAIL_CAREER_APPLY_TO_EMAIL,
-      ZEPTOMAIL_TO_NAME,
-    } = process.env;
-
-    if (
-      !ZEPTOMAIL_URL ||
-      !ZEPTOMAIL_TOKEN ||
-      !ZEPTOMAIL_FROM_EMAIL ||
-      !ZEPTOMAIL_FROM_NAME ||
-      !ZEPTOMAIL_CAREER_APPLY_TO_EMAIL ||
-      !ZEPTOMAIL_TO_NAME
-    ) {
-      return NextResponse.json(
-        { error: "Email service not configured." },
-        { status: 500 }
-      );
-    }
-
-    const resumeBase64 = Buffer.from(await resume.arrayBuffer()).toString(
-      "base64"
-    );
 
     let utm = {};
     try {
@@ -117,44 +75,30 @@ export async function POST(request) {
       utm = {};
     }
 
-    const utmHtml =
-      Object.keys(utm).length > 0
-        ? Object.entries(utm)
-            .map(([k, v]) => `<p><strong>${k}:</strong> ${v}</p>`)
-            .join("")
-        : "<p>N/A</p>";
-
+    const resumeBase64 = Buffer.from(await resume.arrayBuffer()).toString(
+      "base64"
+    );
     const fullName = `${firstName} ${lastName}`;
 
-    const payload = {
-      from: { address: ZEPTOMAIL_FROM_EMAIL, name: ZEPTOMAIL_FROM_NAME },
-      to: [
-        {
-          email_address: {
-            address: ZEPTOMAIL_CAREER_APPLY_TO_EMAIL,
-            name: ZEPTOMAIL_TO_NAME,
-          },
-        },
-      ],
-      subject: jobTitle
-        ? `Application for ${jobTitle} — ${fullName}`
-        : `Job Application from ${fullName}`,
-      htmlbody: `
-        <h2>New Job Application</h2>
-        ${jobTitle ? `<p><strong>Role:</strong> ${jobTitle}</p>` : ""}
-        <p><strong>Name:</strong> ${fullName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Mobile:</strong> ${mobile}</p>
-        <p><strong>Experience:</strong> ${experience}</p>
-        <p><strong>Current Location:</strong> ${location}</p>
-        <hr />
-        <h3>Tracking Info</h3>
-        <p><strong>IP Address:</strong> ${ip}</p>
-        <p><strong>Page URL:</strong> ${pageUrl || "N/A"}</p>
-        <p><strong>Previous Page:</strong> ${previousPage || "N/A"}</p>
-        <h4>UTM Parameters</h4>
-        ${utmHtml}
-      `,
+    const html = `
+      <h2>New Job Application</h2>
+      ${jobTitle ? `<p><strong>Role:</strong> ${escapeHtml(jobTitle)}</p>` : ""}
+      <p><strong>Name:</strong> ${escapeHtml(fullName)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>Mobile:</strong> ${escapeHtml(mobile)}</p>
+      <p><strong>Experience:</strong> ${escapeHtml(experience)}</p>
+      <p><strong>Current Location:</strong> ${escapeHtml(location)}</p>
+      ${buildTrackingHtml({ ip, pageUrl, previousPage, utm })}
+    `;
+
+    const { ok, configError, result } = await sendZeptoMail({
+      toEmail: process.env.ZEPTOMAIL_CAREER_APPLY_TO_EMAIL,
+      subject: sanitizeSubject(
+        jobTitle
+          ? `Application for ${jobTitle} — ${fullName}`
+          : `Job Application from ${fullName}`
+      ),
+      html,
       attachments: [
         {
           name: resume.name || "resume.pdf",
@@ -162,19 +106,14 @@ export async function POST(request) {
           mime_type: "application/pdf",
         },
       ],
-    };
-
-    const response = await fetch(ZEPTOMAIL_URL, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: ZEPTOMAIL_TOKEN,
-      },
-      body: JSON.stringify(payload),
     });
 
-    const result = await response.json();
+    if (configError) {
+      return NextResponse.json(
+        { error: "Email service not configured." },
+        { status: 500 }
+      );
+    }
 
     logEmail({
       timestamp: new Date().toISOString(),
@@ -191,17 +130,16 @@ export async function POST(request) {
       utm,
       previousPage,
       pageUrl,
-      status: response.ok ? "sent" : "failed",
+      status: ok ? "sent" : "failed",
       zeptoResponse: result,
     });
 
-    if (!response.ok) {
+    if (!ok) {
       return NextResponse.json(
         { error: "Failed to send application.", details: result },
         { status: 500 }
       );
     }
-
     return NextResponse.json({ success: true });
   } catch (error) {
     logEmail({

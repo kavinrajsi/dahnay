@@ -2,24 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
+import { getUTMParams } from "@/lib/utm";
 import SectionHeader from "./SectionHeader";
-
-function getUTMParams() {
-  if (typeof window === "undefined") return {};
-  const params = new URLSearchParams(window.location.search);
-  const utms = {};
-  for (const key of [
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_term",
-    "utm_content",
-  ]) {
-    const val = params.get(key);
-    if (val) utms[key] = val;
-  }
-  return utms;
-}
 
 export default function GrowForm() {
   const [status, setStatus] = useState("idle");
@@ -51,17 +35,12 @@ export default function GrowForm() {
 
     const formData = new FormData(e.target);
 
-    // Honeypot check — if filled, silently reject (bot submission)
-    if (formData.get("website")) {
-      setStatus("success");
-      return;
-    }
-
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
       mobile: formData.get("mobile"),
       message: formData.get("message"),
+      website: formData.get("website"),
       utm: getUTMParams(),
       previousPage: referrer.current,
       pageUrl: window.location.href,

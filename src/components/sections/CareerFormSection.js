@@ -2,24 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
+import { getUTMParams } from "@/lib/utm";
 import SectionHeader from "./SectionHeader";
-
-function getUTMParams() {
-  if (typeof window === "undefined") return {};
-  const params = new URLSearchParams(window.location.search);
-  const utms = {};
-  for (const key of [
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_term",
-    "utm_content",
-  ]) {
-    const val = params.get(key);
-    if (val) utms[key] = val;
-  }
-  return utms;
-}
 
 export default function CareerFormSection() {
   const [formData, setFormData] = useState({

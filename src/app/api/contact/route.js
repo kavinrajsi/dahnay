@@ -1,25 +1,36 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
-
-function logEmail(entry) {
-  console.log("[ZeptoMail Log]", JSON.stringify(entry));
-}
-
-function getClientIP(headersList) {
-  return (
-    headersList.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-    headersList.get("x-real-ip") ||
-    "unknown"
-  );
-}
+import { escapeHtml, sanitizeSubject, buildTrackingHtml } from "@/lib/html";
+import { getClientIP, logEmail, sendZeptoMail } from "@/lib/zeptomail";
 
 export async function POST(request) {
   try {
     const headersList = await headers();
     const ip = getClientIP(headersList);
-    const { name, email, mobile, message, utm, previousPage, pageUrl } =
-      await request.json();
+    const {
+      name,
+      email,
+      mobile,
+      message,
+      utm,
+      previousPage,
+      pageUrl,
+      website,
+    } = await request.json();
+
+    if (website) {
+      logEmail({
+        timestamp: new Date().toISOString(),
+        form: "contact",
+        status: "honeypot",
+        ip,
+        website: String(website).slice(0, 200),
+        previousPage: previousPage || "",
+        pageUrl: pageUrl || "",
+      });
+      return NextResponse.json({ success: true });
+    }
 
     if (!name?.trim() || !email?.trim() || !mobile?.trim()) {
       return NextResponse.json(
@@ -27,14 +38,12 @@ export async function POST(request) {
         { status: 400 }
       );
     }
-
     if (!isValidEmail(email)) {
       return NextResponse.json(
         { error: "Enter a valid email address." },
         { status: 400 }
       );
     }
-
     if (!isValidMobile(mobile)) {
       return NextResponse.json(
         { error: "Enter a valid mobile number." },
@@ -42,79 +51,31 @@ export async function POST(request) {
       );
     }
 
-    const {
-      ZEPTOMAIL_URL,
-      ZEPTOMAIL_TOKEN,
-      ZEPTOMAIL_FROM_EMAIL,
-      ZEPTOMAIL_FROM_NAME,
-      ZEPTOMAIL_TO_EMAIL,
-      ZEPTOMAIL_TO_NAME,
-    } = process.env;
+    const html = `
+      <h2>New Contact Form Submission</h2>
+      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>Mobile:</strong> ${escapeHtml(mobile)}</p>
+      <p><strong>Message:</strong> ${message ? escapeHtml(message) : "N/A"}</p>
+      ${buildTrackingHtml({ ip, pageUrl, previousPage, utm })}
+    `;
 
-    if (
-      !ZEPTOMAIL_URL ||
-      !ZEPTOMAIL_TOKEN ||
-      !ZEPTOMAIL_FROM_EMAIL ||
-      !ZEPTOMAIL_FROM_NAME ||
-      !ZEPTOMAIL_TO_EMAIL ||
-      !ZEPTOMAIL_TO_NAME
-    ) {
+    const { ok, configError, result } = await sendZeptoMail({
+      toEmail: process.env.ZEPTOMAIL_TO_EMAIL,
+      subject: sanitizeSubject(`New Inquiry from ${name}`),
+      html,
+    });
+
+    if (configError) {
       return NextResponse.json(
         { error: "Email service not configured." },
         { status: 500 }
       );
     }
 
-    const utmHtml = utm && Object.keys(utm).length > 0
-      ? Object.entries(utm)
-          .map(([k, v]) => `<p><strong>${k}:</strong> ${v}</p>`)
-          .join("")
-      : "<p>N/A</p>";
-
-    const payload = {
-      from: {
-        address: ZEPTOMAIL_FROM_EMAIL,
-        name: ZEPTOMAIL_FROM_NAME,
-      },
-      to: [
-        {
-          email_address: {
-            address: ZEPTOMAIL_TO_EMAIL,
-            name: ZEPTOMAIL_TO_NAME,
-          },
-        },
-      ],
-      subject: `New Inquiry from ${name}`,
-      htmlbody: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Mobile:</strong> ${mobile}</p>
-        <p><strong>Message:</strong> ${message || "N/A"}</p>
-        <hr />
-        <h3>Tracking Info</h3>
-        <p><strong>IP Address:</strong> ${ip}</p>
-        <p><strong>Page URL:</strong> ${pageUrl || "N/A"}</p>
-        <p><strong>Previous Page:</strong> ${previousPage || "N/A"}</p>
-        <h4>UTM Parameters</h4>
-        ${utmHtml}
-      `,
-    };
-
-    const response = await fetch(ZEPTOMAIL_URL, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: ZEPTOMAIL_TOKEN,
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const result = await response.json();
-
-    const logEntry = {
+    logEmail({
       timestamp: new Date().toISOString(),
+      form: "contact",
       name,
       email,
       mobile,
@@ -123,22 +84,21 @@ export async function POST(request) {
       utm: utm || {},
       previousPage: previousPage || "",
       pageUrl: pageUrl || "",
-      status: response.ok ? "sent" : "failed",
+      status: ok ? "sent" : "failed",
       zeptoResponse: result,
-    };
-    logEmail(logEntry);
+    });
 
-    if (!response.ok) {
+    if (!ok) {
       return NextResponse.json(
         { error: "Failed to send email.", details: result },
         { status: 500 }
       );
     }
-
     return NextResponse.json({ success: true });
   } catch (error) {
     logEmail({
       timestamp: new Date().toISOString(),
+      form: "contact",
       status: "error",
       error: error.message,
     });

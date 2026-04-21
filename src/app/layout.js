@@ -4,6 +4,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ConsentBanner from "@/components/layout/ConsentBanner";
+import UtmCapture from "@/components/UtmCapture";
 import "./globals.scss";
 
 const avenir = localFont({
@@ -73,6 +74,7 @@ export default function RootLayout({ children }) {
       </Script>
       {shouldLoadGTM && <GoogleTagManager gtmId={gtmId} />}
       <body>
+        <UtmCapture />
         <Header />
         <main>{children}</main>
         <Footer />

@@ -2,24 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
+import { getUTMParams } from "@/lib/utm";
 import SectionHeader from "./SectionHeader";
-
-function getUTMParams() {
-  if (typeof window === "undefined") return {};
-  const params = new URLSearchParams(window.location.search);
-  const utms = {};
-  for (const key of [
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_term",
-    "utm_content",
-  ]) {
-    const val = params.get(key);
-    if (val) utms[key] = val;
-  }
-  return utms;
-}
 
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({
@@ -62,12 +46,6 @@ export default function ContactFormSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Honeypot — bots tend to fill every field
-    if (formData.website) {
-      setStatus("success");
-      return;
-    }
-
     const errs = validate(formData);
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
@@ -83,6 +61,7 @@ export default function ContactFormSection() {
           email: formData.email,
           mobile: formData.mobile,
           message: formData.message,
+          website: formData.website,
           utm: getUTMParams(),
           previousPage: referrer.current,
           pageUrl: window.location.href,

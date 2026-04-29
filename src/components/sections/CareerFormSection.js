@@ -118,6 +118,7 @@ export default function CareerFormSection() {
                   type="text"
                   id="career-name"
                   name="name"
+                  placeholder="e.g. Priya Sharma"
                   value={formData.name}
                   onChange={handleChange}
                   aria-invalid={Boolean(errors.name)}
@@ -138,6 +139,7 @@ export default function CareerFormSection() {
                   type="email"
                   id="career-email"
                   name="email"
+                  placeholder="e.g. priya@company.com"
                   value={formData.email}
                   onChange={handleChange}
                   aria-invalid={Boolean(errors.email)}

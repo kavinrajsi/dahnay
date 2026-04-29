@@ -147,6 +147,7 @@ export default function ContactFormSection() {
                   type="text"
                   id="name"
                   name="name"
+                  placeholder="e.g. Priya Sharma"
                   value={formData.name}
                   onChange={handleChange}
                   aria-invalid={Boolean(errors.name)}
@@ -168,6 +169,7 @@ export default function ContactFormSection() {
                   type="email"
                   id="email"
                   name="email"
+                  placeholder="e.g. priya@company.com"
                   value={formData.email}
                   onChange={handleChange}
                   aria-invalid={Boolean(errors.email)}

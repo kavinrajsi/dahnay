@@ -134,7 +134,7 @@ const STATIC_TAIL = `## Optional
 - General enquiries: info@dahnay.com
 - Careers: careers@dahnay.com
 - International offices: reachus@dahnay.com
-- Africa offices (Ghana, Congo): GH.admin@dahnaylogistics.com
+- Africa offices (Ghana, Congo): GH.admin@dahnay.com
 - Phone: +91 44 4042 2888
 - Headquarters: K.G.N Towers, Ethiraj Salai, Egmore, Chennai 600008, Tamil Nadu, India
 - International offices: USA (New Jersey), Canada (Ontario), UK (London), UAE (Dubai, Sharjah, Ras Al Khaimah, Jebel Ali), Ghana (Accra), Kenya (Nairobi), Congo (Kinshasa), Sri Lanka (Colombo), Malaysia (Port Klang), Turkey (Istanbul), and additional offices across Bangladesh, Singapore, Thailand, Vietnam, Indonesia, and Hong Kong.

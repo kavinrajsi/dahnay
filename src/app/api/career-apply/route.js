@@ -3,7 +3,6 @@ import { headers } from "next/headers";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
 import { escapeHtml, sanitizeSubject, buildTrackingHtml } from "@/lib/html";
 import { getClientIP, logEmail, sendZeptoMail } from "@/lib/zeptomail";
-import { notifyAdminAndUser } from "@/lib/pinbot";
 
 const MAX_FILE_BYTES = 15 * 1024 * 1024;
 
@@ -141,20 +140,6 @@ export async function POST(request) {
         { status: 500 }
       );
     }
-
-    // Shares WhatsApp templates with /api/career. Contract is 4 positional
-    // params: [name, email, mobile, details]. `details` is the user's free-text
-    // message for inquiries; here we build it from job-application fields so a
-    // single Meta-approved template body fits both flows. If you change the
-    // shape of `summary`, also update the `dahnay_career_*` template bodies.
-    const summary = `Applied for ${jobTitle || "open role"} — ${experience} years' experience, based in ${location}`;
-    await notifyAdminAndUser({
-      form: "career-apply",
-      adminTemplateEnv: "PINBOT_TEMPLATE_CAREER_ADMIN",
-      userTemplateEnv: "PINBOT_TEMPLATE_CAREER_USER",
-      userMobile: mobile,
-      parameters: [fullName, email, mobile, summary],
-    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

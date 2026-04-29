@@ -3,7 +3,6 @@ import { headers } from "next/headers";
 import { isValidEmail } from "@/lib/validators";
 import { escapeHtml, sanitizeSubject, buildTrackingHtml } from "@/lib/html";
 import { getClientIP, logEmail, sendZeptoMail, maskEmail } from "@/lib/zeptomail";
-import { notifyAdminAndUser } from "@/lib/pinbot";
 
 export async function POST(request) {
   try {
@@ -56,15 +55,6 @@ export async function POST(request) {
         { status: 500 }
       );
     }
-
-    // Newsletter form collects email only — no user-side WhatsApp template
-    // is fired. userMobile is null so the helper skips the user branch.
-    await notifyAdminAndUser({
-      form: "newsletter",
-      adminTemplateEnv: "PINBOT_TEMPLATE_NEWSLETTER_ADMIN",
-      userMobile: null,
-      parameters: [email],
-    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

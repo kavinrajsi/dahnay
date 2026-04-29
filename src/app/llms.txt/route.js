@@ -1,4 +1,17 @@
-# DahNAY
+import { getBlogPosts } from "@/lib/ghost";
+
+export const revalidate = 3600;
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.dahnay.com";
+
+const EXCERPT_MAX = 160;
+
+const POST_TYPE_PATH = {
+  blog: "blog",
+  "case-study": "case-study",
+};
+
+const STATIC_PRE_NEWSROOM = `# DahNAY
 
 > DahNAY is a global logistics and supply chain solutions company headquartered in Chennai, India. Founded in 2007 by Mr. Murali Babu, DahNAY has grown from a single desk into an international operation spanning 45+ offices across 19+ countries, serving 5000+ clients with 20+ years of operational experience. The company delivers industry-specific freight and supply chain services across air, sea, road, customs, project, reverse, and last-mile networks for enterprises in 11+ industry verticals — including automotive, renewables, FMCG, food and agro, energy, construction materials, and machinery. DahNAY is Great Place to Work Certified (2024–2026) and operates owned warehousing in the USA and UAE alongside Container Freight Stations in Chennai and Tuticorin.
 
@@ -48,8 +61,9 @@
 - [Case Studies](https://www.dahnay.com/newsroom/case-study): Customer outcomes and engagement deep-dives showing measurable results.
 - [News](https://www.dahnay.com/newsroom/news): Company announcements, expansion updates, and press releases.
 - [Medium](https://medium.com/@dahnaylogistics): Long-form articles and industry perspectives published by DahNAY Logistics on Medium.
+`;
 
-## Careers
+const STATIC_POST_DYNAMIC = `## Careers
 
 - [Careers](https://www.dahnay.com/careers): Open roles and a people-first culture organised around three pillars — People-First Culture, One Team Many Voices, and Growth & Opportunity (mentorship, training, advancement pathways from day one). Great Place to Work Certified (2024–2026).
 
@@ -79,3 +93,77 @@
 - Phone: +91 44 4042 2888
 - Headquarters: K.G.N Towers, Ethiraj Salai, Egmore, Chennai 600008, Tamil Nadu, India
 - International offices: USA (New Jersey), Canada (Ontario), UK (London), UAE (Dubai, Sharjah, Ras Al Khaimah, Jebel Ali), Ghana (Accra), Kenya (Nairobi), Congo (Kinshasa), Sri Lanka (Colombo), Malaysia (Port Klang), Turkey (Istanbul), and additional offices across Bangladesh, Singapore, Thailand, Vietnam, Indonesia, and Hong Kong.
+`;
+
+// Flatten whitespace, escape markdown link breakers, truncate at word boundary.
+function cleanExcerpt(text) {
+  if (!text) return "";
+  const flat = text.replace(/\s+/g, " ").trim();
+  if (flat.length <= EXCERPT_MAX) return flat;
+  const cut = flat.slice(0, EXCERPT_MAX);
+  const lastSpace = cut.lastIndexOf(" ");
+  return `${(lastSpace > 0 ? cut.slice(0, lastSpace) : cut).trimEnd()}…`;
+}
+
+function escapeTitle(title) {
+  return (title || "").replace(/\[/g, "\\[").replace(/\]/g, "\\]");
+}
+
+function formatPostLine(post, segment) {
+  const url = `${siteUrl}/newsroom/${segment}/${post.slug}`;
+  const title = escapeTitle(post.title);
+  const excerpt = cleanExcerpt(post.excerpt);
+  const date = post.publishedAt ? post.publishedAt.slice(0, 10) : null;
+  const datePart = date ? ` (${date})` : "";
+  return excerpt
+    ? `- [${title}](${url}): ${excerpt}${datePart}`
+    : `- [${title}](${url})${datePart}`;
+}
+
+function buildDynamicSections(posts) {
+  const grouped = { blog: [], "case-study": [] };
+  for (const p of posts) {
+    if (!p.slug) continue;
+    const segment = POST_TYPE_PATH[p.postType];
+    if (!segment) continue;
+    grouped[p.postType].push(p);
+  }
+
+  const sortByDateDesc = (a, b) =>
+    new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0);
+
+  const blogLines = grouped.blog
+    .sort(sortByDateDesc)
+    .map((p) => formatPostLine(p, "blog"));
+  const caseLines = grouped["case-study"]
+    .sort(sortByDateDesc)
+    .map((p) => formatPostLine(p, "case-study"));
+
+  const sections = [];
+  if (blogLines.length) {
+    sections.push(`## Blog Posts\n\n${blogLines.join("\n")}`);
+  }
+  if (caseLines.length) {
+    sections.push(`## Case Studies\n\n${caseLines.join("\n")}`);
+  }
+  return sections.length ? `${sections.join("\n\n")}\n\n` : "";
+}
+
+export async function GET() {
+  let dynamicSections = "";
+  try {
+    const { posts } = await getBlogPosts({ limit: "all" });
+    dynamicSections = buildDynamicSections(posts);
+  } catch {
+    // Ghost unreachable — serve the static portion only.
+  }
+
+  const body = `${STATIC_PRE_NEWSROOM}\n${dynamicSections}${STATIC_POST_DYNAMIC}`;
+
+  return new Response(body, {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
+    },
+  });
+}

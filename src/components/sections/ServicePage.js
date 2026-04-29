@@ -8,10 +8,8 @@ import GrowForm from "@/components/sections/GrowForm";
 import IndustriesSlider from "@/components/sections/IndustriesSlider";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
+import { LAST_REVIEWED_DISPLAY, LAST_REVIEWED_ISO } from "@/lib/site-meta";
 import serviceData from "@/data/services/index.json";
-
-const LAST_REVIEWED_DISPLAY = "April 2026";
-const LAST_REVIEWED_ISO = "2026-04-30";
 
 export default function ServicePage({ slug }) {
   const data = serviceData[slug];

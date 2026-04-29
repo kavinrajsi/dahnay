@@ -4,7 +4,8 @@ import LogisticsSection from "@/components/sections/LogisticsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
+import { breadcrumbList, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
+import { LAST_REVIEWED_DISPLAY, LAST_REVIEWED_ISO } from "@/lib/site-meta";
 
 export const metadata = {
   title: "DahNAY Logistics Platform",
@@ -39,6 +40,12 @@ const schemas = [
     path,
     serviceType: "Logistics Platform",
   }),
+  webPageSchema({
+    name: "DahNAY Logistics Platform",
+    description: metadata.description,
+    path,
+    dateModified: LAST_REVIEWED_ISO,
+  }),
   faqSchema(faqItems),
 ];
 
@@ -50,6 +57,10 @@ export default function LogisticsPage() {
         title="DahNAY Logistics"
         desktopImage="/images/banners/banner-desktop-logistics.png"
       />
+      <p className="solution-page__last-reviewed container">
+        Last reviewed:{" "}
+        <time dateTime={LAST_REVIEWED_ISO}>{LAST_REVIEWED_DISPLAY}</time>
+      </p>
 
       <LogisticsSection />
 

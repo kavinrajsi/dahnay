@@ -142,12 +142,13 @@ export async function POST(request) {
       );
     }
 
+    const summary = `Applied for ${jobTitle || "open role"} — ${experience} years' experience, based in ${location}`;
     await notifyAdminAndUser({
       form: "career-apply",
-      adminTemplateEnv: "PINBOT_TEMPLATE_CAREER_APPLY_ADMIN",
-      userTemplateEnv: "PINBOT_TEMPLATE_CAREER_APPLY_USER",
+      adminTemplateEnv: "PINBOT_TEMPLATE_CAREER_ADMIN",
+      userTemplateEnv: "PINBOT_TEMPLATE_CAREER_USER",
       userMobile: mobile,
-      parameters: [fullName, email, mobile, jobTitle || "N/A", experience, location],
+      parameters: [fullName, email, mobile, summary],
     });
 
     return NextResponse.json({ success: true });

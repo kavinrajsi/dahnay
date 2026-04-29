@@ -80,7 +80,12 @@ export async function POST(request) {
       adminTemplateEnv: "PINBOT_TEMPLATE_CAREER_ADMIN",
       userTemplateEnv: "PINBOT_TEMPLATE_CAREER_USER",
       userMobile: mobile,
-      parameters: [name, email, mobile, message || ""],
+      parameters: [
+        name,
+        email,
+        mobile,
+        message?.trim() || "General career inquiry",
+      ],
     });
 
     return NextResponse.json({ success: true });

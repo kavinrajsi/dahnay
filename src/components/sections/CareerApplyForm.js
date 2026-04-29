@@ -235,6 +235,7 @@ export default function CareerApplyForm({ jobTitle }) {
                 name="mobile"
                 value={formData.mobile}
                 onChange={handleChange}
+                placeholder="With country code, e.g. 919876543210"
                 aria-invalid={Boolean(errors.mobile)}
                 aria-describedby={errors.mobile ? "apply-mobile-error" : undefined}
               />

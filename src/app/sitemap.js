@@ -61,18 +61,19 @@ export default async function sitemap() {
     priority: 0.9,
   }));
 
-  // TODO: map each job in JOBS to a sitemap entry for /careers/{slug}.
-  // Trade-offs to consider:
-  //   - priority: job postings are high-intent SEO targets — higher than blog?
-  //   - changeFrequency: postings don't change often, but freshness signals
-  //     "still hiring". What cadence reflects your hiring pipeline?
-  //   - lastModified: use job.updatedAt if present, else job.postedAt, else now.
-  //   - guard: skip entries without a slug.
   const careerPages = JOBS
     .map((job) => {
-      // TODO: return a sitemap entry shaped like the other *Pages arrays above,
-      // or return null to skip.
-      return null;
+      if (!job?.slug) return null;
+      return {
+        url: `${siteUrl}/careers/${job.slug}`,
+        lastModified: job.updatedAt
+          ? new Date(job.updatedAt)
+          : job.postedAt
+            ? new Date(job.postedAt)
+            : now,
+        changeFrequency: "weekly",
+        priority: 0.7,
+      };
     })
     .filter(Boolean);
 

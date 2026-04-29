@@ -182,6 +182,7 @@ export default function GrowForm() {
                     type="tel"
                     name="mobile"
                     className={`grow-form__input ${errors.mobile ? "grow-form__input--error" : ""}`}
+                    placeholder="With country code, e.g. 919876543210"
                     onChange={() =>
                       setErrors((prev) => ({ ...prev, mobile: undefined }))
                     }

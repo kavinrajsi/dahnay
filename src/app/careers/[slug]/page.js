@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { JOBS, getJobBySlug } from "@/data/careers/jobs";
 import CareerApplyForm from "@/components/sections/CareerApplyForm";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, jobPostingSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return JOBS.map((job) => ({ slug: job.slug }));
@@ -22,8 +24,25 @@ export default async function CareerDetailPage({ params }) {
 
   if (!job) notFound();
 
+  const schemas = [
+    breadcrumbList([
+      { name: "Home", path: "/" },
+      { name: "Careers", path: "/careers" },
+      { name: job.title, path: `/careers/${slug}` },
+    ]),
+    jobPostingSchema({
+      title: job.title,
+      description: [job.intro, ...(job.description?.map((d) => d.para) ?? [])].filter(Boolean).join(" "),
+      postedAt: job.postedAt,
+      employmentType: job.type,
+      location: job.location,
+      slug,
+    }),
+  ];
+
   return (
     <div className="page page--career-detail">
+      <JsonLd data={schemas} />
       <div className="career-detail container">
 
         {/* Header: title/location + posted date/apply */}

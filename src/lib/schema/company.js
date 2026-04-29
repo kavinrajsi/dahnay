@@ -1,13 +1,10 @@
 // Single source of truth for company identity used across all schemas.
-// Edit values here — schema files read from this constant.
 export const COMPANY = {
-  // TODO: confirm registered legal entity name (e.g. "DahNAY Logistics Private Limited")
-  legalName: "DahNAY Logistics Private Limited",
-  brandName: "DahNAY Logistics",
-  // TODO: set founding year (number, e.g. 1998). Until set, foundingDate is omitted.
-  foundingYear: null,
+  legalName: "Dahnay logistics pvt ltd",
+  brandName: "DahNAY",
+  foundingYear: 2007,
   founder: "Mr. Murali Babu",
-  logoPath: "/images/logo.svg",
+  logoPath: "/images/logo.png",
   description:
     "Industry-specific logistics solutions powered by expertise, technology, and a global network. Air freight, sea freight, customs clearance, and more.",
   email: "info@dahnay.com",

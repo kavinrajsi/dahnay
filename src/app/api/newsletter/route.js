@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { isValidEmail } from "@/lib/validators";
 import { escapeHtml, sanitizeSubject, buildTrackingHtml } from "@/lib/html";
 import { getClientIP, logEmail, sendZeptoMail, maskEmail } from "@/lib/zeptomail";
+import { notifyAdminAndUser } from "@/lib/pinbot";
 
 export async function POST(request) {
   try {
@@ -55,6 +56,15 @@ export async function POST(request) {
         { status: 500 }
       );
     }
+
+    await notifyAdminAndUser({
+      form: "newsletter",
+      adminTemplateEnv: "PINBOT_TEMPLATE_NEWSLETTER_ADMIN",
+      userTemplateEnv: "PINBOT_TEMPLATE_NEWSLETTER_USER",
+      userMobile: null,
+      parameters: [email],
+    });
+
     return NextResponse.json({ success: true });
   } catch (error) {
     logEmail({

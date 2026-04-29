@@ -191,6 +191,7 @@ export default function ContactFormSection() {
                   name="mobile"
                   value={formData.mobile}
                   onChange={handleChange}
+                  placeholder="With country code, e.g. 919876543210"
                   aria-invalid={Boolean(errors.mobile)}
                   aria-describedby={errors.mobile ? "contact-mobile-error" : undefined}
                 />

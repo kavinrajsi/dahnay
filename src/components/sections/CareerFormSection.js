@@ -98,10 +98,10 @@ export default function CareerFormSection() {
                   </svg>
                 </div>
                 <a
-                  href="mailto:career@dahnay.com"
+                  href="mailto:careers@dahnay.com"
                   className="career-form-section__info-text"
                 >
-                  career@dahnay.com
+                  careers@dahnay.com
                 </a>
               </div>
             </div>
@@ -160,6 +160,7 @@ export default function CareerFormSection() {
                   name="mobile"
                   value={formData.mobile}
                   onChange={handleChange}
+                  placeholder="With country code, e.g. 919876543210"
                   aria-invalid={Boolean(errors.mobile)}
                   aria-describedby={errors.mobile ? "career-mobile-error" : undefined}
                 />

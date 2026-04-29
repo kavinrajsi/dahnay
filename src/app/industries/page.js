@@ -3,6 +3,8 @@ import Banner from "@/components/sections/Banner";
 import IndustriesGrid from "@/components/sections/IndustriesGrid";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, faqSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "Industries",
@@ -24,8 +26,17 @@ const faqItems = [
 ];
 
 export default function IndustriesPage() {
+  const schemas = [
+    breadcrumbList([
+      { name: "Home", path: "/" },
+      { name: "Industries", path: "/industries" },
+    ]),
+    faqSchema(faqItems),
+  ];
+
   return (
     <div className="page page--industries">
+      <JsonLd data={schemas} />
       <Banner
         title="Industries"
         desktopImage="/images/banners/banner-desktop-industries.png"

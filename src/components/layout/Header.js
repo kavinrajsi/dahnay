@@ -130,7 +130,10 @@ export default function Header() {
         onMouseLeave={handleMouseLeave}
       >
         <button
+          type="button"
           className={`header__nav-link${hasActive ? " header__nav-link--active" : ""}`}
+          onClick={() => setActiveDropdown(activeDropdown === id ? null : id)}
+          aria-expanded={activeDropdown === id}
         >
           {id.charAt(0).toUpperCase() + id.slice(1)}
           <svg

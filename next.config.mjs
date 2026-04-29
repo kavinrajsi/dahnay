@@ -38,15 +38,25 @@ const nextConfig = {
 
       // ─── Services (old /services/ → new /service/) ─────────────────────────
       { source: "/services", destination: "/service", permanent: true },
+      { source: "/services.html", destination: "/service", permanent: true },
       { source: "/services/air-freight", destination: "/service/air-freight", permanent: true },
+      { source: "/services/air-freight.html", destination: "/service/air-freight", permanent: true },
       { source: "/services/sea-freight", destination: "/service/sea-freight", permanent: true },
+      { source: "/services/sea-freight.html", destination: "/service/sea-freight", permanent: true },
       { source: "/services/custom-brokerage", destination: "/service/customs-clearance", permanent: true },
+      { source: "/services/custom-brokerage.html", destination: "/service/customs-clearance", permanent: true },
       { source: "/services/project-cargo", destination: "/service/project-logistics", permanent: true },
+      { source: "/services/project-cargo.html", destination: "/service/project-logistics", permanent: true },
       { source: "/services/last-mile-connectivity", destination: "/service/last-mile-delivery", permanent: true },
+      { source: "/services/last-mile-connectivity.html", destination: "/service/last-mile-delivery", permanent: true },
       { source: "/services/omni-channel", destination: "/service/ecommerce-fulfilment", permanent: true },
+      { source: "/services/omni-channel.html", destination: "/service/ecommerce-fulfilment", permanent: true },
       { source: "/services/consolidation", destination: "/service", permanent: true },
+      { source: "/services/consolidation.html", destination: "/service", permanent: true },
       { source: "/services/customer-service", destination: "/contact", permanent: true },
+      { source: "/services/customer-service.html", destination: "/contact", permanent: true },
       { source: "/services/warehouse", destination: "/solutions/ports-infra", permanent: true },
+      { source: "/services/warehouse.html", destination: "/solutions/ports-infra", permanent: true },
 
       // ─── Industries (old /industry/ → new /industries/) ────────────────────
       { source: "/industry", destination: "/industries", permanent: true },

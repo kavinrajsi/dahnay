@@ -7,9 +7,28 @@ const TYPE_BY_POST_TYPE = {
   "case-study": "Article",
 };
 
+function authorSchema(post) {
+  if (!post.authors?.length) {
+    return {
+      "@type": "Organization",
+      name: COMPANY.brandName,
+      url: siteUrl(),
+    };
+  }
+  const persons = post.authors.map((a) => ({
+    "@type": "Person",
+    name: a.name,
+    ...(a.url && { url: a.url }),
+    ...(a.image && { image: a.image }),
+    ...(a.bio && { description: a.bio }),
+  }));
+  return persons.length === 1 ? persons[0] : persons;
+}
+
 export function articleSchema(post, { path, type = "blog" } = {}) {
   const articleType = TYPE_BY_POST_TYPE[type] || "Article";
   const url = absoluteUrl(path);
+  const dateModified = post.updatedAt || post.publishedAt;
   return {
     "@context": "https://schema.org",
     "@type": articleType,
@@ -22,12 +41,8 @@ export function articleSchema(post, { path, type = "blog" } = {}) {
     ...(post.excerpt && { description: post.excerpt }),
     ...(post.featuredImage?.url && { image: [post.featuredImage.url] }),
     ...(post.publishedAt && { datePublished: post.publishedAt }),
-    ...(post.publishedAt && { dateModified: post.publishedAt }),
-    author: {
-      "@type": "Organization",
-      name: COMPANY.brandName,
-      url: siteUrl(),
-    },
+    ...(dateModified && { dateModified }),
+    author: authorSchema(post),
     publisher: { "@id": `${siteUrl()}/#organization` },
   };
 }

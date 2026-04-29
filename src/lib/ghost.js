@@ -19,6 +19,14 @@ function derivePostType(tags) {
 
 function normalizePost(p) {
   const tags = p.tags?.map((t) => ({ tag: t.slug, label: t.name })) ?? [];
+  const authors =
+    p.authors?.map((a) => ({
+      name: a.name,
+      slug: a.slug,
+      bio: a.bio || null,
+      image: a.profile_image || null,
+      url: a.website || null,
+    })) ?? [];
   return {
     id: p.id,
     slug: p.slug,
@@ -29,18 +37,20 @@ function normalizePost(p) {
       ? { url: p.feature_image, alt: p.feature_image_alt || p.title }
       : null,
     publishedAt: p.published_at,
+    updatedAt: p.updated_at,
     readingTime: p.reading_time,
     tags,
+    authors,
     postType: derivePostType(p.tags),
   };
 }
 
 const POST_FIELDS =
-  "id,slug,title,custom_excerpt,excerpt,feature_image,feature_image_alt,published_at,reading_time";
+  "id,slug,title,custom_excerpt,excerpt,feature_image,feature_image_alt,published_at,updated_at,reading_time";
 
 async function fetchPostsPage({ limit, page }) {
   const url = ghostUrl("posts/", {
-    include: "tags",
+    include: "tags,authors",
     limit,
     page,
     fields: POST_FIELDS,
@@ -72,7 +82,7 @@ export async function getBlogPosts({ limit = 12, page = 1 } = {}) {
 }
 
 export async function getBlogPost(slug) {
-  const url = ghostUrl(`posts/slug/${slug}/`, { include: "tags" });
+  const url = ghostUrl(`posts/slug/${slug}/`, { include: "tags,authors" });
   const res = await fetch(url, { next: { revalidate: 300 } });
   if (!res.ok) throw new Error(`Ghost API error: ${res.status}`);
   const { posts } = await res.json();

@@ -150,7 +150,7 @@ export default function GrowForm() {
                   <input
                     type="text"
                     name="name"
-                    placeholder="e.g. Priya Sharma"
+                    placeholder="Full name"
                     className={`grow-form__input ${errors.name ? "grow-form__input--error" : ""}`}
                     onChange={() =>
                       setErrors((prev) => ({ ...prev, name: undefined }))
@@ -167,7 +167,7 @@ export default function GrowForm() {
                   <input
                     type="email"
                     name="email"
-                    placeholder="e.g. priya@company.com"
+                    placeholder="Email address"
                     className={`grow-form__input ${errors.email ? "grow-form__input--error" : ""}`}
                     onChange={() =>
                       setErrors((prev) => ({ ...prev, email: undefined }))

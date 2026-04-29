@@ -170,7 +170,7 @@ export default function CareerApplyForm({ jobTitle }) {
                 type="text"
                 id="apply-firstName"
                 name="firstName"
-                placeholder="e.g. Priya"
+                placeholder="First name"
                 value={formData.firstName}
                 onChange={handleChange}
                 aria-invalid={Boolean(errors.firstName)}
@@ -191,7 +191,7 @@ export default function CareerApplyForm({ jobTitle }) {
                 type="text"
                 id="apply-lastName"
                 name="lastName"
-                placeholder="e.g. Sharma"
+                placeholder="Last name"
                 value={formData.lastName}
                 onChange={handleChange}
                 aria-invalid={Boolean(errors.lastName)}
@@ -216,7 +216,7 @@ export default function CareerApplyForm({ jobTitle }) {
                 type="email"
                 id="apply-email"
                 name="email"
-                placeholder="e.g. priya@company.com"
+                placeholder="Email address"
                 value={formData.email}
                 onChange={handleChange}
                 aria-invalid={Boolean(errors.email)}

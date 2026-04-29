@@ -52,8 +52,7 @@ export const metadata = {
 };
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-const isOnVercel = Boolean(process.env.VERCEL);
-const shouldLoadGTM = Boolean(gtmId) && !isOnVercel;
+const shouldLoadGTM = Boolean(gtmId) && process.env.NODE_ENV === "production";
 
 export default function RootLayout({ children }) {
   return (

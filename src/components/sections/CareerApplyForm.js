@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
 import { getUTMParams } from "@/lib/utm";
+import PhoneField from "@/components/ui/PhoneField";
 
 const MAX_FILE_BYTES = 15 * 1024 * 1024; // 15MB
 
@@ -231,16 +232,14 @@ export default function CareerApplyForm({ jobTitle }) {
               <label className="career-apply-form__label" htmlFor="apply-mobile">
                 Mobile Number <span className="career-apply-form__required">*</span>
               </label>
-              <input
-                className={`career-apply-form__input${errors.mobile ? " career-apply-form__input--error" : ""}`}
-                type="tel"
+              <PhoneField
                 id="apply-mobile"
                 name="mobile"
                 value={formData.mobile}
                 onChange={handleChange}
-                placeholder="With country code, e.g. 919876543210"
-                aria-invalid={Boolean(errors.mobile)}
-                aria-describedby={errors.mobile ? "apply-mobile-error" : undefined}
+                placeholder="98765 43210"
+                ariaInvalid={Boolean(errors.mobile)}
+                inputClassName={`career-apply-form__input${errors.mobile ? " career-apply-form__input--error" : ""}`}
               />
               {errors.mobile && (
                 <span id="apply-mobile-error" className="career-apply-form__error">

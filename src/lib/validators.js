@@ -1,13 +1,21 @@
+import { isValidPhoneNumber } from "libphonenumber-js/min";
+
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-export const MOBILE_RE = /^\d{11,15}$/;
 
 export function isValidEmail(email) {
   return EMAIL_RE.test(String(email || "").trim());
 }
 
+// Expects E.164 format (e.g. "+919876543210"). Validates against
+// libphonenumber-js's per-country length and pattern rules.
 export function isValidMobile(mobile) {
-  const digits = String(mobile || "").replace(/\D/g, "");
-  return MOBILE_RE.test(digits);
+  const value = String(mobile || "").trim();
+  if (!value) return false;
+  try {
+    return isValidPhoneNumber(value);
+  } catch {
+    return false;
+  }
 }
 
 export function normalizeMobile(mobile) {

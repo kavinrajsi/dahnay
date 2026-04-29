@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
 import { getUTMParams } from "@/lib/utm";
+import PhoneField from "@/components/ui/PhoneField";
 import SectionHeader from "./SectionHeader";
 
 export default function CareerFormSection() {
@@ -155,16 +156,14 @@ export default function CareerFormSection() {
                 <label className="career-form__label" htmlFor="career-mobile">
                   Mobile Number <span className="career-form__required">*</span>
                 </label>
-                <input
-                  className={`career-form__input${errors.mobile ? " career-form__input--error" : ""}`}
-                  type="tel"
+                <PhoneField
                   id="career-mobile"
                   name="mobile"
                   value={formData.mobile}
                   onChange={handleChange}
-                  placeholder="With country code, e.g. 919876543210"
-                  aria-invalid={Boolean(errors.mobile)}
-                  aria-describedby={errors.mobile ? "career-mobile-error" : undefined}
+                  placeholder="98765 43210"
+                  ariaInvalid={Boolean(errors.mobile)}
+                  inputClassName={`career-form__input${errors.mobile ? " career-form__input--error" : ""}`}
                 />
                 {errors.mobile && (
                   <span id="career-mobile-error" className="career-form__error">

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
 import { getUTMParams } from "@/lib/utm";
+import PhoneField from "@/components/ui/PhoneField";
 import SectionHeader from "./SectionHeader";
 
 export default function GrowForm() {
@@ -180,14 +181,14 @@ export default function GrowForm() {
                   <label className="grow-form__label">
                     Mobile Number <span className="grow-form__required">*</span>
                   </label>
-                  <input
-                    type="tel"
+                  <PhoneField
                     name="mobile"
-                    className={`grow-form__input ${errors.mobile ? "grow-form__input--error" : ""}`}
-                    placeholder="With country code, e.g. 919876543210"
                     onChange={() =>
                       setErrors((prev) => ({ ...prev, mobile: undefined }))
                     }
+                    placeholder="98765 43210"
+                    ariaInvalid={Boolean(errors.mobile)}
+                    inputClassName={`grow-form__input ${errors.mobile ? "grow-form__input--error" : ""}`}
                   />
                   {errors.mobile && (
                     <span className="grow-form__error">{errors.mobile}</span>

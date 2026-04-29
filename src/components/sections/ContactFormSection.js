@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
 import { getUTMParams } from "@/lib/utm";
+import PhoneField from "@/components/ui/PhoneField";
 import SectionHeader from "./SectionHeader";
 
 export default function ContactFormSection() {
@@ -186,16 +187,14 @@ export default function ContactFormSection() {
                 <label className="contact-form__label" htmlFor="mobile">
                   Mobile Number *
                 </label>
-                <input
-                  className={`contact-form__input${errors.mobile ? " contact-form__input--error" : ""}`}
-                  type="tel"
+                <PhoneField
                   id="mobile"
                   name="mobile"
                   value={formData.mobile}
                   onChange={handleChange}
-                  placeholder="With country code, e.g. 919876543210"
-                  aria-invalid={Boolean(errors.mobile)}
-                  aria-describedby={errors.mobile ? "contact-mobile-error" : undefined}
+                  placeholder="98765 43210"
+                  ariaInvalid={Boolean(errors.mobile)}
+                  inputClassName={`contact-form__input${errors.mobile ? " contact-form__input--error" : ""}`}
                 />
                 {errors.mobile && (
                   <span id="contact-mobile-error" className="contact-form__error">

@@ -33,7 +33,7 @@ export default function IndustriesSlider({ currentSlug }) {
              If it moves, we ship it. From Pharma to renewables and automotive, get your goods delivered to your doorstep, well and safe.
             </p>
           </div>
-          <Link href="/contact" className="industries-slider__btn">
+          <Link href="/industries" className="industries-slider__btn">
             See More
           </Link>
         </div>

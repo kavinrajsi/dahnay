@@ -52,6 +52,7 @@ const nextConfig = {
       { source: "/industry", destination: "/industries", permanent: true },
       { source: "/industry-landing-page", destination: "/industries", permanent: true },
       { source: "/industry/automotive", destination: "/industries/automotive", permanent: true },
+      { source: "/industry/automotive.html", destination: "/industries/automotive", permanent: true },
       { source: "/industry/oil-gas", destination: "/industries/energy-oil-gas", permanent: true },
       { source: "/industry/food-agro", destination: "/industries/food-agro", permanent: true },
       { source: "/industry/retail", destination: "/industries/retail-apparel", permanent: true },
@@ -60,6 +61,7 @@ const nextConfig = {
       { source: "/industry/electricals-electronics", destination: "/industries/white-goods", permanent: true },
       { source: "/industry/minerals", destination: "/industries", permanent: true },
       { source: "/industry/pharma", destination: "/industries", permanent: true },
+      { source: "/industry/pharma.html", destination: "/industries", permanent: true },
       { source: "/white-goods", destination: "/industries/white-goods", permanent: true },
 
       // ─── Landing / template / deprecated pages ─────────────────────────────

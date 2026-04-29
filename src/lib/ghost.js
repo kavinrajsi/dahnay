@@ -17,6 +17,19 @@ function derivePostType(tags) {
   return "news";
 }
 
+// Ghost emits audio cards with custom play/pause/seek controls that depend on
+// JS that ships with the Casper theme. Without that JS we get a broken UI:
+// raw-seconds duration, dead buttons, broken thumbnail placeholder. Force the
+// browser to render native HTML5 controls instead by adding `controls` to
+// every <audio> tag. Same logic applies to <video>.
+function transformGhostHtml(html) {
+  if (!html) return html;
+  return html.replace(
+    /<(audio|video)(?![^>]*\bcontrols\b)([^>]*)>/gi,
+    "<$1 controls$2>"
+  );
+}
+
 function normalizePost(p) {
   const tags = p.tags?.map((t) => ({ tag: t.slug, label: t.name })) ?? [];
   const authors =
@@ -32,7 +45,7 @@ function normalizePost(p) {
     slug: p.slug,
     title: p.title,
     excerpt: p.custom_excerpt || p.excerpt,
-    html: p.html,
+    html: transformGhostHtml(p.html),
     featuredImage: p.feature_image
       ? { url: p.feature_image, alt: p.feature_image_alt || p.title }
       : null,

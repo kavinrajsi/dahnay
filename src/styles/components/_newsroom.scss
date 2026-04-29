@@ -976,6 +976,44 @@
       padding: 16px;
     }
 
+    // Ghost audio card: ghost.js forces `controls` onto the <audio> tag so
+    // the browser renders native HTML5 controls. Hide Ghost's broken custom
+    // player (kg-audio-player elements rely on Casper-theme JS we don't
+    // ship) and the thumbnail (often has no real src — shows alt text).
+    .kg-audio-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid var(--neutral-white3);
+      border-radius: 8px;
+      background: var(--neutral-white2, #f5f5f5);
+
+      .kg-audio-thumbnail,
+      .kg-audio-play-icon,
+      .kg-audio-pause-icon,
+      .kg-audio-seek-slider,
+      .kg-audio-current-time,
+      .kg-audio-time,
+      .kg-audio-duration,
+      .kg-audio-playback-rate,
+      .kg-audio-mute-icon,
+      .kg-audio-unmute-icon,
+      .kg-audio-volume-slider {
+        display: none;
+      }
+
+      .kg-audio-title {
+        font-weight: 600;
+        margin: 0;
+      }
+
+      audio {
+        display: block;
+        width: 100%;
+      }
+    }
+
     hr {
       border: none;
       border-top: 1px solid var(--neutral-white3);

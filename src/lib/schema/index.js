@@ -1,6 +1,6 @@
 export { COMPANY } from "./company";
 export { breadcrumbList } from "./breadcrumb";
-export { organizationSchema } from "./organization";
+export { organizationSchema, localBusinessSchema } from "./organization";
 export { websiteSchema } from "./website";
 export { faqSchema } from "./faq";
 export { articleSchema } from "./article";

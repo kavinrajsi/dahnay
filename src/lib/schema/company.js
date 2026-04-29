@@ -17,4 +17,16 @@ export const COMPANY = {
     "https://www.instagram.com/dahnaylogisticsofficial/",
     "https://x.com/dahnaylogistics/"
   ],
+  primaryAddress: {
+    streetAddress: "K.G.N Towers, Ethiraj Salai, Egmore",
+    addressLocality: "Chennai",
+    addressRegion: "Tamil Nadu",
+    postalCode: "600008",
+    addressCountry: "IN",
+  },
+  primaryContact: {
+    telephone: "04440422888",
+    contactType: "customer service",
+    availableLanguage: ["English", "Tamil"],
+  },
 };

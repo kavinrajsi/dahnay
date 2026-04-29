@@ -1,29 +1,32 @@
 import { COMPANY } from "./company";
 import { absoluteUrl, siteUrl } from "./helpers";
 
-function postalAddress(office) {
+function postalAddress() {
+  return { "@type": "PostalAddress", ...COMPANY.primaryAddress };
+}
+
+function contactPoint() {
+  return { "@type": "ContactPoint", ...COMPANY.primaryContact };
+}
+
+function placeFromOffice(office) {
   return {
-    "@type": "PostalAddress",
-    streetAddress: office.address,
-    addressLocality: office.city.replace(/\s*\(HQ\)\s*$/, ""),
-    addressCountry: office.country,
+    "@type": "Place",
+    name: office.city,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: office.address,
+      addressLocality: office.city.replace(/\s*\(HQ\)\s*$/, ""),
+      addressCountry: office.country,
+    },
+    ...(office.phone && { telephone: office.phone }),
+    ...(office.email && { email: office.email }),
   };
 }
 
-// Site-wide Organization schema. Pass `offices` to also emit `location[]` and
-// per-office contactPoint entries — typically used on the contact page.
+// Site-wide Organization schema. Pass `offices` to also emit `location[]`
+// (typically used on the contact page for multi-office presence).
 export function organizationSchema({ offices = [] } = {}) {
-  const hq = offices.find((o) => /\(HQ\)/.test(o.city));
-  const contactPoints = offices
-    .filter((o) => o.phone || o.email)
-    .map((o) => ({
-      "@type": "ContactPoint",
-      contactType: /\(HQ\)/.test(o.city) ? "headquarters" : "customer service",
-      areaServed: o.country,
-      ...(o.phone && { telephone: o.phone }),
-      ...(o.email && { email: o.email }),
-    }));
-
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -38,14 +41,25 @@ export function organizationSchema({ offices = [] } = {}) {
       founder: { "@type": "Person", name: COMPANY.founder },
     }),
     sameAs: COMPANY.social,
-    ...(hq && { address: postalAddress(hq) }),
-    ...(contactPoints.length && { contactPoint: contactPoints }),
-    ...(offices.length && {
-      location: offices.map((o) => ({
-        "@type": "Place",
-        name: o.city,
-        address: postalAddress(o),
-      })),
-    }),
+    address: postalAddress(),
+    contactPoint: contactPoint(),
+    ...(offices.length && { location: offices.map(placeFromOffice) }),
+  };
+}
+
+// LocalBusiness for the HQ — emit on pages that represent the physical
+// business (homepage, contact). Distinct @id keeps it separate from the
+// global Organization entity above.
+export function localBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${siteUrl()}/#hq`,
+    name: COMPANY.brandName,
+    image: absoluteUrl(COMPANY.logoPath),
+    url: siteUrl(),
+    telephone: COMPANY.primaryContact.telephone,
+    address: postalAddress(),
+    parentOrganization: { "@id": `${siteUrl()}/#organization` },
   };
 }

@@ -22,7 +22,6 @@ export const COMPANY = {
     addressCountry: "IN",
   },
   primaryContact: {
-    telephone: "04440422888",
     contactType: "customer service",
     availableLanguage: ["English", "Tamil"],
   },

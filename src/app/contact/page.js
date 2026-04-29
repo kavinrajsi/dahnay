@@ -23,7 +23,7 @@ const regions = [
 
 const offices = [
   // India - Corporate Office
-  { city: "Chennai (HQ)", country: "India", region: "India", address: "K.G.N Towers, 9th Floor, No: 62, Ethiraj Salai, Egmore, Chennai \u2013 600 008", phone: "+91 44 4042 2888" },
+  { city: "Chennai (HQ)", country: "India", region: "India", address: "K.G.N Towers, 9th Floor, No: 62, Ethiraj Salai, Egmore, Chennai \u2013 600 008" },
   // India - Branch Offices
   { city: "Ahmedabad", country: "India", region: "India", address: "B 306-Mondeal Heights, Near Novotel Hotel, Iscon Cross Road, S.G. Highway, Ahmedabad, Gujarat \u2013 380015" },
   { city: "Aurangabad", country: "India", region: "India", address: "ELITIE SQUARE, Office No.317, 3rd Floor, Gut No.57/p, Beed Bay Pass Road, Opp: Govt Sugar Warehouse, Aurangabad \u2013 431001" },

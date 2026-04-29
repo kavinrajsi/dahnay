@@ -52,7 +52,7 @@ export const metadata = {
 };
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-const shouldLoadGTM = Boolean(gtmId) && process.env.NODE_ENV === "production";
+const shouldLoadGTM = Boolean(gtmId) && process.env.NEXT_PUBLIC_GTM_ENABLED === "true";
 
 export default function RootLayout({ children }) {
   return (

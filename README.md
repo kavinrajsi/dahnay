@@ -45,8 +45,10 @@ ZEPTOMAIL_CAREER_TO_EMAIL=careers@dahnay.com       # /api/career (inquiry)
 ZEPTOMAIL_CAREER_APPLY_TO_EMAIL=careers@dahnay.com # /api/career-apply (resume upload)
 ZEPTOMAIL_NEWSLETTER_TO_EMAIL=info@dahnay.com      # /api/newsletter
 
-# Optional
+# Optional — Google Tag Manager
+# GTM only loads when both vars are set (ID present AND enabled flag is the string "true").
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+NEXT_PUBLIC_GTM_ENABLED=true
 ```
 
 All `ZEPTOMAIL_*` values above are required at runtime — API routes return a 500 "Email service not configured." if any are missing.

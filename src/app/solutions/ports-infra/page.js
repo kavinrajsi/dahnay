@@ -3,6 +3,8 @@ import Banner from "@/components/sections/Banner";
 import PortsInfraSection from "@/components/sections/PortsInfraSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "DahNAY Ports & Infrastructure",
@@ -23,9 +25,27 @@ const faqItems = [
   { question: "What makes DahNAY different from other logistics providers?", answer: "DahNAY stands out through its customer-centric approach, global network, customised logistics solutions and strong focus on transparency. The company combines operational expertise with technology to deliver reliable and efficient supply chain services." },
 ];
 
+const path = "/solutions/ports-infra";
+const schemas = [
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Solutions", path: "/" },
+    { name: "Ports & Infrastructure", path },
+  ]),
+  serviceSchema({
+    name: "DahNAY Ports & Infrastructure",
+    description: metadata.description,
+    image: "/images/banners/banner-desktop-ports-infra.png",
+    path,
+    serviceType: "Port & Infrastructure Solutions",
+  }),
+  faqSchema(faqItems),
+];
+
 export default function PortsInfraPage() {
   return (
     <div className="page page--ports-infra">
+      <JsonLd data={schemas} />
       <Banner
         title="DahNAY Ports &amp; Infra"
         desktopImage="/images/banners/banner-desktop-ports-infra.png"

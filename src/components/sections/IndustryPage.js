@@ -7,6 +7,8 @@ import ContactFormSection from "@/components/sections/ContactFormSection";
 import CaseStudy from "@/components/sections/CaseStudy";
 import RelatedBlogs from "@/components/sections/RelatedBlogs";
 import IndustriesSlider from "@/components/sections/IndustriesSlider";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
 import industryData from "@/data/industries/index.json";
 import {
   ContinuityIcon,
@@ -26,8 +28,26 @@ export default function IndustryPage({ slug }) {
     return { ...item, icon: <Icon /> };
   });
 
+  const path = `/industries/${slug}`;
+  const schemas = [
+    breadcrumbList([
+      { name: "Home", path: "/" },
+      { name: "Industries", path: "/industries" },
+      { name: data.banner.title, path },
+    ]),
+    serviceSchema({
+      name: `${data.banner.title} Logistics`,
+      description: data.overview.content,
+      image: data.banner.desktopImage,
+      path,
+      serviceType: `${data.banner.title} Logistics`,
+    }),
+    faqSchema(data.faq?.items),
+  ];
+
   return (
     <div className="page page--industry">
+      <JsonLd data={schemas} />
       <Banner {...data.banner} />
 
       <section className="container industry-overview">

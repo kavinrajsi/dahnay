@@ -4,6 +4,8 @@
 import { useState, useEffect, useRef } from "react";
 import Banner from "@/components/sections/Banner";
 import ContactFormSection from "@/components/sections/ContactFormSection";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, organizationSchema } from "@/lib/schema";
 
 const stats = [
   { value: "20+", label: "Years of Experience" },
@@ -177,8 +179,17 @@ export default function ContactPage() {
     return acc;
   }, {});
 
+  const contactSchemas = [
+    breadcrumbList([
+      { name: "Home", path: "/" },
+      { name: "Contact", path: "/contact" },
+    ]),
+    organizationSchema({ offices }),
+  ];
+
   return (
     <div className="page page--contact">
+      <JsonLd data={contactSchemas} />
       <Banner
         title="Contact Us"
         desktopImage="/images/banners/banner-desktop-contact.png"

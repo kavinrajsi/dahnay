@@ -1,4 +1,6 @@
 import PolicyContent from "@/components/sections/PolicyContent";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, webPageSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "Terms & Conditions",
@@ -12,9 +14,22 @@ export const metadata = {
   },
 };
 
+const termsSchemas = [
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Terms & Conditions", path: "/terms-conditions" },
+  ]),
+  webPageSchema({
+    name: "Terms & Conditions",
+    description: metadata.description,
+    path: "/terms-conditions",
+  }),
+];
+
 export default function TermsConditionsPage() {
   return (
     <div className="page page--policy">
+      <JsonLd data={termsSchemas} />
       <PolicyContent title="Terms & Conditions" lastUpdated="March 2026">
         <h2>Acceptance of Terms</h2>
         <p>

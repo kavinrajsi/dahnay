@@ -5,6 +5,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ConsentBanner from "@/components/layout/ConsentBanner";
 import UtmCapture from "@/components/UtmCapture";
+import JsonLd from "@/components/JsonLd";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import "./globals.scss";
 
 const avenir = localFont({
@@ -72,6 +74,7 @@ export default function RootLayout({ children }) {
           });`}
       </Script>
       {shouldLoadGTM && <GoogleTagManager gtmId={gtmId} />}
+      <JsonLd data={[organizationSchema(), websiteSchema()]} />
       <body>
         <UtmCapture />
         <Header />

@@ -1,4 +1,6 @@
 import PolicyContent from "@/components/sections/PolicyContent";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, webPageSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "Whistleblower Policy",
@@ -12,9 +14,22 @@ export const metadata = {
   },
 };
 
+const whistleblowerSchemas = [
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Whistleblower Policy", path: "/whistleblower-policy" },
+  ]),
+  webPageSchema({
+    name: "Whistleblower Policy",
+    description: metadata.description,
+    path: "/whistleblower-policy",
+  }),
+];
+
 export default function WhistleblowerPolicyPage() {
   return (
     <div className="page page--policy">
+      <JsonLd data={whistleblowerSchemas} />
       <PolicyContent title="Whistleblower Policy" lastUpdated="March 2026">
         <h2>Purpose</h2>
         <p>

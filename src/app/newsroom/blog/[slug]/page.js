@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getBlogPost } from "@/lib/ghost";
+import JsonLd from "@/components/JsonLd";
+import { articleSchema, breadcrumbList } from "@/lib/schema";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -41,8 +43,20 @@ export default async function BlogPostPage({ params }) {
   const encodedUrl = encodeURIComponent(pageUrl);
   const encodedTitle = encodeURIComponent(post.title);
 
+  const path = `/newsroom/blog/${slug}`;
+  const schemas = [
+    breadcrumbList([
+      { name: "Home", path: "/" },
+      { name: "Newsroom", path: "/newsroom" },
+      { name: "Blog", path: "/newsroom" },
+      { name: post.title, path },
+    ]),
+    articleSchema(post, { path, type: "blog" }),
+  ];
+
   return (
     <div className="page page--blog-post">
+      <JsonLd data={schemas} />
       {/* Header */}
       <div className="blog-post__header container">
         <div className="blog-post__meta">

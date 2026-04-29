@@ -3,6 +3,8 @@ import Banner from "@/components/sections/Banner";
 import CenteredIntro from "@/components/sections/CenteredIntro";
 import ContentBlock from "@/components/sections/ContentBlock";
 import TrustCTA from "@/components/sections/TrustCTA";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, webPageSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "ESG & CSR",
@@ -16,9 +18,22 @@ export const metadata = {
   },
 };
 
+const esgSchemas = [
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "ESG & CSR", path: "/esg-csr" },
+  ]),
+  webPageSchema({
+    name: "ESG & CSR",
+    description: metadata.description,
+    path: "/esg-csr",
+  }),
+];
+
 export default function EsgCsrPage() {
   return (
     <div className="page page--esg-csr">
+      <JsonLd data={esgSchemas} />
       <Banner
         title="ESG &amp; CSR"
         desktopImage="/images/banners/banner-desktop-esg-csr.png"

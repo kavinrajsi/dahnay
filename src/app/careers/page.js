@@ -4,6 +4,8 @@ import SectionHeader from "@/components/sections/SectionHeader";
 import CareerJobsSection from "@/components/sections/CareerJobsSection";
 import CareerFormSection from "@/components/sections/CareerFormSection";
 import CareerApplyForm from "@/components/sections/CareerApplyForm";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, jobPostingSchema, webPageSchema } from "@/lib/schema";
 import { JOBS } from "@/data/careers/jobs";
 
 export const metadata = {
@@ -42,9 +44,23 @@ const CULTURE_CARDS = [
   },
 ];
 
+const careersSchemas = [
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Careers", path: "/careers" },
+  ]),
+  webPageSchema({
+    name: "Careers at DahNAY",
+    description: metadata.description,
+    path: "/careers",
+  }),
+  ...JOBS.map(jobPostingSchema),
+];
+
 export default function CareersPage() {
   return (
     <div className="page page--careers">
+      <JsonLd data={careersSchemas} />
       <Banner
         title="Careers"
         desktopImage="/images/banners/banner-desktop-careers.png"

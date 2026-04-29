@@ -3,6 +3,8 @@ import Banner from "@/components/sections/Banner";
 import LinesSection from "@/components/sections/LinesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "DahNAY Lines",
@@ -23,9 +25,27 @@ const faqItems = [
   { question: "What makes DahNAY different from other logistics providers?", answer: "DahNAY stands out through its customer-centric approach, global network, customised logistics solutions and strong focus on transparency. The company combines operational expertise with technology to deliver reliable and efficient supply chain services." },
 ];
 
+const path = "/solutions/lines";
+const schemas = [
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Solutions", path: "/" },
+    { name: "DahNAY Lines", path },
+  ]),
+  serviceSchema({
+    name: "DahNAY Lines",
+    description: metadata.description,
+    image: "/images/banners/banner-desktop-lines.png",
+    path,
+    serviceType: "Carrier & Shipping Line Management",
+  }),
+  faqSchema(faqItems),
+];
+
 export default function LinesPage() {
   return (
     <div className="page page--lines">
+      <JsonLd data={schemas} />
       <Banner
         title="DahNAY Lines"
         desktopImage="/images/banners/banner-desktop-lines.png"

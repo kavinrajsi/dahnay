@@ -1,4 +1,6 @@
 import PolicyContent from "@/components/sections/PolicyContent";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, webPageSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "POSH Policy",
@@ -12,9 +14,22 @@ export const metadata = {
   },
 };
 
+const poshSchemas = [
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "POSH Policy", path: "/posh-policy" },
+  ]),
+  webPageSchema({
+    name: "POSH Policy",
+    description: metadata.description,
+    path: "/posh-policy",
+  }),
+];
+
 export default function POSHPolicyPage() {
   return (
     <div className="page page--policy">
+      <JsonLd data={poshSchemas} />
       <PolicyContent title="Prevention of Sexual Harassment (POSH) Policy" lastUpdated="March 2026">
         <h2>Policy Statement</h2>
         <p>

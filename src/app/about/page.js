@@ -6,6 +6,8 @@ import FounderSection from "@/components/sections/FounderSection";
 import TrustCTA from "@/components/sections/TrustCTA";
 import FAQSection from "@/components/sections/FAQSection";
 import GrowForm from "@/components/sections/GrowForm";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, webPageSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "About Us",
@@ -19,9 +21,23 @@ export const metadata = {
   },
 };
 
+const aboutSchemas = [
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+  ]),
+  webPageSchema({
+    name: "About DahNAY",
+    description: metadata.description,
+    path: "/about",
+    type: "AboutPage",
+  }),
+];
+
 export default function AboutPage() {
   return (
     <div className="page page--about">
+      <JsonLd data={aboutSchemas} />
       <Banner
         title="About Us"
         desktopImage="/images/banners/banner-desktop-about-us.png"

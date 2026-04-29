@@ -24,17 +24,27 @@ const nextConfig = {
     return [
       // ─── Top-level legacy pages ────────────────────────────────────────────
       { source: "/contacts", destination: "/contact", permanent: true },
+      { source: "/contacts.html", destination: "/contact", permanent: true },
       { source: "/about-us", destination: "/about", permanent: true },
+      { source: "/about-us.html", destination: "/about", permanent: true },
       { source: "/advantage", destination: "/about", permanent: true },
+      { source: "/advantage.html", destination: "/about", permanent: true },
       { source: "/eco-system", destination: "/about", permanent: true },
+      { source: "/eco-system.html", destination: "/about", permanent: true },
       { source: "/schedule-call", destination: "/contact", permanent: true },
+      { source: "/schedule-call.html", destination: "/contact", permanent: true },
       { source: "/our-learning", destination: "/newsroom", permanent: true },
+      { source: "/our-learning.html", destination: "/newsroom", permanent: true },
 
       // ─── Content sections ──────────────────────────────────────────────────
       { source: "/news", destination: "/newsroom/news", permanent: true },
+      { source: "/news.html", destination: "/newsroom/news", permanent: true },
       { source: "/blog", destination: "/newsroom/blog", permanent: true },
+      { source: "/blog.html", destination: "/newsroom/blog", permanent: true },
       { source: "/case-study", destination: "/newsroom/case-study", permanent: true },
+      { source: "/case-study.html", destination: "/newsroom/case-study", permanent: true },
       { source: "/case-study-2", destination: "/newsroom/case-study", permanent: true },
+      { source: "/case-study-2.html", destination: "/newsroom/case-study", permanent: true },
 
       // ─── Services (old /services/ → new /service/) ─────────────────────────
       { source: "/services", destination: "/service", permanent: true },
@@ -60,7 +70,9 @@ const nextConfig = {
 
       // ─── Industries (old /industry/ → new /industries/) ────────────────────
       { source: "/industry", destination: "/industries", permanent: true },
+      { source: "/industry.html", destination: "/industries", permanent: true },
       { source: "/industry-landing-page", destination: "/industries", permanent: true },
+      { source: "/industry-landing-page.html", destination: "/industries", permanent: true },
       { source: "/industry/automotive", destination: "/industries/automotive", permanent: true },
       { source: "/industry/automotive.html", destination: "/industries/automotive", permanent: true },
       { source: "/industry/oil-gas", destination: "/industries/energy-oil-gas", permanent: true },
@@ -80,14 +92,21 @@ const nextConfig = {
       { source: "/industry/pharma", destination: "/industries", permanent: true },
       { source: "/industry/pharma.html", destination: "/industries", permanent: true },
       { source: "/white-goods", destination: "/industries/white-goods", permanent: true },
+      { source: "/white-goods.html", destination: "/industries/white-goods", permanent: true },
 
       // ─── Landing / template / deprecated pages ─────────────────────────────
       { source: "/ecommerce-landing-page", destination: "/service/ecommerce-fulfilment", permanent: true },
+      { source: "/ecommerce-landing-page.html", destination: "/service/ecommerce-fulfilment", permanent: true },
       { source: "/single-service", destination: "/service", permanent: true },
+      { source: "/single-service.html", destination: "/service", permanent: true },
       { source: "/elements", destination: "/", permanent: true },
+      { source: "/elements.html", destination: "/", permanent: true },
       { source: "/coming-soon", destination: "/", permanent: true },
+      { source: "/coming-soon.html", destination: "/", permanent: true },
       { source: "/load-calculator", destination: "/", permanent: true },
+      { source: "/load-calculator.html", destination: "/", permanent: true },
       { source: "/dlpl", destination: "/", permanent: true },
+      { source: "/dlpl.html", destination: "/", permanent: true },
     ];
   },
 };

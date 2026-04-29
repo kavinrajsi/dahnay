@@ -19,10 +19,10 @@ export const metadata = {
 };
 
 const faqItems = [
-  { question: "Why choose DahNAY as a growth partner?", answer: "DahNAY acts as a strategic logistics partner by offering scalable supply chain solutions, global freight expertise and technology-driven visibility. Businesses choose DahNAY to optimise costs, improve delivery timelines and support long-term growth." },
-  { question: "Does DahNAY have a global presence?", answer: "DahNAY operates across key global trade routes with a strong presence in India, the UAE and the USA. Through a network of international partners, DahNAY ensures seamless global logistics and cross-border shipping solutions." },
-  { question: "Does DahNAY offer shipment tracking?", answer: "Yes, DahNAY provides real-time shipment tracking and end-to-end visibility. Clients can monitor cargo movement, receive updates and stay informed throughout the shipping process." },
-  { question: "What makes DahNAY different from other logistics providers?", answer: "DahNAY stands out through its customer-centric approach, global network, customised logistics solutions and strong focus on transparency. The company combines operational expertise with technology to deliver reliable and efficient supply chain services." },
+  { question: "What is DahNAY Lines?", answer: "DahNAY Lines is a carrier and shipping-line management solution that streamlines container booking, sailing schedules, freight documentation, and rate management across global ocean and inland networks. It connects shippers with vetted ocean carriers through a unified booking interface and consolidated commercial workflow." },
+  { question: "How does DahNAY Lines simplify container booking?", answer: "DahNAY Lines streamlines ocean container booking with carrier rate comparison, real-time space availability, sailing schedule consolidation, and one-click booking workflows. Shippers and freight forwarders save planning time, secure capacity during peak demand, and access pre-negotiated rates with major shipping lines." },
+  { question: "Does DahNAY Lines support both FCL and LCL bookings?", answer: "Yes, DahNAY Lines supports Full Container Load (FCL) for dedicated container shipments and Less than Container Load (LCL) for shared container space. Shippers can compare carrier options, route alternatives, and rates for both formats through the same booking interface, optimising freight cost and transit time." },
+  { question: "Which shipping lines does DahNAY work with?", answer: "DahNAY Lines partners with major global ocean carriers and regional feeder operators serving India, the UAE, the USA, Southeast Asia, and major African and European trade lanes. Through these partnerships, customers access guaranteed space allocations, flexible rate structures, and reliable transit times. [CONFIRM: list of named carrier partners, e.g., Maersk, MSC, ONE]" },
 ];
 
 const path = "/solutions/lines";

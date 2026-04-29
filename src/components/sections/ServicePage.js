@@ -7,8 +7,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import GrowForm from "@/components/sections/GrowForm";
 import IndustriesSlider from "@/components/sections/IndustriesSlider";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbList, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
-import { LAST_REVIEWED_DISPLAY, LAST_REVIEWED_ISO } from "@/lib/site-meta";
+import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
 import serviceData from "@/data/services/index.json";
 
 export default function ServicePage({ slug }) {
@@ -31,12 +30,6 @@ export default function ServicePage({ slug }) {
       path,
       serviceType: data.banner.title,
     }),
-    webPageSchema({
-      name: data.banner.title,
-      description,
-      path,
-      dateModified: LAST_REVIEWED_ISO,
-    }),
     faqSchema(data.faq?.items),
   ];
 
@@ -44,10 +37,6 @@ export default function ServicePage({ slug }) {
     <div className="page page--service">
       <JsonLd data={schemas} />
       <Banner {...data.banner} />
-      <p className="service-page__last-reviewed container">
-        Last reviewed:{" "}
-        <time dateTime={LAST_REVIEWED_ISO}>{LAST_REVIEWED_DISPLAY}</time>
-      </p>
       <Overview {...data.overview} />
       <ServiceExpertise
         {...data.expertise}

@@ -4,8 +4,7 @@ import LinesSection from "@/components/sections/LinesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbList, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
-import { LAST_REVIEWED_DISPLAY, LAST_REVIEWED_ISO } from "@/lib/site-meta";
+import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "DahNAY Lines",
@@ -40,12 +39,6 @@ const schemas = [
     path,
     serviceType: "Carrier & Shipping Line Management",
   }),
-  webPageSchema({
-    name: "DahNAY Lines",
-    description: metadata.description,
-    path,
-    dateModified: LAST_REVIEWED_ISO,
-  }),
   faqSchema(faqItems),
 ];
 
@@ -57,10 +50,6 @@ export default function LinesPage() {
         title="DahNAY Lines"
         desktopImage="/images/banners/banner-desktop-lines.png"
       />
-      <p className="solution-page__last-reviewed container">
-        Last reviewed:{" "}
-        <time dateTime={LAST_REVIEWED_ISO}>{LAST_REVIEWED_DISPLAY}</time>
-      </p>
 
       <LinesSection />
 

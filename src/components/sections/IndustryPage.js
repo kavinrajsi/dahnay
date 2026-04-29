@@ -8,8 +8,7 @@ import CaseStudy from "@/components/sections/CaseStudy";
 import RelatedBlogs from "@/components/sections/RelatedBlogs";
 import IndustriesSlider from "@/components/sections/IndustriesSlider";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbList, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
-import { LAST_REVIEWED_DISPLAY, LAST_REVIEWED_ISO } from "@/lib/site-meta";
+import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
 import industryData from "@/data/industries/index.json";
 import {
   ContinuityIcon,
@@ -43,12 +42,6 @@ export default function IndustryPage({ slug }) {
       path,
       serviceType: `${data.banner.title} Logistics`,
     }),
-    webPageSchema({
-      name: `${data.banner.title} Logistics`,
-      description: data.overview.content,
-      path,
-      dateModified: LAST_REVIEWED_ISO,
-    }),
     faqSchema(data.faq?.items),
   ];
 
@@ -56,10 +49,6 @@ export default function IndustryPage({ slug }) {
     <div className="page page--industry">
       <JsonLd data={schemas} />
       <Banner {...data.banner} />
-      <p className="industry-page__last-reviewed container">
-        Last reviewed:{" "}
-        <time dateTime={LAST_REVIEWED_ISO}>{LAST_REVIEWED_DISPLAY}</time>
-      </p>
 
       <section className="container industry-overview">
         <div className="industry-overview__container">

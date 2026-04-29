@@ -4,8 +4,7 @@ import PortsInfraSection from "@/components/sections/PortsInfraSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumbList, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
-import { LAST_REVIEWED_DISPLAY, LAST_REVIEWED_ISO } from "@/lib/site-meta";
+import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "DahNAY Ports & Infrastructure",
@@ -40,12 +39,6 @@ const schemas = [
     path,
     serviceType: "Port & Infrastructure Solutions",
   }),
-  webPageSchema({
-    name: "DahNAY Ports & Infrastructure",
-    description: metadata.description,
-    path,
-    dateModified: LAST_REVIEWED_ISO,
-  }),
   faqSchema(faqItems),
 ];
 
@@ -57,10 +50,6 @@ export default function PortsInfraPage() {
         title="DahNAY Ports &amp; Infra"
         desktopImage="/images/banners/banner-desktop-ports-infra.png"
       />
-      <p className="solution-page__last-reviewed container">
-        Last reviewed:{" "}
-        <time dateTime={LAST_REVIEWED_ISO}>{LAST_REVIEWED_DISPLAY}</time>
-      </p>
 
       <PortsInfraSection />
 

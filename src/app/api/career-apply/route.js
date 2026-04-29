@@ -142,6 +142,11 @@ export async function POST(request) {
       );
     }
 
+    // Shares WhatsApp templates with /api/career. Contract is 4 positional
+    // params: [name, email, mobile, details]. `details` is the user's free-text
+    // message for inquiries; here we build it from job-application fields so a
+    // single Meta-approved template body fits both flows. If you change the
+    // shape of `summary`, also update the `dahnay_career_*` template bodies.
     const summary = `Applied for ${jobTitle || "open role"} — ${experience} years' experience, based in ${location}`;
     await notifyAdminAndUser({
       form: "career-apply",

@@ -1,4 +1,6 @@
 import { getBlogPosts } from "@/lib/ghost";
+import servicesData from "@/data/services/index.json";
+import industriesData from "@/data/industries/index.json";
 
 export const revalidate = 3600;
 
@@ -10,6 +12,55 @@ const POST_TYPE_PATH = {
   blog: "blog",
   "case-study": "case-study",
 };
+
+// Inline-coded FAQs that aren't in src/data JSON. Hybrid model (Approach C):
+// these are duplicated from their respective page files and will drift if not
+// kept in sync. When refactoring, move these into a shared JSON source.
+const HOME_FAQS = [
+  { question: "Why choose DahNAY as a growth partner?", answer: "DahNAY acts as a strategic logistics partner by offering scalable supply chain solutions, global freight expertise and technology-driven visibility. Businesses choose DahNAY to optimise costs, improve delivery timelines and support long-term growth." },
+  { question: "Can DahNAY handle oversized or heavy equipment?", answer: "Yes, DahNAY specialises in handling oversized cargo, heavy equipment and project logistics. From route surveys to heavy-lift operations, DahNAY ensures safe and compliant transportation of out-of-gauge and breakbulk cargo." },
+  { question: "Does DahNAY have a global presence?", answer: "DahNAY operates across key global trade routes with a strong presence in India, the UAE and the USA. Through a network of international partners, DahNAY ensures seamless global logistics and cross-border shipping solutions." },
+  { question: "Does DahNAY offer shipment tracking?", answer: "Yes, DahNAY provides real-time shipment tracking and end-to-end visibility. Clients can monitor cargo movement, receive updates and stay informed throughout the shipping process." },
+  { question: "How do I request a shipping quote from DahNAY?", answer: "You can request a shipping quote by contacting DahNAY through the website, email or customer support team. Share shipment details such as cargo type, volume, origin and destination to receive a customised logistics quote." },
+  { question: "What makes DahNAY different from other logistics providers?", answer: "DahNAY stands out through its customer-centric approach, global network, customised logistics solutions and strong focus on transparency. The company combines operational expertise with technology to deliver reliable and efficient supply chain services." },
+];
+
+const ABOUT_FAQS = [
+  { question: "Is DahNAY only a freight forwarding company?", answer: "No, DahNAY is an integrated logistics solutions provider. In addition to freight forwarding, DahNAY offers warehousing, customs brokerage, consolidation, project cargo handling and last mile delivery." },
+  { question: "How long has DahNAY been in business?", answer: "DahNAY has built a strong presence in the logistics industry over the years, delivering reliable freight and supply chain solutions across global markets." },
+  { question: "Where is DahNAY headquartered?", answer: "DahNAY is headquartered in India, with strategic operations and partnerships across global markets to support international logistics." },
+  { question: "Is DahNAY involved in sustainability or CSR initiatives?", answer: "DahNAY is committed to responsible logistics practices by optimising routes, reducing inefficiencies and supporting sustainable supply chain operations wherever possible." },
+  { question: "Who leads DahNAY?", answer: "DahNAY was founded by Mr. Murali Babu. Since its inception, the company has shown remarkable growth, evolving from a single person operation into a large scale international logistics organization with a global presence." },
+  { question: "What values guide DahNAY?", answer: "DahNAY is guided by integrity, curiosity, empathy, responsibility, and inclusion. These values shape every logistics solution and client partnership." },
+];
+
+const INDUSTRIES_INDEX_FAQS = [
+  { question: "Do you handle time-critical shipments?", answer: "Yes. Our solutions support industries operating on strict production and project timelines." },
+  { question: "Can DahNAY manage oversized and project cargo?", answer: "Yes. We specialise in OOG and large-scale industrial shipments." },
+  { question: "Which geographies do you serve?", answer: "We support domestic and international movements across key global markets." },
+  { question: "Do you manage end-to-end logistics?", answer: "Yes. From freight forwarding to customs to last-mile distribution." },
+];
+
+const LOGISTICS_FAQS = [
+  { question: "What is the DahNAY logistics platform?", answer: "The DahNAY logistics platform is an end-to-end supply chain management system providing real-time shipment tracking, automated documentation, freight booking, and visibility across air, sea, road, and warehouse operations. It connects shippers with consolidated logistics data through a single interface for planning, execution, and reporting." },
+  { question: "How does DahNAY's logistics platform improve shipment visibility?", answer: "DahNAY's platform delivers real-time shipment tracking with milestone alerts, geo-location updates, exception notifications, and consolidated dashboards across modes and carriers. Customers get a single view of all shipments in transit, enabling proactive issue management and accurate ETAs for downstream operations and customers." },
+  { question: "Can the DahNAY logistics platform integrate with ERP systems?", answer: "Yes, DahNAY's logistics platform supports integration with enterprise systems including ERP, WMS, and TMS platforms via standard APIs and EDI connections. This enables automated shipment booking, invoice reconciliation, and data flow between supply chain partners without manual entry." },
+  { question: "Who can use the DahNAY logistics platform?", answer: "Manufacturers, exporters, importers, distributors, and 3PL clients across automotive, FMCG, retail, energy, and construction sectors use DahNAY's logistics platform. The system scales from single-shipment operators to enterprise customers with multi-country, multi-mode supply chains, with role-based access for shippers, carriers, and consignees." },
+];
+
+const LINES_FAQS = [
+  { question: "What is DahNAY Lines?", answer: "DahNAY Lines is a carrier and shipping-line management solution that streamlines container booking, sailing schedules, freight documentation, and rate management across global ocean and inland networks. It connects shippers with vetted ocean carriers through a unified booking interface and consolidated commercial workflow." },
+  { question: "How does DahNAY Lines simplify container booking?", answer: "DahNAY Lines streamlines ocean container booking with carrier rate comparison, real-time space availability, sailing schedule consolidation, and one-click booking workflows. Shippers and freight forwarders save planning time, secure capacity during peak demand, and access pre-negotiated rates with major shipping lines." },
+  { question: "Does DahNAY Lines support both FCL and LCL bookings?", answer: "Yes, DahNAY Lines supports Full Container Load (FCL) for dedicated container shipments and Less than Container Load (LCL) for shared container space. Shippers can compare carrier options, route alternatives, and rates for both formats through the same booking interface, optimising freight cost and transit time." },
+  { question: "Which shipping lines does DahNAY work with?", answer: "DahNAY Lines partners with major global ocean carriers and regional feeder operators serving India, the UAE, the USA, Southeast Asia, and major African and European trade lanes. Through these partnerships, customers access guaranteed space allocations, flexible rate structures, and reliable transit times." },
+];
+
+const PORTS_FAQS = [
+  { question: "What does DahNAY Ports and Infrastructure cover?", answer: "DahNAY Ports and Infrastructure provides cargo handling efficiency, terminal operations support, yard management, and equipment optimisation for ports and inland container depots. We help port operators, ICD facilities, and logistics hubs improve container throughput, reduce dwell times, and streamline gate-in and gate-out processes." },
+  { question: "How does DahNAY improve port and terminal operations?", answer: "DahNAY improves port operations through yard layout planning, equipment scheduling, gate management, and operational analytics. We work with terminals to optimise container moves per hour, reduce truck turn times, and improve berth productivity, helping port operators handle increased volumes without major infrastructure expansion." },
+  { question: "Does DahNAY support inland container depots and dry ports?", answer: "Yes, DahNAY supports inland container depots, dry ports, and container freight stations with operational consulting, equipment optimisation, and terminal management services. We help inland facilities serve as efficient extensions of major seaports, enabling faster customs clearance and seamless intermodal transfers between sea, rail, and road." },
+  { question: "Where does DahNAY operate port and infrastructure services?", answer: "DahNAY supports port and infrastructure operations primarily across India, with strong presence at major container ports including Chennai, Mumbai, Krishnapatnam, and Tuticorin. Our 47 offices in 19+ countries enable us to extend port operational expertise to client facilities across South Asia, the Middle East, and Africa." },
+];
 
 const STATIC_PRE_NEWSROOM = `# DahNAY
 
@@ -63,18 +114,12 @@ const STATIC_PRE_NEWSROOM = `# DahNAY
 - [Medium](https://medium.com/@dahnaylogistics): Long-form articles and industry perspectives published by DahNAY Logistics on Medium.
 `;
 
-const STATIC_POST_DYNAMIC = `## Careers
+const STATIC_CAREERS = `## Careers
 
 - [Careers](https://www.dahnay.com/careers): Open roles and a people-first culture organised around three pillars — People-First Culture, One Team Many Voices, and Growth & Opportunity (mentorship, training, advancement pathways from day one). Great Place to Work Certified (2024–2026).
+`;
 
-## Frequently Asked
-
-- DahNAY operates across air, sea, road, customs, and project logistics with real-time shipment tracking and end-to-end visibility for clients.
-- DahNAY handles oversized and heavy equipment using engineered project logistics, hydraulic axle trailers, and breakbulk/heavy-lift coordination.
-- DahNAY has a global presence across 45+ offices in 19+ countries, with owned warehousing in the USA and UAE and CFS facilities in Chennai and Tuticorin.
-- Quotes can be requested via the contact form at [https://www.dahnay.com/contact](https://www.dahnay.com/contact) or by emailing info@dahnay.com.
-
-## Optional
+const STATIC_TAIL = `## Optional
 
 - [Sitemap](https://www.dahnay.com/sitemap.xml): Machine-readable list of all indexed URLs.
 - [Privacy Policy](https://www.dahnay.com/privacy-policy)
@@ -95,7 +140,6 @@ const STATIC_POST_DYNAMIC = `## Careers
 - International offices: USA (New Jersey), Canada (Ontario), UK (London), UAE (Dubai, Sharjah, Ras Al Khaimah, Jebel Ali), Ghana (Accra), Kenya (Nairobi), Congo (Kinshasa), Sri Lanka (Colombo), Malaysia (Port Klang), Turkey (Istanbul), and additional offices across Bangladesh, Singapore, Thailand, Vietnam, Indonesia, and Hong Kong.
 `;
 
-// Flatten whitespace, escape markdown link breakers, truncate at word boundary.
 function cleanExcerpt(text) {
   if (!text) return "";
   const flat = text.replace(/\s+/g, " ").trim();
@@ -149,16 +193,71 @@ function buildDynamicSections(posts) {
   return sections.length ? `${sections.join("\n\n")}\n\n` : "";
 }
 
+function formatFAQBlock(items) {
+  return items
+    .map(({ question, answer }) => `**Q: ${question}**\nA: ${answer}`)
+    .join("\n\n");
+}
+
+function formatFAQSubsection(title, url, items) {
+  if (!items?.length) return null;
+  return `### ${title} (${url})\n\n${formatFAQBlock(items)}`;
+}
+
+function buildFAQSection() {
+  const subs = [
+    formatFAQSubsection("Home", siteUrl, HOME_FAQS),
+    formatFAQSubsection("About DahNAY", `${siteUrl}/about`, ABOUT_FAQS),
+    formatFAQSubsection("All Industries", `${siteUrl}/industries`, INDUSTRIES_INDEX_FAQS),
+    formatFAQSubsection("DahNAY Logistics Platform", `${siteUrl}/solutions/logistics`, LOGISTICS_FAQS),
+    formatFAQSubsection("DahNAY Lines", `${siteUrl}/solutions/lines`, LINES_FAQS),
+    formatFAQSubsection("DahNAY Ports & Infrastructure", `${siteUrl}/solutions/ports-infra`, PORTS_FAQS),
+  ];
+
+  for (const slug of Object.keys(servicesData)) {
+    const data = servicesData[slug];
+    subs.push(
+      formatFAQSubsection(
+        data?.banner?.title || slug,
+        `${siteUrl}/service/${slug}`,
+        data?.faq?.items,
+      ),
+    );
+  }
+
+  for (const slug of Object.keys(industriesData)) {
+    if (slug === "shared") continue;
+    const data = industriesData[slug];
+    subs.push(
+      formatFAQSubsection(
+        `${data?.banner?.title || slug} Logistics`,
+        `${siteUrl}/industries/${slug}`,
+        data?.faq?.items,
+      ),
+    );
+  }
+
+  const body = subs.filter(Boolean).join("\n\n");
+  return body ? `## Frequently Asked\n\n${body}\n\n` : "";
+}
+
 export async function GET() {
   let dynamicSections = "";
   try {
     const { posts } = await getBlogPosts({ limit: "all" });
     dynamicSections = buildDynamicSections(posts);
   } catch {
-    // Ghost unreachable — serve the static portion only.
+    // Ghost unreachable — serve everything except blog/case-study posts.
   }
 
-  const body = `${STATIC_PRE_NEWSROOM}\n${dynamicSections}${STATIC_POST_DYNAMIC}`;
+  const faqSection = buildFAQSection();
+
+  const body =
+    `${STATIC_PRE_NEWSROOM}\n` +
+    `${dynamicSections}` +
+    `${STATIC_CAREERS}\n` +
+    `${faqSection}` +
+    `${STATIC_TAIL}`;
 
   return new Response(body, {
     headers: {

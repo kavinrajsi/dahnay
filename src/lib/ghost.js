@@ -21,12 +21,13 @@ function derivePostType(tags) {
 // JS that ships with the Casper theme. Without that JS we get a broken UI:
 // raw-seconds duration, dead buttons, broken thumbnail placeholder. Force the
 // browser to render native HTML5 controls instead by adding `controls` to
-// every <audio> tag. Same logic applies to <video>.
+// every <audio> and <video>. `controlslist="nodownload"` removes the
+// browser's built-in download item from the kebab menu.
 function transformGhostHtml(html) {
   if (!html) return html;
   return html.replace(
     /<(audio|video)(?![^>]*\bcontrols\b)([^>]*)>/gi,
-    "<$1 controls$2>"
+    '<$1 controls controlslist="nodownload"$2>'
   );
 }
 

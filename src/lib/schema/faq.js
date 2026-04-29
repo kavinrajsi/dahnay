@@ -3,6 +3,10 @@ export function faqSchema(items) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".faq__question", ".faq__answer"],
+    },
     mainEntity: items.map(({ question, answer }) => ({
       "@type": "Question",
       name: question,

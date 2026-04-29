@@ -14,6 +14,10 @@ export function articleSchema(post, { path, type = "blog" } = {}) {
     "@context": "https://schema.org",
     "@type": articleType,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".blog-post__title", ".blog-post__excerpt"],
+    },
     headline: post.title,
     ...(post.excerpt && { description: post.excerpt }),
     ...(post.featuredImage?.url && { image: [post.featuredImage.url] }),

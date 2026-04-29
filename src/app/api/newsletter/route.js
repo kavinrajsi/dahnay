@@ -57,10 +57,11 @@ export async function POST(request) {
       );
     }
 
+    // Newsletter form collects email only — no user-side WhatsApp template
+    // is fired. userMobile is null so the helper skips the user branch.
     await notifyAdminAndUser({
       form: "newsletter",
       adminTemplateEnv: "PINBOT_TEMPLATE_NEWSLETTER_ADMIN",
-      userTemplateEnv: "PINBOT_TEMPLATE_NEWSLETTER_USER",
       userMobile: null,
       parameters: [email],
     });

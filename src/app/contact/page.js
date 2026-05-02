@@ -56,7 +56,7 @@ const offices = [
   { city: "Accra", country: "Ghana", region: "Ghana", address: "EJ163 Abakaliki St, GK-0072-1417, Post Office Box 112 Nungua, Accra, Ghana", email: "GH.admin@dahnay.com" },
   { city: "Nairobi", country: "Kenya", region: "Kenya", address: "Office No. 3B-03, 3rd Floor, Maruti Heights Building, Opposite Hotel Tamrind Tree, Langata, Nairobi, Kenya", phone: "+254-781588082", email: "reachus@dahnay.com" },
   { city: "Istanbul", country: "Turkey", region: "Turkey", address: "Idealtepe Mahallesi, Turgut Ozal Bulvari, Ideal Sitesi No: 127/A D:4 K:1, Maltepe, Istanbul, Turkey", phone: "905411855509", email: "reachus@dahnay.com" },
-  { city: "Dubai", country: "UAE", region: "UAE", address: "103, Shipping Tower, Al-Mina St, Dubai, UAE", phone: "+971 43510002" },
+  { city: "Dubai", country: "UAE", region: "UAE", address: "Office no: 101, Arif & Bintoak Building, Zaa'beel St - Al Karama - Dubai - United Arab Emirates, Location: Casanova Furniture Third Branch", phone: "043510002" },
   { city: "Sharjah", country: "UAE", region: "UAE", address: "No.409, Al Mulla Tower, Al Ittihad St \u2013 Al Nadha, Sharjah, UAE", phone: "+971 65323791" },
   { city: "Ras Al Khaimah", country: "UAE", region: "UAE", address: "No.AC01, Al Hamriya Industrial Free Zone, Ras Al Kaima, UAE", phone: "+971 72075793" },
   { city: "Jebel Ali", country: "UAE", region: "UAE", address: "FZS1BE01, Jebel Ali Free Zone South, UAE", phone: "+971 42725787" },

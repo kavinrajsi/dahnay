@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import SectionHeader from "@/components/sections/SectionHeader";
 import CareerJobsSection from "@/components/sections/CareerJobsSection";
 import CareerFormSection from "@/components/sections/CareerFormSection";
@@ -44,11 +45,13 @@ const CULTURE_CARDS = [
   },
 ];
 
+const trail = [
+  { name: "Home", path: "/" },
+  { name: "Careers", path: "/careers" },
+];
+
 const careersSchemas = [
-  breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "Careers", path: "/careers" },
-  ]),
+  breadcrumbList(trail),
   webPageSchema({
     name: "Careers at DahNAY",
     description: metadata.description,
@@ -65,6 +68,7 @@ export default function CareersPage() {
         title="Careers"
         desktopImage="/images/banners/banner-desktop-careers.png"
       />
+      <Breadcrumb trail={trail} />
 
       {/* Great Place to Work strip */}
       <div className="gptw-strip">

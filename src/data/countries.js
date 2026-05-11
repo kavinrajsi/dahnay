@@ -1,17 +1,9 @@
-import { getCountries, getCountryCallingCode } from "libphonenumber-js/min";
+// Static snapshot generated from libphonenumber-js + Intl.DisplayNames("en").
+// Pre-built to avoid SSR/CSR hydration mismatches caused by Node and browser
+// shipping different CLDR versions (e.g. FK was "Falkland Islands (Islas
+// Malvinas)" on older Node vs "Falkland Islands" in modern browsers).
+// Regenerate with: scripts/generate-countries.mjs
+import countries from "./countries.json";
 
-// English country names from the runtime — avoids hardcoding 250 entries.
-// `Intl.DisplayNames` is supported in Node 18+ and all modern browsers.
-const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
-
-export const COUNTRIES = getCountries()
-  .map((iso) => {
-    const name = regionNames.of(iso);
-    return name
-      ? { iso, name, dialCode: getCountryCallingCode(iso) }
-      : null;
-  })
-  .filter(Boolean)
-  .sort((a, b) => a.name.localeCompare(b.name));
-
+export const COUNTRIES = countries;
 export const DEFAULT_COUNTRY_ISO = "IN";

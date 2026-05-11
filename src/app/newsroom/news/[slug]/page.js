@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getBlogPost, getBlogPosts } from "@/lib/ghost";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { articleSchema, breadcrumbList } from "@/lib/schema";
 
@@ -55,19 +56,21 @@ export default async function NewsPostPage({ params }) {
   const encodedTitle = encodeURIComponent(post.title);
 
   const path = `/newsroom/news/${slug}`;
+  const trail = [
+    { name: "Home", path: "/" },
+    { name: "Newsroom", path: "/newsroom" },
+    { name: "News", path: "/newsroom/news" },
+    { name: post.title, path },
+  ];
   const schemas = [
-    breadcrumbList([
-      { name: "Home", path: "/" },
-      { name: "Newsroom", path: "/newsroom" },
-      { name: "News", path: "/newsroom" },
-      { name: post.title, path },
-    ]),
+    breadcrumbList(trail),
     articleSchema(post, { path, type: "news" }),
   ];
 
   return (
     <div className="page page--blog-post">
       <JsonLd data={schemas} />
+      <Breadcrumb trail={trail} />
       {/* Header */}
       <div className="blog-post__header container">
         <div className="blog-post__meta">

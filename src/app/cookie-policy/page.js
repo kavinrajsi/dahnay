@@ -1,4 +1,5 @@
 import PolicyContent from "@/components/sections/PolicyContent";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
 
@@ -14,11 +15,13 @@ export const metadata = {
   },
 };
 
+const trail = [
+  { name: "Home", path: "/" },
+  { name: "Cookie Policy", path: "/cookie-policy" },
+];
+
 const cookieSchemas = [
-  breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "Cookie Policy", path: "/cookie-policy" },
-  ]),
+  breadcrumbList(trail),
   webPageSchema({
     name: "Cookie Policy",
     description: metadata.description,
@@ -30,6 +33,7 @@ export default function CookiePolicyPage() {
   return (
     <div className="page page--policy">
       <JsonLd data={cookieSchemas} />
+      <Breadcrumb trail={trail} />
       <PolicyContent title="Cookie Policy" lastUpdated="March 2026">
         <h2>What Are Cookies</h2>
         <p>

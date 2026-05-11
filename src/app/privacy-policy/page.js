@@ -1,4 +1,5 @@
 import PolicyContent from "@/components/sections/PolicyContent";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
 
@@ -14,11 +15,13 @@ export const metadata = {
   },
 };
 
+const trail = [
+  { name: "Home", path: "/" },
+  { name: "Privacy Policy", path: "/privacy-policy" },
+];
+
 const privacySchemas = [
-  breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "Privacy Policy", path: "/privacy-policy" },
-  ]),
+  breadcrumbList(trail),
   webPageSchema({
     name: "Privacy Policy",
     description: metadata.description,
@@ -30,6 +33,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="page page--policy">
       <JsonLd data={privacySchemas} />
+      <Breadcrumb trail={trail} />
       <PolicyContent title="Privacy Policy" lastUpdated="March 2026">
         <h2>Introduction</h2>
         <p>

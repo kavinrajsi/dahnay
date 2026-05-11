@@ -1,4 +1,5 @@
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import SectionHeader from "@/components/sections/SectionHeader";
 import Expertise from "@/components/sections/Expertise";
 import WhyDahnay from "@/components/sections/WhyDahnay";
@@ -29,12 +30,13 @@ export default function IndustryPage({ slug }) {
   });
 
   const path = `/industries/${slug}`;
+  const trail = [
+    { name: "Home", path: "/" },
+    { name: "Industries", path: "/industries" },
+    { name: data.banner.title, path },
+  ];
   const schemas = [
-    breadcrumbList([
-      { name: "Home", path: "/" },
-      { name: "Industries", path: "/industries" },
-      { name: data.banner.title, path },
-    ]),
+    breadcrumbList(trail),
     serviceSchema({
       name: `${data.banner.title} Logistics`,
       description: data.overview.content,
@@ -49,6 +51,7 @@ export default function IndustryPage({ slug }) {
     <div className="page page--industry">
       <JsonLd data={schemas} />
       <Banner {...data.banner} />
+      <Breadcrumb trail={trail} />
 
       <section className="container industry-overview">
         <div className="industry-overview__container">

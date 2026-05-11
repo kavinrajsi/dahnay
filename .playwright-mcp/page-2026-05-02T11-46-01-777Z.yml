@@ -1,0 +1,597 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e345] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e346]:
+      - img [ref=e347]
+    - generic [ref=e350]:
+      - button "Open issues overlay" [ref=e351]:
+        - generic [ref=e352]:
+          - generic [ref=e353]: "7"
+          - generic [ref=e354]: "8"
+        - generic [ref=e355]:
+          - text: Issue
+          - generic [ref=e356]: s
+      - button "Collapse issues badge" [ref=e357]:
+        - img [ref=e358]
+  - banner [ref=e360]:
+    - generic [ref=e361]:
+      - link [ref=e362] [cursor=pointer]:
+        - /url: /
+        - img [ref=e363]
+      - navigation [ref=e369]:
+        - link "Home" [ref=e370] [cursor=pointer]:
+          - /url: /
+        - button "Solutions" [ref=e372] [cursor=pointer]:
+          - text: Solutions
+          - img [ref=e373]
+        - button "Industries" [ref=e376] [cursor=pointer]:
+          - text: Industries
+          - img [ref=e377]
+        - button "About us" [ref=e380] [cursor=pointer]:
+          - text: About us
+          - img [ref=e381]
+        - button "Newsroom" [ref=e384] [cursor=pointer]:
+          - text: Newsroom
+          - img [ref=e385]
+        - link "Contact us" [ref=e387] [cursor=pointer]:
+          - /url: /contact
+      - link "Tracking" [ref=e388] [cursor=pointer]:
+        - /url: https://dahnaylogistics.logitrack.live/?utm_source=dahnay&utm_medium=referral&utm_campaign=header_tracking_cta
+  - main [ref=e389]:
+    - generic [ref=e390]:
+      - img "About Us" [ref=e392]
+      - navigation "Breadcrumb" [ref=e393]:
+        - list [ref=e395]:
+          - listitem [ref=e396]:
+            - link "Home" [ref=e397] [cursor=pointer]:
+              - /url: /
+            - img [ref=e398]
+          - listitem [ref=e400]:
+            - generic [ref=e401]: About Us
+      - generic [ref=e403]:
+        - img "DahNAY team and operations" [ref=e405]
+        - generic [ref=e406]:
+          - generic [ref=e407]:
+            - generic [ref=e409]: Who we are
+            - paragraph [ref=e410]: At DahNAY, growth isn't just a business outcome, it's a journey. From a single desk to 35+ countries, what's grown with us is a belief in people, in progress and in the power of showing up, shipment after shipment. Every milestone we've reached is stitched with late nights, honest calls, small wins, big leaps and a team that never stopped caring. And the journey has only just begun.
+          - generic [ref=e411]:
+            - generic [ref=e412]:
+              - generic [ref=e413]: 0+
+              - generic [ref=e414]: Years of Experience
+            - generic [ref=e415]:
+              - generic [ref=e416]: 0+
+              - generic [ref=e417]: Clients
+            - generic [ref=e418]:
+              - generic [ref=e419]: 0+
+              - generic [ref=e420]: Countries
+            - generic [ref=e421]:
+              - generic [ref=e422]: 0+
+              - generic [ref=e423]: Offices Worldwide
+      - generic [ref=e425]:
+        - generic [ref=e426]:
+          - generic [ref=e427]: Why us
+          - heading "What drives us" [level=2] [ref=e428]
+          - paragraph [ref=e429]: The passion that drives DahNAY is the belief that movement can empower progress for people, partners and economies.
+        - generic [ref=e430]:
+          - generic [ref=e431]:
+            - img [ref=e433]
+            - generic [ref=e435]:
+              - heading "Vision" [level=3] [ref=e436]
+              - paragraph [ref=e437]: To be a complete and future-ready logistics partner, delivering growth that creates a ripple effect of prosperity for every stakeholder we serve, guided by uncompromising values.
+          - generic [ref=e438]:
+            - img [ref=e440]
+            - generic [ref=e442]:
+              - heading "Mission" [level=3] [ref=e443]
+              - paragraph [ref=e444]: Drive growth-in-action every day, investing in talent, building deeper partnerships and delivering logistics that move businesses forward.
+          - generic [ref=e445]:
+            - img [ref=e447]
+            - generic [ref=e456]:
+              - heading "Values" [level=3] [ref=e457]
+              - paragraph [ref=e458]: Integrity, Curiosity, Empathy, Responsibility, Inclusion
+      - generic [ref=e460]:
+        - generic [ref=e461]:
+          - generic [ref=e462]:
+            - generic [ref=e463]: CEO & Founder
+            - heading "Mr. Murali Babu" [level=2] [ref=e464]
+          - paragraph [ref=e465]: I'm all about growth and efficiency. My passion for logistics drives me to excel further in the realm of logistics. At DahNAY, our mission is to Grow The Now, ensuring the seamless movement of your valuable cargo. When your cargo is in our hands, rest assured it receives our utmost attention. We provide tailored, efficient solutions because we understand the significance of your brand and reputation.
+          - link [ref=e467] [cursor=pointer]:
+            - /url: https://linkedin.com
+            - img [ref=e468]
+        - img "Mr. Murali Babu - CEO & Founder of DahNAY" [ref=e474]
+      - generic [ref=e477]:
+        - heading "Need a partner you can Trust?" [level=2] [ref=e478]
+        - paragraph [ref=e479]: "Partner with DahNAY for smarter logistics: transparent pricing, proactive support and solutions designed to fit your growth."
+        - link "Join us" [ref=e480] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e482]:
+        - generic [ref=e484]:
+          - generic [ref=e485]: FAQs
+          - heading "Frequently Asked Questions" [level=2] [ref=e486]
+          - paragraph [ref=e487]: Learn more about DahNAY, our story, values and the team driving innovation in global logistics.
+        - generic [ref=e489]:
+          - button "Is DahNAY only a freight forwarding company?" [ref=e491] [cursor=pointer]:
+            - generic [ref=e492]: Is DahNAY only a freight forwarding company?
+            - img [ref=e494]
+          - button "How long has DahNAY been in business?" [ref=e498] [cursor=pointer]:
+            - generic [ref=e499]: How long has DahNAY been in business?
+            - img [ref=e501]
+          - button "Where is DahNAY headquartered?" [ref=e505] [cursor=pointer]:
+            - generic [ref=e506]: Where is DahNAY headquartered?
+            - img [ref=e508]
+          - button "Is DahNAY involved in sustainability or CSR initiatives?" [ref=e512] [cursor=pointer]:
+            - generic [ref=e513]: Is DahNAY involved in sustainability or CSR initiatives?
+            - img [ref=e515]
+          - button "Who leads DahNAY?" [ref=e519] [cursor=pointer]:
+            - generic [ref=e520]: Who leads DahNAY?
+            - img [ref=e522]
+          - button "What values guide DahNAY?" [ref=e526] [cursor=pointer]:
+            - generic [ref=e527]: What values guide DahNAY?
+            - img [ref=e529]
+      - generic [ref=e533]:
+        - generic [ref=e534]:
+          - generic [ref=e536]:
+            - generic [ref=e537]: Reach us
+            - heading "Grow the Now" [level=2] [ref=e538]
+            - paragraph [ref=e539]: Wherever your business takes you, DahNAY is there to drive your success.
+          - generic [ref=e540]:
+            - img [ref=e542]
+            - link "info@dahnay.com" [ref=e544] [cursor=pointer]:
+              - /url: mailto:info@dahnay.com
+        - generic [ref=e546]:
+          - textbox
+          - generic [ref=e547]:
+            - generic [ref=e548]:
+              - generic [ref=e549]: Name *
+              - textbox "Full name" [ref=e550]
+            - generic [ref=e551]:
+              - generic [ref=e552]: Email Address *
+              - textbox "Email address" [ref=e553]
+            - generic [ref=e554]:
+              - generic [ref=e555]: Mobile Number *
+              - generic [ref=e556]:
+                - combobox "Country" [ref=e557] [cursor=pointer]:
+                  - option "Afghanistan (+93)"
+                  - option "Åland Islands (+358)"
+                  - option "Albania (+355)"
+                  - option "Algeria (+213)"
+                  - option "American Samoa (+1)"
+                  - option "Andorra (+376)"
+                  - option "Angola (+244)"
+                  - option "Anguilla (+1)"
+                  - option "Antigua & Barbuda (+1)"
+                  - option "Argentina (+54)"
+                  - option "Armenia (+374)"
+                  - option "Aruba (+297)"
+                  - option "Ascension Island (+247)"
+                  - option "Australia (+61)"
+                  - option "Austria (+43)"
+                  - option "Azerbaijan (+994)"
+                  - option "Bahamas (+1)"
+                  - option "Bahrain (+973)"
+                  - option "Bangladesh (+880)"
+                  - option "Barbados (+1)"
+                  - option "Belarus (+375)"
+                  - option "Belgium (+32)"
+                  - option "Belize (+501)"
+                  - option "Benin (+229)"
+                  - option "Bermuda (+1)"
+                  - option "Bhutan (+975)"
+                  - option "Bolivia (+591)"
+                  - option "Bosnia & Herzegovina (+387)"
+                  - option "Botswana (+267)"
+                  - option "Brazil (+55)"
+                  - option "British Indian Ocean Territory (+246)"
+                  - option "British Virgin Islands (+1)"
+                  - option "Brunei (+673)"
+                  - option "Bulgaria (+359)"
+                  - option "Burkina Faso (+226)"
+                  - option "Burundi (+257)"
+                  - option "Cambodia (+855)"
+                  - option "Cameroon (+237)"
+                  - option "Canada (+1)"
+                  - option "Cape Verde (+238)"
+                  - option "Caribbean Netherlands (+599)"
+                  - option "Cayman Islands (+1)"
+                  - option "Central African Republic (+236)"
+                  - option "Chad (+235)"
+                  - option "Chile (+56)"
+                  - option "China (+86)"
+                  - option "Christmas Island (+61)"
+                  - option "Cocos (Keeling) Islands (+61)"
+                  - option "Colombia (+57)"
+                  - option "Comoros (+269)"
+                  - option "Congo - Brazzaville (+242)"
+                  - option "Congo - Kinshasa (+243)"
+                  - option "Cook Islands (+682)"
+                  - option "Costa Rica (+506)"
+                  - option "Côte d’Ivoire (+225)"
+                  - option "Croatia (+385)"
+                  - option "Cuba (+53)"
+                  - option "Curaçao (+599)"
+                  - option "Cyprus (+357)"
+                  - option "Czechia (+420)"
+                  - option "Denmark (+45)"
+                  - option "Djibouti (+253)"
+                  - option "Dominica (+1)"
+                  - option "Dominican Republic (+1)"
+                  - option "Ecuador (+593)"
+                  - option "Egypt (+20)"
+                  - option "El Salvador (+503)"
+                  - option "Equatorial Guinea (+240)"
+                  - option "Eritrea (+291)"
+                  - option "Estonia (+372)"
+                  - option "Eswatini (+268)"
+                  - option "Ethiopia (+251)"
+                  - option "Falkland Islands (Islas Malvinas) (+500)"
+                  - option "Faroe Islands (+298)"
+                  - option "Fiji (+679)"
+                  - option "Finland (+358)"
+                  - option "France (+33)"
+                  - option "French Guiana (+594)"
+                  - option "French Polynesia (+689)"
+                  - option "Gabon (+241)"
+                  - option "Gambia (+220)"
+                  - option "Georgia (+995)"
+                  - option "Germany (+49)"
+                  - option "Ghana (+233)"
+                  - option "Gibraltar (+350)"
+                  - option "Greece (+30)"
+                  - option "Greenland (+299)"
+                  - option "Grenada (+1)"
+                  - option "Guadeloupe (+590)"
+                  - option "Guam (+1)"
+                  - option "Guatemala (+502)"
+                  - option "Guernsey (+44)"
+                  - option "Guinea (+224)"
+                  - option "Guinea-Bissau (+245)"
+                  - option "Guyana (+592)"
+                  - option "Haiti (+509)"
+                  - option "Honduras (+504)"
+                  - option "Hong Kong (+852)"
+                  - option "Hungary (+36)"
+                  - option "Iceland (+354)"
+                  - option "India (+91)" [selected]
+                  - option "Indonesia (+62)"
+                  - option "Iran (+98)"
+                  - option "Iraq (+964)"
+                  - option "Ireland (+353)"
+                  - option "Isle of Man (+44)"
+                  - option "Israel (+972)"
+                  - option "Italy (+39)"
+                  - option "Jamaica (+1)"
+                  - option "Japan (+81)"
+                  - option "Jersey (+44)"
+                  - option "Jordan (+962)"
+                  - option "Kazakhstan (+7)"
+                  - option "Kenya (+254)"
+                  - option "Kiribati (+686)"
+                  - option "Kosovo (+383)"
+                  - option "Kuwait (+965)"
+                  - option "Kyrgyzstan (+996)"
+                  - option "Laos (+856)"
+                  - option "Latvia (+371)"
+                  - option "Lebanon (+961)"
+                  - option "Lesotho (+266)"
+                  - option "Liberia (+231)"
+                  - option "Libya (+218)"
+                  - option "Liechtenstein (+423)"
+                  - option "Lithuania (+370)"
+                  - option "Luxembourg (+352)"
+                  - option "Macao (+853)"
+                  - option "Madagascar (+261)"
+                  - option "Malawi (+265)"
+                  - option "Malaysia (+60)"
+                  - option "Maldives (+960)"
+                  - option "Mali (+223)"
+                  - option "Malta (+356)"
+                  - option "Marshall Islands (+692)"
+                  - option "Martinique (+596)"
+                  - option "Mauritania (+222)"
+                  - option "Mauritius (+230)"
+                  - option "Mayotte (+262)"
+                  - option "Mexico (+52)"
+                  - option "Micronesia (+691)"
+                  - option "Moldova (+373)"
+                  - option "Monaco (+377)"
+                  - option "Mongolia (+976)"
+                  - option "Montenegro (+382)"
+                  - option "Montserrat (+1)"
+                  - option "Morocco (+212)"
+                  - option "Mozambique (+258)"
+                  - option "Myanmar (Burma) (+95)"
+                  - option "Namibia (+264)"
+                  - option "Nauru (+674)"
+                  - option "Nepal (+977)"
+                  - option "Netherlands (+31)"
+                  - option "New Caledonia (+687)"
+                  - option "New Zealand (+64)"
+                  - option "Nicaragua (+505)"
+                  - option "Niger (+227)"
+                  - option "Nigeria (+234)"
+                  - option "Niue (+683)"
+                  - option "Norfolk Island (+672)"
+                  - option "North Korea (+850)"
+                  - option "North Macedonia (+389)"
+                  - option "Northern Mariana Islands (+1)"
+                  - option "Norway (+47)"
+                  - option "Oman (+968)"
+                  - option "Pakistan (+92)"
+                  - option "Palau (+680)"
+                  - option "Palestine (+970)"
+                  - option "Panama (+507)"
+                  - option "Papua New Guinea (+675)"
+                  - option "Paraguay (+595)"
+                  - option "Peru (+51)"
+                  - option "Philippines (+63)"
+                  - option "Poland (+48)"
+                  - option "Portugal (+351)"
+                  - option "Puerto Rico (+1)"
+                  - option "Qatar (+974)"
+                  - option "Réunion (+262)"
+                  - option "Romania (+40)"
+                  - option "Russia (+7)"
+                  - option "Rwanda (+250)"
+                  - option "Samoa (+685)"
+                  - option "San Marino (+378)"
+                  - option "São Tomé & Príncipe (+239)"
+                  - option "Saudi Arabia (+966)"
+                  - option "Senegal (+221)"
+                  - option "Serbia (+381)"
+                  - option "Seychelles (+248)"
+                  - option "Sierra Leone (+232)"
+                  - option "Singapore (+65)"
+                  - option "Sint Maarten (+1)"
+                  - option "Slovakia (+421)"
+                  - option "Slovenia (+386)"
+                  - option "Solomon Islands (+677)"
+                  - option "Somalia (+252)"
+                  - option "South Africa (+27)"
+                  - option "South Korea (+82)"
+                  - option "South Sudan (+211)"
+                  - option "Spain (+34)"
+                  - option "Sri Lanka (+94)"
+                  - option "St. Barthélemy (+590)"
+                  - option "St. Helena (+290)"
+                  - option "St. Kitts & Nevis (+1)"
+                  - option "St. Lucia (+1)"
+                  - option "St. Martin (+590)"
+                  - option "St. Pierre & Miquelon (+508)"
+                  - option "St. Vincent & Grenadines (+1)"
+                  - option "Sudan (+249)"
+                  - option "Suriname (+597)"
+                  - option "Svalbard & Jan Mayen (+47)"
+                  - option "Sweden (+46)"
+                  - option "Switzerland (+41)"
+                  - option "Syria (+963)"
+                  - option "Taiwan (+886)"
+                  - option "Tajikistan (+992)"
+                  - option "Tanzania (+255)"
+                  - option "Thailand (+66)"
+                  - option "Timor-Leste (+670)"
+                  - option "Togo (+228)"
+                  - option "Tokelau (+690)"
+                  - option "Tonga (+676)"
+                  - option "Trinidad & Tobago (+1)"
+                  - option "Tristan da Cunha (+290)"
+                  - option "Tunisia (+216)"
+                  - option "Türkiye (+90)"
+                  - option "Turkmenistan (+993)"
+                  - option "Turks & Caicos Islands (+1)"
+                  - option "Tuvalu (+688)"
+                  - option "U.S. Virgin Islands (+1)"
+                  - option "Uganda (+256)"
+                  - option "Ukraine (+380)"
+                  - option "United Arab Emirates (+971)"
+                  - option "United Kingdom (+44)"
+                  - option "United States (+1)"
+                  - option "Uruguay (+598)"
+                  - option "Uzbekistan (+998)"
+                  - option "Vanuatu (+678)"
+                  - option "Vatican City (+39)"
+                  - option "Venezuela (+58)"
+                  - option "Vietnam (+84)"
+                  - option "Wallis & Futuna (+681)"
+                  - option "Western Sahara (+212)"
+                  - option "Yemen (+967)"
+                  - option "Zambia (+260)"
+                  - option "Zimbabwe (+263)"
+                - textbox "98765 43210" [ref=e558]
+            - generic [ref=e559]:
+              - generic [ref=e560]: Message
+              - textbox [ref=e561]
+          - button "Submit" [ref=e562] [cursor=pointer]
+  - contentinfo [ref=e563]:
+    - generic [ref=e565]:
+      - generic [ref=e566]:
+        - generic [ref=e567]:
+          - link [ref=e568] [cursor=pointer]:
+            - /url: /
+            - img [ref=e569]
+          - paragraph [ref=e591]: Industry-specific efficiency with our powerful, unified freight tools.
+          - generic [ref=e592]:
+            - link "Facebook" [ref=e593] [cursor=pointer]:
+              - /url: https://www.facebook.com/DahnayLogisticsofficial/
+              - img [ref=e594]
+            - link "LinkedIn" [ref=e596] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/7087159/
+              - img [ref=e597]
+            - link "X" [ref=e599] [cursor=pointer]:
+              - /url: https://x.com/DahNAY_Official
+              - img [ref=e600]
+            - link "Instagram" [ref=e602] [cursor=pointer]:
+              - /url: https://www.instagram.com/dahnaylogisticsofficial
+              - img [ref=e603]
+        - generic [ref=e607]:
+          - generic [ref=e608]:
+            - button "Information" [ref=e609]
+            - list [ref=e610]:
+              - listitem [ref=e611]:
+                - link "Home" [ref=e612] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e613]:
+                - link "About us" [ref=e614] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e615]:
+                - link "Newsroom" [ref=e616] [cursor=pointer]:
+                  - /url: /newsroom
+              - listitem [ref=e617]:
+                - link "Blog" [ref=e618] [cursor=pointer]:
+                  - /url: /newsroom/blog
+              - listitem [ref=e619]:
+                - link "Careers" [ref=e620] [cursor=pointer]:
+                  - /url: /careers
+              - listitem [ref=e621]:
+                - link "ESG & CSR" [ref=e622] [cursor=pointer]:
+                  - /url: /esg-csr
+              - listitem [ref=e623]:
+                - link "POSH" [ref=e624] [cursor=pointer]:
+                  - /url: /posh-policy
+              - listitem [ref=e625]:
+                - link "Whistleblower" [ref=e626] [cursor=pointer]:
+                  - /url: /whistleblower-policy
+              - listitem [ref=e627]:
+                - link "Contact us" [ref=e628] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e629]:
+            - button "Solutions" [ref=e630]
+            - list [ref=e631]:
+              - listitem [ref=e632]:
+                - link "DahNAY Logistics" [ref=e633] [cursor=pointer]:
+                  - /url: /solutions/logistics
+              - listitem [ref=e634]:
+                - link "DahNAY Lines" [ref=e635] [cursor=pointer]:
+                  - /url: /solutions/lines
+              - listitem [ref=e636]:
+                - link "DahNAY Ports & Infra" [ref=e637] [cursor=pointer]:
+                  - /url: /solutions/ports-infra
+          - generic [ref=e638]:
+            - button "Industries" [ref=e639]
+            - list [ref=e640]:
+              - listitem [ref=e641]:
+                - link "Automotive" [ref=e642] [cursor=pointer]:
+                  - /url: /industries/automotive
+              - listitem [ref=e643]:
+                - link "Renewables" [ref=e644] [cursor=pointer]:
+                  - /url: /industries/renewables
+              - listitem [ref=e645]:
+                - link "Machinery" [ref=e646] [cursor=pointer]:
+                  - /url: /industries/machinery
+              - listitem [ref=e647]:
+                - link "Retail & Apparel" [ref=e648] [cursor=pointer]:
+                  - /url: /industries/retail-apparel
+              - listitem [ref=e649]:
+                - link "Natural Rubber" [ref=e650] [cursor=pointer]:
+                  - /url: /industries/natural-rubber
+              - listitem [ref=e651]:
+                - link "White Goods" [ref=e652] [cursor=pointer]:
+                  - /url: /industries/white-goods
+              - listitem [ref=e653]:
+                - link "Energy, Oil & Gas" [ref=e654] [cursor=pointer]:
+                  - /url: /industries/energy-oil-gas
+              - listitem [ref=e655]:
+                - link "Food & Agro" [ref=e656] [cursor=pointer]:
+                  - /url: /industries/food-agro
+      - paragraph [ref=e658]:
+        - text: "Popular Links:"
+        - link "Global logistics company" [ref=e659] [cursor=pointer]:
+          - /url: /about
+        - text: "|"
+        - link "International logistics services" [ref=e660] [cursor=pointer]:
+          - /url: /solutions/logistics
+        - text: "|"
+        - link "Freight forwarding company" [ref=e661] [cursor=pointer]:
+          - /url: /solutions/logistics
+        - text: "|"
+        - link "Air freight services" [ref=e662] [cursor=pointer]:
+          - /url: /service/air-freight
+        - text: "|"
+        - link "Sea freight shipping solutions" [ref=e663] [cursor=pointer]:
+          - /url: /service/sea-freight
+        - text: "|"
+        - link "Road transportation services" [ref=e664] [cursor=pointer]:
+          - /url: /service/road-transportation
+        - text: "|"
+        - link "Warehousing and distribution services" [ref=e665] [cursor=pointer]:
+          - /url: /solutions/ports-infra
+        - text: "|"
+        - link "Third-party logistics provider" [ref=e666] [cursor=pointer]:
+          - /url: /solutions/logistics
+        - text: "|"
+        - link "Supply chain management solutions" [ref=e667] [cursor=pointer]:
+          - /url: /solutions/logistics
+        - text: "|"
+        - link "Worldwide shipping services" [ref=e668] [cursor=pointer]:
+          - /url: /service/sea-freight
+        - text: "|"
+        - link "Cross-border logistics solutions" [ref=e669] [cursor=pointer]:
+          - /url: /service/customs-clearance
+        - text: "|"
+        - link "Multimodal transportation services" [ref=e670] [cursor=pointer]:
+          - /url: /service/project-logistics
+        - text: "|"
+        - link "Time-critical delivery solutions" [ref=e671] [cursor=pointer]:
+          - /url: /service/time-critical-delivery
+        - text: "|"
+        - link "Reverse logistics services" [ref=e672] [cursor=pointer]:
+          - /url: /service/reverse-logistics
+        - text: "|"
+        - link "Domestic trucking services" [ref=e673] [cursor=pointer]:
+          - /url: /service/domestic-trucking
+        - text: "|"
+        - link "Last-mile delivery services" [ref=e674] [cursor=pointer]:
+          - /url: /service/last-mile-delivery
+        - text: "|"
+        - link "E-commerce fulfilment services" [ref=e675] [cursor=pointer]:
+          - /url: /service/ecommerce-fulfilment
+        - text: "|"
+        - link "Carrier and shipping line management" [ref=e676] [cursor=pointer]:
+          - /url: /solutions/lines
+        - text: "|"
+        - link "Automotive logistics" [ref=e677] [cursor=pointer]:
+          - /url: /industries/automotive
+        - text: "|"
+        - link "Renewable energy logistics" [ref=e678] [cursor=pointer]:
+          - /url: /industries/renewables
+        - text: "|"
+        - link "Industrial machinery logistics" [ref=e679] [cursor=pointer]:
+          - /url: /industries/machinery
+        - text: "|"
+        - link "Retail and apparel logistics" [ref=e680] [cursor=pointer]:
+          - /url: /industries/retail-apparel
+        - text: "|"
+        - link "Natural rubber logistics" [ref=e681] [cursor=pointer]:
+          - /url: /industries/natural-rubber
+        - text: "|"
+        - link "White goods logistics" [ref=e682] [cursor=pointer]:
+          - /url: /industries/white-goods
+        - text: "|"
+        - link "Oil and gas logistics" [ref=e683] [cursor=pointer]:
+          - /url: /industries/energy-oil-gas
+        - text: "|"
+        - link "Food and agro logistics" [ref=e684] [cursor=pointer]:
+          - /url: /industries/food-agro
+        - text: "|"
+        - link "FMCG logistics solutions" [ref=e685] [cursor=pointer]:
+          - /url: /industries/fmcg
+        - text: "|"
+        - link "Paper and pulp logistics" [ref=e686] [cursor=pointer]:
+          - /url: /industries/paper-pulp
+        - text: "|"
+        - link "Construction materials logistics" [ref=e687] [cursor=pointer]:
+          - /url: /industries/construction-materials
+    - generic [ref=e689]:
+      - paragraph [ref=e690]: ©2026 DahNay Logistics. All Rights Reserved.
+      - generic [ref=e691]:
+        - link "Privacy Policy" [ref=e692] [cursor=pointer]:
+          - /url: /privacy-policy
+        - link "Terms & Conditions" [ref=e693] [cursor=pointer]:
+          - /url: /terms-conditions
+        - link "Cookie Policy" [ref=e694] [cursor=pointer]:
+          - /url: /cookie-policy
+        - button "Consent Settings" [ref=e695] [cursor=pointer]
+      - paragraph [ref=e696]:
+        - text: Made by
+        - link "Madarth ®" [ref=e697] [cursor=pointer]:
+          - /url: https://madarth.com/?utm_source=dahnay&utm_medium=referral&utm_campaign=website_footer
+          - text: Madarth
+          - superscript [ref=e698]: ®
+  - alert [ref=e699]

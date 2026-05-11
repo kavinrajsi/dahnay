@@ -1,4 +1,5 @@
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import Overview from "@/components/sections/Overview";
 import ServiceExpertise from "@/components/sections/ServiceExpertise";
 import WhyDahnay from "@/components/sections/WhyDahnay";
@@ -17,12 +18,12 @@ export default function ServicePage({ slug }) {
   const description = Array.isArray(data.overview?.descriptions)
     ? data.overview.descriptions.join(" ")
     : data.overview?.content;
+  const trail = [
+    { name: "Home", path: "/" },
+    { name: data.banner.title, path },
+  ];
   const schemas = [
-    breadcrumbList([
-      { name: "Home", path: "/" },
-      { name: "Services", path: "/" },
-      { name: data.banner.title, path },
-    ]),
+    breadcrumbList(trail),
     serviceSchema({
       name: data.banner.title,
       description,
@@ -37,6 +38,7 @@ export default function ServicePage({ slug }) {
     <div className="page page--service">
       <JsonLd data={schemas} />
       <Banner {...data.banner} />
+      <Breadcrumb trail={trail} />
       <Overview {...data.overview} />
       <ServiceExpertise
         {...data.expertise}

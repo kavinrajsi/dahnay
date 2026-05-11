@@ -1,5 +1,6 @@
 // Figma: node-id=434-6919
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import LinesSection from "@/components/sections/LinesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
@@ -26,12 +27,12 @@ const faqItems = [
 ];
 
 const path = "/solutions/lines";
+const trail = [
+  { name: "Home", path: "/" },
+  { name: "DahNAY Lines", path },
+];
 const schemas = [
-  breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "Solutions", path: "/" },
-    { name: "DahNAY Lines", path },
-  ]),
+  breadcrumbList(trail),
   serviceSchema({
     name: "DahNAY Lines",
     description: metadata.description,
@@ -50,6 +51,7 @@ export default function LinesPage() {
         title="DahNAY Lines"
         desktopImage="/images/banners/banner-desktop-lines.png"
       />
+      <Breadcrumb trail={trail} />
 
       <LinesSection />
 

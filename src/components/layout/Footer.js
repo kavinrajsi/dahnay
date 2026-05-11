@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { CONSENT_EVENT } from "@/lib/consent";
 
 const informationLinks = [
@@ -100,6 +101,9 @@ function LinkColumn({ title, links }) {
 }
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname === "/tools" || pathname?.startsWith("/tools/")) return null;
+
   return (
     <footer className="footer">
       <div className="footer__main">

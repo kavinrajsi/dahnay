@@ -1,5 +1,4 @@
 import localFont from "next/font/local";
-import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -55,26 +54,40 @@ export const metadata = {
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 const shouldLoadGTM = Boolean(gtmId) && process.env.NEXT_PUBLIC_GTM_ENABLED === "true";
+const isDev = process.env.NODE_ENV === "development";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={avenir.variable}>
-      <Script id="gtag-consent-default" strategy="beforeInteractive">
-        {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('consent', 'default', {
-            ad_storage: 'denied',
-            ad_user_data: 'denied',
-            ad_personalization: 'denied',
-            analytics_storage: 'denied',
-            functionality_storage: 'granted',
-            personalization_storage: 'denied',
-            security_storage: 'granted',
-            wait_for_update: 500
-          });`}
-      </Script>
-      {shouldLoadGTM && <GoogleTagManager gtmId={gtmId} />}
-      <JsonLd data={[organizationSchema(), websiteSchema(), localBusinessSchema()]} />
+      <head>
+        {isDev && (
+          <script
+            id="dev-script-warning-filter"
+            dangerouslySetInnerHTML={{
+              __html: `(function(){var o=console.error;console.error=function(){var a=arguments[0];if(typeof a==='string'&&a.indexOf('Encountered a script tag while rendering React component')!==-1)return;return o.apply(console,arguments);};})();`,
+            }}
+          />
+        )}
+        <script
+          id="gtag-consent-default"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                analytics_storage: 'denied',
+                functionality_storage: 'granted',
+                personalization_storage: 'denied',
+                security_storage: 'granted',
+                wait_for_update: 500
+              });`,
+          }}
+        />
+        {shouldLoadGTM && <GoogleTagManager gtmId={gtmId} />}
+        <JsonLd data={[organizationSchema(), websiteSchema(), localBusinessSchema()]} />
+      </head>
       <body>
         <UtmCapture />
         <Header />

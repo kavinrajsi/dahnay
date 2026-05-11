@@ -1,5 +1,6 @@
 // Figma: node-id=354-5481
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import IndustriesGrid from "@/components/sections/IndustriesGrid";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
@@ -25,14 +26,13 @@ const faqItems = [
   { question: "Do you manage end-to-end logistics?", answer: "Yes. From freight forwarding to customs to last-mile distribution." },
 ];
 
+const trail = [
+  { name: "Home", path: "/" },
+  { name: "Industries", path: "/industries" },
+];
+
 export default function IndustriesPage() {
-  const schemas = [
-    breadcrumbList([
-      { name: "Home", path: "/" },
-      { name: "Industries", path: "/industries" },
-    ]),
-    faqSchema(faqItems),
-  ];
+  const schemas = [breadcrumbList(trail), faqSchema(faqItems)];
 
   return (
     <div className="page page--industries">
@@ -41,6 +41,7 @@ export default function IndustriesPage() {
         title="Industries"
         desktopImage="/images/banners/banner-desktop-industries.png"
       />
+      <Breadcrumb trail={trail} />
 
       <IndustriesGrid />
 

@@ -1,5 +1,6 @@
 // Figma: node-id=710-7471
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import CenteredIntro from "@/components/sections/CenteredIntro";
 import ContentBlock from "@/components/sections/ContentBlock";
 import TrustCTA from "@/components/sections/TrustCTA";
@@ -18,11 +19,13 @@ export const metadata = {
   },
 };
 
+const trail = [
+  { name: "Home", path: "/" },
+  { name: "ESG & CSR", path: "/esg-csr" },
+];
+
 const esgSchemas = [
-  breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "ESG & CSR", path: "/esg-csr" },
-  ]),
+  breadcrumbList(trail),
   webPageSchema({
     name: "ESG & CSR",
     description: metadata.description,
@@ -38,6 +41,7 @@ export default function EsgCsrPage() {
         title="ESG &amp; CSR"
         desktopImage="/images/banners/banner-desktop-esg-csr.png"
       />
+      <Breadcrumb trail={trail} />
       <CenteredIntro
         title="Moving forward, responsibly"
         descriptions={[

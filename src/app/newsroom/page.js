@@ -1,6 +1,7 @@
 // Figma: node-id=616-4933
 import { getBlogPosts } from "@/lib/ghost";
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import NewsroomContent from "@/components/sections/NewsroomContent";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
@@ -26,11 +27,12 @@ export default async function NewsroomPage() {
     // Ghost CMS unavailable or no posts yet
   }
 
+  const trail = [
+    { name: "Home", path: "/" },
+    { name: "Newsroom", path: "/newsroom" },
+  ];
   const schemas = [
-    breadcrumbList([
-      { name: "Home", path: "/" },
-      { name: "Newsroom", path: "/newsroom" },
-    ]),
+    breadcrumbList(trail),
     webPageSchema({
       name: "Newsroom",
       description: metadata.description,
@@ -46,6 +48,7 @@ export default async function NewsroomPage() {
         title="Newsroom"
         desktopImage="/images/banners/banner-desktop-newsroom.png"
       />
+      <Breadcrumb trail={trail} />
       <NewsroomContent posts={posts} />
     </div>
   );

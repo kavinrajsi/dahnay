@@ -1,5 +1,6 @@
 // Figma: node-id=434-7319
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import PortsInfraSection from "@/components/sections/PortsInfraSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
@@ -26,12 +27,12 @@ const faqItems = [
 ];
 
 const path = "/solutions/ports-infra";
+const trail = [
+  { name: "Home", path: "/" },
+  { name: "Ports & Infrastructure", path },
+];
 const schemas = [
-  breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "Solutions", path: "/" },
-    { name: "Ports & Infrastructure", path },
-  ]),
+  breadcrumbList(trail),
   serviceSchema({
     name: "DahNAY Ports & Infrastructure",
     description: metadata.description,
@@ -50,6 +51,7 @@ export default function PortsInfraPage() {
         title="DahNAY Ports &amp; Infra"
         desktopImage="/images/banners/banner-desktop-ports-infra.png"
       />
+      <Breadcrumb trail={trail} />
 
       <PortsInfraSection />
 

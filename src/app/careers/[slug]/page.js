@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { JOBS, getJobBySlug } from "@/data/careers/jobs";
 import CareerApplyForm from "@/components/sections/CareerApplyForm";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, jobPostingSchema } from "@/lib/schema";
 
@@ -24,12 +25,14 @@ export default async function CareerDetailPage({ params }) {
 
   if (!job) notFound();
 
+  const trail = [
+    { name: "Home", path: "/" },
+    { name: "Careers", path: "/careers" },
+    { name: job.title, path: `/careers/${slug}` },
+  ];
+
   const schemas = [
-    breadcrumbList([
-      { name: "Home", path: "/" },
-      { name: "Careers", path: "/careers" },
-      { name: job.title, path: `/careers/${slug}` },
-    ]),
+    breadcrumbList(trail),
     jobPostingSchema({
       title: job.title,
       description: [job.intro, ...(job.description?.map((d) => d.para) ?? [])].filter(Boolean).join(" "),
@@ -43,6 +46,7 @@ export default async function CareerDetailPage({ params }) {
   return (
     <div className="page page--career-detail">
       <JsonLd data={schemas} />
+      <Breadcrumb trail={trail} />
       <div className="career-detail container">
 
         {/* Header: title/location + posted date/apply */}

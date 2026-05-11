@@ -1,5 +1,6 @@
 // Figma: node-id=354-5309
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import LogisticsSection from "@/components/sections/LogisticsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
@@ -26,12 +27,12 @@ const faqItems = [
 ];
 
 const path = "/solutions/logistics";
+const trail = [
+  { name: "Home", path: "/" },
+  { name: "DahNAY Logistics", path },
+];
 const schemas = [
-  breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "Solutions", path: "/" },
-    { name: "DahNAY Logistics", path },
-  ]),
+  breadcrumbList(trail),
   serviceSchema({
     name: "DahNAY Logistics Platform",
     description: metadata.description,
@@ -50,6 +51,7 @@ export default function LogisticsPage() {
         title="DahNAY Logistics"
         desktopImage="/images/banners/banner-desktop-logistics.png"
       />
+      <Breadcrumb trail={trail} />
 
       <LogisticsSection />
 

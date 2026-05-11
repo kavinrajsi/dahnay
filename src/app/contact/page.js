@@ -3,6 +3,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, organizationSchema } from "@/lib/schema";
@@ -177,11 +178,12 @@ export default function ContactPage() {
     return acc;
   }, {});
 
+  const trail = [
+    { name: "Home", path: "/" },
+    { name: "Contact", path: "/contact" },
+  ];
   const contactSchemas = [
-    breadcrumbList([
-      { name: "Home", path: "/" },
-      { name: "Contact", path: "/contact" },
-    ]),
+    breadcrumbList(trail),
     organizationSchema({ offices }),
   ];
 
@@ -192,6 +194,7 @@ export default function ContactPage() {
         title="Contact Us"
         desktopImage="/images/banners/banner-desktop-contact.png"
       />
+      <Breadcrumb trail={trail} />
 
       <ContactFormSection />
 

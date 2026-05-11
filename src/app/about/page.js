@@ -1,5 +1,6 @@
 // Figma: node-id=354-6710
 import Banner from "@/components/sections/Banner";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import WhoWeAre from "@/components/sections/WhoWeAre";
 import WhatDrivesUs from "@/components/sections/WhatDrivesUs";
 import FounderSection from "@/components/sections/FounderSection";
@@ -21,11 +22,13 @@ export const metadata = {
   },
 };
 
+const trail = [
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" },
+];
+
 const aboutSchemas = [
-  breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-  ]),
+  breadcrumbList(trail),
   webPageSchema({
     name: "About DahNAY",
     description: metadata.description,
@@ -42,6 +45,7 @@ export default function AboutPage() {
         title="About Us"
         desktopImage="/images/banners/banner-desktop-about-us.png"
       />
+      <Breadcrumb trail={trail} />
       <WhoWeAre
         description="At DahNAY, growth isn't just a business outcome, it's a journey. From a single desk to 35+ countries, what's grown with us is a belief in people, in progress and in the power of showing up, shipment after shipment. Every milestone we've reached is stitched with late nights, honest calls, small wins, big leaps and a team that never stopped caring. And the journey has only just begun."
         image="/images/about/who-we-are.png"

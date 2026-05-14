@@ -30,6 +30,8 @@ const nextConfig = {
       { source: "/dahnay-acquires-kailash-cfs/", destination: "/solutions/ports-infra", permanent: true },
       { source: "/about-us", destination: "/about", permanent: true },
       { source: "/about-us.html", destination: "/about", permanent: true },
+      { source: "/about-us-2", destination: "/about", permanent: true },
+      { source: "/about-us-2.html", destination: "/about", permanent: true },
       { source: "/advantage", destination: "/about", permanent: true },
       { source: "/advantage.html", destination: "/about", permanent: true },
       { source: "/eco-system", destination: "/about", permanent: true },

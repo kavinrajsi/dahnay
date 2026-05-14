@@ -86,6 +86,14 @@ const nextConfig = {
       { source: "/contact/services/customer-service", destination: "/contact", permanent: true },
       { source: "/contact/services/warehouse", destination: "/solutions/ports-infra", permanent: true },
 
+      // ─── Legacy /renewable-energy-logistics/* → renewables industry ────────
+      { source: "/renewable-energy-logistics", destination: "/industries/renewables", permanent: true },
+      { source: "/renewable-energy-logistics.html", destination: "/industries/renewables", permanent: true },
+      { source: "/renewable-energy-logistics/blog", destination: "/industries/renewables", permanent: true },
+      { source: "/renewable-energy-logistics/blog.html", destination: "/industries/renewables", permanent: true },
+      { source: "/renewable-energy-logistics/case-study", destination: "/industries/renewables", permanent: true },
+      { source: "/renewable-energy-logistics/case-study.html", destination: "/industries/renewables", permanent: true },
+
       // ─── Industries (old /industry/ → new /industries/) ────────────────────
       { source: "/industry", destination: "/industries", permanent: true },
       { source: "/industry.html", destination: "/industries", permanent: true },

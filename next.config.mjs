@@ -73,6 +73,17 @@ const nextConfig = {
       { source: "/services/warehouse", destination: "/solutions/ports-infra", permanent: true },
       { source: "/services/warehouse.html", destination: "/solutions/ports-infra", permanent: true },
 
+      // ─── Legacy /contact/services/* → matching service pages ───────────────
+      { source: "/contact/services/air-freight", destination: "/service/air-freight", permanent: true },
+      { source: "/contact/services/sea-freight", destination: "/service/sea-freight", permanent: true },
+      { source: "/contact/services/custom-brokerage", destination: "/service/customs-clearance", permanent: true },
+      { source: "/contact/services/project-cargo", destination: "/service/project-logistics", permanent: true },
+      { source: "/contact/services/last-mile-connectivity", destination: "/service/last-mile-delivery", permanent: true },
+      { source: "/contact/services/omni-channel", destination: "/service/ecommerce-fulfilment", permanent: true },
+      { source: "/contact/services/consolidation", destination: "/service", permanent: true },
+      { source: "/contact/services/customer-service", destination: "/contact", permanent: true },
+      { source: "/contact/services/warehouse", destination: "/solutions/ports-infra", permanent: true },
+
       // ─── Industries (old /industry/ → new /industries/) ────────────────────
       { source: "/industry", destination: "/industries", permanent: true },
       { source: "/industry.html", destination: "/industries", permanent: true },

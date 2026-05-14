@@ -1,44 +1,52 @@
 .slider {
-  .swiper {
-    overflow: visible;
+  --slider-base: 1;
+  --slider-md: 2;
+  --slider-lg: 3;
+  --slider-gap: 20px;
+
+  &__track-wrapper {
+    overflow: hidden;
   }
 
-  // Controls row: dots left, arrows right
+  &__track {
+    display: flex;
+    gap: var(--slider-gap);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__slide {
+    flex: 0 0 calc((100% - (var(--slider-base) - 1) * var(--slider-gap)) / var(--slider-base));
+    min-width: 0;
+    scroll-snap-align: start;
+
+    @media (min-width: 768px) {
+      flex: 0 0 calc((100% - (var(--slider-md) - 1) * var(--slider-gap)) / var(--slider-md));
+    }
+
+    @media (min-width: 1024px) {
+      flex: 0 0 calc((100% - (var(--slider-lg) - 1) * var(--slider-gap)) / var(--slider-lg));
+    }
+  }
+
   &__control {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-top: 32px;
-  }
-
-  &__dots {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex: 1;
-  }
-
-  &__dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--neutral-white3);
-    transition: background 0.2s;
-    cursor: pointer;
-    border: none;
-    padding: 0;
-
-    &--active {
-      background: var(--primary-orange);
-    }
   }
 
   &__arrows {
     display: flex;
     align-items: center;
-    gap: 32px;
-    margin-left: auto;
+    gap: 16px;
   }
 
   &__arrow {
@@ -51,5 +59,11 @@
     background: none;
     padding: 0;
     cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
   }
 }

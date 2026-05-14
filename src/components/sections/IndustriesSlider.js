@@ -1,25 +1,39 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Keyboard, Mousewheel } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/pagination";
-
 import { industries } from "@/data/industries";
 
 export default function IndustriesSlider({ currentSlug }) {
   const filtered = industries.filter((i) => !i.href.endsWith(`/${currentSlug}`));
-  const swiperRef = useRef(null);
-  const [isBeginning, setIsBeginning] = useState(true);
+  const trackRef = useRef(null);
+  const [isStart, setIsStart] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
-  const updateNav = (swiper) => {
-    setIsBeginning(swiper.isBeginning);
-    setIsEnd(swiper.isEnd);
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const update = () => {
+      setIsStart(track.scrollLeft <= 1);
+      setIsEnd(track.scrollLeft + track.clientWidth >= track.scrollWidth - 1);
+    };
+    update();
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      track.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [filtered.length]);
+
+  const scrollByCard = (direction) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.querySelector(".industries-slider__card");
+    const cardWidth = card?.getBoundingClientRect().width ?? track.clientWidth;
+    const gap = parseFloat(getComputedStyle(track).columnGap || "20") || 20;
+    track.scrollBy({ left: direction * (cardWidth + gap), behavior: "smooth" });
   };
 
   return (
@@ -30,7 +44,7 @@ export default function IndustriesSlider({ currentSlug }) {
             <span className="industries-slider__tag">INDUSTRIES</span>
             <h2 className="industries-slider__title">Logistics for every sector</h2>
             <p className="industries-slider__desc">
-             If it moves, we ship it. From Pharma to renewables and automotive, get your goods delivered to your doorstep, well and safe.
+              If it moves, we ship it. From Pharma to renewables and automotive, get your goods delivered to your doorstep, well and safe.
             </p>
           </div>
           <Link href="/industries" className="industries-slider__btn">
@@ -38,29 +52,14 @@ export default function IndustriesSlider({ currentSlug }) {
           </Link>
         </div>
 
-        <Swiper
-          modules={[Pagination, Keyboard, Mousewheel]}
-          onSwiper={(swiper) => { swiperRef.current = swiper; updateNav(swiper); }}
-          onSlideChange={updateNav}
-          spaceBetween={20}
-          slidesPerView={1}
-          keyboard={{ enabled: true }}
-          mousewheel={{ forceToAxis: true }}
-          pagination={{
-            clickable: true,
-            el: ".industries-slider__dots",
-            bulletClass: "industries-slider__dot",
-            bulletActiveClass: "industries-slider__dot--active",
-          }}
-          breakpoints={{
-            576: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            992: { slidesPerView: 4 },
-          }}
-        >
-          {filtered.map((item) => (
-            <SwiperSlide key={item.href}>
-              <Link href={item.href} className="industries-slider__card">
+        <div className="industries-slider__track-wrapper">
+          <div className="industries-slider__track" ref={trackRef}>
+            {filtered.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="industries-slider__card"
+              >
                 <div className="industries-slider__card-image">
                   <Image
                     src={item.image}
@@ -79,17 +78,17 @@ export default function IndustriesSlider({ currentSlug }) {
                   <span className="industries-slider__card-link">Learn more</span>
                 </div>
               </Link>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            ))}
+          </div>
+        </div>
 
         <div className="industries-slider__controls">
-          <div className="industries-slider__dots" />
           <div className="industries-slider__arrows">
             <button
+              type="button"
               className="industries-slider__arrow"
-              style={{ opacity: isBeginning ? 0.5 : 1 }}
-              onClick={() => swiperRef.current?.slidePrev()}
+              onClick={() => scrollByCard(-1)}
+              disabled={isStart}
               aria-label="Previous"
             >
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -98,9 +97,10 @@ export default function IndustriesSlider({ currentSlug }) {
               </svg>
             </button>
             <button
+              type="button"
               className="industries-slider__arrow"
-              style={{ opacity: isEnd ? 0.5 : 1 }}
-              onClick={() => swiperRef.current?.slideNext()}
+              onClick={() => scrollByCard(1)}
+              disabled={isEnd}
               aria-label="Next"
             >
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none">

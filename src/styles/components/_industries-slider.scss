@@ -92,6 +92,7 @@
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    scroll-snap-type: x mandatory;
 
     &::-webkit-scrollbar {
       display: none;
@@ -101,6 +102,7 @@
   &__card {
     flex: 0 0 100%;
     min-width: 0;
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     background: #fff;
@@ -192,8 +194,7 @@
     margin-top: 32px;
 
     @media (min-width: 768px) {
-      justify-content: space-between;
-      padding-left: 40%;
+      justify-content: flex-end;
     }
   }
 

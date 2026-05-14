@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
+  ALL_GRANTED_CATEGORIES,
   CONSENT_EVENT,
   DEFAULT_CATEGORIES,
   applyConsent,
@@ -10,11 +11,12 @@ import {
   writeConsentCookie,
 } from "@/lib/consent";
 
-export default function ConsentBanner() {
+export default function ConsentBanner({ isRegulated = true }) {
+  const initialCategories = isRegulated ? DEFAULT_CATEGORIES : ALL_GRANTED_CATEGORIES;
   const [mounted, setMounted] = useState(false);
   const [forceOpen, setForceOpen] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [categories, setCategories] = useState(DEFAULT_CATEGORIES);
+  const [categories, setCategories] = useState(initialCategories);
 
   // Client-only mount gate — reads cookie once, applies gtag consent signals.
   // The setState calls here are intentional: we can't know the cookie state
@@ -25,19 +27,21 @@ export default function ConsentBanner() {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- hydration bootstrap
       setCategories(existing);
       applyConsent(existing);
+    } else {
+      setCategories(initialCategories);
     }
     setMounted(true);
-  }, []);
+  }, [initialCategories]);
 
   useEffect(() => {
     const handler = () => {
-      setCategories(readConsentCookie() || DEFAULT_CATEGORIES);
+      setCategories(readConsentCookie() || initialCategories);
       setShowSettings(true);
       setForceOpen(true);
     };
     window.addEventListener(CONSENT_EVENT, handler);
     return () => window.removeEventListener(CONSENT_EVENT, handler);
-  }, []);
+  }, [initialCategories]);
 
   const save = (next) => {
     const toSave = { ...next, necessary: true };

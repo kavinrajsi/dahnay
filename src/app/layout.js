@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { headers } from "next/headers";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -6,6 +7,7 @@ import ConsentBanner from "@/components/layout/ConsentBanner";
 import UtmCapture from "@/components/UtmCapture";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema, websiteSchema, localBusinessSchema } from "@/lib/schema";
+import { REGULATED_COUNTRIES, isRegulatedCountry } from "@/lib/consent";
 import "./globals.scss";
 
 const avenir = localFont({
@@ -56,7 +58,11 @@ const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 const shouldLoadGTM = Boolean(gtmId) && process.env.NEXT_PUBLIC_GTM_ENABLED === "true";
 const isDev = process.env.NODE_ENV === "development";
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const headersList = await headers();
+  const country = headersList.get("x-vercel-ip-country") || "";
+  const isRegulated = isRegulatedCountry(country);
+
   return (
     <html lang="en" className={avenir.variable}>
       <head>
@@ -73,6 +79,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
+              // Regulated regions (GDPR/UK GDPR/DPDP/LGPD): deny until user opts in via banner.
               gtag('consent', 'default', {
                 ad_storage: 'denied',
                 ad_user_data: 'denied',
@@ -80,6 +87,18 @@ export default function RootLayout({ children }) {
                 analytics_storage: 'denied',
                 functionality_storage: 'granted',
                 personalization_storage: 'denied',
+                security_storage: 'granted',
+                wait_for_update: 500,
+                region: ${JSON.stringify(REGULATED_COUNTRIES)}
+              });
+              // Everywhere else: grant by default; banner offers opt-out.
+              gtag('consent', 'default', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted',
+                analytics_storage: 'granted',
+                functionality_storage: 'granted',
+                personalization_storage: 'granted',
                 security_storage: 'granted',
                 wait_for_update: 500
               });`,
@@ -93,7 +112,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
-        <ConsentBanner />
+        <ConsentBanner isRegulated={isRegulated} />
       </body>
     </html>
   );

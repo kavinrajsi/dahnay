@@ -9,6 +9,27 @@ export const DEFAULT_CATEGORIES = {
   marketing: false,
 };
 
+export const ALL_GRANTED_CATEGORIES = {
+  necessary: true,
+  analytics: true,
+  marketing: true,
+};
+
+// ISO 3166-1 alpha-2 codes for regions where opt-in consent is legally required.
+// Kept in sync with the `region: [...]` list in the gtag consent default script.
+export const REGULATED_COUNTRIES = [
+  "AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE",
+  "IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE",
+  "GB","CH","NO","IS","LI","IN","BR",
+];
+
+// Unknown country (missing geo header, local dev) is treated as regulated —
+// safer to over-show the banner than to under-comply.
+export function isRegulatedCountry(country) {
+  if (!country) return true;
+  return REGULATED_COUNTRIES.includes(country.toUpperCase());
+}
+
 export function readConsentCookie() {
   if (typeof document === "undefined") return null;
   const match = document.cookie.match(

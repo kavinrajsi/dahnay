@@ -91,7 +91,10 @@ const newsroomDropdown = [
 export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMegaCol, setMobileMegaCol] = useState(null);
   const pathname = usePathname();
+  const headerRef = useRef(null);
+  const leaveTimerRef = useRef(null);
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -107,18 +110,37 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  const leaveTimerRef = useRef(null);
+  // Reset expanded mobile column whenever the active dropdown closes/changes.
+  useEffect(() => {
+    if (!activeDropdown) setMobileMegaCol(null);
+  }, [activeDropdown]);
 
-  const handleMouseEnter = (menu) => {
+  // Close the active dropdown when a tap/click lands outside the header.
+  useEffect(() => {
+    if (!activeDropdown) return;
+    const handleOutside = (e) => {
+      if (headerRef.current && !headerRef.current.contains(e.target)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener("pointerdown", handleOutside);
+    return () => document.removeEventListener("pointerdown", handleOutside);
+  }, [activeDropdown]);
+
+  // Hover handlers fire only for real mouse pointers — touch goes through click.
+  const handlePointerEnter = (menu, e) => {
+    if (e?.pointerType && e.pointerType !== "mouse") return;
     clearTimeout(leaveTimerRef.current);
     setActiveDropdown(menu);
   };
-  const handleMouseLeave = () => {
+  const handlePointerLeave = (e) => {
+    if (e?.pointerType && e.pointerType !== "mouse") return;
     leaveTimerRef.current = setTimeout(() => setActiveDropdown(null), 150);
   };
   const closeAll = () => {
     setActiveDropdown(null);
     setMobileMenuOpen(false);
+    setMobileMegaCol(null);
   };
 
   const renderDropdown = (id, items) => {
@@ -126,13 +148,13 @@ export default function Header() {
     return (
       <div
         className="header__nav-item"
-        onMouseEnter={() => handleMouseEnter(id)}
-        onMouseLeave={handleMouseLeave}
+        onPointerEnter={(e) => handlePointerEnter(id, e)}
+        onPointerLeave={handlePointerLeave}
       >
         <button
           type="button"
           className={`header__nav-link${hasActive ? " header__nav-link--active" : ""}`}
-          onClick={() => setActiveDropdown(activeDropdown === id ? null : id)}
+          onClick={() => setActiveDropdown((prev) => (prev === id ? null : id))}
           aria-expanded={activeDropdown === id}
         >
           {id.charAt(0).toUpperCase() + id.slice(1)}
@@ -155,8 +177,8 @@ export default function Header() {
         {activeDropdown === id && (
           <div
             className="header__dropdown"
-            onMouseEnter={() => clearTimeout(leaveTimerRef.current)}
-            onMouseLeave={handleMouseLeave}
+            onPointerEnter={() => clearTimeout(leaveTimerRef.current)}
+            onPointerLeave={handlePointerLeave}
           >
             {items.map((item) => (
               <Link
@@ -183,13 +205,14 @@ export default function Header() {
     return (
       <div
         className="header__nav-item"
-        onMouseEnter={() => handleMouseEnter(id)}
-        onMouseLeave={handleMouseLeave}
+        onPointerEnter={(e) => handlePointerEnter(id, e)}
+        onPointerLeave={handlePointerLeave}
       >
         <button
           type="button"
           className={`header__nav-link${hasActive ? " header__nav-link--active" : ""}`}
-          onClick={() => setActiveDropdown(activeDropdown === id ? null : id)}
+          onClick={() => setActiveDropdown((prev) => (prev === id ? null : id))}
+          aria-expanded={activeDropdown === id}
         >
           {label}
           <svg
@@ -211,33 +234,61 @@ export default function Header() {
         {activeDropdown === id && (
           <div
             className="header__mega-menu"
-            onMouseEnter={() => clearTimeout(leaveTimerRef.current)}
-            onMouseLeave={handleMouseLeave}
+            onPointerEnter={() => clearTimeout(leaveTimerRef.current)}
+            onPointerLeave={handlePointerLeave}
           >
             <div className="container header__mega-menu-inner">
-              {columns.map((col) => (
-                <div key={col.title} className="header__mega-col">
-                  <Link
-                    href={col.href}
-                    className="header__mega-title"
-                    onClick={closeAll}
+              {columns.map((col) => {
+                const isOpen = mobileMegaCol === col.title;
+                return (
+                  <div
+                    key={col.title}
+                    className={`header__mega-col${isOpen ? " header__mega-col--open" : ""}`}
                   >
-                    {col.title}
-                  </Link>
-                  <div className="header__mega-links">
-                    {col.items.map((item) => (
-                      <Link
-                        key={item.href + item.label}
-                        href={item.href}
-                        className={`header__mega-link${pathname === item.href ? " header__mega-link--active" : ""}`}
-                        onClick={closeAll}
+                    <Link
+                      href={col.href}
+                      className="header__mega-title"
+                      onClick={closeAll}
+                    >
+                      {col.title}
+                    </Link>
+                    <button
+                      type="button"
+                      className="header__mega-col-toggle"
+                      onClick={() => setMobileMegaCol(isOpen ? null : col.title)}
+                      aria-expanded={isOpen}
+                      aria-label={`Toggle ${col.title} links`}
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
                       >
-                        {item.label}
-                      </Link>
-                    ))}
+                        <path
+                          d="M4 6L8 10L12 6"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <div className="header__mega-links">
+                      {col.items.map((item) => (
+                        <Link
+                          key={item.href + item.label}
+                          href={item.href}
+                          className={`header__mega-link${pathname === item.href ? " header__mega-link--active" : ""}`}
+                          onClick={closeAll}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
@@ -245,8 +296,10 @@ export default function Header() {
     );
   };
 
+  if (pathname === "/tools" || pathname?.startsWith("/tools/")) return null;
+
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <div className="container header__container">
         <button
           className={`header__hamburger${mobileMenuOpen ? " header__hamburger--open" : ""}`}
@@ -318,28 +371,6 @@ export default function Header() {
               fill="#EE402F"
               d="M57.42 40.444c-.47.263-.965.456-1.486.58a6.803 6.803 0 0 1-1.578.186c-.64 0-1.225-.105-1.757-.313a3.966 3.966 0 0 1-2.29-2.245 4.608 4.608 0 0 1-.324-1.758c0-.649.114-1.239.341-1.768.228-.53.541-.982.943-1.358a4.34 4.34 0 0 1 1.4-.876 4.68 4.68 0 0 1 1.722-.313c.54 0 1.058.081 1.555.244.497.162.942.44 1.336.834l-.73.766a2.78 2.78 0 0 0-1.011-.696 3.195 3.195 0 0 0-1.22-.243c-.47 0-.906.085-1.307.255-.4.17-.75.405-1.046.707a3.196 3.196 0 0 0-.694 1.08 3.684 3.684 0 0 0-.248 1.368c0 .488.082.94.248 1.358.166.417.397.78.694 1.084a3.12 3.12 0 0 0 1.07.714c.416.17.874.254 1.376.254.33 0 .678-.04 1.04-.122.362-.08.694-.198.995-.353v-2.517h-1.885v-.905h2.856v4.037Zm1.874-3.584c0-.248-.008-.48-.023-.697a8.12 8.12 0 0 1-.023-.591h.855c0 .147.004.294.012.44.007.147.01.297.01.453h.024c.062-.131.148-.26.26-.383.112-.124.245-.234.4-.33a2.143 2.143 0 0 1 1.33-.308.79.79 0 0 1 .184.046l-.057.916a1.683 1.683 0 0 0-.485-.07c-.555 0-.958.18-1.21.54-.25.359-.375.852-.375 1.478v2.645h-.902v-4.14Zm3.549 1.426c0-.424.074-.812.22-1.16a2.74 2.74 0 0 1 .601-.898c.255-.252.56-.447.914-.586.354-.14.74-.209 1.156-.209.417 0 .802.07 1.157.21.354.139.659.334.913.584.254.252.455.552.6.9.148.347.22.734.22 1.16 0 .425-.072.812-.22 1.16a2.745 2.745 0 0 1-.6.898c-.255.251-.56.447-.913.586-.355.14-.74.208-1.157.208-.416 0-.802-.07-1.156-.208a2.675 2.675 0 0 1-.914-.586 2.732 2.732 0 0 1-.6-.898 2.96 2.96 0 0 1-.22-1.16Zm.972 0c0 .286.044.552.133.795a1.84 1.84 0 0 0 .995 1.068c.235.105.499.157.792.157.292 0 .557-.052.792-.157a1.84 1.84 0 0 0 .994-1.068c.089-.243.133-.508.133-.795 0-.285-.044-.55-.133-.794a1.858 1.858 0 0 0-.387-.639 1.853 1.853 0 0 0-1.4-.586 1.92 1.92 0 0 0-.791.157 1.84 1.84 0 0 0-.995 1.068c-.09.243-.133.509-.133.794ZM75.829 41h-.89L73.4 36.825h-.024l-1.364 4.177h-.925l-1.758-5.43h.994l1.238 4.177h.023l1.4-4.176h.947l1.422 4.176h.023l1.226-4.176h.971L75.83 41Zm11.631-7.308h-2.705v7.309h-.97v-7.309h-2.706v-.904h6.383v.904h-.001Zm.984-1.461h.901v4.095h.024c.062-.108.147-.215.255-.32a1.91 1.91 0 0 1 .387-.284c.15-.084.318-.154.502-.208.185-.054.382-.081.59-.081.355 0 .66.054.92.162a1.718 1.718 0 0 1 1.017 1.155c.08.275.121.574.121.899V41h-.901v-3.26c0-.456-.101-.815-.301-1.078-.2-.263-.513-.394-.937-.394-.293 0-.545.05-.757.15a1.332 1.332 0 0 0-.52.43 1.924 1.924 0 0 0-.301.66 3.394 3.394 0 0 0-.099.848v2.645h-.901V32.23Zm11.262 7.784c-.323.417-.679.71-1.064.876-.385.166-.832.25-1.34.25a2.8 2.8 0 0 1-1.145-.227 2.574 2.574 0 0 1-.862-.609 2.664 2.664 0 0 1-.543-.905 3.223 3.223 0 0 1-.19-1.114c0-.417.069-.802.207-1.154a2.586 2.586 0 0 1 1.458-1.49 2.88 2.88 0 0 1 1.11-.209c.377 0 .724.064 1.04.192.316.127.588.313.816.556.227.244.402.542.526.894.123.351.185.752.185 1.2v.29h-4.37c.014.232.07.454.167.666.096.213.222.398.376.557.154.158.335.284.543.377.208.092.436.14.682.14.393 0 .725-.07.994-.21.27-.139.513-.343.729-.614l.681.534Zm-.775-2.216c-.016-.464-.165-.835-.451-1.114-.285-.279-.679-.418-1.18-.418-.5 0-.905.14-1.213.418-.309.278-.494.65-.555 1.114h3.4Zm5.747-5.011h1.225l4.741 6.82h.023v-6.82h.971V41h-1.225l-4.741-6.821h-.023V41h-.971v-8.212Zm8.521 5.498c0-.424.074-.812.22-1.16a2.658 2.658 0 0 1 1.514-1.484c.355-.14.74-.209 1.157-.209.416 0 .802.07 1.156.21.355.139.66.334.914.584.254.252.455.552.601.9.146.347.22.734.22 1.16 0 .425-.074.812-.22 1.16a2.752 2.752 0 0 1-.601.898 2.662 2.662 0 0 1-.914.586c-.354.14-.74.208-1.156.208-.417 0-.802-.07-1.157-.208a2.68 2.68 0 0 1-.913-.586 2.745 2.745 0 0 1-.601-.898 2.972 2.972 0 0 1-.22-1.16Zm.972 0c0 .286.044.552.133.795a1.842 1.842 0 0 0 .994 1.068c.236.105.499.157.793.157.292 0 .557-.052.792-.157a1.839 1.839 0 0 0 .994-1.068 2.32 2.32 0 0 0 .133-.795c0-.285-.045-.55-.133-.794a1.872 1.872 0 0 0-.387-.639 1.861 1.861 0 0 0-1.399-.586 1.85 1.85 0 0 0-1.4.586 1.85 1.85 0 0 0-.387.639 2.3 2.3 0 0 0-.133.794ZM126.184 41h-.89l-1.538-4.176h-.023l-1.364 4.177h-.926l-1.757-5.43h.994l1.237 4.177h.024l1.399-4.176h.948l1.422 4.176h.023l1.226-4.176h.971L126.184 41Z"
             />
-          </svg>
-        </Link>
-
-        <Link href="/contact" className="header__phone">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clipPath="url(#clip0_853_8523)">
-              <path
-                d="M22.0742 15.7533C20.6049 15.7533 19.1621 15.5234 17.7949 15.0716C17.125 14.8431 16.3014 15.0528 15.8926 15.4727L13.194 17.5098C10.0644 15.8393 8.13669 13.9121 6.48894 10.8061L8.46612 8.17781C8.97981 7.66481 9.16406 6.91544 8.94331 6.21231C8.48956 4.83794 8.25906 3.39587 8.25906 1.92587C8.25913 0.863937 7.39519 0 6.33331 0H1.92581C0.863937 0 0 0.863937 0 1.92581C0 14.0977 9.90237 24 22.0742 24C23.1361 24 24.0001 23.1361 24.0001 22.0742V17.679C24 16.6172 23.1361 15.7533 22.0742 15.7533Z"
-                fill="#0B090A"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_853_8523">
-                <rect width="24" height="24" fill="white" />
-              </clipPath>
-            </defs>
           </svg>
         </Link>
 

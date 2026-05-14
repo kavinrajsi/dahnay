@@ -74,6 +74,16 @@ const socialLinks = [
       </svg>
     ),
   },
+  {
+    label: "Medium",
+    href: "https://medium.com/@dahnaylogistics",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <rect width="24" height="24" fill="#fff" rx="12"/>
+        <path fill="#000" d="M13.153 12c0 2.761-2.273 5-5.077 5C5.273 17 3 14.762 3 12s2.273-5 5.076-5c2.804 0 5.077 2.239 5.077 5Zm5.57 0c0 2.6-1.137 4.707-2.54 4.707-1.4 0-2.537-2.108-2.537-4.707 0-2.599 1.136-4.707 2.538-4.707S18.722 9.401 18.722 12ZM21 12c0 2.329-.4 4.217-.893 4.217s-.892-1.889-.892-4.217c0-2.328.4-4.217.892-4.217.494 0 .893 1.888.893 4.217Z"/>
+      </svg>
+    ),
+  },
 ];
 
 function LinkColumn({ title, links }) {

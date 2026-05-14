@@ -144,6 +144,16 @@ const nextConfig = {
       { source: "/header/default", destination: "/", permanent: true },
       { source: "/header/default-2", destination: "/", permanent: true },
       { source: "/header/default-2-2", destination: "/", permanent: true },
+      { source: "/industry/electricals&electronics", destination: "/", permanent: true },
+      { source: "/industry/electricals&electronics.html", destination: "/", permanent: true },
+      { source: "/service/other_resources", destination: "/", permanent: true },
+      { source: "/service/other_resources.html", destination: "/", permanent: true },
+      { source: "/resources/other_resources", destination: "/", permanent: true },
+      { source: "/resources/other_resources.html", destination: "/", permanent: true },
+      { source: "/industry/other_resources", destination: "/", permanent: true },
+      { source: "/industry/other_resources.html", destination: "/", permanent: true },
+      { source: "/tools/other_resources", destination: "/", permanent: true },
+      { source: "/tools/other_resources.html", destination: "/", permanent: true },
     ];
   },
 };

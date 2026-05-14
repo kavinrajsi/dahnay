@@ -91,6 +91,7 @@ const nextConfig = {
       // ─── Legacy /renewable-energy-logistics/* → renewables industry ────────
       { source: "/renewable-energy-logistics", destination: "/industries/renewables", permanent: true },
       { source: "/renewable-energy-logistics.html", destination: "/industries/renewables", permanent: true },
+      { source: "/renewable-energy-logistics/index.html", destination: "/industries/renewables", permanent: true },
       { source: "/renewable-energy-logistics/blog", destination: "/industries/renewables", permanent: true },
       { source: "/renewable-energy-logistics/blog.html", destination: "/industries/renewables", permanent: true },
       { source: "/renewable-energy-logistics/case-study", destination: "/industries/renewables", permanent: true },

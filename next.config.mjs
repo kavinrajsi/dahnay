@@ -25,6 +25,9 @@ const nextConfig = {
       // ─── Top-level legacy pages ────────────────────────────────────────────
       { source: "/contacts", destination: "/contact", permanent: true },
       { source: "/contacts.html", destination: "/contact", permanent: true },
+      { source: "/contact.html", destination: "/contact", permanent: true },
+      { source: "/dahnay-acquires-kailash-cfs", destination: "/solutions/ports-infra", permanent: true },
+      { source: "/dahnay-acquires-kailash-cfs/", destination: "/solutions/ports-infra", permanent: true },
       { source: "/about-us", destination: "/about", permanent: true },
       { source: "/about-us.html", destination: "/about", permanent: true },
       { source: "/advantage", destination: "/about", permanent: true },

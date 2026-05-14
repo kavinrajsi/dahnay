@@ -26,6 +26,8 @@ const nextConfig = {
       { source: "/contacts", destination: "/contact", permanent: true },
       { source: "/contacts.html", destination: "/contact", permanent: true },
       { source: "/contact.html", destination: "/contact", permanent: true },
+      { source: "/chargrs", destination: "/contact", permanent: true },
+      { source: "/chargrs.html", destination: "/contact", permanent: true },
       { source: "/dahnay-acquires-kailash-cfs", destination: "/solutions/ports-infra", permanent: true },
       { source: "/dahnay-acquires-kailash-cfs/", destination: "/solutions/ports-infra", permanent: true },
       { source: "/about-us", destination: "/about", permanent: true },

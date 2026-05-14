@@ -44,6 +44,8 @@ const nextConfig = {
       // ─── Content sections ──────────────────────────────────────────────────
       { source: "/news", destination: "/newsroom/news", permanent: true },
       { source: "/news.html", destination: "/newsroom/news", permanent: true },
+      { source: "/news&media", destination: "/newsroom/news", permanent: true },
+      { source: "/news&media.html", destination: "/newsroom/news", permanent: true },
       { source: "/blog", destination: "/newsroom/blog", permanent: true },
       { source: "/blog.html", destination: "/newsroom/blog", permanent: true },
       { source: "/case-study", destination: "/newsroom/case-study", permanent: true },

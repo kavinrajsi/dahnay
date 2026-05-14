@@ -110,6 +110,14 @@ const nextConfig = {
       { source: "/load-calculator.html", destination: "/", permanent: true },
       { source: "/dlpl", destination: "/", permanent: true },
       { source: "/dlpl.html", destination: "/", permanent: true },
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/tools/index.html", destination: "/", permanent: true },
+      { source: "/header/sticky", destination: "/", permanent: true },
+      { source: "/header/home-2", destination: "/", permanent: true },
+      { source: "/header/home-3", destination: "/", permanent: true },
+      { source: "/header/default", destination: "/", permanent: true },
+      { source: "/header/default-2", destination: "/", permanent: true },
+      { source: "/header/default-2-2", destination: "/", permanent: true },
     ];
   },
 };

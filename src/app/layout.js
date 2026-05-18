@@ -64,7 +64,7 @@ export default async function RootLayout({ children }) {
   const isRegulated = isRegulatedCountry(country);
 
   return (
-    <html lang="en" className={avenir.variable}>
+    <html lang="en" className={avenir.variable} data-scroll-behavior="smooth">
       <head>
         {isDev && (
           <script

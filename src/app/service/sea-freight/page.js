@@ -5,6 +5,9 @@ export const metadata = {
   title: "Sea Freight",
   description:
     "Cost-effective sea freight with global carrier partnerships. DahNAY offers FCL, LCL, and specialised container solutions for all cargo types and trade lanes.",
+  alternates: {
+    canonical: "/service/sea-freight",
+  },
   openGraph: {
     title: "Sea Freight | DahNAY",
     description:

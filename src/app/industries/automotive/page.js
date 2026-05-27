@@ -5,6 +5,9 @@ export const metadata = {
   title: "Automotive Logistics",
   description:
     "DahNAY delivers precision logistics for the automotive sector — just-in-time delivery, OEM supply chain management, and finished vehicle transport across South Asia.",
+  alternates: {
+    canonical: "/industries/automotive",
+  },
   openGraph: {
     title: "Automotive Logistics | DahNAY",
     description:

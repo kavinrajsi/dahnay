@@ -6,6 +6,9 @@ export const metadata = {
   title: "Case Studies",
   description:
     "Explore DahNAY case studies showcasing real-world logistics solutions, supply chain innovations, and client success stories.",
+  alternates: {
+    canonical: "/newsroom/case-study",
+  },
   openGraph: {
     title: "Case Studies | DahNAY",
     description:

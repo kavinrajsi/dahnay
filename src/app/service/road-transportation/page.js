@@ -5,6 +5,9 @@ export const metadata = {
   title: "Road Transportation",
   description:
     "Reliable road transportation solutions across South Asia. DahNAY provides full-load and part-load trucking with real-time tracking and dedicated support.",
+  alternates: {
+    canonical: "/service/road-transportation",
+  },
   openGraph: {
     title: "Road Transportation | DahNAY",
     description:

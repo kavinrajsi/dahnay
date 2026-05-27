@@ -1,5 +1,8 @@
 export const metadata = {
   title: "Sea Freight Rates",
+  alternates: {
+    canonical: "/tools/sea-rates",
+  },
 };
 
 export default function SeaRatesPage() {

@@ -11,6 +11,9 @@ export const metadata = {
   title: "DahNAY Ports & Infrastructure",
   description:
     "DahNAY's port and infrastructure solutions improve cargo handling efficiency, terminal operations, and yard management for ports and logistics hubs.",
+  alternates: {
+    canonical: "/solutions/ports-infra",
+  },
   openGraph: {
     title: "DahNAY Ports & Infrastructure | DahNAY",
     description:

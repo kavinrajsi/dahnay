@@ -7,6 +7,9 @@ export const metadata = {
   title: "POSH Policy",
   description:
     "DahNAY's Prevention of Sexual Harassment (POSH) Policy — our commitment to a safe and respectful workplace for all employees.",
+  alternates: {
+    canonical: "/posh-policy",
+  },
   openGraph: {
     title: "POSH Policy | DahNAY",
     description:

@@ -5,6 +5,9 @@ export const metadata = {
   title: "Energy, Oil & Gas Logistics",
   description:
     "Logistics solutions for energy, oil & gas operations. DahNAY handles hazmat cargo, specialist equipment transport, and project logistics for upstream and downstream sectors.",
+  alternates: {
+    canonical: "/industries/energy-oil-gas",
+  },
   openGraph: {
     title: "Energy, Oil & Gas Logistics | DahNAY",
     description:

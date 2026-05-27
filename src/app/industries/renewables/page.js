@@ -5,6 +5,9 @@ export const metadata = {
   title: "Renewables Logistics",
   description:
     "Logistics expertise for renewable energy projects. DahNAY moves wind turbines, solar panels, and energy infrastructure with precision planning and heavy-lift capability.",
+  alternates: {
+    canonical: "/industries/renewables",
+  },
   openGraph: {
     title: "Renewables Logistics | DahNAY",
     description:

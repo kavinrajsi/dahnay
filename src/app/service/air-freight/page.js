@@ -5,6 +5,9 @@ export const metadata = {
   title: "Air Freight",
   description:
     "DahNAY's air freight services deliver speed and reliability for time-sensitive cargo. Global coverage, expert handling, and real-time tracking from origin to destination.",
+  alternates: {
+    canonical: "/service/air-freight",
+  },
   openGraph: {
     title: "Air Freight | DahNAY",
     description:

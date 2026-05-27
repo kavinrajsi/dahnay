@@ -6,6 +6,9 @@ export const metadata = {
   title: "Blog",
   description:
     "Insights, news, and perspectives from DahNAY on logistics, supply chain, and industry trends.",
+  alternates: {
+    canonical: "/newsroom/blog",
+  },
   openGraph: {
     title: "Blog | DahNAY",
     description:

@@ -2,6 +2,9 @@ export const metadata = {
   title: "Contact Us",
   description:
     "Get in touch with DahNAY's logistics experts. Tell us about your freight needs and we'll build a solution tailored to your business.",
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
     title: "Contact Us | DahNAY",
     description:

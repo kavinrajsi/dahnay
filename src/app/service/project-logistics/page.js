@@ -5,6 +5,9 @@ export const metadata = {
   title: "Project Logistics",
   description:
     "DahNAY manages complex project logistics — heavy lifts, oversized cargo, and multi-modal transport solutions for large-scale industrial and infrastructure projects.",
+  alternates: {
+    canonical: "/service/project-logistics",
+  },
   openGraph: {
     title: "Project Logistics | DahNAY",
     description:

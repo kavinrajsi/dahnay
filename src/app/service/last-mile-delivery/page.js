@@ -5,6 +5,9 @@ export const metadata = {
   title: "Last Mile Delivery",
   description:
     "DahNAY's last-mile delivery network ensures shipments reach their final destination on time, with full visibility at every step of the journey.",
+  alternates: {
+    canonical: "/service/last-mile-delivery",
+  },
   openGraph: {
     title: "Last Mile Delivery | DahNAY",
     description:

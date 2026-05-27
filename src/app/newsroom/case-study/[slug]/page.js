@@ -23,12 +23,20 @@ export async function generateMetadata({ params }) {
     return {
       title: `${post.title} - DahNAY`,
       description: post.excerpt,
+      alternates: {
+        canonical: `/newsroom/case-study/${slug}`,
+      },
       openGraph: post.featuredImage?.url
         ? { images: [{ url: post.featuredImage.url }] }
         : undefined,
     };
   } catch {
-    return { title: "Case Study - DahNAY" };
+    return {
+      title: "Case Study - DahNAY",
+      alternates: {
+        canonical: `/newsroom/case-study/${slug}`,
+      },
+    };
   }
 }
 

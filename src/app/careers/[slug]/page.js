@@ -12,10 +12,18 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const job = getJobBySlug(slug);
-  if (!job) return { title: "Careers | DahNAY" };
+  if (!job) {
+    return {
+      title: "Careers | DahNAY",
+      alternates: { canonical: `/careers/${slug}` },
+    };
+  }
   return {
     title: `${job.title} - Careers | DahNAY`,
     description: `${job.intro}. ${job.location} — ${job.type}.`,
+    alternates: {
+      canonical: `/careers/${slug}`,
+    },
   };
 }
 

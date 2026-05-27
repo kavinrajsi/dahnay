@@ -5,6 +5,9 @@ export const metadata = {
   title: "Reverse Logistics",
   description:
     "Efficient reverse logistics and returns management by DahNAY. Reduce costs and improve customer satisfaction with seamless returns processing and remanufacturing support.",
+  alternates: {
+    canonical: "/service/reverse-logistics",
+  },
   openGraph: {
     title: "Reverse Logistics | DahNAY",
     description:

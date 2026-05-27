@@ -11,6 +11,9 @@ export const metadata = {
   title: "DahNAY Lines",
   description:
     "DahNAY Lines provides carrier and shipping line management tools for streamlined booking, documentation, and freight operations.",
+  alternates: {
+    canonical: "/solutions/lines",
+  },
   openGraph: {
     title: "DahNAY Lines | DahNAY",
     description:

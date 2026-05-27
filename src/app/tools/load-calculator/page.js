@@ -1,5 +1,8 @@
 export const metadata = {
   title: "Load Calculator",
+  alternates: {
+    canonical: "/tools/load-calculator",
+  },
 };
 
 export default function LoadCalculatorPage() {

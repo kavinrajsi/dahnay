@@ -32,6 +32,9 @@ export const metadata = {
   },
   description:
     "Industry-specific logistics solutions powered by expertise, technology, and a global network. Air freight, sea freight, customs clearance, and more.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     siteName: "DahNAY",
     type: "website",

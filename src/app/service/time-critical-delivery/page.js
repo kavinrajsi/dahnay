@@ -5,6 +5,9 @@ export const metadata = {
   title: "Time-Critical Delivery",
   description:
     "When timing is everything, DahNAY's time-critical delivery service guarantees your urgent shipments arrive on schedule — 24/7, every day of the year.",
+  alternates: {
+    canonical: "/service/time-critical-delivery",
+  },
   openGraph: {
     title: "Time-Critical Delivery | DahNAY",
     description:

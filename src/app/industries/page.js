@@ -11,6 +11,9 @@ export const metadata = {
   title: "Industries",
   description:
     "DahNAY serves 10+ industry verticals with specialised logistics solutions — from automotive to renewables, FMCG to machinery.",
+  alternates: {
+    canonical: "/industries",
+  },
   openGraph: {
     title: "Industries | DahNAY",
     description:

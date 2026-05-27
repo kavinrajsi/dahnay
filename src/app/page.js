@@ -15,6 +15,9 @@ export const metadata = {
   title: "DahNAY — Global Logistics Solutions",
   description:
     "Industry-specific logistics solutions powered by expertise, technology, and a global network across air freight, sea freight, customs clearance, and more.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "DahNAY — Global Logistics Solutions",
     description:

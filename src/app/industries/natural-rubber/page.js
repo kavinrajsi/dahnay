@@ -5,6 +5,9 @@ export const metadata = {
   title: "Natural Rubber Logistics",
   description:
     "Specialised logistics for natural rubber and latex products. DahNAY provides moisture-controlled handling, bulk transport, and supply chain solutions for rubber producers.",
+  alternates: {
+    canonical: "/industries/natural-rubber",
+  },
   openGraph: {
     title: "Natural Rubber Logistics | DahNAY",
     description:

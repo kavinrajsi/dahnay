@@ -1,5 +1,8 @@
 export const metadata = {
   title: "Seaport Directory",
+  alternates: {
+    canonical: "/tools/seaport",
+  },
 };
 
 export default function SeaportPage() {

@@ -5,6 +5,9 @@ export const metadata = {
   title: "Paper & Pulp Logistics",
   description:
     "DahNAY supports the paper and pulp industry with moisture-sensitive cargo handling, roll transport, and just-in-time delivery to mills and distributors.",
+  alternates: {
+    canonical: "/industries/paper-pulp",
+  },
   openGraph: {
     title: "Paper & Pulp Logistics | DahNAY",
     description:

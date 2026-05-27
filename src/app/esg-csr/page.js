@@ -11,6 +11,9 @@ export const metadata = {
   title: "ESG & CSR",
   description:
     "DahNAY's commitment to sustainability — our environmental, social, and governance initiatives for a responsible logistics future.",
+  alternates: {
+    canonical: "/esg-csr",
+  },
   openGraph: {
     title: "ESG & CSR | DahNAY",
     description:

@@ -1,5 +1,8 @@
 export const metadata = {
   title: "Unit Convertor",
+  alternates: {
+    canonical: "/tools/unit-convertor",
+  },
 };
 
 export default function UnitConvertorPage() {

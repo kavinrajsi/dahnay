@@ -5,6 +5,9 @@ export const metadata = {
   title: "FMCG Logistics",
   description:
     "Fast, efficient FMCG logistics by DahNAY. Temperature-controlled transport, high-volume distribution, and last-mile delivery for consumer goods manufacturers and retailers.",
+  alternates: {
+    canonical: "/industries/fmcg",
+  },
   openGraph: {
     title: "FMCG Logistics | DahNAY",
     description:

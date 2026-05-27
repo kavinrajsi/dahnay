@@ -7,6 +7,9 @@ export const metadata = {
   title: "Terms & Conditions",
   description:
     "DahNAY Terms & Conditions — the legal terms governing your use of our website and logistics services.",
+  alternates: {
+    canonical: "/terms-conditions",
+  },
   openGraph: {
     title: "Terms & Conditions | DahNAY",
     description:

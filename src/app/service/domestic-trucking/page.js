@@ -5,6 +5,9 @@ export const metadata = {
   title: "Domestic Trucking",
   description:
     "Flexible domestic trucking across India's road network. DahNAY offers FTL, LTL, and multimodal road solutions with GPS tracking and dedicated account management.",
+  alternates: {
+    canonical: "/service/domestic-trucking",
+  },
   openGraph: {
     title: "Domestic Trucking | DahNAY",
     description:

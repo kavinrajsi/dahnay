@@ -7,6 +7,9 @@ export const metadata = {
   title: "Privacy Policy",
   description:
     "DahNAY Privacy Policy — how we collect, use, and protect your personal data in accordance with applicable laws.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
   openGraph: {
     title: "Privacy Policy | DahNAY",
     description:

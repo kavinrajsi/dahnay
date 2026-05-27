@@ -5,6 +5,9 @@ export const metadata = {
   title: "Customs Clearance",
   description:
     "Streamline cross-border trade with DahNAY's customs clearance experts. Full documentation management, duty optimisation, and compliance across all major trade lanes.",
+  alternates: {
+    canonical: "/service/customs-clearance",
+  },
   openGraph: {
     title: "Customs Clearance | DahNAY",
     description:

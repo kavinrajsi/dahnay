@@ -4,6 +4,9 @@ export const metadata = {
   title: "Food & Agro Logistics",
   description:
     "DahNAY delivers reliable logistics for the food and agriculture sector — temperature-controlled transport, cold chain management, and farm-to-market supply chain solutions.",
+  alternates: {
+    canonical: "/industries/food-agro",
+  },
   openGraph: {
     title: "Food & Agro Logistics | DahNAY",
     description:

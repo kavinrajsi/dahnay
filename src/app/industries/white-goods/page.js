@@ -5,6 +5,9 @@ export const metadata = {
   title: "White Goods Logistics",
   description:
     "Careful handling and delivery for white goods and appliances. DahNAY ensures damage-free transport from factory floor to retail shelf.",
+  alternates: {
+    canonical: "/industries/white-goods",
+  },
   openGraph: {
     title: "White Goods Logistics | DahNAY",
     description:

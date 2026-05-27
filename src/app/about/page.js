@@ -14,6 +14,9 @@ export const metadata = {
   title: "About Us",
   description:
     "Learn about DahNAY — our story, values, and the team driving innovation in global logistics and supply chain management.",
+  alternates: {
+    canonical: "/about",
+  },
   openGraph: {
     title: "About Us | DahNAY",
     description:

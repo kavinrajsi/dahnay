@@ -5,6 +5,9 @@ export const metadata = {
   title: "Retail & Apparel Logistics",
   description:
     "Agile supply chain solutions for retail and apparel. DahNAY manages seasonal volumes, garment-on-hanger transport, and rapid replenishment for fashion brands.",
+  alternates: {
+    canonical: "/industries/retail-apparel",
+  },
   openGraph: {
     title: "Retail & Apparel Logistics | DahNAY",
     description:

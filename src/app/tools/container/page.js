@@ -1,5 +1,8 @@
 export const metadata = {
   title: "Container Specifications",
+  alternates: {
+    canonical: "/tools/container",
+  },
 };
 
 export default function ContainerPage() {

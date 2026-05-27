@@ -5,6 +5,9 @@ export const metadata = {
   title: "Ecommerce Fulfilment",
   description:
     "End-to-end ecommerce fulfilment by DahNAY — warehousing, pick-and-pack, order management, and fast delivery to your customers nationwide.",
+  alternates: {
+    canonical: "/service/ecommerce-fulfilment",
+  },
   openGraph: {
     title: "Ecommerce Fulfilment | DahNAY",
     description:

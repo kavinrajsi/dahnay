@@ -13,6 +13,9 @@ export const metadata = {
   title: "Careers",
   description:
     "Join DahNAY and shape the future of logistics. Explore career opportunities across freight, technology, operations, and sales.",
+  alternates: {
+    canonical: "/careers",
+  },
   openGraph: {
     title: "Careers | DahNAY",
     description:

@@ -7,6 +7,9 @@ export const metadata = {
   title: "Cookie Policy",
   description:
     "DahNAY Cookie Policy — information about the cookies we use on our website and how to manage your preferences.",
+  alternates: {
+    canonical: "/cookie-policy",
+  },
   openGraph: {
     title: "Cookie Policy | DahNAY",
     description:

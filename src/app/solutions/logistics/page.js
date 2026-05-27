@@ -11,6 +11,9 @@ export const metadata = {
   title: "DahNAY Logistics Platform",
   description:
     "DahNAY's logistics platform delivers end-to-end supply chain visibility, automated workflows, and data-driven insights for modern freight operations.",
+  alternates: {
+    canonical: "/solutions/logistics",
+  },
   openGraph: {
     title: "DahNAY Logistics Platform | DahNAY",
     description:

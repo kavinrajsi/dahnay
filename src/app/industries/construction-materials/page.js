@@ -5,6 +5,9 @@ export const metadata = {
   title: "Construction Materials Logistics",
   description:
     "DahNAY moves bulk materials, heavy equipment, and building supplies to construction sites on time. Specialised handling for all construction logistics needs.",
+  alternates: {
+    canonical: "/industries/construction-materials",
+  },
   openGraph: {
     title: "Construction Materials Logistics | DahNAY",
     description:

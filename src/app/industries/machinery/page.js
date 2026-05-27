@@ -5,6 +5,9 @@ export const metadata = {
   title: "Machinery & Equipment Logistics",
   description:
     "DahNAY transports heavy machinery and industrial equipment with expert planning. Oversized load management, crane lifts, and multi-modal solutions for capital goods.",
+  alternates: {
+    canonical: "/industries/machinery",
+  },
   openGraph: {
     title: "Machinery & Equipment Logistics | DahNAY",
     description:

@@ -7,6 +7,9 @@ export const metadata = {
   title: "Whistleblower Policy",
   description:
     "DahNAY's Whistleblower Policy — a secure channel for reporting concerns about unethical conduct or policy violations.",
+  alternates: {
+    canonical: "/whistleblower-policy",
+  },
   openGraph: {
     title: "Whistleblower Policy | DahNAY",
     description:

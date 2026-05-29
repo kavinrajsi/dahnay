@@ -11,19 +11,28 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
 
 export const metadata = {
-  title: "About Us",
+  title: "DahNAY | About | AEO-Certified Global Logistics Partner",
   description:
-    "Learn about DahNAY — our story, values, and the team driving innovation in global logistics and supply chain management.",
+    "Learn how DahNAY, AEO-certified and MTO-registered - supports businesses across South Asia with freight forwarding, supply chain solutions, and logistics.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About Us | DahNAY",
+    title: "DahNAY | About | AEO-Certified Global Logistics Partner",
     description:
-      "Learn about DahNAY — our story, values, and the team driving innovation in global logistics and supply chain management.",
+      "Learn how DahNAY, AEO-certified and MTO-registered - supports businesses across South Asia with freight forwarding, supply chain solutions, and logistics.",
     images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "DahNAY | About | AEO-Certified Global Logistics Partner",
+    description:
+      "Learn how DahNAY, AEO-certified and MTO-registered - supports businesses across South Asia with freight forwarding, supply chain solutions, and logistics.",
+    images: ["/images/banners/banner-desktop-about-us.png"],
+  },
 };
+
 
 const trail = [
   { name: "Home", path: "/" },

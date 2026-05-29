@@ -2,19 +2,28 @@
 import ServicePage from "@/components/sections/ServicePage";
 
 export const metadata = {
-  title: "Air Freight",
+  title: "IATA-Certified Air Freight Import Export Charter - DahNAY",
   description:
-    "DahNAY's air freight services deliver speed and reliability for time-sensitive cargo. Global coverage, expert handling, and real-time tracking from origin to destination.",
+    "Ship faster with DahNAY IATA-certified air freight - competitive air cargo rates, import and export handling, charter flights, and DG support worldwide.",
   alternates: {
     canonical: "/service/air-freight",
   },
   openGraph: {
-    title: "Air Freight | DahNAY",
+    title: "IATA-Certified Air Freight Import Export Charter - DahNAY",
     description:
-      "DahNAY's air freight services deliver speed and reliability for time-sensitive cargo. Global coverage, expert handling, and real-time tracking from origin to destination.",
+      "Ship faster with DahNAY IATA-certified air freight - competitive air cargo rates, import and export handling, charter flights, and DG support worldwide.",
     images: [{ url: "/images/banners/banner-desktop-air-freight.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "IATA-Certified Air Freight Import Export Charter - DahNAY",
+    description:
+      "Ship faster with DahNAY IATA-certified air freight - competitive air cargo rates, import and export handling, charter flights, and DG support worldwide.",
+    images: ["/images/banners/banner-desktop-air-freight.png"],
+  },
 };
+
 
 export default function AirFreightPage() {
   return <ServicePage slug="air-freight" />;

@@ -10,19 +10,28 @@ import { breadcrumbList, jobPostingSchema, webPageSchema } from "@/lib/schema";
 import { JOBS } from "@/data/careers/jobs";
 
 export const metadata = {
-  title: "Careers",
+  title: "Join DahNAY - Logistics, Freight & Supply Chain Careers",
   description:
-    "Join DahNAY and shape the future of logistics. Explore career opportunities across freight, technology, operations, and sales.",
+    "Build your career in freight forwarding, 3PL, and supply chain management at DahNAY - a fast-growing global logistics company across multiple domains.",
   alternates: {
     canonical: "/careers",
   },
   openGraph: {
-    title: "Careers | DahNAY",
+    title: "Join DahNAY - Logistics, Freight & Supply Chain Careers",
     description:
-      "Join DahNAY and shape the future of logistics. Explore career opportunities across freight, technology, operations, and sales.",
+      "Build your career in freight forwarding, 3PL, and supply chain management at DahNAY - a fast-growing global logistics company across multiple domains.",
     images: [{ url: "/images/banners/banner-desktop-careers.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "Join DahNAY - Logistics, Freight & Supply Chain Careers",
+    description:
+      "Build your career in freight forwarding, 3PL, and supply chain management at DahNAY - a fast-growing global logistics company across multiple domains.",
+    images: ["/images/banners/banner-desktop-careers.png"],
+  },
 };
+
 
 const CULTURE_CARDS = [
   {

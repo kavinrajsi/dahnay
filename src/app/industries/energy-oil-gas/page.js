@@ -2,19 +2,28 @@
 import IndustryPage from "@/components/sections/IndustryPage";
 
 export const metadata = {
-  title: "Energy, Oil & Gas Logistics",
+  title: "Oil, Gas & Energy Upstream-Downstream Logistics - DahNAY",
   description:
-    "Logistics solutions for energy, oil & gas operations. DahNAY handles hazmat cargo, specialist equipment transport, and project logistics for upstream and downstream sectors.",
+    "Handle complex oil, gas, and energy cargo with DahNAY - OOG freight, hazardous goods, bonded warehousing, and project logistics for energy operations.",
   alternates: {
     canonical: "/industries/energy-oil-gas",
   },
   openGraph: {
-    title: "Energy, Oil & Gas Logistics | DahNAY",
+    title: "Oil, Gas & Energy Upstream-Downstream Logistics - DahNAY",
     description:
-      "Logistics solutions for energy, oil & gas operations. DahNAY handles hazmat cargo, specialist equipment transport, and project logistics for upstream and downstream sectors.",
+      "Handle complex oil, gas, and energy cargo with DahNAY - OOG freight, hazardous goods, bonded warehousing, and project logistics for energy operations.",
     images: [{ url: "/images/banners/banner-desktop-energy-oil-gas.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "Oil, Gas & Energy Upstream-Downstream Logistics - DahNAY",
+    description:
+      "Handle complex oil, gas, and energy cargo with DahNAY - OOG freight, hazardous goods, bonded warehousing, and project logistics for energy operations.",
+    images: ["/images/banners/banner-desktop-energy-oil-gas.png"],
+  },
 };
+
 
 export default function EnergyOilGasPage() {
   return <IndustryPage slug="energy-oil-gas" />;

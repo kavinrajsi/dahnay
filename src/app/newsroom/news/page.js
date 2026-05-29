@@ -3,19 +3,28 @@ import Banner from "@/components/sections/Banner";
 import NewsroomContent from "@/components/sections/NewsroomContent";
 
 export const metadata = {
-  title: "News",
+  title: "Freight Forwarding & Supply Chain News Updates - DahNAY",
   description:
-    "Stay updated with the latest news from DahNAY on logistics, supply chain developments, and industry milestones.",
+    "Stay updated with DahNAY freight news, India EXIM trade alerts, supply chain disruption reports, and logistics announcements from global trade community.",
   alternates: {
     canonical: "/newsroom/news",
   },
   openGraph: {
-    title: "News | DahNAY",
+    title: "Freight Forwarding & Supply Chain News Updates - DahNAY",
     description:
-      "Stay updated with the latest news from DahNAY on logistics, supply chain developments, and industry milestones.",
+      "Stay updated with DahNAY freight news, India EXIM trade alerts, supply chain disruption reports, and logistics announcements from global trade community.",
     images: [{ url: "/images/banners/banner-desktop-newsroom.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "Freight Forwarding & Supply Chain News Updates - DahNAY",
+    description:
+      "Stay updated with DahNAY freight news, India EXIM trade alerts, supply chain disruption reports, and logistics announcements from global trade community.",
+    images: ["/images/banners/banner-desktop-newsroom.png"],
+  },
 };
+
 
 export default async function NewsPage() {
   let posts = [];

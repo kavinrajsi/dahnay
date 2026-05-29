@@ -3,19 +3,28 @@ import Banner from "@/components/sections/Banner";
 import NewsroomContent from "@/components/sections/NewsroomContent";
 
 export const metadata = {
-  title: "Blog",
+  title: "India EXIM, AI & Geopolitical Logistics Insights - DahNAY",
   description:
-    "Insights, news, and perspectives from DahNAY on logistics, supply chain, and industry trends.",
+    "Explore AI in logistics, India EXIM trends, geopolitical supply chain risk, and freight insights - thought leadership from DahNAY supply chain experts.",
   alternates: {
     canonical: "/newsroom/blog",
   },
   openGraph: {
-    title: "Blog | DahNAY",
+    title: "India EXIM, AI & Geopolitical Logistics Insights - DahNAY",
     description:
-      "Insights, news, and perspectives from DahNAY on logistics, supply chain, and industry trends.",
+      "Explore AI in logistics, India EXIM trends, geopolitical supply chain risk, and freight insights - thought leadership from DahNAY supply chain experts.",
     images: [{ url: "/images/banners/banner-desktop-newsroom.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "India EXIM, AI & Geopolitical Logistics Insights - DahNAY",
+    description:
+      "Explore AI in logistics, India EXIM trends, geopolitical supply chain risk, and freight insights - thought leadership from DahNAY supply chain experts.",
+    images: ["/images/banners/banner-desktop-newsroom.png"],
+  },
 };
+
 
 export default async function BlogPage() {
   let posts = [];

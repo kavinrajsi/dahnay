@@ -8,19 +8,28 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
 
 export const metadata = {
-  title: "ESG & CSR",
+  title: "Green & Sustainable Net-Zero Freight Logistics - DahNAY",
   description:
-    "DahNAY's commitment to sustainability — our environmental, social, and governance initiatives for a responsible logistics future.",
+    "Discover how DahNAY supports green freight and net-zero supply chain goals - carbon footprint reduction, sustainable logistics, and community impact now.",
   alternates: {
     canonical: "/esg-csr",
   },
   openGraph: {
-    title: "ESG & CSR | DahNAY",
+    title: "Green & Sustainable Net-Zero Freight Logistics - DahNAY",
     description:
-      "DahNAY's commitment to sustainability — our environmental, social, and governance initiatives for a responsible logistics future.",
+      "Discover how DahNAY supports green freight and net-zero supply chain goals - carbon footprint reduction, sustainable logistics, and community impact now.",
     images: [{ url: "/images/banners/banner-desktop-esg-csr.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "Green & Sustainable Net-Zero Freight Logistics - DahNAY",
+    description:
+      "Discover how DahNAY supports green freight and net-zero supply chain goals - carbon footprint reduction, sustainable logistics, and community impact now.",
+    images: ["/images/banners/banner-desktop-esg-csr.png"],
+  },
 };
+
 
 const trail = [
   { name: "Home", path: "/" },

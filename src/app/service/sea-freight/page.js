@@ -2,19 +2,28 @@
 import ServicePage from "@/components/sections/ServicePage";
 
 export const metadata = {
-  title: "Sea Freight",
+  title: "FCL, LCL & NVOCC Global Sea Freight Forwarding - DahNAY",
   description:
-    "Cost-effective sea freight with global carrier partnerships. DahNAY offers FCL, LCL, and specialised container solutions for all cargo types and trade lanes.",
+    "Ship globally with DahNAY FCL, LCL, and NVOCC sea freight - reefer containers, flat rack, and port-to-port or door-to-door cargo movement worldwide now.",
   alternates: {
     canonical: "/service/sea-freight",
   },
   openGraph: {
-    title: "Sea Freight | DahNAY",
+    title: "FCL, LCL & NVOCC Global Sea Freight Forwarding - DahNAY",
     description:
-      "Cost-effective sea freight with global carrier partnerships. DahNAY offers FCL, LCL, and specialised container solutions for all cargo types and trade lanes.",
+      "Ship globally with DahNAY FCL, LCL, and NVOCC sea freight - reefer containers, flat rack, and port-to-port or door-to-door cargo movement worldwide now.",
     images: [{ url: "/images/banners/banner-desktop-sea-freight.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "FCL, LCL & NVOCC Global Sea Freight Forwarding - DahNAY",
+    description:
+      "Ship globally with DahNAY FCL, LCL, and NVOCC sea freight - reefer containers, flat rack, and port-to-port or door-to-door cargo movement worldwide now.",
+    images: ["/images/banners/banner-desktop-sea-freight.png"],
+  },
 };
+
 
 export default function SeaFreightPage() {
   return <ServicePage slug="sea-freight" />;

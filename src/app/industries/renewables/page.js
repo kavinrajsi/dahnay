@@ -2,19 +2,28 @@
 import IndustryPage from "@/components/sections/IndustryPage";
 
 export const metadata = {
-  title: "Renewables Logistics",
+  title: "OOG Renewable Energy & Offshore Wind Logistics - DahNAY",
   description:
-    "Logistics expertise for renewable energy projects. DahNAY moves wind turbines, solar panels, and energy infrastructure with precision planning and heavy-lift capability.",
+    "DahNAY handles renewable and offshore wind logistics - solar panels, wind turbine blades, OOG green energy cargo, and project equipment to global sites.",
   alternates: {
     canonical: "/industries/renewables",
   },
   openGraph: {
-    title: "Renewables Logistics | DahNAY",
+    title: "OOG Renewable Energy & Offshore Wind Logistics - DahNAY",
     description:
-      "Logistics expertise for renewable energy projects. DahNAY moves wind turbines, solar panels, and energy infrastructure with precision planning and heavy-lift capability.",
+      "DahNAY handles renewable and offshore wind logistics - solar panels, wind turbine blades, OOG green energy cargo, and project equipment to global sites.",
     images: [{ url: "/images/banners/banner-desktop-renewables.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "OOG Renewable Energy & Offshore Wind Logistics - DahNAY",
+    description:
+      "DahNAY handles renewable and offshore wind logistics - solar panels, wind turbine blades, OOG green energy cargo, and project equipment to global sites.",
+    images: ["/images/banners/banner-desktop-renewables.png"],
+  },
 };
+
 
 export default function RenewablesPage() {
   return <IndustryPage slug="renewables" />;

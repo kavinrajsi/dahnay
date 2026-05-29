@@ -8,19 +8,28 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata = {
-  title: "DahNAY Lines",
+  title: "Shipping Line, FCL & Port Connectivity Logistics - DahNAY",
   description:
-    "DahNAY Lines provides carrier and shipping line management tools for streamlined booking, documentation, and freight operations.",
+    "Support shipping line operations with DahNAY - FCL, LCL, port-to-port cargo, seamless port connectivity, and customs clearance across global trade lanes.",
   alternates: {
     canonical: "/solutions/lines",
   },
   openGraph: {
-    title: "DahNAY Lines | DahNAY",
+    title: "Shipping Line, FCL & Port Connectivity Logistics - DahNAY",
     description:
-      "DahNAY Lines provides carrier and shipping line management tools for streamlined booking, documentation, and freight operations.",
+      "Support shipping line operations with DahNAY - FCL, LCL, port-to-port cargo, seamless port connectivity, and customs clearance across global trade lanes.",
     images: [{ url: "/images/banners/banner-desktop-lines.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "Shipping Line, FCL & Port Connectivity Logistics - DahNAY",
+    description:
+      "Support shipping line operations with DahNAY - FCL, LCL, port-to-port cargo, seamless port connectivity, and customs clearance across global trade lanes.",
+    images: ["/images/banners/banner-desktop-lines.png"],
+  },
 };
+
 
 const faqItems = [
   { question: "What is DahNAY Lines?", answer: "DahNAY Lines is a carrier and shipping-line management solution that streamlines container booking, sailing schedules, freight documentation, and rate management across global ocean and inland networks. It connects shippers with vetted ocean carriers through a unified booking interface and consolidated commercial workflow." },

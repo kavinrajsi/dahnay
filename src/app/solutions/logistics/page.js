@@ -8,19 +8,28 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata = {
-  title: "DahNAY Logistics Platform",
+  title: "Contract Logistics, Outsourced & SCM Solutions - DahNAY",
   description:
-    "DahNAY's logistics platform delivers end-to-end supply chain visibility, automated workflows, and data-driven insights for modern freight operations.",
+    "Simplify supply chains with DahNAY contract and outsourced logistics - FCL, LCL, WMS warehousing, and an integrated logistics platform for global trade.",
   alternates: {
     canonical: "/solutions/logistics",
   },
   openGraph: {
-    title: "DahNAY Logistics Platform | DahNAY",
+    title: "Contract Logistics, Outsourced & SCM Solutions - DahNAY",
     description:
-      "DahNAY's logistics platform delivers end-to-end supply chain visibility, automated workflows, and data-driven insights for modern freight operations.",
+      "Simplify supply chains with DahNAY contract and outsourced logistics - FCL, LCL, WMS warehousing, and an integrated logistics platform for global trade.",
     images: [{ url: "/images/banners/banner-desktop-logistics.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "Contract Logistics, Outsourced & SCM Solutions - DahNAY",
+    description:
+      "Simplify supply chains with DahNAY contract and outsourced logistics - FCL, LCL, WMS warehousing, and an integrated logistics platform for global trade.",
+    images: ["/images/banners/banner-desktop-logistics.png"],
+  },
 };
+
 
 const faqItems = [
   { question: "What is the DahNAY logistics platform?", answer: "The DahNAY logistics platform is an end-to-end supply chain management system providing real-time shipment tracking, automated documentation, freight booking, and visibility across air, sea, road, and warehouse operations. It connects shippers with consolidated logistics data through a single interface for planning, execution, and reporting." },

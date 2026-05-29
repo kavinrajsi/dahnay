@@ -8,19 +8,28 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, faqSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata = {
-  title: "DahNAY Ports & Infrastructure",
+  title: "Port Terminal, OOG & Infrastructure Logistics - DahNAY Inc",
   description:
-    "DahNAY's port and infrastructure solutions improve cargo handling efficiency, terminal operations, and yard management for ports and logistics hubs.",
+    "Improve cargo flow at ports and infrastructure projects with DahNAY - OOG handling, bonded warehousing, customs drayage, and integrated logistics support.",
   alternates: {
     canonical: "/solutions/ports-infra",
   },
   openGraph: {
-    title: "DahNAY Ports & Infrastructure | DahNAY",
+    title: "Port Terminal, OOG & Infrastructure Logistics - DahNAY Inc",
     description:
-      "DahNAY's port and infrastructure solutions improve cargo handling efficiency, terminal operations, and yard management for ports and logistics hubs.",
+      "Improve cargo flow at ports and infrastructure projects with DahNAY - OOG handling, bonded warehousing, customs drayage, and integrated logistics support.",
     images: [{ url: "/images/banners/banner-desktop-ports-infra.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "Port Terminal, OOG & Infrastructure Logistics - DahNAY Inc",
+    description:
+      "Improve cargo flow at ports and infrastructure projects with DahNAY - OOG handling, bonded warehousing, customs drayage, and integrated logistics support.",
+    images: ["/images/banners/banner-desktop-ports-infra.png"],
+  },
 };
+
 
 const faqItems = [
   { question: "What does DahNAY Ports and Infrastructure cover?", answer: "DahNAY Ports and Infrastructure provides cargo handling efficiency, terminal operations support, yard management, and equipment optimisation for ports and inland container depots. We help port operators, ICD facilities, and logistics hubs improve container throughput, reduce dwell times, and streamline gate-in and gate-out processes." },

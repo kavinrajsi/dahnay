@@ -12,16 +12,16 @@ import FAQSection from "@/components/sections/FAQSection";
 import GrowForm from "@/components/sections/GrowForm";
 
 export const metadata = {
-  title: "DahNAY — Global Logistics Solutions",
+  title: "DahNAY | End-to-End 3PL, MTO & Global Freight Solutions",
   description:
-    "Industry-specific logistics solutions powered by expertise, technology, and a global network across air freight, sea freight, customs clearance, and more.",
+      "Ship smarter with DahNAY - an MTO-certified 3PL partner for global air, sea, and road freight with real-time supply chain visibility for all businesses.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "DahNAY — Global Logistics Solutions",
+    title: "DahNAY | End-to-End 3PL, MTO & Global Freight Solutions",
     description:
-      "Industry-specific logistics solutions powered by expertise, technology, and a global network across air freight, sea freight, customs clearance, and more.",
+        "Ship smarter with DahNAY - an MTO-certified 3PL partner for global air, sea, and road freight with real-time supply chain visibility for all businesses.",
     images: [
       {
         url: "/images/banners/banner-desktop-about-us.png",
@@ -30,7 +30,16 @@ export const metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "DahNAY | End-to-End 3PL, MTO & Global Freight Solutions",
+    description:
+        "Ship smarter with DahNAY - an MTO-certified 3PL partner for global air, sea, and road freight with real-time supply chain visibility for all businesses.",
+    images: ["/images/banners/banner-desktop-about-us.png"],
+  },
 };
+
 
 export default function Home() {
   return (

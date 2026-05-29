@@ -2,19 +2,28 @@
 import ServicePage from "@/components/sections/ServicePage";
 
 export const metadata = {
-  title: "Customs Clearance",
+  title: "AEO-Certified Customs Clearance | SEZ, FTWZ & EOU - DahNAY",
   description:
-    "Streamline cross-border trade with DahNAY's customs clearance experts. Full documentation management, duty optimisation, and compliance across all major trade lanes.",
+    "Avoid delays with DahNAY AEO-certified customs clearance - SEZ, FTWZ, EOU, EPCG, and Advance Authorization with full documentation and bonded warehousing.",
   alternates: {
     canonical: "/service/customs-clearance",
   },
   openGraph: {
-    title: "Customs Clearance | DahNAY",
+    title: "AEO-Certified Customs Clearance | SEZ, FTWZ & EOU - DahNAY",
     description:
-      "Streamline cross-border trade with DahNAY's customs clearance experts. Full documentation management, duty optimisation, and compliance across all major trade lanes.",
+      "Avoid delays with DahNAY AEO-certified customs clearance - SEZ, FTWZ, EOU, EPCG, and Advance Authorization with full documentation and bonded warehousing.",
     images: [{ url: "/images/banners/banner-desktop-customs-clearance.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@dahnay",
+    title: "AEO-Certified Customs Clearance | SEZ, FTWZ & EOU - DahNAY",
+    description:
+      "Avoid delays with DahNAY AEO-certified customs clearance - SEZ, FTWZ, EOU, EPCG, and Advance Authorization with full documentation and bonded warehousing.",
+    images: ["/images/banners/banner-desktop-customs-clearance.png"],
+  },
 };
+
 
 export default function CustomsClearancePage() {
   return <ServicePage slug="customs-clearance" />;

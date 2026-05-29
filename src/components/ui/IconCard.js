@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function IconCard({ icon, title, content, className }) {
   const isImagePath = typeof icon === "string" && (icon.startsWith("/") || icon.startsWith("http"));
   const isHtmlString = typeof icon === "string" && !isImagePath;
@@ -6,7 +8,7 @@ export default function IconCard({ icon, title, content, className }) {
     <div className={`icon-card${className ? ` ${className}` : ""}`}>
       {isImagePath ? (
         <div className="icon-card__icon">
-          <img src={icon} alt="" width={64} height={64} />
+          <Image src={icon} alt="" width={64} height={64} />
         </div>
       ) : isHtmlString ? (
         <div className="icon-card__icon" dangerouslySetInnerHTML={{ __html: icon }} />

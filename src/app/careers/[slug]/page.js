@@ -4,6 +4,9 @@ import CareerApplyForm from "@/components/sections/CareerApplyForm";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, jobPostingSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo";
+
+const CAREERS_OG_IMAGE = "/images/banners/banner-desktop-careers.png";
 
 export function generateStaticParams() {
   return JOBS.map((job) => ({ slug: job.slug }));
@@ -11,20 +14,22 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
+  const canonical = `/careers/${slug}`;
   const job = getJobBySlug(slug);
   if (!job) {
-    return {
+    return buildPageMetadata({
       title: "Careers | DahNAY",
-      alternates: { canonical: `/careers/${slug}` },
-    };
+      canonical,
+      image: CAREERS_OG_IMAGE,
+    });
   }
-  return {
+  return buildPageMetadata({
     title: `${job.title} - Careers | DahNAY`,
+    ogTitle: `${job.title} — Careers at DahNAY`,
     description: `${job.intro}. ${job.location} — ${job.type}.`,
-    alternates: {
-      canonical: `/careers/${slug}`,
-    },
-  };
+    canonical,
+    image: CAREERS_OG_IMAGE,
+  });
 }
 
 export default async function CareerDetailPage({ params }) {

@@ -2,21 +2,15 @@ import PolicyContent from "@/components/sections/PolicyContent";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Privacy Policy",
   description:
     "DahNAY Privacy Policy — how we collect, use, and protect your personal data in accordance with applicable laws.",
-  alternates: {
-    canonical: "/privacy-policy",
-  },
-  openGraph: {
-    title: "Privacy Policy | DahNAY",
-    description:
-      "DahNAY Privacy Policy — how we collect, use, and protect your personal data in accordance with applicable laws.",
-    images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
-  },
-};
+  canonical: "/privacy-policy",
+  image: "/images/banners/banner-desktop-about-us.png",
+});
 
 const trail = [
   { name: "Home", path: "/" },

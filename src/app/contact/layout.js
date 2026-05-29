@@ -1,17 +1,12 @@
-export const metadata = {
-  title: "Contact Us",
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: "Get Instant Freight Quotes Today | Air, FCL & LCL - DahNAY",
   description:
-    "Get in touch with DahNAY's logistics experts. Tell us about your freight needs and we'll build a solution tailored to your business.",
-  alternates: {
-    canonical: "/contact",
-  },
-  openGraph: {
-    title: "Contact Us | DahNAY",
-    description:
-      "Get in touch with DahNAY's logistics experts. Tell us about your freight needs and we'll build a solution tailored to your business.",
-    images: [{ url: "/images/banners/banner-desktop-contact.png", width: 1200, height: 630 }],
-  },
-};
+    "Contact DahNAY for an instant freight quote on air cargo, FCL, LCL sea freight and supply chain solutions. Our team is ready today.",
+  canonical: "/contact",
+  image: "/images/banners/banner-desktop-contact.png",
+});
 
 export default function ContactLayout({ children }) {
   return children;

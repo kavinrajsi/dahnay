@@ -390,6 +390,7 @@ export default function Header() {
         <Link
           href="https://dahnaylogistics.logitrack.live/?utm_source=dahnay&utm_medium=referral&utm_campaign=header_tracking_cta"
           target="_blank"
+          rel="noopener noreferrer"
           className="header__cta button header__cta--desktop"
         >
           Tracking
@@ -412,6 +413,7 @@ export default function Header() {
         <Link
           href="https://dahnaylogistics.logitrack.live/?utm_source=dahnay&utm_medium=referral&utm_campaign=header_tracking_cta"
           target="_blank"
+          rel="noopener noreferrer"
           className="header__cta button"
           onClick={closeAll}
         >

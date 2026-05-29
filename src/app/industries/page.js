@@ -6,21 +6,15 @@ import FAQSection from "@/components/sections/FAQSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, faqSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Industries",
   description:
     "DahNAY serves 10+ industry verticals with specialised logistics solutions — from automotive to renewables, FMCG to machinery.",
-  alternates: {
-    canonical: "/industries",
-  },
-  openGraph: {
-    title: "Industries | DahNAY",
-    description:
-      "DahNAY serves 10+ industry verticals with specialised logistics solutions — from automotive to renewables, FMCG to machinery.",
-    images: [{ url: "/images/banners/banner-desktop-industries.png", width: 1200, height: 630 }],
-  },
-};
+  canonical: "/industries",
+  image: "/images/banners/banner-desktop-industries.png",
+});
 
 const faqItems = [
   { question: "Do you handle time-critical shipments?", answer: "Yes. Our solutions support industries operating on strict production and project timelines." },

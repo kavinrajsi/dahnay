@@ -5,21 +5,15 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import NewsroomContent from "@/components/sections/NewsroomContent";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Newsroom",
   description:
     "Latest news, insights, and case studies from DahNAY on logistics, supply chain trends, and industry developments.",
-  alternates: {
-    canonical: "/newsroom",
-  },
-  openGraph: {
-    title: "Newsroom | DahNAY",
-    description:
-      "Latest news, insights, and case studies from DahNAY on logistics, supply chain trends, and industry developments.",
-    images: [{ url: "/images/banners/banner-desktop-newsroom.png", width: 1200, height: 630 }],
-  },
-};
+  canonical: "/newsroom",
+  image: "/images/banners/banner-desktop-newsroom.png",
+});
 
 export default async function NewsroomPage() {
   let posts = [];

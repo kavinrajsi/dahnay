@@ -2,21 +2,15 @@ import PolicyContent from "@/components/sections/PolicyContent";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Terms & Conditions",
   description:
     "DahNAY Terms & Conditions — the legal terms governing your use of our website and logistics services.",
-  alternates: {
-    canonical: "/terms-conditions",
-  },
-  openGraph: {
-    title: "Terms & Conditions | DahNAY",
-    description:
-      "DahNAY Terms & Conditions — the legal terms governing your use of our website and logistics services.",
-    images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
-  },
-};
+  canonical: "/terms-conditions",
+  image: "/images/banners/banner-desktop-about-us.png",
+});
 
 const trail = [
   { name: "Home", path: "/" },

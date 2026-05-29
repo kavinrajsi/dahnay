@@ -83,6 +83,25 @@ All `ZEPTOMAIL_*` values above are required at runtime — API routes return a 5
 
 Post-type classification is derived from Ghost tags: a `case-study` tag maps to case-studies, `blog` to blog, and anything else falls through to `news`. See `src/lib/ghost.js`.
 
+## SEO & Metadata
+
+All page metadata uses the `buildPageMetadata()` helper from `src/lib/seo.js`.
+
+```js
+export const metadata = buildPageMetadata({
+  title: "IATA-Certified Air Freight Import Export Charter - DahNAY",
+  description: "Ship faster with DahNAY IATA-certified air freight...",
+  canonical: "/service/air-freight",
+  image: "/images/banners/banner-desktop-air-freight.png", // optional
+});
+```
+
+**Title template bypass:** The root layout sets a `"%s | DahNAY"` title template. `buildPageMetadata` returns `{ absolute: title }` to bypass it, so every page title must already include the brand name. Do not write bare titles like `"Air Freight"`.
+
+**OG / Twitter:** Both default to the same title and description. Pass `ogTitle` explicitly only when the social card copy must differ.
+
+**Contact page:** Metadata lives in `src/app/contact/layout.js`, not `page.js`, because `contact/page.js` is a Client Component.
+
 ## Project Structure
 
 ```
@@ -91,6 +110,8 @@ src/
 │   ├── api/contact/           # Contact form endpoint
 │   ├── about/
 │   ├── careers/
+│   ├── contact/
+│   │   └── layout.js          # Metadata for the contact page (page.js is "use client")
 │   ├── industries/[slug]/
 │   ├── newsroom/
 │   │   ├── blog/[slug]/       # Blog detail
@@ -110,7 +131,8 @@ src/
 │   ├── careers/jobs.js        # Job openings (empty array → careers page shows apply form)
 │   └── ...
 ├── lib/
-│   └── ghost.js               # Ghost Content API client + pagination
+│   ├── ghost.js               # Ghost Content API client + pagination
+│   └── seo.js                 # buildPageMetadata() helper
 ├── styles/
 │   ├── _index.scss            # Component entrypoint
 │   └── components/            # Per-component SCSS partials

@@ -2,21 +2,15 @@ import PolicyContent from "@/components/sections/PolicyContent";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Whistleblower Policy",
   description:
     "DahNAY's Whistleblower Policy — a secure channel for reporting concerns about unethical conduct or policy violations.",
-  alternates: {
-    canonical: "/whistleblower-policy",
-  },
-  openGraph: {
-    title: "Whistleblower Policy | DahNAY",
-    description:
-      "DahNAY's Whistleblower Policy — a secure channel for reporting concerns about unethical conduct or policy violations.",
-    images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
-  },
-};
+  canonical: "/whistleblower-policy",
+  image: "/images/banners/banner-desktop-about-us.png",
+});
 
 const trail = [
   { name: "Home", path: "/" },

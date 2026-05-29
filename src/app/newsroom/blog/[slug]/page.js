@@ -4,28 +4,32 @@ import { getBlogPost } from "@/lib/ghost";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { articleSchema, breadcrumbList } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo";
+
+const NEWSROOM_FALLBACK_IMAGE = "/images/banners/banner-desktop-newsroom.png";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
+  const canonical = `/newsroom/blog/${slug}`;
   try {
     const post = await getBlogPost(slug);
-    return {
+    return buildPageMetadata({
       title: `${post.title} - DahNAY`,
+      ogTitle: post.title,
       description: post.excerpt,
-      alternates: {
-        canonical: `/newsroom/blog/${slug}`,
-      },
-      openGraph: post.featuredImage?.url
-        ? { images: [{ url: post.featuredImage.url }] }
-        : undefined,
-    };
+      canonical,
+      image: post.featuredImage?.url || NEWSROOM_FALLBACK_IMAGE,
+      type: "article",
+      publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt,
+      authors: post.authors?.map((a) => a.name).filter(Boolean),
+    });
   } catch {
-    return {
+    return buildPageMetadata({
       title: "Blog - DahNAY",
-      alternates: {
-        canonical: `/newsroom/blog/${slug}`,
-      },
-    };
+      canonical,
+      image: NEWSROOM_FALLBACK_IMAGE,
+    });
   }
 }
 

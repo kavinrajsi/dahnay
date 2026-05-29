@@ -2,21 +2,15 @@ import PolicyContent from "@/components/sections/PolicyContent";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Cookie Policy",
   description:
     "DahNAY Cookie Policy — information about the cookies we use on our website and how to manage your preferences.",
-  alternates: {
-    canonical: "/cookie-policy",
-  },
-  openGraph: {
-    title: "Cookie Policy | DahNAY",
-    description:
-      "DahNAY Cookie Policy — information about the cookies we use on our website and how to manage your preferences.",
-    images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
-  },
-};
+  canonical: "/cookie-policy",
+  image: "/images/banners/banner-desktop-about-us.png",
+});
 
 const trail = [
   { name: "Home", path: "/" },

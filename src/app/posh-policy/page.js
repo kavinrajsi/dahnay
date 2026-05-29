@@ -2,21 +2,15 @@ import PolicyContent from "@/components/sections/PolicyContent";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbList, webPageSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "POSH Policy",
   description:
     "DahNAY's Prevention of Sexual Harassment (POSH) Policy — our commitment to a safe and respectful workplace for all employees.",
-  alternates: {
-    canonical: "/posh-policy",
-  },
-  openGraph: {
-    title: "POSH Policy | DahNAY",
-    description:
-      "DahNAY's Prevention of Sexual Harassment (POSH) Policy — our commitment to a safe and respectful workplace for all employees.",
-    images: [{ url: "/images/banners/banner-desktop-about-us.png", width: 1200, height: 630 }],
-  },
-};
+  canonical: "/posh-policy",
+  image: "/images/banners/banner-desktop-about-us.png",
+});
 
 const trail = [
   { name: "Home", path: "/" },

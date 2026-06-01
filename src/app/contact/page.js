@@ -61,6 +61,8 @@ const offices = [
   { city: "Sharjah", country: "UAE", region: "UAE", address: "No.409, Al Mulla Tower, Al Ittihad St \u2013 Al Nadha, Sharjah, UAE", phone: "+971 65323791" },
   { city: "Ras Al Khaimah", country: "UAE", region: "UAE", address: "No.AC01, Al Hamriya Industrial Free Zone, Ras Al Kaima, UAE", phone: "+971 72075793" },
   { city: "Jebel Ali", country: "UAE", region: "UAE", address: "FZS1BE01, Jebel Ali Free Zone South, UAE", phone: "+971 42725787" },
+  { city: "South Open Yard", country: "Jebel Ali, UAE", region: "UAE", address: "South Warehouse No: 01, Street No: S110, Jebel Ali Free Zone, Dubai, United Arab Emirates" },
+  { city: "North Warehouse", country: "Jebel Ali, UAE", region: "UAE", address: "Warehouse No: 16, Street No: N602, Jebel Ali Free Zone, Dubai, United Arab Emirates" },
   { city: "Colombo", country: "Sri Lanka", region: "Sri Lanka", address: "Level \u2013 1, Parkland \u2013 1, #33, Park Street, Colombo \u2013 02, Sri Lanka", phone: "94777734582", email: "reachus@dahnay.com" },
   { city: "Dhaka", country: "Bangladesh", region: "Bangladesh", address: "House # 23 (Flat # B5), Road # 18, Block # A, Banani, Dhaka-1213, Bangladesh", phone: "+88-02-41082526" },
   { city: "Chittagong", country: "Bangladesh", region: "Bangladesh", address: "Shafi Bhabon (4th Floor), 1216/A SK. Mujib Road, Agrabad C/A, Chittagong, Bangladesh", phone: "+88-02333330981" },

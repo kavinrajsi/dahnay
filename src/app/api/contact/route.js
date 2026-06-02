@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
 import { escapeHtml, sanitizeSubject, buildTrackingHtml } from "@/lib/html";
-import { getClientIP, logEmail, sendZeptoMail } from "@/lib/zeptomail";
+import { getClientIP, logEmail, sendZohoMail } from "@/lib/zohomail";
 
 export async function POST(request) {
   try {
@@ -60,7 +60,7 @@ export async function POST(request) {
       ${buildTrackingHtml({ ip, pageUrl, previousPage, utm })}
     `;
 
-    const { ok, configError, result } = await sendZeptoMail({
+    const { ok, configError, result } = await sendZohoMail({
       toEmail: process.env.ZEPTOMAIL_TO_EMAIL,
       subject: sanitizeSubject(`New Inquiry from ${name}`),
       html,

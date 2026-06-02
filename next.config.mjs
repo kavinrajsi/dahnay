@@ -6,16 +6,18 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**",
+        hostname: "studio.dahnay.com",
+        pathname: "/content/images/**",
+      },
+      {
+        protocol: "http",
+        hostname: "studio.dahnay.com",
+        pathname: "/content/images/**",
       },
       {
         protocol: "http",
         hostname: "20.219.8.121",
-      },
-      {
-        protocol: 'http',
-        hostname: 'studio.dahnay.com',
-        pathname: '/content/images/**',
+        pathname: "/content/images/**",
       },
     ],
   },

@@ -28,7 +28,6 @@ export async function POST(request) {
       toEmail: process.env.ZEPTOMAIL_NEWSLETTER_TO_EMAIL,
       subject: sanitizeSubject(`Newsletter Subscription: ${maskEmail(email)}`),
       html,
-      cc: email,
     });
 
     if (configError) {

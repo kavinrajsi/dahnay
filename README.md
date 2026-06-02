@@ -2,6 +2,12 @@
 
 Corporate website for DahNAY — global integrated logistics solutions. Next.js 16 App Router frontend backed by a self-hosted Ghost CMS for newsroom content.
 
+## TODO
+
+- [ ] Fix navigation menu issues on desktop and mobile
+- [ ] Update all section images to 1.5× resolution
+- [ ] Migrate CMS from Ghost to Payload CMS
+
 ## Tech Stack
 
 | Layer | Technology |

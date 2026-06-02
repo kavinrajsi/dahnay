@@ -260,16 +260,62 @@ The honeypot field on the contact form (`website`, hidden via absolute positioni
 
 ## Schema / JSON-LD
 
-`<JsonLd data={[...]} />` (`src/components/JsonLd.js`) injects structured data. Schema builders live in `src/lib/schema/`:
+`<JsonLd data={[...]} />` (`src/components/JsonLd.js`) injects structured data. All builders live in `src/lib/schema/` and are exported from `src/lib/schema/index.js`.
 
-- `buildOrganizationSchema()` — Organization + LocalBusiness
-- `buildWebsiteSchema()` — Website with SearchAction
-- `buildBreadcrumbSchema(items)` — BreadcrumbList (used on every page except the homepage)
-- `buildArticleSchema(post)` — Article / BlogPosting
-- `buildServiceSchema(service)` — Service
-- `buildFaqSchema(faqs)` — FAQPage
-- `buildJobPostingSchema(job)` — JobPosting
-- `buildWebPageSchema(page)` — WebPage
+### Company constants
+
+`src/lib/schema/company.js` exports `COMPANY` — the single source of truth for brand identity (name, legal name, address, social URLs, founder, email). All schema builders import from it. Update this file when any company detail changes; never hard-code identity data in a schema builder directly.
+
+### Helpers (`src/lib/schema/helpers.js`)
+
+| Function | Purpose |
+|---|---|
+| `siteUrl()` | `NEXT_PUBLIC_SITE_URL` with trailing slash stripped |
+| `absoluteUrl(path)` | Prepends `siteUrl()` to relative paths; passes through absolute URLs |
+| `serializeJsonLd(data)` | `JSON.stringify` + escapes `<` to prevent `</script>` injection (called internally by `<JsonLd>`) |
+
+### Builders
+
+| Export | Schema type | Key parameters |
+|---|---|---|
+| `organizationSchema({ offices? })` | Organization | Pass `offices[]` on contact/homepage to emit `location[]` |
+| `localBusinessSchema()` | LocalBusiness | HQ only — distinct `@id` (`/#hq`) from Organization (`/#organization`) |
+| `websiteSchema()` | WebSite | Emit once on the homepage alongside Organization |
+| `breadcrumbList(trail)` | BreadcrumbList | `[{ name, path }]` — returns `null` if empty; use on every page except homepage |
+| `articleSchema(post, { path, type })` | BlogPosting / NewsArticle / Article | `type`: `"blog"` → BlogPosting, `"news"` → NewsArticle, `"case-study"` → Article |
+| `serviceSchema({ name, description, image?, path, serviceType?, areaServed? })` | Service | `areaServed` defaults to `"Worldwide"`; used on service, industry, and solutions pages |
+| `faqSchema(items)` | FAQPage | `[{ question, answer }]` — returns `null` if empty; includes speakable selectors |
+| `webPageSchema({ name, description?, path, type?, dateModified? })` | WebPage | `type` defaults to `"WebPage"`; can be `"AboutPage"`, `"ContactPage"`, etc. |
+| `jobPostingSchema(job)` | JobPosting | `{ title, description, postedAt, employmentType, location, country, slug }` — returns `null` if `job.title` missing |
+
+### Usage example
+
+```js
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbList, serviceSchema, faqSchema } from "@/lib/schema";
+
+const schemas = [
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Air Freight", path: "/service/air-freight" },
+  ]),
+  serviceSchema({
+    name: "Air Freight",
+    description: "IATA-certified global air freight forwarding from India.",
+    path: "/service/air-freight",
+  }),
+  faqSchema(pageData.faqs),
+].filter(Boolean); // builders return null on empty input — always filter
+
+return (
+  <>
+    <JsonLd data={schemas} />
+    {/* page content */}
+  </>
+);
+```
+
+`<JsonLd data={schemas}>` renders one `<script type="application/ld+json">` block per schema object. The `speakable` CSS selectors in `faqSchema` (`.faq__question`, `.faq__answer`) must match the class names used on FAQ DOM elements.
 
 ---
 

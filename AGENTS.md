@@ -50,20 +50,102 @@ When adding new private or non-indexable paths, add them to both `rules` entries
 
 ## Schema / JSON-LD
 
-Schema markup is injected via `<JsonLd data={[...]} />` (`src/components/JsonLd.js`). Builders live in `src/lib/schema/` and are exported from `src/lib/schema/index.js`:
+Schema markup is injected via `<JsonLd data={[...]} />` (`src/components/JsonLd.js`). All builders live in `src/lib/schema/` and are re-exported from `src/lib/schema/index.js`.
 
-| Builder | Output |
+### Company constants — `src/lib/schema/company.js`
+
+`COMPANY` is the single source of truth for brand identity used across every schema. Edit it when contact details, social URLs, or the founding year change. Never hard-code company data directly in a schema builder.
+
+```js
+import { COMPANY } from "@/lib/schema";
+// COMPANY.brandName, COMPANY.legalName, COMPANY.email,
+// COMPANY.primaryAddress, COMPANY.social, COMPANY.founder, …
+```
+
+### Helpers — `src/lib/schema/helpers.js`
+
+| Function | Purpose |
 |---|---|
-| `buildOrganizationSchema()` | Organization + LocalBusiness |
-| `buildWebsiteSchema()` | Website with SearchAction |
-| `buildBreadcrumbSchema(items)` | BreadcrumbList |
-| `buildArticleSchema(post)` | Article / BlogPosting |
-| `buildServiceSchema(service)` | Service |
-| `buildFaqSchema(faqs)` | FAQPage |
-| `buildJobPostingSchema(job)` | JobPosting |
-| `buildWebPageSchema(page)` | WebPage |
+| `siteUrl()` | Returns `NEXT_PUBLIC_SITE_URL` with trailing slash stripped |
+| `absoluteUrl(path)` | Prepends `siteUrl()` to a relative path; passes through absolute URLs unchanged |
+| `serializeJsonLd(data)` | `JSON.stringify` + escapes `<` → `<` to prevent `</script>` injection |
 
-Always pass the appropriate schema to `<JsonLd>` on new pages. Use `buildBreadcrumbSchema` on every page except the homepage.
+`serializeJsonLd` is called by `<JsonLd>` internally — you do not need to call it yourself.
+
+### Builders
+
+#### `organizationSchema({ offices? })` → Organization
+Site-wide Organization entity. Pass `offices` (the array from the contact-page data) to emit `location[]` with all office addresses. Used on the homepage and contact page alongside `localBusinessSchema()`.
+
+#### `localBusinessSchema()` → LocalBusiness
+HQ-specific LocalBusiness node. Has a distinct `@id` (`/#hq`) so it stays separate from the global Organization (`/#organization`). Emit only on pages that represent the physical business (homepage, contact).
+
+#### `websiteSchema()` → WebSite
+Site-level WebSite node with `publisher` linked to `/#organization`. Emit once on the homepage alongside Organization.
+
+#### `breadcrumbList(trail)` → BreadcrumbList
+```js
+breadcrumbList([
+  { name: "Home", path: "/" },
+  { name: "Air Freight", path: "/service/air-freight" },
+])
+```
+Returns `null` if `trail` is empty. Use on **every page except the homepage**.
+
+#### `articleSchema(post, { path, type })` → BlogPosting | NewsArticle | Article
+- `post` — Ghost post object (`title`, `excerpt`, `publishedAt`, `updatedAt`, `featuredImage`, `authors`)
+- `path` — page URL path (e.g. `/newsroom/blog/my-slug`)
+- `type` — `"blog"` → `BlogPosting`, `"news"` → `NewsArticle`, `"case-study"` → `Article`
+- Falls back to DahNAY Organization as author when `post.authors` is empty
+
+#### `serviceSchema({ name, description, image?, path, serviceType?, areaServed? })` → Service
+Used on `/service/[slug]`, `/industries/[slug]`, and `/solutions/*` pages. `provider` is always linked to `/#organization`. `areaServed` defaults to `"Worldwide"`.
+
+#### `faqSchema(items)` → FAQPage
+```js
+faqSchema([{ question: "What is DahNAY?", answer: "…" }])
+```
+Returns `null` if `items` is empty. Includes `speakable` CSS selectors `.faq__question` and `.faq__answer` — keep those class names on FAQ DOM elements.
+
+#### `webPageSchema({ name, description?, path, type?, dateModified? })` → WebPage
+Generic page node. `type` defaults to `"WebPage"`; can be `"AboutPage"`, `"ContactPage"`, etc. `isPartOf` links to `/#website`.
+
+#### `jobPostingSchema(job)` → JobPosting
+```js
+jobPostingSchema({
+  title, description, postedAt, employmentType,
+  location, country, slug
+})
+```
+Returns `null` if `job.title` is missing. `employmentType` defaults to `"FULL_TIME"`.
+
+### Usage pattern
+
+```js
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbList,
+  organizationSchema,
+  serviceSchema,
+  faqSchema,
+} from "@/lib/schema";
+
+// In a page component (Server Component):
+const schemas = [
+  breadcrumbList([{ name: "Home", path: "/" }, { name: "Air Freight", path: "/service/air-freight" }]),
+  serviceSchema({ name: "Air Freight", description: "…", path: "/service/air-freight" }),
+  faqSchema(pageData.faqs),
+].filter(Boolean);
+
+return (
+  <>
+    <JsonLd data={schemas} />
+    {/* page content */}
+  </>
+);
+```
+
+`<JsonLd data={schemas}>` accepts an **array** of schema objects and renders one `<script type="application/ld+json">` per item. Always `.filter(Boolean)` before passing — builders that receive empty/missing input return `null`.
 
 ---
 

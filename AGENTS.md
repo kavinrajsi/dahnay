@@ -15,3 +15,15 @@ All page metadata is built with `buildPageMetadata()` from `src/lib/seo.js`.
 **Contact page:** Uses `src/app/contact/layout.js` for metadata because `contact/page.js` is a Client Component (`"use client"`).
 
 **Canonical URLs:** Every static page passes a `canonical` field. Keep it set to the page's URL path without trailing slash.
+
+## Robots & Crawlers
+
+Crawler rules live in `src/app/robots.js` (Next.js Metadata API — not a static file).
+
+**Disallowed for all crawlers and AI bots:**
+- `/api/`
+- `/wp-admin/`
+- `/wp-content/`
+- `/wp-includes/`
+
+When adding new private or non-indexable paths, add them to both `rules` entries (the `"*"` wildcard rule and the `aiCrawlers` array rule) so they stay in sync.

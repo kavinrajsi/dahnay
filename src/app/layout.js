@@ -55,6 +55,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "BwqcXJmQq8SgVWmmjPgr-TnUcvncdUW1F__mf6aMOrU",
+  },
 };
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;

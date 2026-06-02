@@ -11,6 +11,7 @@
   }
 
   &__container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,7 +54,7 @@
       display: none;
       flex-direction: column;
       position: fixed;
-      top: 90px;
+      top: 72px;
       left: 0;
       right: 0;
       bottom: 0;
@@ -76,15 +77,20 @@
   }
 
   &__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
     svg {
       height: 42px;
       width: auto;
     }
 
     @media (min-width: 992px) {
+      position: static;
+      transform: none;
       display: flex;
       align-items: center;
-      // padding: 24px 0;
     }
   }
 
@@ -226,6 +232,10 @@
     line-height: 30px;
     color: #000000;
     transition: color 0.2s;
+
+    @media (min-width: 992px) {
+      flex: none;
+    }
 
     &:hover {
       color: #ef4230;

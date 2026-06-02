@@ -1,91 +1,232 @@
 # DahNAY Website
 
-Corporate website for DahNAY — global logistics solutions with industry-specific freight tools. Next.js frontend backed by a self-hosted Ghost CMS for blog, news, and case study content.
+Corporate website for DahNAY — global integrated logistics solutions. Next.js 16 App Router frontend backed by a self-hosted Ghost CMS for newsroom content.
 
 ## Tech Stack
 
-- **Framework:** Next.js 16 (App Router) with React 19 and the React Compiler
-- **Styling:** Sass (SCSS partials under `src/styles/`)
-- **Font:** Avenir (local, via `next/font`)
-- **CMS:** Self-hosted Ghost (Content API) for posts across `/newsroom/{blog,case-study,news}`
-- **Carousel / transitions:** Swiper, GSAP
-- **Analytics:** Google Tag Manager (via `@next/third-parties`)
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router), React 19, React Compiler |
+| Language | JavaScript — `@/*` path alias to `src/*` |
+| Styling | Sass (SCSS partials) + CSS Modules for scoped components |
+| Font | Avenir — local, via `next/font/local` |
+| CMS | Self-hosted Ghost (Content API) at `studio.dahnay.com` |
+| Email | Nodemailer → Zoho SMTP (`smtppro.zoho.in:465`) |
+| Animations | GSAP + ScrollTrigger |
+| Phone validation | libphonenumber-js |
+| Analytics | Google Tag Manager (conditional load, feature-flagged) |
+
+---
 
 ## Getting Started
 
 ```bash
 npm install
-npm run dev
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+### Scripts
 
-### Environment variables
+| Command | Description |
+|---|---|
+| `npm run dev` | Start dev server |
+| `npm run build` | Production build |
+| `npm run start` | Serve production build |
+| `npm run lint` | Run ESLint |
 
-Create a `.env.local` at the repo root.
+---
+
+## Environment Variables
+
+Create `.env.local` at the repo root. All variables marked **required** must be set or the site will not function correctly at runtime.
 
 ```env
-# Public site URL (used in sitemap + canonical + JSON-LD)
+# ─── Public ───────────────────────────────────────────────────────────────────
+# Canonical base URL — used in sitemap, canonical tags, and JSON-LD
 NEXT_PUBLIC_SITE_URL=https://www.dahnay.com
 
-# Ghost CMS — Content API (public, read-only)
-GHOST_URL=http://studio.dahnay.com
-GHOST_CONTENT_API_KEY=<your-content-api-key>
-
-# ZeptoMail — shared
-ZEPTOMAIL_URL=https://api.zeptomail.in/v1.1/email
-ZEPTOMAIL_TOKEN=<zoho-zeptomail-send-token>
-ZEPTOMAIL_FROM_EMAIL=noreply@dahnay.com
-ZEPTOMAIL_FROM_NAME=DahNAY Website
-ZEPTOMAIL_TO_NAME=DahNAY Team
-
-# ZeptoMail — per-form recipients
-ZEPTOMAIL_TO_EMAIL=info@dahnay.com                 # /api/contact
-ZEPTOMAIL_CAREER_TO_EMAIL=careers@dahnay.com       # /api/career (inquiry)
-ZEPTOMAIL_CAREER_APPLY_TO_EMAIL=careers@dahnay.com # /api/career-apply (resume upload)
-ZEPTOMAIL_NEWSLETTER_TO_EMAIL=info@dahnay.com      # /api/newsletter
-
-# Optional — Google Tag Manager
-# GTM only loads when both vars are set (ID present AND enabled flag is the string "true").
+# Google Tag Manager — GTM loads only when BOTH vars are set AND ENABLED="true"
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 NEXT_PUBLIC_GTM_ENABLED=true
+
+# ─── Ghost CMS ────────────────────────────────────────────────────────────────
+GHOST_URL=https://studio.dahnay.com
+GHOST_CONTENT_API_KEY=<read-only-content-api-key>
+
+# ─── Zoho SMTP (email delivery via Nodemailer) ────────────────────────────────
+ZOHO_SMTP_USER=sam@dahnay.com
+ZOHO_SMTP_PASS=<smtp-password>
+ZOHO_FROM_NAME=DahNAY Website
+ZOHO_TO_NAME=DahNAY Team
+
+# ─── Per-form email recipients ────────────────────────────────────────────────
+# Note: env var names retain legacy "ZEPTOMAIL_" prefix; transport is Zoho SMTP
+ZEPTOMAIL_TO_EMAIL=info@dahnay.com                  # /api/contact
+ZEPTOMAIL_CAREER_TO_EMAIL=careers@dahnay.com        # /api/career
+ZEPTOMAIL_CAREER_APPLY_TO_EMAIL=careers@dahnay.com  # /api/career-apply (resume)
+ZEPTOMAIL_NEWSLETTER_TO_EMAIL=info@dahnay.com       # /api/newsletter
 ```
 
-All `ZEPTOMAIL_*` values above are required at runtime — API routes return a 500 "Email service not configured." if any are missing.
+All `ZOHO_SMTP_*` and `ZEPTOMAIL_*_TO_EMAIL` values are required at runtime — API routes return HTTP 500 "Email service not configured." if any are absent.
 
-## Scripts
-
-| Command         | Description              |
-| --------------- | ------------------------ |
-| `npm run dev`   | Start dev server         |
-| `npm run build` | Production build         |
-| `npm run start` | Serve production build   |
-| `npm run lint`  | Run ESLint               |
+---
 
 ## Routes
 
-| URL                                  | Purpose                                                   |
-| ------------------------------------ | --------------------------------------------------------- |
-| `/`                                  | Homepage with hero carousel                               |
-| `/about`                             | About us                                                  |
-| `/careers`                           | Careers (resume-upload form when no openings listed)      |
-| `/contact`                           | Contact form                                              |
-| `/industries/[slug]`                 | Industry detail pages (11 verticals)                      |
-| `/solutions/{logistics,lines,ports-infra}` | Solution pillars                                    |
-| `/service/[slug]`                    | Individual service pages                                  |
-| `/newsroom`                          | All posts (blog + case studies + news)                    |
-| `/newsroom/blog` + `/newsroom/blog/[slug]`         | Blog listing and detail               |
-| `/newsroom/case-study` + `/newsroom/case-study/[slug]` | Case studies                      |
-| `/newsroom/news` + `/newsroom/news/[slug]`         | News                                  |
-| `/esg-csr`                           | ESG & CSR                                                 |
-| `/{privacy,cookie,terms,posh,whistleblower}-policy` | Legal pages                            |
-| `/api/contact`                       | Contact form submission (server route → ZeptoMail)        |
+### Public Pages
 
-Post-type classification is derived from Ghost tags: a `case-study` tag maps to case-studies, `blog` to blog, and anything else falls through to `news`. See `src/lib/ghost.js`.
+| URL | Description |
+|---|---|
+| `/` | Homepage — hero carousel, services overview, industries slider, newsroom preview, FAQ |
+| `/about` | About DahNAY |
+| `/contact` | Contact form + 47 office locations with region filter/search |
+| `/careers` | Careers — shows resume-upload form when `JOBS` array is empty, job listing otherwise |
+| `/careers/[slug]` | Individual job detail page |
+| `/esg-csr` | ESG & CSR page |
+| `/privacy-policy` | Privacy policy |
+| `/terms-conditions` | Terms & conditions |
+| `/cookie-policy` | Cookie policy |
+| `/posh-policy` | POSH policy |
+| `/whistleblower-policy` | Whistleblower policy |
+
+### Services (10 verticals)
+
+All under `/service/[slug]` driven by `src/data/services/index.json`.
+
+`air-freight` · `sea-freight` · `road-transportation` · `time-critical-delivery` · `project-logistics` · `reverse-logistics` · `customs-clearance` · `domestic-trucking` · `last-mile-delivery` · `ecommerce-fulfilment`
+
+### Industries (11 verticals)
+
+All under `/industries/[slug]` driven by `src/data/industries/index.json`.
+
+`automotive` · `renewables` · `machinery` · `retail-apparel` · `natural-rubber` · `white-goods` · `energy-oil-gas` · `food-agro` · `construction-materials` · `fmcg` · `paper-pulp`
+
+### Solutions
+
+| URL | Description |
+|---|---|
+| `/solutions/logistics` | Integrated logistics pillar |
+| `/solutions/lines` | Shipping lines pillar |
+| `/solutions/ports-infra` | Ports & infrastructure pillar |
+
+### Newsroom (Ghost CMS content)
+
+| URL | Description |
+|---|---|
+| `/newsroom` | All posts — blog + case studies + news |
+| `/newsroom/blog` | Blog listing |
+| `/newsroom/blog/[slug]` | Blog detail |
+| `/newsroom/case-study` | Case studies listing |
+| `/newsroom/case-study/[slug]` | Case study detail |
+| `/newsroom/news` | News listing |
+| `/newsroom/news/[slug]` | News detail |
+
+Post type is derived from Ghost tags: `case-study` → case-study, `blog` → blog, anything else → news.
+
+### Tools
+
+| URL | Description |
+|---|---|
+| `/tools/load-calculator` | Load calculator |
+| `/tools/sea-rates` | Sea rates lookup |
+| `/tools/seaport` | Seaport information |
+| `/tools/unit-convertor` | Unit converter |
+| `/tools/container` | Container specification |
+
+### API Routes
+
+| URL | Method | Description |
+|---|---|---|
+| `/api/contact` | POST | Contact form → Zoho SMTP email |
+| `/api/career` | POST | Career inquiry form → Zoho SMTP email |
+| `/api/career-apply` | POST | Resume upload (PDF, max 15 MB) → Zoho SMTP with attachment |
+| `/api/newsletter` | POST | Newsletter signup → Zoho SMTP email |
+
+### LLM Context
+
+| URL | Description |
+|---|---|
+| `/llms.txt` | Plain-text site context for LLMs |
+| `/llms-full.txt` | Extended context version |
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/                            # Next.js App Router
+│   ├── layout.js                   # Root layout (font, GTM, consent, schema, header/footer)
+│   ├── page.js                     # Homepage
+│   ├── robots.js                   # Robots.txt (Next.js Metadata API)
+│   ├── sitemap.js                  # Dynamic XML sitemap
+│   ├── not-found.js                # 404 page
+│   ├── globals.scss
+│   ├── api/
+│   │   ├── contact/route.js
+│   │   ├── career/route.js
+│   │   ├── career-apply/route.js
+│   │   └── newsletter/route.js
+│   ├── about/
+│   ├── careers/
+│   │   └── [slug]/                 # Individual job pages
+│   ├── contact/
+│   │   └── layout.js               # Metadata lives here — page.js is "use client"
+│   ├── industries/[slug]/
+│   ├── service/[slug]/
+│   ├── solutions/
+│   │   ├── logistics/
+│   │   ├── lines/
+│   │   └── ports-infra/
+│   ├── newsroom/
+│   │   ├── blog/[slug]/
+│   │   ├── case-study/[slug]/
+│   │   └── news/[slug]/
+│   ├── tools/
+│   ├── esg-csr/
+│   ├── llms.txt/route.js
+│   └── llms-full.txt/route.js
+├── components/
+│   ├── layout/                     # Header, Footer, ConsentBanner
+│   ├── sections/                   # Page section building blocks
+│   ├── ui/                         # Button, PhoneField, Breadcrumb, Slider, FAQ, cards
+│   ├── icons/                      # ServiceIcons, WhyDahnayIcons
+│   ├── JsonLd.js                   # Schema.org JSON-LD injector
+│   └── UtmCapture.js               # Stores UTM params to sessionStorage
+├── data/
+│   ├── industries/index.json       # All 11 industry pages content
+│   ├── services/index.json         # All 10 service pages content
+│   ├── careers/jobs.js             # JOBS array — empty → show apply form
+│   └── countries.json              # Country data for PhoneField dial codes
+├── lib/
+│   ├── seo.js                      # buildPageMetadata() helper
+│   ├── ghost.js                    # Ghost Content API client + pagination
+│   ├── zohomail.js                 # sendZohoMail(), getClientIP(), logEmail()
+│   ├── validators.js               # isValidEmail(), isValidMobile()
+│   ├── html.js                     # escapeHtml(), sanitizeSubject(), buildTrackingHtml()
+│   ├── utm.js                      # captureUTMs(), getUTMParams()
+│   ├── consent.js                  # GDPR consent logic, REGULATED_COUNTRIES
+│   └── schema/                     # JSON-LD schema builders
+│       ├── index.js
+│       ├── organization.js
+│       ├── website.js
+│       ├── breadcrumb.js
+│       ├── article.js
+│       ├── service.js
+│       ├── faq.js
+│       ├── jobPosting.js
+│       └── webPage.js
+├── styles/
+│   ├── _index.scss                 # Main entrypoint (imports all partials)
+│   └── _*.scss                     # Per-component SCSS partials (60+ files)
+└── fonts/                          # Local Avenir font files (300–800 weights)
+```
+
+---
 
 ## SEO & Metadata
 
-All page metadata uses the `buildPageMetadata()` helper from `src/lib/seo.js`.
+All page metadata uses `buildPageMetadata()` from `src/lib/seo.js`.
 
 ```js
 export const metadata = buildPageMetadata({
@@ -96,67 +237,79 @@ export const metadata = buildPageMetadata({
 });
 ```
 
-**Title template bypass:** The root layout sets a `"%s | DahNAY"` title template. `buildPageMetadata` returns `{ absolute: title }` to bypass it, so every page title must already include the brand name. Do not write bare titles like `"Air Freight"`.
+**Title template bypass:** The root layout sets a `"%s | DahNAY"` title template. `buildPageMetadata` returns `{ absolute: title }` to bypass it, so every page title must already include the brand name. Never write bare titles like `"Air Freight"`.
 
-**OG / Twitter:** Both default to the same title and description. Pass `ogTitle` explicitly only when the social card copy must differ.
+**Contact page:** Metadata lives in `src/app/contact/layout.js`, not `page.js`, because `contact/page.js` is a Client Component (`"use client"`).
 
-**Contact page:** Metadata lives in `src/app/contact/layout.js`, not `page.js`, because `contact/page.js` is a Client Component.
+**Article pages:** Also pass `type: "article"`, `publishedTime`, `modifiedTime`, and `authors`.
 
-## Project Structure
+---
 
-```
-src/
-├── app/                       # Next.js App Router
-│   ├── api/contact/           # Contact form endpoint
-│   ├── about/
-│   ├── careers/
-│   ├── contact/
-│   │   └── layout.js          # Metadata for the contact page (page.js is "use client")
-│   ├── industries/[slug]/
-│   ├── newsroom/
-│   │   ├── blog/[slug]/       # Blog detail
-│   │   ├── case-study/[slug]/ # Case study detail
-│   │   └── news/[slug]/       # News detail
-│   ├── solutions/
-│   ├── service/
-│   ├── layout.js
-│   ├── page.js
-│   └── sitemap.js
-├── components/
-│   ├── layout/                # Header, Footer
-│   ├── sections/              # Page section building blocks
-│   └── icons/
-├── data/
-│   ├── industries/index.json  # Industry page content (banner, expertise, FAQs, case study link)
-│   ├── careers/jobs.js        # Job openings (empty array → careers page shows apply form)
-│   └── ...
-├── lib/
-│   ├── ghost.js               # Ghost Content API client + pagination
-│   └── seo.js                 # buildPageMetadata() helper
-├── styles/
-│   ├── _index.scss            # Component entrypoint
-│   └── components/            # Per-component SCSS partials
-└── fonts/                     # Avenir font files
-```
+## Email System
+
+All form routes share `sendZohoMail()` from `src/lib/zohomail.js`:
+
+- Transport: `smtppro.zoho.in:465` (SSL/TLS)
+- Every submission is CC'd to the submitter's own email
+- Emails include a tracking footer with client IP, page URL, referrer, and UTM parameters
+- Resume uploads (`/api/career-apply`) attach the PDF as base64 via nodemailer `attachments`; limit 15 MB, PDF only
+
+The honeypot field on the contact form (`website`, hidden via absolute positioning) silently discards bot submissions without revealing rejection to the sender.
+
+---
+
+## Schema / JSON-LD
+
+`<JsonLd data={[...]} />` (`src/components/JsonLd.js`) injects structured data. Schema builders live in `src/lib/schema/`:
+
+- `buildOrganizationSchema()` — Organization + LocalBusiness
+- `buildWebsiteSchema()` — Website with SearchAction
+- `buildBreadcrumbSchema(items)` — BreadcrumbList (used on every page except the homepage)
+- `buildArticleSchema(post)` — Article / BlogPosting
+- `buildServiceSchema(service)` — Service
+- `buildFaqSchema(faqs)` — FAQPage
+- `buildJobPostingSchema(job)` — JobPosting
+- `buildWebPageSchema(page)` — WebPage
+
+---
+
+## GDPR / Consent
+
+`src/lib/consent.js` manages a 31-country consent gate (EU/GDPR, UK PECR, India DPDP, Brazil LGPD). The `<ConsentBanner>` (`src/components/layout/ConsentBanner.js`) shows only for regulated regions. GTM consent defaults are set inline in `src/app/layout.js` before GTM loads; `applyConsent()` updates them when the user chooses.
+
+---
 
 ## Robots & Crawlers
 
-Crawler rules are generated by `src/app/robots.js` using the Next.js Metadata API (not a static `public/robots.txt`).
+Generated by `src/app/robots.js` (Next.js Metadata API — not a static `public/robots.txt`).
 
-The following paths are disallowed for **all crawlers** and the full **AI bot list** (`aiCrawlers` array):
+The following paths are disallowed for **all crawlers** and the full **AI bot list**:
 
 | Path | Reason |
-|------|--------|
-| `/api/` | Internal API routes |
+|---|---|
+| `/api/` | Internal API routes — not indexable |
 | `/wp-admin/` | WordPress scanner honeypot |
 | `/wp-content/` | WordPress scanner honeypot |
 | `/wp-includes/` | WordPress scanner honeypot |
 
-To add a new blocked path, append it to the `disallow` array in **both** rules entries inside `robots()`.
+To add a new blocked path, append it to the `disallow` array in **both** rule entries in `robots()` (the `"*"` wildcard rule and the `aiCrawlers` array rule).
 
-## Content model
+---
 
-- **Industries** — all 11 industry pages are driven by `src/data/industries/index.json` (banner, overview copy, expertise items, FAQs, why-DahNAY, case-study link).
-- **Posts (blog / case-study / news)** — fetched from Ghost via `getBlogPosts` / `getBlogPost` in `src/lib/ghost.js`. Post type is derived from Ghost tags.
-- **Case-study links on industry pages** — each industry references one featured post via an internal `/newsroom/blog/<slug>` link in the JSON.
-- **Jobs** — `src/data/careers/jobs.js`. Empty array hides the listing section and swaps in `CareerApplyForm` instead.
+## Content Model
+
+- **Industries** — 11 pages, all data in `src/data/industries/index.json`: banner, overview, expertise (6 items), FAQs, WhyDahnay (4 items), case-study link.
+- **Services** — 10 pages, data in `src/data/services/index.json`.
+- **Posts** — fetched from Ghost via `getBlogPosts` / `getBlogPost` (`src/lib/ghost.js`). Type derived from Ghost tags.
+- **Jobs** — `src/data/careers/jobs.js` exports `JOBS`. Empty array → careers page shows resume-upload form. Populate with job objects to show the listing.
+
+---
+
+## Redirects
+
+157 permanent (301) redirects in `next.config.mjs` cover:
+- Legacy slug remapping (`/services/*` → `/service/*`, `/industry/*` → `/industries/*`)
+- Old marketing URLs (e.g. `/renewable-energy-logistics/` → `/industries/renewables`)
+- WordPress scanner paths (silently redirected to homepage)
+
+Add new redirects to the `redirects()` async function in `next.config.mjs`.

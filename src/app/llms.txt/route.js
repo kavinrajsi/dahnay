@@ -556,7 +556,7 @@ export async function GET() {
   }
 
   const body =
-    `${STATIC_CONTENT}\n` +
+    `${STATIC_CONTENT.replace(/\n# /g, "\n## ")}\n` +
     `${dynamicSections}` +
     `${STATIC_TAIL}`;
 

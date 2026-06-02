@@ -43,6 +43,7 @@ export async function POST(request) {
       toEmail: process.env.ZEPTOMAIL_CAREER_TO_EMAIL,
       subject: sanitizeSubject(`New Career Inquiry from ${name}`),
       html,
+      cc: email,
     });
 
     if (configError) {

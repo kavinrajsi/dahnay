@@ -99,6 +99,7 @@ export async function POST(request) {
           : `Job Application from ${fullName}`
       ),
       html,
+      cc: email,
       attachments: [
         {
           name: resume.name || "resume.pdf",

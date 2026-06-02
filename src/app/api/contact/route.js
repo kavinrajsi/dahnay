@@ -64,6 +64,7 @@ export async function POST(request) {
       toEmail: process.env.ZEPTOMAIL_TO_EMAIL,
       subject: sanitizeSubject(`New Inquiry from ${name}`),
       html,
+      cc: email,
     });
 
     if (configError) {

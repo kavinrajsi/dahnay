@@ -24,7 +24,7 @@ export function maskEmail(email) {
   return `${local[0]}***@${domainName[0] || ""}***${tld}`;
 }
 
-export async function sendZohoMail({ toEmail, subject, html, attachments }) {
+export async function sendZohoMail({ toEmail, subject, html, attachments, cc }) {
   const {
     ZOHO_SMTP_USER,
     ZOHO_SMTP_PASS,
@@ -51,6 +51,7 @@ export async function sendZohoMail({ toEmail, subject, html, attachments }) {
     to: `"${ZOHO_TO_NAME}" <${toEmail}>`,
     subject,
     html,
+    ...(cc ? { cc } : {}),
   };
 
   if (attachments?.length) {

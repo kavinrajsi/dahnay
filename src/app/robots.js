@@ -27,12 +27,12 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/wp-admin/", "/wp-content/"],
+        disallow: ["/api/", "/wp-admin/", "/wp-content/", "/wp-includes/"],
       },
       {
         userAgent: aiCrawlers,
         allow: "/",
-        disallow: ["/api/", "/wp-admin/", "/wp-content/"],
+        disallow: ["/api/", "/wp-admin/", "/wp-content/", "/wp-includes/"],
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,

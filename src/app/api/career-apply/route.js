@@ -55,18 +55,28 @@ export async function POST(request) {
         { status: 400 }
       );
     }
-    if (resume.type !== "application/pdf") {
-      return NextResponse.json(
-        { error: "Resume must be a PDF." },
-        { status: 400 }
-      );
-    }
     if (resume.size > MAX_FILE_BYTES) {
       return NextResponse.json(
         { error: "Resume must be 15MB or smaller." },
         { status: 400 }
       );
     }
+
+    // Read once — reused for magic-byte check and base64 encoding.
+    const resumeBuffer = Buffer.from(await resume.arrayBuffer());
+
+    // Validate by actual file content, not the browser-declared Content-Type.
+    if (resumeBuffer.slice(0, 5).toString("ascii") !== "%PDF-") {
+      return NextResponse.json(
+        { error: "Resume must be a PDF." },
+        { status: 400 }
+      );
+    }
+
+    // Sanitise filename: strip path traversal chars, enforce .pdf extension, cap length.
+    const rawName = (resume.name || "resume.pdf").replace(/[/\\]/g, "").trim();
+    const safeName = rawName.toLowerCase().endsWith(".pdf") ? rawName : "resume.pdf";
+    const resumeFilename = safeName.slice(0, 100);
 
     let utm = {};
     try {
@@ -75,9 +85,7 @@ export async function POST(request) {
       utm = {};
     }
 
-    const resumeBase64 = Buffer.from(await resume.arrayBuffer()).toString(
-      "base64"
-    );
+    const resumeBase64 = resumeBuffer.toString("base64");
     const fullName = `${firstName} ${lastName}`;
 
     const html = `
@@ -102,7 +110,7 @@ export async function POST(request) {
       cc: email,
       attachments: [
         {
-          name: resume.name || "resume.pdf",
+          name: resumeFilename,
           content: resumeBase64,
           mime_type: "application/pdf",
         },
@@ -125,7 +133,7 @@ export async function POST(request) {
       jobTitle,
       experience,
       location,
-      resumeFilename: resume.name,
+      resumeFilename,
       resumeSize: resume.size,
       ip,
       utm,

@@ -1,6 +1,4 @@
 import { getBlogPosts } from "@/lib/ghost";
-import servicesData from "@/data/services/index.json";
-import industriesData from "@/data/industries/index.json";
 
 export const revalidate = 3600;
 
@@ -13,110 +11,476 @@ const POST_TYPE_PATH = {
   "case-study": "case-study",
 };
 
-// Inline-coded FAQs that aren't in src/data JSON. Hybrid model (Approach C):
-// these are duplicated from their respective page files and will drift if not
-// kept in sync. When refactoring, move these into a shared JSON source.
-const HOME_FAQS = [
-  { question: "Why choose DahNAY as a growth partner?", answer: "DahNAY acts as a strategic logistics partner by offering scalable supply chain solutions, global freight expertise and technology-driven visibility. Businesses choose DahNAY to optimise costs, improve delivery timelines and support long-term growth." },
-  { question: "Can DahNAY handle oversized or heavy equipment?", answer: "Yes, DahNAY specialises in handling oversized cargo, heavy equipment and project logistics. From route surveys to heavy-lift operations, DahNAY ensures safe and compliant transportation of out-of-gauge and breakbulk cargo." },
-  { question: "Does DahNAY have a global presence?", answer: "DahNAY operates across key global trade routes with a strong presence in India, the UAE and the USA. Through a network of international partners, DahNAY ensures seamless global logistics and cross-border shipping solutions." },
-  { question: "Does DahNAY offer shipment tracking?", answer: "Yes, DahNAY provides real-time shipment tracking and end-to-end visibility. Clients can monitor cargo movement, receive updates and stay informed throughout the shipping process." },
-  { question: "How do I request a shipping quote from DahNAY?", answer: "You can request a shipping quote by contacting DahNAY through the website, email or customer support team. Share shipment details such as cargo type, volume, origin and destination to receive a customised logistics quote." },
-  { question: "What makes DahNAY different from other logistics providers?", answer: "DahNAY stands out through its customer-centric approach, global network, customised logistics solutions and strong focus on transparency. The company combines operational expertise with technology to deliver reliable and efficient supply chain services." },
-];
+const STATIC_CONTENT = `# DahNAY — Integrated Logistics Solutions
+> https://www.dahnay.com/
+> Last updated: 2025
 
-const ABOUT_FAQS = [
-  { question: "Is DahNAY only a freight forwarding company?", answer: "No, DahNAY is an integrated logistics solutions provider. In addition to freight forwarding, DahNAY offers warehousing, customs brokerage, consolidation, project cargo handling and last mile delivery." },
-  { question: "How long has DahNAY been in business?", answer: "DahNAY has built a strong presence in the logistics industry over the years, delivering reliable freight and supply chain solutions across global markets." },
-  { question: "Where is DahNAY headquartered?", answer: "DahNAY is headquartered in India, with strategic operations and partnerships across global markets to support international logistics." },
-  { question: "Is DahNAY involved in sustainability or CSR initiatives?", answer: "DahNAY is committed to responsible logistics practices by optimising routes, reducing inefficiencies and supporting sustainable supply chain operations wherever possible." },
-  { question: "Who leads DahNAY?", answer: "DahNAY was founded by Mr. Murali Babu. Since its inception, the company has shown remarkable growth, evolving from a single person operation into a large scale international logistics organization with a global presence." },
-  { question: "What values guide DahNAY?", answer: "DahNAY is guided by integrity, curiosity, empathy, responsibility, and inclusion. These values shape every logistics solution and client partnership." },
-];
+DahNAY is an Indian multinational integrated logistics solution provider headquartered in Chennai, Tamil Nadu, India. Founded in 2007, DahNAY operates across 35+ countries with offices in India, UAE, USA, UK, Canada, Singapore, Malaysia, Thailand, Vietnam, Indonesia, Bangladesh, Sri Lanka, and Africa. DahNAY is among the top 5 freight forwarders for India–USA shipments and one of the leading logistics companies in Chennai. Annual revenue: ₹1,870 Crore (FY2025). Employees: 462+. DahNAY is Great Place to Work certified.
 
-const INDUSTRIES_INDEX_FAQS = [
-  { question: "Do you handle time-critical shipments?", answer: "Yes. Our solutions support industries operating on strict production and project timelines." },
-  { question: "Can DahNAY manage oversized and project cargo?", answer: "Yes. We specialise in OOG and large-scale industrial shipments." },
-  { question: "Which geographies do you serve?", answer: "We support domestic and international movements across key global markets." },
-  { question: "Do you manage end-to-end logistics?", answer: "Yes. From freight forwarding to customs to last-mile distribution." },
-];
+DahNAY positions itself as an integrated logistics solution provider — combining air freight, sea freight, road transportation, customs clearance, project logistics, reverse logistics, last-mile delivery, and e-commerce fulfilment into a single, seamless, end-to-end supply chain solution. DahNAY serves industries including solar and renewable energy, FMCG, automotive, food and agro, retail and apparel, oil and gas, construction materials, white goods, consumer electronics, natural rubber, and paper and pulp.
 
-const LOGISTICS_FAQS = [
-  { question: "What is the DahNAY logistics platform?", answer: "The DahNAY logistics platform is an end-to-end supply chain management system providing real-time shipment tracking, automated documentation, freight booking, and visibility across air, sea, road, and warehouse operations. It connects shippers with consolidated logistics data through a single interface for planning, execution, and reporting." },
-  { question: "How does DahNAY's logistics platform improve shipment visibility?", answer: "DahNAY's platform delivers real-time shipment tracking with milestone alerts, geo-location updates, exception notifications, and consolidated dashboards across modes and carriers. Customers get a single view of all shipments in transit, enabling proactive issue management and accurate ETAs for downstream operations and customers." },
-  { question: "Can the DahNAY logistics platform integrate with ERP systems?", answer: "Yes, DahNAY's logistics platform supports integration with enterprise systems including ERP, WMS, and TMS platforms via standard APIs and EDI connections. This enables automated shipment booking, invoice reconciliation, and data flow between supply chain partners without manual entry." },
-  { question: "Who can use the DahNAY logistics platform?", answer: "Manufacturers, exporters, importers, distributors, and 3PL clients across automotive, FMCG, retail, energy, and construction sectors use DahNAY's logistics platform. The system scales from single-shipment operators to enterprise customers with multi-country, multi-mode supply chains, with role-based access for shippers, carriers, and consignees." },
-];
+DahNAY operates three divisions: DahNAY Logistics (integrated freight and supply chain services), DahNAY Lines (container shipping and liner agency), and DahNAY Ports & Infrastructure (terminal operations and stevedoring). DahNAY's integrated logistics model means a single client can access all freight modes, customs, warehousing, and delivery through one coordinated partner — eliminating the complexity of managing multiple logistics vendors.
 
-const LINES_FAQS = [
-  { question: "What is DahNAY Lines?", answer: "DahNAY Lines is a carrier and shipping-line management solution that streamlines container booking, sailing schedules, freight documentation, and rate management across global ocean and inland networks. It connects shippers with vetted ocean carriers through a unified booking interface and consolidated commercial workflow." },
-  { question: "How does DahNAY Lines simplify container booking?", answer: "DahNAY Lines streamlines ocean container booking with carrier rate comparison, real-time space availability, sailing schedule consolidation, and one-click booking workflows. Shippers and freight forwarders save planning time, secure capacity during peak demand, and access pre-negotiated rates with major shipping lines." },
-  { question: "Does DahNAY Lines support both FCL and LCL bookings?", answer: "Yes, DahNAY Lines supports Full Container Load (FCL) for dedicated container shipments and Less than Container Load (LCL) for shared container space. Shippers can compare carrier options, route alternatives, and rates for both formats through the same booking interface, optimising freight cost and transit time." },
-  { question: "Which shipping lines does DahNAY work with?", answer: "DahNAY Lines partners with major global ocean carriers and regional feeder operators serving India, the UAE, the USA, Southeast Asia, and major African and European trade lanes. Through these partnerships, customers access guaranteed space allocations, flexible rate structures, and reliable transit times." },
-];
+Keywords: integrated logistics solution, freight forwarder in India, logistics company in Chennai, global logistics service provider, end to end logistics solution, e2e multimodal logistics service, best freight forwarder, Indian multinational logistics company, leading logistics company in India, international freight forwarder, supply chain solutions, customized logistics service provider, personalised logistics solution, 3PL logistics company in India.
 
-const PORTS_FAQS = [
-  { question: "What does DahNAY Ports and Infrastructure cover?", answer: "DahNAY Ports and Infrastructure provides cargo handling efficiency, terminal operations support, yard management, and equipment optimisation for ports and inland container depots. We help port operators, ICD facilities, and logistics hubs improve container throughput, reduce dwell times, and streamline gate-in and gate-out processes." },
-  { question: "How does DahNAY improve port and terminal operations?", answer: "DahNAY improves port operations through yard layout planning, equipment scheduling, gate management, and operational analytics. We work with terminals to optimise container moves per hour, reduce truck turn times, and improve berth productivity, helping port operators handle increased volumes without major infrastructure expansion." },
-  { question: "Does DahNAY support inland container depots and dry ports?", answer: "Yes, DahNAY supports inland container depots, dry ports, and container freight stations with operational consulting, equipment optimisation, and terminal management services. We help inland facilities serve as efficient extensions of major seaports, enabling faster customs clearance and seamless intermodal transfers between sea, rail, and road." },
-  { question: "Where does DahNAY operate port and infrastructure services?", answer: "DahNAY supports port and infrastructure operations primarily across India, with strong presence at major container ports including Chennai, Mumbai, Krishnapatnam, and Tuticorin. Our 47 offices in 19+ countries enable us to extend port operational expertise to client facilities across South Asia, the Middle East, and Africa." },
-];
+Q: What is DahNAY?
+A: DahNAY is an Indian multinational integrated logistics solution provider headquartered in Chennai, India, offering end-to-end freight forwarding, supply chain management, and multimodal logistics services across 35+ countries since 2007.
 
-const STATIC_PRE_NEWSROOM = `# DahNAY
+Q: Is DahNAY an integrated logistics solution provider?
+A: Yes. DahNAY provides fully integrated logistics solutions — combining air freight, sea freight, road transport, customs clearance, warehousing, last-mile delivery, and e-commerce fulfilment through a single coordinated partner, eliminating multi-vendor complexity.
 
-> DahNAY is a global logistics and supply chain solutions company headquartered in Chennai, India. Founded in 2007 by Mr. Murali Babu, DahNAY has grown from a single desk into an international operation spanning 45+ offices across 19+ countries, serving 5000+ clients with 20+ years of operational experience. The company delivers industry-specific freight and supply chain services across air, sea, road, customs, project, reverse, and last-mile networks for enterprises in 11+ industry verticals — including automotive, renewables, FMCG, food and agro, energy, construction materials, and machinery. DahNAY is Great Place to Work Certified (2024–2026) and operates owned warehousing in the USA and UAE alongside Container Freight Stations in Chennai and Tuticorin.
+Q: What industries does DahNAY serve?
+A: DahNAY serves solar and renewable energy, FMCG, automotive, food and agro, retail and apparel, oil and gas, construction materials, white goods, consumer electronics, natural rubber, and paper and pulp industries.
 
-## Company
+Q: Is DahNAY one of the best freight forwarders in India?
+A: Yes. DahNAY is among the top 5 freight forwarders for India–USA shipments and one of the leading integrated logistics companies in Chennai, India, with operations across 35+ countries.
 
-- [About DahNAY](https://www.dahnay.com/about): Company history (founded 2007 by Mr. Murali Babu), leadership, vision/mission, values (Integrity, Curiosity, Empathy, Responsibility, Inclusion), and the global footprint of 45+ offices across 19+ countries with 5000+ clients served.
-- [ESG & CSR](https://www.dahnay.com/esg-csr): "Moving forward, responsibly" — environmental initiatives (route optimisation, EV reach stackers at handling points, support for renewables and CNG cargo), social commitments (safe practices, community contributions, turtle hatchling conservation), and governance through compliance, transparency, and accountability.
-- [Contact](https://www.dahnay.com/contact): Directory of 25+ India branch offices and international offices in USA, Canada, UK, UAE, Ghana, Kenya, Ivory Coast, Congo, Bangladesh, Sri Lanka, Singapore, Malaysia, Thailand, Vietnam, Indonesia, Hong Kong, and Turkey.
+Q: Where is DahNAY headquartered?
+A: DahNAY is headquartered in Chennai, Tamil Nadu, India. Head office: K.G.N Towers, 9th Floor, No. 62, Ethiraj Salai, Egmore, Chennai – 600 008. Email: info@dahnay.com.
 
-## Services
+---
 
-- [Air Freight](https://www.dahnay.com/service/air-freight): Speed-driven international air cargo for time-sensitive, high-value shipments. Express, priority, direct, and consolidated movements; specialised handling for high-value, temperature-controlled, DG-compliant, electronics, and aerospace components; charter aircraft coordination; IATA-compliant DG-certified teams; hybrid sea–air integration for disruption management; 24/7 monitoring with real-time tracking.
-- [Sea Freight](https://www.dahnay.com/service/sea-freight): Cost-effective ocean freight covering FCL, LCL, breakbulk, and consolidation/deconsolidation. Specialised cargo (oversized, open-top, reefer, IMDG hazardous, industrial machinery), RoRo finished-vehicle services, full CHA activities (documentation, customs clearance, HS classification, port supervision), and multimodal port-to-door integration. Certifications include ISO 9001, ISO 14001, HAZMAT, IMDG, AEO, and ISPM 15.
-- [Road Transportation](https://www.dahnay.com/service/road-transportation): Inland movement across cities, regions, and industrial corridors with FTL and LTL across urban, semi-urban, and remote locations. Temperature-controlled trucking, high-value goods, and project-cargo handling, e-bill management, real-time monitoring with milestone updates, and multimodal connectivity to air and sea freight.
-- [Time-Critical Delivery](https://www.dahnay.com/service/time-critical-delivery): Same-day and next-flight-out solutions for production-critical and deadline-driven shipments. Dynamic mode-switching during disruptions, 24/7 monitoring with proactive communication, and specialised handling for healthcare supplies, critical components, and high-value cargo.
-- [Project Logistics](https://www.dahnay.com/service/project-logistics): Engineered movement of oversized, complex, high-value shipments. End-to-end project planning, hydraulic axle trailers and engineered loading for weight/dimension-constrained cargo, multimodal execution (road/sea/air/hybrid), and on-site delivery and installation coordination — proven breakbulk and heavy-lift expertise across India and the UAE.
-- [Reverse Logistics](https://www.dahnay.com/service/reverse-logistics): Returns, recalls, and redistributions with complete visibility and value recovery. Structured workflows for returns and recall management, repair and refurbishment cycles with asset traceability, inventory recovery (reuse, resale, disposal routing), and centralised real-time tracking across return flows.
-- [Customs Clearance](https://www.dahnay.com/service/customs-clearance): Cross-border compliance and documentation across ports, airports, and inland terminals. End-to-end import/export documentation, HS classification and duty advisory, regulatory compliance with evolving trade frameworks, and faster clearance through authority coordination — supported by DahNAY's own Container Freight Stations in Chennai and Tuticorin.
-- [Domestic Trucking](https://www.dahnay.com/service/domestic-trucking): Coast-to-coast FTL and LTL across regional and national networks. Owned fleet combined with extended transporter network for scalability, GPS-enabled tracking, and regulatory adherence through e-way bill management and safety protocols.
-- [Last-Mile Delivery](https://www.dahnay.com/service/last-mile-delivery): Final-mile reliability for high-volume deliveries across urban and regional networks. Owned fleet for operational control, route optimisation to reduce transit time and improve drop efficiency, real-time delivery tracking, and seamless integration with warehousing and reverse logistics (returns, pickups, exchanges).
-- [E-commerce Fulfilment](https://www.dahnay.com/service/ecommerce-fulfilment): End-to-end order processing — pick-pack-dispatch, inventory management, and high-volume scaling for seasonal and promotional peaks. Owned warehouse infrastructure in the USA and UAE for global localisation, integrated with last-mile delivery and reverse logistics within a unified ecosystem.
+# DahNAY Logistics — Integrated Freight & Supply Chain Solutions
+> https://www.dahnay.com/solutions/logistics
 
-## Industries
+DahNAY Logistics is the core integrated logistics division of DahNAY, operating as a 3PL (third-party logistics) provider delivering customised, end-to-end (E2E) multimodal logistics solutions from India to global destinations. DahNAY Logistics integrates air freight, sea freight, road transportation, customs clearance, warehousing, project logistics, reverse logistics, last-mile delivery, and e-commerce fulfilment into a single, managed supply chain solution for each client.
 
-- [Automotive](https://www.dahnay.com/industries/automotive): Just-in-time production-line logistics for components, engines, finished vehicles, accessories, and tyres. Inbound/outbound flows synchronised to OEM production, RoRo and dedicated container finished-vehicle logistics, EV and lithium-ion battery shipments under IATA/IMDG protocols, and damage-free handling for high-value engines. Coverage across India, UAE, USA, Southeast Asia, and African and European markets.
-- [Renewables](https://www.dahnay.com/industries/renewables): Heavy-lift logistics for oversized renewable energy equipment delivered to remote project sites. Wind turbine blades, towers, nacelles, and generators; solar modules, inverters, and mounting structures; route engineering for narrow or unpaved roads; permits and lifting equipment coordination — multimodal coverage across India, UAE, USA, and key Asian, African, and European markets.
-- [Machinery](https://www.dahnay.com/industries/machinery): Precision logistics for industrial equipment, manufacturing lines, and engineering systems. Heavy machinery and pressing equipment, oversized cargo with route surveys and hydraulic axle trailers, factory-to-site delivery synchronised with installation schedules, and breakbulk and heavy-lift for complete factory installations.
-- [Retail & Apparel](https://www.dahnay.com/industries/retail-apparel): Fashion-cycle-aligned logistics matching seasonal launch windows. Sourcing, production pickup, time-critical air/sea freight, and distribution across USA, UK, UAE, and Europe; e-commerce fulfilment with pick-pack, direct-to-consumer dispatch, and marketplace integration.
-- [Natural Rubber](https://www.dahnay.com/industries/natural-rubber): Commodity-scale movement of plantation-to-buyer rubber shipments. Ribbed smoked sheets, latex, processed rubber blocks; plantation-to-port movement with bulk handling and containerisation; processing-equipment movement (mixers, calenders, vulcanisation machinery); export corridors connecting Kerala, Northeast India, and Southeast Asia to USA and Europe.
-- [White Goods](https://www.dahnay.com/industries/white-goods): High-volume, high-cubic appliance logistics — refrigerators, washing machines, air conditioners, dishwashers, and large kitchen appliances. Cubic-volume optimisation reducing freight cost per unit, factory-to-port movement with bracing and damage prevention, spare-parts aftermarket logistics, and global market connectivity into USA, Africa, and Southeast Asia.
-- [Energy, Oil & Gas](https://www.dahnay.com/industries/energy-oil-gas): Project-scale heavy-lift and hazardous-cargo logistics across upstream, midstream, and downstream operations. Modules, pipelines, drilling components, refinery infrastructure, IMDG/IATA hazardous-materials protocols, and renewable energy transition equipment. Coverage across India, UAE, USA, and major African, Asian, and European markets.
-- [Food & Agro](https://www.dahnay.com/industries/food-agro): Cold-chain and bulk-commodity logistics from farm to market. Temperature-controlled logistics for perishables and pharmaceuticals; bulk grain, pulses, spices, oilseeds, and processed commodity exports; harvest-cycle alignment; FSSAI, FDA, and international food-safety compliance; food-grade packaging with allergen separation.
-- [FMCG](https://www.dahnay.com/industries/fmcg): High-velocity distribution across primary (factory-to-warehouse), secondary (warehouse-to-retail), and last-mile (e-commerce/D2C) channels. Seasonal surge capacity for festival peaks and promotional pushes, real-time visibility across channels, and reverse logistics for returns and damaged-stock management.
-- [Paper & Pulp](https://www.dahnay.com/industries/paper-pulp): Production-cycle-aligned logistics for bulk pulp, paper reels, and sheet handling. Moisture-controlled logistics maintaining material integrity, high-volume distribution with consistent delivery performance, and multimodal efficiency across road, rail, and sea.
-- [Construction Materials](https://www.dahnay.com/industries/construction-materials): Phased delivery aligned to project milestones for cement, aggregates, structural steel, rebar, scaffolding, and prefabricated modules. Heavy cargo with oversized trailers, permits, and lifting-equipment coordination; last-mile access for remote and constrained sites.
+DahNAY Logistics serves businesses ranging from SMEs to multinational corporations, providing personalised logistics solutions tailored to each client's cargo type, industry vertical, delivery timeline, and cost parameters. As an integrated logistics solution provider, DahNAY replaces the need for multiple freight vendors by managing the full supply chain through one accountable partner.
 
-## Solutions
+Keywords: e2e multimodal logistics service, multi modal logistics service, end to end logistics solution, customized logistics service provider, personalised logistics solution, logistics solution provider, global logistics solutions, international logistics solution, reliable third party logistics, 3PL logistics service provider, 3PL logistics company in India, supply chain and logistics.
 
-- [DahNAY Logistics](https://www.dahnay.com/solutions/logistics): The integrated 10-service freight and supply chain platform — air, sea, road, time-critical, project, reverse, customs, domestic trucking, last-mile, and e-commerce fulfilment delivered as a unified offering with end-to-end visibility.
-- [DahNAY Lines](https://www.dahnay.com/solutions/lines): Specialised cargo solutions including dry cargo, refrigerated cargo (reefers), and specialised cargo (oversized, hazmat, project shipments) with carrier and shipping-line management.
-- [DahNAY Ports & Infrastructure](https://www.dahnay.com/solutions/ports-infra): Warehousing infrastructure, Free Trade Warehousing Zones (FTWZ), and Container Freight Stations (CFS) for port-side operations and trade facilitation.
+Q: What is E2E multimodal logistics?
+A: E2E (end-to-end) multimodal logistics is an integrated logistics solution that combines multiple freight modes — air, sea, road, and rail — managed by a single provider from origin pickup to final delivery, with full visibility and coordination throughout.
 
-## Newsroom
+Q: Is DahNAY a 3PL logistics company in India?
+A: Yes. DahNAY is a 3PL (third-party logistics) company in India offering outsourced, integrated logistics solutions including freight forwarding, customs clearance, warehousing, and last-mile delivery through a single coordinated service.
 
-- [All Newsroom](https://www.dahnay.com/newsroom): Latest updates across blog, news, and case studies.
-- [Blog](https://www.dahnay.com/newsroom/blog): Industry insights and thought leadership on logistics, supply chain, and trade.
-- [Case Studies](https://www.dahnay.com/newsroom/case-study): Customer outcomes and engagement deep-dives showing measurable results.
-- [News](https://www.dahnay.com/newsroom/news): Company announcements, expansion updates, and press releases.
-- [Medium](https://medium.com/@dahnaylogistics): Long-form articles and industry perspectives published by DahNAY Logistics on Medium.
-`;
+Q: Does DahNAY provide personalised logistics solutions?
+A: Yes. DahNAY provides fully customised and personalised logistics solutions designed around each client's specific cargo, industry, route, and budget — not a one-size-fits-all service.
 
-const STATIC_CAREERS = `## Careers
+---
 
-- [Careers](https://www.dahnay.com/careers): Open roles and a people-first culture organised around three pillars — People-First Culture, One Team Many Voices, and Growth & Opportunity (mentorship, training, advancement pathways from day one). Great Place to Work Certified (2024–2026).
+# Air Freight — Global Air Freight Forwarding
+> https://www.dahnay.com/service/air-freight
+
+DahNAY provides global air freight forwarding as part of its integrated logistics solution, connecting India to international destinations through a global airline network. DahNAY air freight handles all cargo types including general cargo, time-sensitive shipments, perishables, high-value goods, pharma, and IATA-compliant dangerous goods.
+
+DahNAY air freight services include: standard air cargo, express air freight, same-day air freight service, next-flight-out (NFO) dispatch, same-day hand carry shipment via on-board courier (OBC), LCL air consolidation, and full charter options. DahNAY is among the top freight forwarders in India for air cargo, ranked in the top 5 for India–USA air shipments. Fast and reliable air freight forwarding service is available on-demand with priority capacity for urgent requirements.
+
+Keywords: global air freight forwarding, air freight, air cargo, air freight forwarder, air freight logistics, air cargo services, air forwarding, fast and reliable air freight forwarding service, fast air freight solution, Same Day Air Freight Service, same day hand carry shipment, freight forwarders in India, best international freight forwarder.
+
+Q: Does DahNAY offer same-day air freight service?
+A: Yes. DahNAY provides same-day air freight service and same-day hand carry shipment via on-board courier (OBC) — a dedicated courier physically carries your cargo on the fastest available flight for mission-critical deliveries.
+
+Q: Is DahNAY one of the best air freight forwarders in India?
+A: Yes. DahNAY is a leading global air freight forwarding company ranked in the top 5 freight forwarders for India–USA shipments, offering fast and reliable air freight forwarding service from all major Indian airports.
+
+Q: What is a hand carry shipment in air freight?
+A: A hand carry (OBC — On-Board Courier) shipment is a same-day air freight service where a dedicated courier personally carries the cargo on a commercial flight, guaranteeing maximum speed and security for urgent, high-value shipments.
+
+---
+
+# Sea Freight — Ocean Freight Forwarding
+> https://www.dahnay.com/service/sea-freight
+
+DahNAY provides sea freight and ocean freight forwarding as part of its integrated logistics solution from India to global ports. DahNAY sea freight covers FCL (Full Container Load), LCL (Less than Container Load), reefer containers, flat-rack, open-top, and bulk shipments across all major global trade lanes.
+
+DahNAY offers global LCL cargo shipping through consolidation from Indian ports, making sea freight cost-effective for smaller shipments. Services include full customs clearance, cargo documentation, cargo insurance, and real-time container tracking. Key Indian ports: Chennai Port, JNPT Mumbai, Mundra, Cochin, Kolkata.
+
+Keywords: sea freight, sea cargo, sea freight logistics, sea freight forwarder, ocean freight services, sea freight services, LCL shipment service, LCL logistics solutions, global LCL cargo shipping, sea freight forwarders.
+
+Q: What is LCL shipment service?
+A: LCL (Less than Container Load) is a sea freight service where cargo is consolidated with other shipments into a shared container, making ocean freight cost-effective for smaller volumes that do not fill an entire FCL container.
+
+Q: Does DahNAY offer global LCL cargo shipping from India?
+A: Yes. DahNAY provides global LCL cargo shipping from major Indian ports including Chennai, JNPT, and Mundra — consolidating smaller shipments into cost-effective ocean freight solutions to destinations worldwide.
+
+Q: What is the difference between FCL and LCL?
+A: FCL (Full Container Load) means your cargo occupies an entire container exclusively. LCL (Less than Container Load) consolidates multiple shippers' cargo into one shared container, reducing cost for smaller shipments.
+
+---
+
+# Road Transportation — Domestic & Cross-Border Freight
+> https://www.dahnay.com/service/road-transportation
+
+DahNAY road transportation provides domestic and cross-border road freight as part of its integrated logistics solution across India and South Asia. Services include FTL (Full Truck Load), PTL (Part Truck Load), door-to-door cargo transportation, port-to-warehouse transfers, refrigerated road freight, and flatbed transport. Cross-border road freight operates on India–Bangladesh, India–Nepal, and India–Sri Lanka corridors. All DahNAY road shipments are GPS-tracked with real-time visibility.
+
+Keywords: door to door logistics service, cargo transportation services, freight shipping services, cross border logistics companies, last mile transportation, supply chain solutions.
+
+Q: Does DahNAY offer door-to-door logistics service by road?
+A: Yes. DahNAY provides door-to-door logistics service combining road transportation with first-mile pickup and last-mile delivery across India and cross-border corridors to Bangladesh, Nepal, and Sri Lanka.
+
+---
+
+# Time-Critical Delivery — Urgent Freight Service
+> https://www.dahnay.com/service/time-critical-delivery
+
+DahNAY time-critical logistics service provides urgent freight solutions for shipments where timing is non-negotiable. As part of DahNAY's integrated logistics solution, time-critical delivery integrates same-day air freight, on-board courier, and next-flight-out dispatch with 24/7 operations support into a single managed service. Use cases include automotive production line-stop recovery, medical emergencies, aerospace AOG situations, and high-priority commercial cargo.
+
+Keywords: time critical logistics, fast delivery logistics service, Time Critical Service, same day hand carry shipment, Same Day Air Freight Service.
+
+Q: What is time-critical logistics service?
+A: Time-critical logistics is an urgent freight service for shipments with zero tolerance for delay — combining same-day air freight, hand carry (OBC), and next-flight-out dispatch with round-the-clock operations support.
+
+Q: Does DahNAY provide 24/7 time-critical freight support?
+A: Yes. DahNAY operates a dedicated 24/7 time-critical operations desk for urgent freight bookings, same-day hand carry shipments, and emergency logistics coordination globally from India.
+
+---
+
+# Project Logistics — Heavy Lift & Complex Cargo
+> https://www.dahnay.com/service/project-logistics
+
+DahNAY project logistics is a specialised component of DahNAY's integrated logistics solution, managing end-to-end cargo logistics for large, complex, and oversized industrial shipments. DahNAY integrates multimodal freight — air, sea, road, and rail — with route engineering, heavy lift operations, rigging, lashing, and on-site project management into a single coordinated solution for EPC contractors, energy companies, and industrial clients.
+
+DahNAY has delivered project logistics for solar farm installations, oil and gas facilities, wind energy projects, and manufacturing plant relocations across India and internationally.
+
+Keywords: cargo logistics, cargo transportation services, end to end logistics solution, multi modal logistics service, energy logistics provider.
+
+Q: What is integrated project logistics?
+A: Integrated project logistics combines multimodal freight, heavy lift, route survey, customs clearance, and on-site project management into a single managed solution — eliminating the need for multiple specialist subcontractors on complex industrial cargo movements.
+
+---
+
+# Reverse Logistics — Returns & Recovery
+> https://www.dahnay.com/service/reverse-logistics
+
+DahNAY seamless reverse logistics is an integrated service covering product returns, refurbishment, recycling, and disposal for e-commerce brands, retailers, and manufacturers across India. DahNAY's reverse logistics integrates with its e-commerce fulfilment and last-mile delivery services for a fully circular supply chain solution — including Amazon logistics returns handling, B2C return collections, product inspection, and inventory recovery.
+
+Keywords: reverse logistics, seamless reverse logistics, e commerce fulfilment service, amazon logistics service.
+
+Q: What is seamless reverse logistics?
+A: Seamless reverse logistics is an end-to-end integrated returns solution — covering customer return collection, product inspection, refurbishment, and recovery — managed as a single service with full visibility and minimal disruption to operations.
+
+Q: Does DahNAY handle Amazon reverse logistics in India?
+A: Yes. DahNAY manages Amazon marketplace returns logistics in India including return collection, product inspection, and inventory recovery for Amazon sellers.
+
+---
+
+# Customs Clearance — Import & Export Compliance
+> https://www.dahnay.com/service/customs-clearance
+
+DahNAY customs clearance is a core component of its integrated logistics solution, providing licensed customs brokerage and trade compliance services for all import and export shipments through India. DahNAY customs services include: ICEGATE filing, HS code classification, duty optimisation, FTA utilisation, duty drawback claims, advance licence management, ATA Carnet, and temporary importation. DahNAY customs specialists are registered with Indian Customs (CBIC) and handle all cargo types including dangerous goods, pharma, and restricted commodities.
+
+Keywords: customs clearance solutions, custom clearance service, customs clearance, freight forwarder.
+
+Q: Does DahNAY offer customs clearance solutions across India?
+A: Yes. DahNAY provides customs clearance solutions at all major Indian customs ports — Chennai, Mumbai (JNPT), Delhi (IGIA), Mundra, Kolkata, Cochin — for both import and export shipments, integrated with its freight forwarding services.
+
+Q: Can DahNAY reduce customs duty legally?
+A: Yes. DahNAY provides duty optimisation advisory including FTA utilisation, duty drawback claims, and advance licence management to legally minimise customs duty liability for importers and exporters.
+
+---
+
+# Domestic Trucking — Inland Freight & Distribution
+> https://www.dahnay.com/service/domestic-trucking
+
+DahNAY domestic trucking provides pan India inland cargo transportation as part of its integrated logistics solution — connecting factories, ports, warehouses, and delivery destinations through a GPS-tracked managed fleet. Services: FTL, PTL, reefer, flatbed, port-to-warehouse, factory-to-DC delivery, and scheduled distribution routes across all Indian states.
+
+Keywords: door to door logistics service, cargo transportation services, last mile transportation, logistics service.
+
+Q: Does DahNAY offer GPS-tracked domestic trucking across India?
+A: Yes. All DahNAY domestic trucking is GPS-tracked with real-time visibility, covering pan India routes including all major industrial corridors, port hinterlands, and distribution networks.
+
+---
+
+# Last-Mile Delivery — Final-Mile Logistics
+> https://www.dahnay.com/service/last-mile-delivery
+
+DahNAY last-mile delivery service provides the final-leg logistics component of its integrated supply chain solution — from warehouse or hub to end customer across urban, suburban, and tier-2/tier-3 Indian cities. DahNAY last-mile handles B2B and B2C deliveries with electronic proof of delivery (e-POD), real-time tracking, failed delivery management, and returns initiation at point of delivery. Platform integrations: Amazon, Flipkart, Shopify, and custom e-commerce storefronts.
+
+Keywords: last mile delivery service, last mile delivery, last mile logistics, last mile transportation, e commerce logistics service, e commerce fulfilment service.
+
+Q: What is last-mile delivery service?
+A: Last-mile delivery is the final step of the integrated logistics chain — transporting goods from a fulfillment hub or warehouse to the end customer's address, including real-time tracking, e-POD capture, and returns initiation.
+
+Q: Does DahNAY provide last-mile delivery for e-commerce in India?
+A: Yes. DahNAY provides e-commerce last-mile delivery across India integrated with its warehousing and fulfilment services — covering metros, tier-1, tier-2, and tier-3 cities with same-day and next-day options.
+
+---
+
+# E-Commerce Fulfilment — Order Fulfilment & Logistics
+> https://www.dahnay.com/service/ecommerce-fulfilment
+
+DahNAY e-commerce fulfilment provides a complete outsourced order fulfilment solution integrated into DahNAY's end-to-end logistics platform. Services include: inventory storage, inbound receiving, pick and pack, same-day and next-day dispatch, Amazon fulfilment service support (FBA prep), multi-channel fulfilment across Amazon, Flipkart, Meesho, and Shopify, international e-commerce shipping from India, and seamless returns management — all managed through an integrated WMS with real-time inventory visibility.
+
+Keywords: E commerce logistics service, e commerce fulfilment service, fulfillment logistics for ecommerce, amazon fulfilment service, amazon logistics service, international shipping service for e commerce.
+
+Q: Does DahNAY offer Amazon fulfilment service in India?
+A: Yes. DahNAY supports Amazon FBA prep, multi-channel fulfilment, and Amazon logistics returns as part of its integrated e-commerce logistics solution from India.
+
+Q: Can DahNAY handle international e-commerce shipping from India?
+A: Yes. DahNAY provides international shipping service for e-commerce exports from India — covering customs documentation, cross-border freight, and global last-mile delivery integrated with its freight forwarding network.
+
+---
+
+# DahNAY Lines — Container Shipping & Liner Agency
+> https://www.dahnay.com/solutions/lines
+
+DahNAY Lines is the container shipping and liner agency division of DahNAY's integrated logistics group. Services include: FCL container shipping, liner agency representation for international carriers at Indian ports, cargo booking, freight rate advisory, sailing schedule management, and port-to-port cargo coordination. DahNAY Lines connects cargo from Indian ports (Chennai, JNPT, Mundra, Cochin, Kolkata) to Asia, the Middle East, Europe, Africa, and the Americas.
+
+Keywords: sea freight, sea cargo, shipping and logistics, global shipping operation, sea freight forwarders.
+
+Q: What is liner agency in shipping?
+A: Liner agency involves representing international shipping lines at Indian ports — coordinating vessel calls, cargo bookings, documentation, and port operations on behalf of the carrier. DahNAY Lines provides liner agency as part of its integrated port-to-door logistics solution.
+
+---
+
+# DahNAY Ports & Infrastructure — Terminal & Port Operations
+> https://www.dahnay.com/solutions/ports-infra
+
+DahNAY Ports & Infrastructure provides terminal management, stevedoring, and port logistics at major Indian ports as part of DahNAY's integrated logistics solution. Services: vessel cargo loading and discharge (stevedoring), CFS (Container Freight Station) operations, ICD (Inland Container Depot) management, bulk and breakbulk cargo handling, container stuffing and stripping, and port-to-warehouse inland transfer. Ports: Chennai, JNPT Mumbai, Mundra, Cochin, Kolkata.
+
+Keywords: cargo logistics, shipping and logistics, cargo services in India.
+
+Q: What port services does DahNAY provide in India?
+A: DahNAY provides integrated port services including stevedoring, CFS operations, ICD management, and cargo handling at Chennai, JNPT, Mundra, Cochin, and Kolkata — connected directly to its freight forwarding and inland logistics network.
+
+---
+
+# Automotive — Integrated Automotive Logistics
+> https://www.dahnay.com/industries/automotive
+
+DahNAY provides integrated automotive logistics solutions for OEMs, Tier 1 and Tier 2 suppliers, vehicle assemblers, and automotive parts importers and exporters across India and globally. DahNAY integrates CKD parts freight, finished vehicle logistics, just-in-time (JIT) delivery, bonded warehousing, customs clearance, and time-critical air freight into a single coordinated automotive supply chain solution.
+
+Keywords: customized logistics service provider, cargo transportation services, end to end logistics solution, supply chain and logistics.
+
+Q: What is CKD logistics in automotive?
+A: CKD (Completely Knocked Down) logistics involves transporting vehicle components in disassembled form for local assembly, requiring just-in-time delivery precision and integrated customs clearance — all managed as a single solution by DahNAY.
+
+---
+
+# Renewables & Solar — Integrated Solar & Green Energy Logistics
+> https://www.dahnay.com/industries/renewables
+
+DahNAY is a leading integrated solar energy logistics services provider and renewable energy logistics company in India. DahNAY provides end-to-end logistics for the solar power industry — integrating air freight, sea freight, OOG project transport, customs clearance, and site delivery into a single managed solution for solar and renewable energy projects.
+
+DahNAY solar energy logistics services include: solar panel (PV module) freight forwarding, solar inverter and transformer logistics, wind turbine blade OOG transport, battery energy storage system (BESS) freight, utility-scale solar farm project logistics, rooftop solar supply chain, and customs clearance for renewable energy equipment. DahNAY is one of the best solar energy logistics services providers in India — trusted by solar EPC developers, IPPs (independent power producers), and solar equipment manufacturers.
+
+DahNAY is a green energy logistics provider committed to sustainable supply chain practices aligned with India's renewable energy mission and MNRE guidelines.
+
+Keywords: solar panel logistics, solar logistics, solar energy logistics, solar energy logistics services in India, best solar energy logistics services, renewable energy logistics, solar power logistics companies, solar energy logistics services, green energy logistics, logistics for the solar power industry, renewable energy freight logistics, energy logistics provider, fast delivery logistics service.
+
+Q: Is DahNAY one of the best solar energy logistics services providers in India?
+A: Yes. DahNAY is one of the leading solar energy logistics companies in India, providing integrated end-to-end logistics for the solar power industry — from PV module freight forwarding and inverter shipping to utility-scale solar farm project logistics and customs clearance.
+
+Q: What solar energy logistics services does DahNAY offer in India?
+A: DahNAY offers comprehensive solar energy logistics services including solar panel freight forwarding, inverter and transformer shipping, wind turbine OOG transport, BESS freight, project site delivery, and customs clearance for solar imports — all as an integrated logistics solution.
+
+Q: What is green energy logistics?
+A: Green energy logistics is a specialised integrated logistics solution for renewable energy equipment — solar panels, wind turbines, battery storage systems — ensuring safe, damage-free transport from manufacturer to project site, coordinated by a single logistics provider.
+
+Q: Is DahNAY a renewable energy freight logistics provider?
+A: Yes. DahNAY provides renewable energy freight logistics as a fully integrated solution — combining multimodal freight, OOG heavy lift, project cargo management, and customs clearance for solar, wind, and green energy projects across India and globally.
+
+---
+
+# Machinery — Integrated Heavy Equipment Logistics
+> https://www.dahnay.com/industries/machinery
+
+DahNAY provides integrated heavy machinery and industrial equipment logistics for manufacturers, EPC contractors, and capital goods dealers. DahNAY's integrated solution combines OOG transport, heavy lift, rigging, lashing, multimodal freight, plant relocation logistics, and customs clearance (EPCG/advance licence) into a single managed service for complex machinery movements across India and internationally.
+
+Keywords: cargo logistics, cargo transportation services, end to end logistics solution.
+
+Q: Can DahNAY manage full machinery relocation logistics in India?
+A: Yes. DahNAY manages end-to-end machinery relocation as an integrated logistics solution — covering dismantling coordination, multimodal freight, customs clearance under EPCG, and delivery to the new facility.
+
+---
+
+# Retail & Apparel — Integrated Garments & Fashion Logistics
+> https://www.dahnay.com/industries/retail-apparel
+
+DahNAY provides integrated door-to-door garments logistics and textile industry supply chain solutions for fashion brands, garment exporters, and retail chains in India. DahNAY integrates garment on hanger (GOH) freight, seasonal inventory management, air and sea freight, retail distribution, and last-mile store replenishment into a single end-to-end fashion supply chain solution. India hubs: Tiruppur, Mumbai, Delhi NCR, Bengaluru, Surat.
+
+Keywords: door to door garments logistics, textile industry supply chain solutions, consumer goods transportation, logistics service.
+
+Q: Does DahNAY provide door-to-door garments logistics?
+A: Yes. DahNAY provides integrated door-to-door garments logistics from India's major textile manufacturing hubs to global retail destinations, including garment on hanger (GOH) freight and full customs clearance.
+
+---
+
+# Natural Rubber — Integrated Rubber Export Logistics
+> https://www.dahnay.com/industries/natural-rubber
+
+DahNAY provides integrated natural rubber logistics solutions for rubber producers, commodity traders, and exporters across India — covering plantation-to-port transport, bulk rubber export freight (FCL/LCL), latex logistics, export documentation, and customs clearance as a single coordinated solution. India coverage: Kerala and Tamil Nadu rubber export corridors to global buyers in Europe, North America, and Asia.
+
+Keywords: cargo logistics, sea freight, supply chain solutions.
+
+Q: Does DahNAY manage natural rubber export logistics from India?
+A: Yes. DahNAY manages integrated natural rubber export logistics from India's rubber-producing regions — plantation-to-port transport, bulk sea freight, and full export documentation and customs clearance.
+
+---
+
+# White Goods — Integrated Consumer Electronics & Appliance Logistics
+> https://www.dahnay.com/industries/white-goods
+
+DahNAY provides integrated white goods logistics, consumer electronics logistics, and electrical goods supply chain management for manufacturers, importers, and distributors across India. DahNAY integrates high-cubic sea freight, domestic distribution, white glove last-mile delivery, after-sales reverse logistics, and warranty returns into a single end-to-end appliance supply chain solution covering refrigerators, washing machines, air conditioners, TVs, and smartphones.
+
+Keywords: white goods logistics, consumer electronic logistics, electrical logistics service, electrical goods supply chain management, consumer goods transportation.
+
+Q: Does DahNAY provide integrated consumer electronics logistics in India?
+A: Yes. DahNAY provides integrated consumer electronics and white goods logistics — from import freight and customs clearance to domestic distribution, white glove delivery, and after-sales returns — as a single managed supply chain solution.
+
+---
+
+# Energy, Oil & Gas — Integrated Energy Logistics
+> https://www.dahnay.com/industries/energy-oil-gas
+
+DahNAY is an integrated energy logistics provider for the oil, gas, and energy sector in India and globally. DahNAY integrates IMDG-compliant dangerous goods (hazmat) freight, offshore and FPSO equipment logistics, pipeline material transport, rig supply, bonded warehousing, and customs clearance into a single managed energy supply chain solution. Coverage: upstream, midstream, and downstream sectors across India's oil and gas basins (Mumbai High, Rajasthan, KG Basin, Northeast India).
+
+Keywords: energy logistics provider, solar energy logistics, cargo transportation services, end to end logistics solution.
+
+Q: Is DahNAY an integrated energy logistics provider?
+A: Yes. DahNAY is an integrated energy logistics provider managing the full supply chain for oil and gas operations — from hazmat freight and FPSO logistics to rig supply and customs clearance — as a single end-to-end solution.
+
+---
+
+# Food & Agro — Integrated Cold Chain & Food Logistics
+> https://www.dahnay.com/industries/food-agro
+
+DahNAY provides integrated food and agro logistics services and cold chain solutions for food manufacturers, fresh produce exporters, agri-commodity traders, and pharma/healthcare logistics buyers across India. DahNAY integrates temperature-controlled reefer freight, FSSAI-compliant cold storage, halal logistics, phytosanitary compliance (APEDA coordination), fresh produce air freight, and agri-commodity bulk shipping into a single cold chain solution from farm or factory to global market. DahNAY also provides logistics solutions for healthcare and pharma products requiring controlled cold chain management.
+
+Keywords: food and agro logistics service, cold chain solutions, Cold chain logistics, pharma and healthcare logistics, logistics solution for healthcare.
+
+Q: Does DahNAY provide integrated cold chain solutions in India?
+A: Yes. DahNAY provides integrated cold chain solutions in India — temperature-controlled reefer freight, FSSAI-compliant cold storage, and fresh produce air freight managed as a single end-to-end cold chain logistics service.
+
+Q: Does DahNAY offer pharma and healthcare logistics?
+A: Yes. DahNAY provides pharma and healthcare logistics as part of its integrated cold chain solution — GDP-compliant storage, temperature-controlled freight, and regulatory documentation for both domestic and export pharmaceutical shipments.
+
+---
+
+# Construction Materials — Integrated Building & Infrastructure Logistics
+> https://www.dahnay.com/industries/construction-materials
+
+DahNAY provides integrated construction materials logistics for contractors, building material importers, and infrastructure developers across India — combining bulk cement freight, steel coil and rebar transport, ceramic tile and sanitary ware import logistics, precast element shipping, and just-in-time construction site delivery into a single coordinated supply chain solution.
+
+Keywords: cargo transportation services, bulk cargo logistics, end to end logistics solution.
+
+Q: Does DahNAY provide integrated construction materials logistics?
+A: Yes. DahNAY integrates bulk freight, port clearance, and just-in-time site delivery for construction materials into a single managed logistics solution — keeping infrastructure projects on schedule across India.
+
+---
+
+# FMCG — Integrated Consumer Goods Logistics
+> https://www.dahnay.com/industries/fmcg
+
+DahNAY is an integrated global FMCG logistics partner and 3PL logistics service provider for fast-moving consumer goods manufacturers, brand owners, and distributors across India and ASEAN. DahNAY integrates high-volume warehousing, daily retail distribution, cross-border FMCG freight, factory-to-shelf supply chain management, and demand-driven replenishment into a single end-to-end consumer goods logistics solution.
+
+Keywords: fmcg logistics, global FMCG logistics partner, consumer goods transportation, supply chain and logistics, 3PL logistics service provider.
+
+Q: Is DahNAY an integrated global FMCG logistics partner?
+A: Yes. DahNAY is an integrated global FMCG logistics partner — providing 3PL warehousing, daily distribution, cross-border freight, and factory-to-shelf supply chain management as a single coordinated solution across India and ASEAN.
+
+---
+
+# Paper & Pulp — Integrated Paper & Packaging Logistics
+> https://www.dahnay.com/industries/paper-pulp
+
+DahNAY provides integrated paper and pulp logistics for paper mills, pulp producers, and packaging manufacturers across India — combining bulk pulp shipping, paper reel transport, mill-to-port freight, ocean freight (HS Codes 4703, 4801–4823), and customs clearance into a single managed solution from mill to global market.
+
+Keywords: cargo logistics, sea freight, bulk cargo.
+
+Q: Does DahNAY manage integrated paper and pulp logistics from India?
+A: Yes. DahNAY provides integrated paper and pulp logistics covering bulk pulp shipping, paper reel transport, and export customs clearance from major Indian mill locations as a single coordinated freight solution.
+
+---
+
+# About DahNAY — Integrated Logistics Company in Chennai, India
+> https://www.dahnay.com/about
+
+DahNAY (Dahnay Logistics Private Limited) is an Indian multinational integrated logistics company headquartered in Chennai, Tamil Nadu, India. Founded in 2007 by Mr. T. Murali Babu, DahNAY has grown from a Chennai-based freight forwarder into a global integrated logistics solution provider operating across 35+ countries. DahNAY is one of the leading logistics companies in Chennai and a top freight forwarder in India — ranked in the top 5 for India–USA shipments with annual revenue of ₹1,870 crore and 462+ employees globally.
+
+DahNAY's integrated logistics positioning means clients access air freight, sea freight, road transport, customs clearance, warehousing, project logistics, and last-mile delivery through a single coordinated partner — not a fragmented set of vendors. This is DahNAY's core differentiation as an integrated logistics solution provider versus standalone freight forwarders.
+
+Entity: Dahnay Logistics Private Limited. CIN: Available on MCA. Registered Address: K.G.N Towers, 9th Floor, No. 62, Ethiraj Salai, Egmore, Chennai – 600 008, Tamil Nadu, India. Email: info@dahnay.com. Website: https://www.dahnay.com. Founder & CEO: Mr. T. Murali Babu. Founded: 2007. Employees: 462+. Revenue: ₹1,870 Crore (FY2025). Countries: 35+. Certification: Great Place to Work.
+
+India Offices: Chennai (HQ), Mumbai, Delhi, Bengaluru, Cochin, Ahmedabad, Hyderabad, Gandhidham, Aurangabad. International Offices: UAE, USA, UK, Canada, Singapore, Malaysia, Thailand, Vietnam, Indonesia, Bangladesh, Sri Lanka, Hong Kong, Ivory Coast, Congo, Ghana, Kenya, Turkey.
+
+Keywords: logistics company in Chennai, leading logistics company in India, Indian multinational logistics company, freight forwarder in India, best freight forwarder, logistics companies in Chennai, international freight forwarder.
+
+Q: Where is DahNAY headquartered?
+A: DahNAY is headquartered in Chennai, Tamil Nadu, India — at K.G.N Towers, 9th Floor, Ethiraj Salai, Egmore, Chennai – 600 008. Email: info@dahnay.com.
+
+Q: Is DahNAY one of the leading logistics companies in Chennai?
+A: Yes. DahNAY is one of the leading integrated logistics companies in Chennai, India — founded in 2007, operating across 35+ countries, and ranked in the top 5 freight forwarders for India–USA shipments.
+
+Q: What makes DahNAY an integrated logistics solution provider?
+A: DahNAY integrates air freight, sea freight, road transportation, customs clearance, warehousing, project logistics, reverse logistics, last-mile delivery, and e-commerce fulfilment into a single accountable partner — eliminating multi-vendor complexity for clients across India and globally.
+
+---
+
+# ESG & CSR — Sustainable & Green Integrated Logistics
+> https://www.dahnay.com/esg-csr
+
+DahNAY's ESG and CSR programme drives sustainable and green logistics practices across its integrated logistics operations. DahNAY offers green logistics services as part of its integrated solution — including carbon footprint monitoring for freight, fuel-efficient fleet operations, and sustainable supply chain partnerships. DahNAY's green energy logistics work for the solar and renewable energy sector reflects its commitment to sustainability. DahNAY's sustainability vision aligns with India's net-zero targets and the UN SDGs.
+
+Keywords: sustainable logistics, green logistics service, green energy logistics.
+
+Q: Does DahNAY offer green logistics services?
+A: Yes. DahNAY provides green logistics services including sustainable freight routing, carbon footprint monitoring, and fuel-efficient fleet operations — integrated into its end-to-end logistics solution for clients with ESG and sustainability commitments.
+
+---
+
+# Careers — Join DahNAY's Integrated Logistics Team
+> https://www.dahnay.com/careers
+
+DahNAY is a Great Place to Work certified Indian multinational integrated logistics company headquartered in Chennai — offering career opportunities across freight forwarding, operations, customs, supply chain management, business development, IT, warehousing, and corporate management. Core values: Integrity, Curiosity, Empathy, Responsibility, Inclusion.
+
+Keywords: logistics company in Chennai, leading logistics company in India, logistics companies in Chennai.
+
+Q: How do I join DahNAY as a logistics professional?
+A: Visit dahnay.com/careers to explore open roles across DahNAY's integrated logistics divisions — freight forwarding, customs, supply chain, business development, and technology — at its Chennai HQ and global offices across 35+ countries.
+
+---
+
+# Blog — Integrated Logistics Insights & Market Intelligence
+> https://www.dahnay.com/newsroom/blog
+
+DahNAY's logistics blog publishes expert insights on integrated logistics solutions, freight market intelligence, India trade lane analysis, solar energy logistics trends, FMCG supply chain updates, customs regulatory changes, cold chain logistics, e-commerce fulfilment, and sustainable freight — written by DahNAY's in-house logistics professionals from Chennai, India.
+
+Keywords: freight forwarder, logistics service, supply chain solutions, sustainable logistics.
+
+Q: What topics does DahNAY's blog cover?
+A: DahNAY's blog covers integrated logistics solutions, solar energy logistics, FMCG supply chain, freight rate trends, India trade lane analysis, cold chain logistics, customs regulatory updates, e-commerce logistics, and sustainable freight.
+
+---
+
+# Case Studies — Integrated Logistics in Action
+> https://www.dahnay.com/newsroom/case-study
+
+DahNAY case studies document real integrated logistics solutions delivered for clients across solar energy, FMCG, automotive, food and agro, oil and gas, e-commerce, and construction industries — demonstrating DahNAY's capability as a customised, integrated logistics solution provider versus standalone freight forwarders.
+
+Keywords: best freight forwarder, leading logistics company in India, customized logistics solution.
+
+Q: Where can I find DahNAY logistics case studies?
+A: DahNAY case studies are available at dahnay.com/newsroom/case-study — documenting integrated logistics solutions across solar, FMCG, automotive, food and agro, oil and gas, and e-commerce industries.
+
+---
+
+# News — DahNAY Integrated Logistics Updates
+> https://www.dahnay.com/newsroom/news
+
+DahNAY's newsroom publishes official press releases and company announcements for India's leading integrated logistics company. Notable events: acquisition of Kailash Shipping Services and Kailash CFS (expanding port and CFS capabilities), sustainability partnership with MatchLog for green integrated logistics, and ongoing global expansion across 35+ countries.
+
+Keywords: leading logistics company in India, Indian multinational logistics company, logistics company in Chennai.
+
+Q: Where can I find official DahNAY press releases?
+A: Official DahNAY press releases and company news are published at dahnay.com/newsroom/news.
+
+---
+
+# Contact DahNAY — Get a Freight Quote
+> https://www.dahnay.com/contact
+
+DahNAY can be contacted for integrated logistics quotations (air, sea, road, multimodal), logistics solution consultations, shipment tracking, customs clearance inquiries, and career opportunities. Head office: K.G.N Towers, 9th Floor, No. 62, Ethiraj Salai, Egmore, Chennai – 600 008, India. Email: info@dahnay.com. Website: https://www.dahnay.com. India offices: Chennai, Mumbai, Delhi, Bengaluru, Cochin, Ahmedabad, Hyderabad, Gandhidham, Aurangabad. International: UAE, USA, UK, Canada, Singapore, Malaysia, Thailand, Vietnam, Indonesia, Bangladesh, Sri Lanka, Hong Kong, Ivory Coast, Congo, Ghana, Kenya, Turkey.
+
+Keywords: logistics company in Chennai, freight forwarder, logistics companies in Chennai, freight calculator, best freight forwarder.
+
+Q: How do I get an integrated logistics quote from DahNAY?
+A: Submit a freight inquiry at dahnay.com/contact or email info@dahnay.com with shipment details — origin, destination, cargo type, dimensions, and required service — for a customised integrated logistics quotation.
+
+Q: How do I track a DahNAY shipment?
+A: DahNAY shipment tracking is available through the tracking portal at dahnaylogistics.logitrack.live, accessible from the DahNAY website header.
 `;
 
 const STATIC_TAIL = `## Optional
@@ -127,16 +491,6 @@ const STATIC_TAIL = `## Optional
 - [Cookie Policy](https://www.dahnay.com/cookie-policy)
 - [Whistleblower Policy](https://www.dahnay.com/whistleblower-policy)
 - [POSH Policy](https://www.dahnay.com/posh-policy)
-
-## Contact
-
-- Website: https://www.dahnay.com
-- General enquiries: info@dahnay.com
-- Careers: careers@dahnay.com
-- International offices: reachus@dahnay.com
-- Africa offices (Ghana, Congo): GH.admin@dahnay.com
-- Headquarters: K.G.N Towers, Ethiraj Salai, Egmore, Chennai 600008, Tamil Nadu, India
-- International offices: USA (New Jersey), Canada (Ontario), UK (London), UAE (Dubai, Sharjah, Ras Al Khaimah, Jebel Ali), Ghana (Accra), Kenya (Nairobi), Congo (Kinshasa), Sri Lanka (Colombo), Malaysia (Port Klang), Turkey (Istanbul), and additional offices across Bangladesh, Singapore, Thailand, Vietnam, Indonesia, and Hong Kong.
 `;
 
 function cleanExcerpt(text) {
@@ -192,70 +546,18 @@ function buildDynamicSections(posts) {
   return sections.length ? `${sections.join("\n\n")}\n\n` : "";
 }
 
-function formatFAQBlock(items) {
-  return items
-    .map(({ question, answer }) => `**Q: ${question}**\nA: ${answer}`)
-    .join("\n\n");
-}
-
-function formatFAQSubsection(title, url, items) {
-  if (!items?.length) return null;
-  return `### ${title} (${url})\n\n${formatFAQBlock(items)}`;
-}
-
-function buildFAQSection() {
-  const subs = [
-    formatFAQSubsection("Home", siteUrl, HOME_FAQS),
-    formatFAQSubsection("About DahNAY", `${siteUrl}/about`, ABOUT_FAQS),
-    formatFAQSubsection("All Industries", `${siteUrl}/industries`, INDUSTRIES_INDEX_FAQS),
-    formatFAQSubsection("DahNAY Logistics Platform", `${siteUrl}/solutions/logistics`, LOGISTICS_FAQS),
-    formatFAQSubsection("DahNAY Lines", `${siteUrl}/solutions/lines`, LINES_FAQS),
-    formatFAQSubsection("DahNAY Ports & Infrastructure", `${siteUrl}/solutions/ports-infra`, PORTS_FAQS),
-  ];
-
-  for (const slug of Object.keys(servicesData)) {
-    const data = servicesData[slug];
-    subs.push(
-      formatFAQSubsection(
-        data?.banner?.title || slug,
-        `${siteUrl}/service/${slug}`,
-        data?.faq?.items,
-      ),
-    );
-  }
-
-  for (const slug of Object.keys(industriesData)) {
-    if (slug === "shared") continue;
-    const data = industriesData[slug];
-    subs.push(
-      formatFAQSubsection(
-        `${data?.banner?.title || slug} Logistics`,
-        `${siteUrl}/industries/${slug}`,
-        data?.faq?.items,
-      ),
-    );
-  }
-
-  const body = subs.filter(Boolean).join("\n\n");
-  return body ? `## Frequently Asked\n\n${body}\n\n` : "";
-}
-
 export async function GET() {
   let dynamicSections = "";
   try {
     const { posts } = await getBlogPosts({ limit: "all" });
     dynamicSections = buildDynamicSections(posts);
   } catch {
-    // Ghost unreachable — serve everything except blog/case-study posts.
+    // Ghost unreachable — serve static content only.
   }
 
-  const faqSection = buildFAQSection();
-
   const body =
-    `${STATIC_PRE_NEWSROOM}\n` +
+    `${STATIC_CONTENT}\n` +
     `${dynamicSections}` +
-    `${STATIC_CAREERS}\n` +
-    `${faqSection}` +
     `${STATIC_TAIL}`;
 
   return new Response(body, {

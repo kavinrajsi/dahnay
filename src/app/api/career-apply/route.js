@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
 import { escapeHtml, sanitizeSubject, buildTrackingHtml } from "@/lib/html";
-import { getClientIP, logEmail, sendZohoMail } from "@/lib/zohomail";
+import { getClientIP, logEmail, sendZohoMail, sendConfirmation } from "@/lib/zohomail";
 
 const MAX_FILE_BYTES = 15 * 1024 * 1024;
 
@@ -148,6 +148,20 @@ export async function POST(request) {
         { status: 500 }
       );
     }
+
+    void sendConfirmation({
+      toEmail: email,
+      toName: fullName,
+      subject: jobTitle
+        ? `Application received: ${jobTitle} — DahNAY`
+        : "We've received your application — DahNAY",
+      html: `
+        <p>Hi ${escapeHtml(firstName.trim())},</p>
+        <p>Thank you for applying${jobTitle ? ` for the <strong>${escapeHtml(jobTitle)}</strong> position` : ""} at DahNAY. We've received your application and our HR team will review it carefully.</p>
+        <p>We'll be in touch if your profile matches our requirements. In the meantime, feel free to explore more about us at <a href="https://www.dahnay.com/about">dahnay.com/about</a>.</p>
+        <p>Best regards,<br>DahNAY HR Team</p>
+      `,
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

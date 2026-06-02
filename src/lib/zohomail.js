@@ -24,6 +24,33 @@ export function maskEmail(email) {
   return `${local[0]}***@${domainName[0] || ""}***${tld}`;
 }
 
+// Sends a fixed-template confirmation directly to the submitter.
+// The body must be entirely DahNAY-authored — never include user-supplied
+// message/inquiry content here, as that would recreate the email-relay
+// phishing vector that the cc field previously caused.
+export async function sendConfirmation({ toEmail, toName, subject, html }) {
+  const { ZOHO_SMTP_USER, ZOHO_SMTP_PASS, ZOHO_FROM_NAME } = process.env;
+  if (!ZOHO_SMTP_USER || !ZOHO_SMTP_PASS || !ZOHO_FROM_NAME || !toEmail) return;
+
+  const transporter = nodemailer.createTransport({
+    host: "smtppro.zoho.in",
+    port: 465,
+    secure: true,
+    auth: { user: ZOHO_SMTP_USER, pass: ZOHO_SMTP_PASS },
+  });
+
+  try {
+    await transporter.sendMail({
+      from: `"${ZOHO_FROM_NAME}" <${ZOHO_SMTP_USER}>`,
+      to: toName ? `"${toName}" <${toEmail}>` : toEmail,
+      subject,
+      html,
+    });
+  } catch {
+    // Confirmation failure is non-fatal — the enquiry was already received.
+  }
+}
+
 export async function sendZohoMail({ toEmail, subject, html, attachments }) {
   const {
     ZOHO_SMTP_USER,

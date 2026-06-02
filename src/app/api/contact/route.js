@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { isValidEmail, isValidMobile } from "@/lib/validators";
 import { escapeHtml, sanitizeSubject, buildTrackingHtml } from "@/lib/html";
-import { getClientIP, logEmail, sendZohoMail } from "@/lib/zohomail";
+import { getClientIP, logEmail, sendZohoMail, sendConfirmation } from "@/lib/zohomail";
 
 export async function POST(request) {
   try {
@@ -94,6 +94,18 @@ export async function POST(request) {
         { status: 500 }
       );
     }
+
+    void sendConfirmation({
+      toEmail: email,
+      toName: name.trim(),
+      subject: "We've received your enquiry — DahNAY",
+      html: `
+        <p>Hi ${escapeHtml(name.trim())},</p>
+        <p>Thank you for reaching out to DahNAY. We've received your enquiry and our team will get back to you within 1–2 business days.</p>
+        <p>If your matter is urgent, please call us or email <a href="mailto:info@dahnay.com">info@dahnay.com</a> directly.</p>
+        <p>Best regards,<br>The DahNAY Team</p>
+      `,
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

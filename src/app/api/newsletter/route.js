@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { isValidEmail } from "@/lib/validators";
 import { escapeHtml, sanitizeSubject, buildTrackingHtml } from "@/lib/html";
-import { getClientIP, logEmail, sendZohoMail, maskEmail } from "@/lib/zohomail";
+import { getClientIP, logEmail, sendZohoMail, sendConfirmation, maskEmail } from "@/lib/zohomail";
 
 export async function POST(request) {
   try {
@@ -55,6 +55,16 @@ export async function POST(request) {
         { status: 500 }
       );
     }
+
+    void sendConfirmation({
+      toEmail: email,
+      subject: "You're subscribed to DahNAY updates",
+      html: `
+        <p>Thank you for subscribing to DahNAY's newsletter.</p>
+        <p>You'll receive the latest insights on integrated logistics, freight market trends, and industry news from our team in Chennai.</p>
+        <p>Best regards,<br>The DahNAY Team</p>
+      `,
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

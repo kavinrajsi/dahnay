@@ -23,24 +23,21 @@ const aiCrawlers = [
 
 const disallow = ["/api/", "/_next/", "/wp-admin/", "/wp-content/", "/wp-includes/"];
 
-export function GET() {
-  const disallowLines = disallow.map((p) => `Disallow: ${p}`).join("\n");
-
-  const content = [
-    `User-agent: *`,
-    `Allow: /`,
-    disallowLines,
-    ``,
-    aiCrawlers.map((ua) => `User-agent: ${ua}`).join("\n"),
-    `Allow: /`,
-    disallowLines,
-    ``,
-    `Sitemap: ${siteUrl}/sitemap.xml`,
-    `Host: ${siteUrl}`,
-    `LLMs: ${siteUrl}/llms.txt`,
-  ].join("\n");
-
-  return new Response(content, {
-    headers: { "Content-Type": "text/plain; charset=utf-8" },
-  });
+export default function robots() {
+  return {
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow,
+      },
+      {
+        userAgent: aiCrawlers,
+        allow: "/",
+        disallow,
+      },
+    ],
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
+  };
 }

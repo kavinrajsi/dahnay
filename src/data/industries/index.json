@@ -59,20 +59,20 @@
     "faq": {
       "items": [
         {
-          "question": "Does DahNAY handle just-in-time automotive shipments?",
-          "answer": "Yes, DahNAY runs just-in-time automotive logistics with synchronised inbound and outbound flows, time-critical air or road movements, and dedicated coordination with OEM production schedules. We support manufacturers across India, the UAE, and key Asian markets, with real-time shipment visibility from origin to plant."
+          "question": "What automotive logistics services does DahNAY offer?",
+          "answer": "We provide end-to-end automotive logistics across India and global markets, including automotive 3PL service India and automotive freight forwarding India to support efficient vehicle and component movement."
         },
         {
-          "question": "Can DahNAY manage EV and battery logistics?",
-          "answer": "Yes, DahNAY handles electric vehicle and lithium-ion battery shipments under IATA dangerous-goods protocols for air freight and IMDG protocols for sea freight. Certified handlers manage segregated storage, fire-safe containers, and full export documentation, supporting EV and component movements across India, the UAE, and global markets."
+          "question": "What is VIN-level visibility in automotive logistics?",
+          "answer": "VIN-level visibility enables real-time tracking of individual vehicles across the car parts supply chain in India and international routes, ensuring transparency, accuracy and better inventory control."
         },
         {
-          "question": "Where does DahNAY ship automotive cargo?",
-          "answer": "DahNAY moves automotive cargo across India, the UAE, the USA, Southeast Asia, and major African and European markets, leveraging 47 offices in 19+ countries. We handle inbound parts, finished vehicles, accessories, and tyres on sea, air, and road, with port operations through Chennai, Mumbai, and Dubai."
+          "question": "Can DahNAY handle global automotive shipments?",
+          "answer": "Yes, we manage automotive freight forwarding in India and across global supply chains, ensuring seamless movement of vehicles and components across borders."
         },
         {
-          "question": "Does DahNAY handle finished vehicles as well as components?",
-          "answer": "DahNAY handles both automotive components and finished vehicle logistics. We manage inbound parts to assembly plants, outbound finished vehicle transport via roll-on/roll-off and dedicated containers, and accessory or tyre distribution to dealer networks, with packaging and handling protocols suited to each cargo class."
+          "question": "How does DahNAY support post-production logistics?",
+          "answer": "We support post-production logistics across India and international markets by managing storage, distribution and timely delivery within the automotive supply chain in India and beyond."
         }
       ]
     },
@@ -156,20 +156,24 @@
     "faq": {
       "items": [
         {
-          "question": "Does DahNAY handle oversized renewable energy equipment?",
-          "answer": "Yes, DahNAY moves oversized renewable energy cargo including wind turbine blades, towers, nacelles, and solar modules. We use heavy-lift trailers, route surveys, lifting equipment, and multimodal coordination across sea, road, and rail to deliver cargo from manufacturing hubs to onshore and offshore project sites."
+          "question": "What renewable energy logistics services does DahNAY offer?",
+          "answer": "We provide end-to-end renewable energy equipment transportation, including logistics solutions for turbine transport, industrial turbine transport and solar panel logistics service across India and global markets."
         },
         {
-          "question": "Can DahNAY support remote renewable project sites?",
-          "answer": "Yes, DahNAY's multimodal coordination enables access to remote renewable project sites including inland wind farms and solar installations. We manage permits, route engineering for narrow or unpaved roads, and last-mile delivery to project locations across India, the UAE, and key emerging markets."
+          "question": "Can DahNAY handle solar panel shipments safely?",
+          "answer": "Yes, our solar panel logistics service ensures safe handling through secure packaging, careful loading and controlled transportation to prevent damage during transit."
         },
         {
-          "question": "Does DahNAY handle both solar and wind cargo?",
-          "answer": "Yes, DahNAY supports both solar and wind logistics. We move solar modules, inverters, and mounting structures by sea container and road, and handle wind turbine blades, hubs, and gearbox assemblies as oversized breakbulk or heavy-lift cargo with specialised trailers and engineered loading plans."
+          "question": "What types of renewable energy equipment can DahNAY transport?",
+          "answer": "We transport a wide range of equipment including solar panels, wind turbine components and other machinery, with expertise in oversized wind turbine transport and industrial turbine transport."
         },
         {
-          "question": "Where does DahNAY ship renewable energy cargo?",
-          "answer": "DahNAY moves renewable energy logistics across India, the UAE, the USA, and key Asian, African, and European markets supported by 47 offices in 19+ countries. We coordinate ocean, road, and air freight from manufacturing hubs to project execution sites worldwide."
+          "question": "Does DahNAY provide customs clearance for renewable shipments?",
+          "answer": "Yes, we offer complete support for renewable energy equipment transportation, including customs clearance for seamless movement across international borders."
+        },
+        {
+          "question": "How are wind turbine blades transported?",
+          "answer": "Wind turbine blades are handled through specialized logistics solutions for turbine transport, using customized equipment and route planning to safely manage oversized wind turbine transport."
         }
       ]
     },
@@ -253,20 +257,20 @@
     "faq": {
       "items": [
         {
-          "question": "Does DahNAY handle oversized industrial machinery?",
-          "answer": "Yes, DahNAY manages oversized and over-dimensional industrial machinery transport including manufacturing lines, pressing equipment, and complete factory installations. We provide route surveys, permits, hydraulic axle trailers, and crane coordination to deliver heavy cargo from factory floors to project installation sites globally."
+          "question": "What types of machinery can DahNAY transport?",
+          "answer": "We handle a wide range of equipment, including heavy machinery transportation and manufacturing machinery transport, supporting diverse industrial equipment logistics needs across India and global markets."
         },
         {
-          "question": "Can DahNAY transport high-value engineering systems?",
-          "answer": "Yes, DahNAY plans and executes specialised logistics for high-value engineering systems including turbines, pressing lines, and complete production assemblies. Our project logistics team handles engineered packing, route engineering, customs clearance, and multimodal coordination to ensure intact delivery and on-schedule installation."
+          "question": "What is project cargo in machinery logistics?",
+          "answer": "Project cargo refers to the transportation of large, complex or high-value machinery that requires specialized planning, handling and coordination as part of industrial equipment logistics."
         },
         {
-          "question": "Does DahNAY support factory-to-site delivery?",
-          "answer": "Yes, DahNAY runs end-to-end factory-to-site delivery, coordinating outbound from production facilities, port handling, ocean or air freight, customs clearance at destination, and final-mile transport to installation sites. We synchronise movement with installation schedules to avoid downtime and demurrage costs."
+          "question": "What are end-to-end machinery logistics solutions?",
+          "answer": "End-to-end machinery logistics solutions cover the complete process, including pickup, heavy machinery transportation, customs clearance, delivery and installation support where required."
         },
         {
-          "question": "Where does DahNAY ship machinery and industrial equipment?",
-          "answer": "DahNAY moves industrial machinery across India, the UAE, the USA, and major Asian, African, and European markets supported by 47 offices in 19+ countries. We handle factory-to-site delivery, breakbulk shipping, and heavy-lift coordination across sea, road, and rail networks."
+          "question": "How does DahNAY support global freight forwarding for equipment?",
+          "answer": "We support global freight forwarding for equipment through integrated logistics planning, multimodal transport and seamless coordination across India and international supply chains."
         }
       ]
     },
@@ -442,20 +446,28 @@
     "faq": {
       "items": [
         {
-          "question": "Does DahNAY handle bulk natural rubber shipments?",
-          "answer": "Yes, DahNAY manages high-volume natural rubber shipments including ribbed smoked sheets, latex, and processed rubber blocks. We coordinate plantation-to-port movement, bulk handling, and containerised export from production hubs in India and Southeast Asia to tyre, automotive, and industrial manufacturing markets globally."
+          "question": "What types of natural rubber shipments do you handle?",
+          "answer": "We handle a wide range of shipments under natural rubber logistics, including raw rubber, processed rubber and bulk consignments, supporting diverse rubber industry logistics needs."
         },
         {
-          "question": "Can DahNAY support rubber export logistics?",
-          "answer": "Yes, DahNAY handles end-to-end rubber export logistics including customs documentation, fumigation, container loading, and ocean freight to manufacturing markets in the USA, Europe, and Asia. We work with major Indian rubber-producing regions including Kerala and the Northeast, with full export-compliance support."
+          "question": "What is the best mode of transport for natural rubber?",
+          "answer": "The ideal mode depends on volume, urgency and destination, with multimodal logistics for rubber often combining road, sea and rail to ensure cost-effective and efficient movement."
         },
         {
-          "question": "Does DahNAY handle rubber processing equipment?",
-          "answer": "Yes, DahNAY moves rubber processing equipment including mixers, calenders, and vulcanisation machinery from manufacturers to processing plants. We manage oversized cargo, route surveys, factory installation coordination, and multimodal transport to support rubber industry expansion across emerging markets."
+          "question": "Are there any export restrictions for natural rubber?",
+          "answer": "Export regulations may vary by country and product type, and our team ensures compliance with all applicable requirements as part of our rubber cargo shipping services across India and global markets."
         },
         {
-          "question": "Where does DahNAY ship natural rubber and processed products?",
-          "answer": "DahNAY supports natural rubber logistics across India, Southeast Asia, the USA, and Europe, with strong operational footprint in major rubber export and import markets. Our 47 offices in 19+ countries enable end-to-end coverage from plantation regions to global tyre and automotive industry buyers."
+          "question": "Can DahNAY Logistics handle customs clearance for natural rubber shipments?",
+          "answer": "Yes, we provide complete support including customs clearance, ensuring smooth execution of rubber cargo shipping services India and international shipments."
+        },
+        {
+          "question": "How do you handle bulk natural rubber exports?",
+          "answer": "We manage bulk exports through specialized planning, secure packaging and multimodal logistics for rubber to ensure efficient handling and transport at scale."
+        },
+        {
+          "question": "Can natural rubber be transported internationally?",
+          "answer": "Yes, natural rubber can be transported internationally, and we facilitate seamless movement through compliant rubber industry logistics and global freight networks."
         }
       ]
     },
@@ -542,20 +554,24 @@
     "faq": {
       "items": [
         {
-          "question": "Does DahNAY handle large-format appliances?",
-          "answer": "Yes, DahNAY manages large-format white goods including refrigerators, washing machines, air conditioners, dishwashers, and large kitchen appliances. We use cargo-specific packaging, optimised container loading plans, and damage-protection protocols to maintain product integrity across factory-to-port and port-to-distribution movements."
+          "question": "What are white goods in logistics?",
+          "answer": "White goods in logistics refer to large household appliances such as refrigerators, washing machines and air conditioners, typically handled through specialized white goods logistics and electronics and appliance shipping."
         },
         {
-          "question": "Does DahNAY optimise container utilisation for appliance shipments?",
-          "answer": "Yes, DahNAY's load planning maximises container utilisation for white goods using cubic-volume optimisation, mixed-SKU loading, and damage-prevention bracing. This reduces freight cost per unit while protecting cargo integrity, especially for high-cube products like refrigerators and washing machines moving over long ocean voyages."
+          "question": "How does DahNAY Logistics ensure safe delivery of appliances?",
+          "answer": "We ensure safe home appliances transportation through secure packaging, careful handling and specialized processes designed for electronics and appliance shipping."
         },
         {
-          "question": "Where does DahNAY ship white goods globally?",
-          "answer": "DahNAY moves white goods exports across India, the UAE, the USA, Africa, and Southeast Asia, supported by 47 offices in 19+ countries. We handle cross-border movements from manufacturing hubs to distributor warehouses, including customs clearance and last-mile delivery to retail networks."
+          "question": "What types of appliances do you handle?",
+          "answer": "We handle a wide range of products under white goods logistics, including refrigerators, washing machines, air conditioners and other large household appliances."
         },
         {
-          "question": "Does DahNAY handle appliance spare parts distribution?",
-          "answer": "Yes, DahNAY supports aftermarket and spare-parts logistics for white goods, including warehousing, regional distribution, and direct dispatch to authorised service centres. We help appliance brands maintain service-level commitments by ensuring parts availability across domestic and international networks."
+          "question": "Do you provide warehousing for white goods?",
+          "answer": "Yes, we offer storage solutions as part of our white goods logistics services, ensuring safe and organized handling of appliances before distribution."
+        },
+        {
+          "question": "Do you offer last mile delivery for appliances?",
+          "answer": "Yes, we provide last mile delivery for appliances, ensuring timely and careful delivery to the end customer with proper handling throughout the final stage."
         }
       ]
     },
@@ -639,20 +655,24 @@
     "faq": {
       "items": [
         {
-          "question": "Does DahNAY handle oversized and heavy-lift cargo?",
-          "answer": "Yes, DahNAY provides engineered solutions for out-of-gauge, breakbulk, and heavy-lift industrial equipment used in upstream, midstream, and downstream operations. We manage modules, pipelines, drilling components, and refinery infrastructure with route surveys, specialised trailers, and dedicated lift coordination."
+          "question": "Which segments of the oil and gas industry do you serve?",
+          "answer": "We serve multiple segments including upstream, midstream and downstream operations, supporting oil and gas logistics and industrial energy transportation across diverse project requirements."
         },
         {
-          "question": "Can DahNAY manage hazardous materials for oil and gas?",
-          "answer": "Yes, DahNAY manages hazardous oil and gas cargo under IMDG protocols for ocean freight and IATA dangerous-goods protocols for air freight. Certified handlers, segregated storage, and full export documentation ensure compliance with international safety frameworks across project shipments."
+          "question": "Can you handle large-scale industrial projects?",
+          "answer": "Yes, we specialize in managing large-scale projects through multimodal transport for oil and gas, ensuring efficient execution across complex industrial energy transportation needs."
         },
         {
-          "question": "Does DahNAY support renewable energy logistics?",
-          "answer": "Yes, DahNAY moves renewable energy infrastructure including wind turbine blades and towers, solar modules, and inverters as part of the energy transition. We use heavy-lift coordination, route engineering, and multimodal transport to deliver cargo from factory to project sites worldwide."
+          "question": "What regions do you operate in?",
+          "answer": "We operate across India, the Middle East, Southeast Asia, Europe and key global trade routes, positioning ourselves as a global energy logistics partner with strong cross-border and domestic capabilities."
         },
         {
-          "question": "Where does DahNAY ship energy and oil-gas cargo?",
-          "answer": "DahNAY supports energy and oil-and-gas logistics across India, the UAE, the USA, and major African, Asian, and European markets, with 47 offices in 19+ countries. We handle upstream, midstream, downstream, and renewable infrastructure cargo with full hazardous-cargo certification and project planning."
+          "question": "How do you ensure safety in your operations?",
+          "answer": "We ensure safety through strict compliance protocols, specialized handling and robust planning, particularly for sensitive cargo within the bulk liquid supply chain and industrial energy transportation."
+        },
+        {
+          "question": "How do I know if your company is the right fit for my project?",
+          "answer": "Our expertise as a global energy logistics partner, combined with customized solutions and proven experience in oil and gas logistics, ensures we can effectively align with your project requirements."
         }
       ]
     },
@@ -832,24 +852,20 @@
     "faq": {
       "items": [
         {
-          "question": "How does DahNAY handle high-velocity FMCG supply chains?",
-          "answer": "DahNAY designs FMCG logistics around demand cycles, fast stock rotation, and short replenishment windows. We run primary distribution from factories to regional warehouses, secondary distribution to retail outlets, and last-mile delivery to e-commerce customers, with technology-enabled visibility across every movement."
+          "question": "Does DahNAY offer cold chain management for perishable FMCG?",
+          "answer": "Yes, we provide cold chain solutions as part of our Fast Moving Consumer Goods (FMCG) logistics, ensuring safe handling and transportation of perishable consumer goods with temperature-controlled systems."
         },
         {
-          "question": "Does DahNAY support e-commerce fulfilment for FMCG brands?",
-          "answer": "Yes, DahNAY runs end-to-end e-commerce fulfilment for FMCG brands including pick-pack operations, marketplace integration, dispatch coordination, and last-mile delivery. We also handle reverse logistics for returns and damaged stock, supporting direct-to-consumer brands and online marketplace sellers across India and key Asian markets."
+          "question": "What are your last mile connectivity options for e-commerce and retail?",
+          "answer": "We offer strong last mile connectivity through our retail supply chain management and eCommerce FMCG fulfillment solutions, ensuring timely and efficient delivery across India and key markets."
         },
         {
-          "question": "Can DahNAY manage FMCG seasonal demand surges?",
-          "answer": "Yes, DahNAY's warehousing and distribution network is designed for FMCG seasonal scaling — festival peaks, monsoon stocking, summer cooling-product spikes, and promotional campaign volumes. We pre-position inventory, expand temporary warehousing, and surge transport capacity to maintain on-shelf availability during demand peaks."
+          "question": "Can I ship small quantities or mixed SKU loads?",
+          "answer": "Yes, we support flexible shipping options, including small quantities and mixed Stock Keeping Units (SKU) loads, as part of our FMCG logistics and eCommerce FMCG fulfillment capabilities."
         },
         {
-          "question": "What FMCG distribution models does DahNAY offer?",
-          "answer": "DahNAY supports primary distribution from factory to regional warehouses, secondary distribution to retail outlets and supermarkets, last-mile delivery for e-commerce consumers, and direct-store delivery for high-velocity SKUs. Each model includes inventory management, route optimisation, and real-time delivery tracking."
-        },
-        {
-          "question": "How does DahNAY maintain product integrity for FMCG goods?",
-          "answer": "DahNAY follows strict handling protocols for FMCG products including damage-prevention packaging, temperature control for sensitive categories, contamination prevention, and tamper-evident sealing. Our warehouse and transport teams are trained on category-specific handling requirements to ensure products reach retail shelves in optimal condition."
+          "question": "What happens if a time-sensitive shipment is delayed?",
+          "answer": "In case of delays, we proactively manage the situation through real-time tracking, rapid response and contingency planning to minimize impact within the retail supply chain management process."
         }
       ]
     },
@@ -926,7 +942,24 @@
       ]
     },
     "faq": {
-      "items": []
+      "items": [
+        {
+          "question": "Does DahNAY provide moisture-controlled warehousing for paper products?",
+          "answer": "Yes, we offer storage solutions with moisture control in paper logistics to protect paper products from humidity and environmental damage."
+        },
+        {
+          "question": "How do you handle reverse logistics for paper and pulp shipments?",
+          "answer": "We manage reverse flows efficiently as part of pulp and paper logistics, ensuring smooth returns, reprocessing or redistribution within industrial material logistics systems."
+        },
+        {
+          "question": "What are the key challenges in paper and pulp logistics, and how does DahNAY address them?",
+          "answer": "Key challenges include moisture sensitivity, bulk handling and risk of damage, which we address through specialized handling, moisture control in paper logistics and structured industrial material logistics processes."
+        },
+        {
+          "question": "How does DahNAY ensure visibility and tracking of shipments?",
+          "answer": "We ensure real-time visibility through advanced tracking systems, enabling accurate monitoring across pulp and paper logistics and global freight forwarding operations."
+        }
+      ]
     },
     "whyDahnay": {
       "title": "Why DahNAY?",
@@ -1008,24 +1041,24 @@
     "faq": {
       "items": [
         {
-          "question": "What construction materials can DahNAY transport?",
-          "answer": "DahNAY transports cement, aggregates, structural steel, rebar, prefabricated modules, ready-mix concrete equipment, scaffolding, and oversized construction machinery. We handle bulk and packaged shipments across domestic and international routes, with cargo-specific equipment for each material class — from bulk tipper trucks to flatbed trailers."
+          "question": "Do you handle heavy and oversized construction materials?",
+          "answer": "Yes, we specialize in heavy cargo logistics, including the transport of oversized and high-volume materials through project cargo construction logistics solutions."
         },
         {
-          "question": "Can DahNAY deliver to remote or access-restricted construction sites?",
-          "answer": "Yes, DahNAY's last-mile site access solutions cover narrow urban roads, hill projects, remote infrastructure builds, and constrained-access locations. We use smaller delivery vehicles, route surveys, escort coordination for oversized cargo, and timed-window deliveries to navigate site constraints without delaying construction schedules."
+          "question": "Do you provide door-to-site delivery?",
+          "answer": "Yes, we offer door-to-site delivery as part of our bulk material transport services, ensuring construction materials reach project locations safely and on time."
         },
         {
-          "question": "Does DahNAY offer phased delivery for construction projects?",
-          "answer": "Yes, DahNAY plans phased material deliveries aligned to construction milestones — foundation, structural, finishing, and fit-out phases. Sequenced deliveries match site readiness, prevent material pile-up at small sites, reduce damage and theft, and let project managers maintain just-in-time inventory through the build cycle."
+          "question": "What is flatbed trucking in construction logistics?",
+          "answer": "Flatbed trucking is used for transporting large, heavy or irregularly shaped materials, making it a key component of construction materials logistics and heavy cargo logistics."
         },
         {
-          "question": "How does DahNAY handle oversized construction cargo?",
-          "answer": "DahNAY engineers logistics for oversized construction cargo including precast modules, structural steel girders, and large prefabricated components. We provide route surveys, transport permits, hydraulic axle trailers, escort vehicles, lifting equipment coordination, and final-position placement at site to ensure safe and on-schedule delivery."
+          "question": "How do you handle bulk construction material shipments?",
+          "answer": "We manage bulk cargo logistics for construction through efficient planning, appropriate equipment and bulk material transport services to ensure timely and secure delivery."
         },
         {
-          "question": "Can DahNAY manage high-volume bulk construction shipments?",
-          "answer": "Yes, DahNAY runs large-scale bulk construction logistics with dedicated fleet capacity, recurring scheduled deliveries, and supply continuity systems. We support cement plants, aggregate quarries, and steel mills with consistent outbound flow, helping major infrastructure and real-estate projects maintain uninterrupted material supply."
+          "question": "What industries benefit from construction materials logistics?",
+          "answer": "Industries such as infrastructure, real estate and industrial development benefit from construction materials logistics, especially for large-scale projects requiring heavy cargo logistics and bulk transport."
         }
       ]
     },
